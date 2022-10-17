@@ -120,6 +120,12 @@ section.content
   padding: var( --normal );
 }
 
+section.content a
+{
+  font-weight: 600;
+  color: var( --color-text-alt );
+}
+
 footer
 {
   padding: var( --normal );
