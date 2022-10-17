@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
 *,
 *::before,
 *::after
@@ -59,7 +61,7 @@ a
 {
   max-width: var( --container-width );
   margin: 0 auto;
-  padding: 0 var( --normal );
+  padding: 0;
   background-color: var( --color-background-alt );
 }
 
@@ -69,21 +71,9 @@ header
   justify-content: flex-left;
   align-items: center;
   gap: var( --normal );
-  padding: var( --normal ) 0;
+  padding: var( --normal );
   border-bottom: 1px solid var( --color-background );
 }
-
-/*header .bars
-{
-  position: relative;
-  left: 0;
-  display: block;
-  width: var( --normal );
-  bottom: var( --normal );
-  height: 0;
-  -webkit-box-shadow: 1px 10px 1px 1px var( --color-text ), 1px 16px 1px 1px var( --color-text ), 1px 22px 1px 1px var( --color-text );
-  box-shadow: 0 10px 0 1px var( --color-text ), 0 16px 0 1px var( --color-text ), 0 22px 0 1px var( --color-text );
-}*/
 
 header .bars
 {
@@ -109,7 +99,7 @@ nav.main
 {
   display: flex;
   align-items: center;
-  padding: var( --small ) 0;
+  padding: var( --small );
   border-bottom: 1px solid var( --color-background );
   flex-direction: column;
   gap: var( --small );
@@ -121,6 +111,19 @@ nav.main a
   text-transform: uppercase;
   font-weight: bold;
   font-size: var( --small );
+}
+
+section.content
+{
+  padding: var( --normal );
+}
+
+footer
+{
+  padding: var( --normal );
+  font-size: var( --small );
+  border-top: 1px solid var( --color-background );
+  text-align: center;
 }
 
 @media ( min-width: 800px )
