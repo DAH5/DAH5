@@ -1,0 +1,132 @@
+*,
+*::before,
+*::after
+{
+  box-sizing: border-box;
+}
+
+:root
+{
+  --small: 13px;
+  --normal: 16px;
+  
+  --container-width: 1200px;
+  
+  --color-dark: #262626;
+  --color-black: #000;
+  --color-light: #e6e6e6;
+  --color-white: #fff;
+  
+  --color-background: var( --color-light );
+  --color-background-alt: var( --color-white );
+  --color-text: var( --color-dark );
+  --color-text-alt: var( --color-black );
+}
+
+@media ( prefers-color-scheme: dark )
+{
+  :root
+  {
+    --color-background: var( --color-black );
+    --color-background-alt: var( --color-dark );
+    --color-text: var( --color-light );
+    --color-text-alt: var( --color-white );
+  }
+}
+
+html,
+body
+{
+  font-family: "Poppins", sans-serif;
+  font-size: var( --normal );
+  margin: 0;
+  padding: 0;
+  background-color: var( --color-background );
+  color: var( --color-text );
+}
+
+a
+{
+  color: var( --color-text );
+}
+
+#nav-toggle
+{
+  display: none;
+}
+
+.container
+{
+  max-width: var( --container-width );
+  margin: 0 auto;
+  padding: 0 var( --normal );
+  background-color: var( --color-background-alt );
+}
+
+header
+{
+  display: flex;
+  justify-content: flex-left;
+  align-items: center;
+  gap: var( --normal );
+  padding: var( --normal ) 0;
+  border-bottom: 1px solid var( --color-background );
+}
+
+/*header .bars
+{
+  position: relative;
+  left: 0;
+  display: block;
+  width: var( --normal );
+  bottom: var( --normal );
+  height: 0;
+  -webkit-box-shadow: 1px 10px 1px 1px var( --color-text ), 1px 16px 1px 1px var( --color-text ), 1px 22px 1px 1px var( --color-text );
+  box-shadow: 0 10px 0 1px var( --color-text ), 0 16px 0 1px var( --color-text ), 0 22px 0 1px var( --color-text );
+}*/
+
+header .bars
+{
+  font-size: 24px;
+}
+
+header .logo
+{
+  max-width: 100px;
+}
+
+#nav-toggle ~ nav.main
+{
+  display: none;
+}
+
+#nav-toggle:checked ~ nav.main
+{
+  display: flex;
+}
+
+nav.main
+{
+  display: flex;
+  align-items: center;
+  padding: var( --small ) 0;
+  border-bottom: 1px solid var( --color-background );
+  flex-direction: column;
+  gap: var( --small );
+}
+
+nav.main a
+{
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: var( --small );
+}
+
+@media ( min-width: 800px )
+{
+  nav.main
+  {
+    flex-direction: row;
+  }
+}
