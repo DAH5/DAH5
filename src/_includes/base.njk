@@ -27,7 +27,23 @@
       </nav>
       
       <section class="content">
-        {{ content | safe }}
+        {% if page.url.substr( 0, 11 ) == '/reference/' %}
+          <nav>
+            <a href="/reference/html/"{% if page.url.substr( 0, 16 ) == '/reference/html/' %} class="current"{% endif %}>HTML</a>
+            {% if page.url.substr( 0, 16 ) == '/reference/html/' %}
+            <div>
+              <a href="/reference/html/"{% if page.url == '/reference/html/' %} class="current"{% endif %}>Intro</a>
+            </div>
+            {% endif %}
+          </nav>
+        {% endif %}
+        <div class="content">
+          {% if page.url.substr( 0, 16 ) == '/reference/html/' %}
+            <h1>HTML Reference</h1>
+          {% endif %}
+
+          {{ content | safe }}
+        </div>
       </section>
       
       <footer>
