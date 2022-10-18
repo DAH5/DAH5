@@ -19,7 +19,7 @@
   --color-background-light: #e6e6e6;
   --color-text-dark: #333;
   --color-text-light: #ccc;
-  --color-text-muted: #bbb;
+  --color-text-muted: #aaa;
   --color-white: #fff;
   
   --color-background: var( --color-background-light );
@@ -36,7 +36,7 @@
     --color-background-alt: var( --color-background-dark );
     --color-text: var( --color-text-light );
     --color-text-alt: var( --color-white );
-    --color-text-muted: #666;
+    --color-text-muted: #777;
   }
 }
 
