@@ -17,11 +17,13 @@
           &#9776;
         </label>
         <a href="/"><img src="/assets/images/dah5-logo-2022.svg" class="logo"></a>
+        {% if page.url.substr( 0, 11 ) == '/reference/' %}<a href="/reference" class="section-title">Reference</a>{% endif %}
       </header>
       
       <nav class="main">
-        <a href="/">Home</a>
-        <a href="/about">About</a>
+        <a href="/"{% if page.url == '/' %} class="current"{% endif %}>Home</a>
+        <a href="/about/"{% if page.url.substr( 0, 7 ) == '/about/' %} class="current"{% endif %}>About</a>
+        <a href="/reference/"{% if page.url.substr( 0, 11 ) == '/reference/' %} class="current"{% endif %}>Reference</a>
       </nav>
       
       <section class="content">
