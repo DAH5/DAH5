@@ -1,0 +1,114 @@
+---
+title: Love Calculator
+description: Find out how much you could be in love with someone using this simple game.
+tags: game
+layout: "base.njk"
+---
+
+<h1>Welcome to Love Calculator!</h1>
+<p>{{ description }}</p>
+<p><b>How to Play?</b></p>
+<p>Put your name in the first box, then put the name of someone you know into the second box, then press Play!</p>
+<p>Afterwards, press the Swap button to switch the names around, and see how much they could be in love with you.</p>
+<p>When you are done, press clear to remove both names from the boxes and have another go, or give someone else a go.</p>
+
+<p class="disclaimer"><b>Disclaimer:</b> This is a game intended for a bit of fun. Please do not take the results too seriously.</p>
+
+<noscript>
+    <p>PLEASE ENABLE JAVASCRIPT TO PLAY THIS GAME!</p>
+</noscript>
+
+<div id="alertBox">
+    <div id="alertBoxText">Sample text.</div>
+    <button id="alertBoxCloseButton">Close</button>
+</div>
+
+<div id="game">
+    <p>
+        <label for="txtFirstName"><b>First Name:</b></label>
+        <input type="text" id="txtFirstName">
+    </p>
+
+    <p>
+        <label for="txtSecondName"><b>Second Name:</b></label>
+        <input type="text" id="txtSecondName">
+    </p>
+
+    <p class="buttons">
+        <button type="button" id="btnPlay">Play</button>
+        <button type="button" id="btnSwap">Swap</button>
+        <button type="button" id="btnReset">Reset</button>
+    </p>
+</div>
+
+<script type="text/javascript">
+    var txtFirstName = document.getElementById('txtFirstName');
+    var txtSecondName = document.getElementById('txtSecondName');
+    var btnPlay = document.getElementById('btnPlay');
+    var btnSwap = document.getElementById('btnSwap');
+    var btnReset = document.getElementById('btnReset');
+    var alertBox = document.getElementById('alertBox');
+    var alertBoxCloseButton = document.getElementById('alertBoxCloseButton');
+
+    btnPlay.addEventListener('click', play);
+    txtFirstName.addEventListener('keypress', function(e) {
+        if( e.key === "Enter" )
+        {
+            play();
+        }
+    });
+
+    txtSecondName.addEventListener('keypress', function(e) {
+        if( e.key === "Enter" )
+        {
+            play();
+        }
+    });
+
+    function play() {
+        var first_name = txtFirstName.value;
+        var second_name = txtSecondName.value;
+
+        if( ! first_name || ! second_name )
+        {
+            showMessage("Please enter both a first and second name into the boxes provided.");
+            return;
+        }
+
+        var score = 0;
+
+        for( var i = 0; i < first_name.length; i++ )
+        {
+            if( second_name.includes( first_name.charAt( i ) ) )
+                score++;
+        }
+
+        var percentage = score / second_name.length * 100;
+
+        showMessage( first_name + " could be " + percentage + "% in love with " + second_name + "!" );
+    }
+
+    btnSwap.addEventListener('click', function() {
+        var first_name = txtFirstName.value;
+        var second_name = txtSecondName.value;
+
+        txtFirstName.value = second_name;
+        txtSecondName.value = first_name;
+    });
+
+    btnReset.addEventListener('click', function() {
+        txtFirstName.value = "";
+        txtSecondName.value = "";
+        alertBox.style.display = 'none';
+    });
+
+    alertBoxCloseButton.addEventListener('click', function() {
+        alertBox.style.display = 'none';
+    });
+
+    function showMessage( text )
+    {
+        document.getElementById('alertBoxText').innerHTML = text;
+        alertBox.style.display = 'block';
+    }
+</script>
