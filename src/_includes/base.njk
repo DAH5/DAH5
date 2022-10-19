@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <title>{% if title %}{{ title }} - {% endif %}DAH5</title>
+    <title>{% if title %}{{ title }} - {% endif %}{% if section %}{{ section }} - {% endif %}DAH5</title>
     
     <link rel="stylesheet" type="text/css" href="/assets/css/main.css">
   </head>
@@ -17,7 +17,11 @@
           &#9776;
         </label>
         <a href="/"><img src="/assets/images/dah5-logo-2022.svg" class="logo"></a>
-        {% if page.url.substr( 0, 11 ) == '/reference/' %}<a href="/reference" class="section-title">Reference</a>{% endif %}
+        {% if section and sectionURL %}
+          <a href="{{ sectionURL }}" class="section-title">{{ section }}</a>
+        {% elif section %}
+          <span class="section-title">{{ section }}</span>
+        {% endif %}
       </header>
       
       <nav class="main">
