@@ -10,16 +10,39 @@ section.content .disclaimer
   font-weight: 600;
 }
 
+@media ( prefers-color-scheme: light )
+{
+  body.toggle-color-scheme section.content
+  {
+    background-color: rgb(98, 52, 151);
+  }
+  
+  body.toggle-color-scheme section.content .disclaimer
+  {
+    color: rgb(255, 0, 0);
+  }
+}
+
 @media ( prefers-color-scheme: dark )
 {
   section.content
   {
     background-color: rgb(98, 52, 151);
   }
+  
+  body.toggle-color-scheme section.content
+  {
+    background-color: rgb(184, 159, 212);
+  }
 
   section.content .disclaimer
   {
     color: rgb(241, 109, 109);
+  }
+  
+  body.toggle-color-scheme section.content .disclaimer
+  {
+    color: rgb(255, 0, 0);
   }
 }
 
