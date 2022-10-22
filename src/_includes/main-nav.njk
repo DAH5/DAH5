@@ -1,0 +1,8 @@
+      <input type="checkbox" id="nav-toggle">
+      
+      <nav class="main">
+        <a href="/"{% if page.url == '/' %} class="current"{% endif %}>Home</a>
+        <a href="/about/"{% if page.url.substr( 0, 7 ) == '/about/' %} class="current"{% endif %}>About</a>
+        <a href="/games/"{% if page.url.substr( 0, 7 ) == '/games/' %} class="current"{% endif %}>Games</a>
+        <a href="/reference/"{% if page.url.substr( 0, 11 ) == '/reference/' %} class="current"{% endif %}>Reference</a>
+      </nav>
