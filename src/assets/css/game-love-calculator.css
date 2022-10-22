@@ -1,0 +1,81 @@
+section.content
+{
+  background-color: rgb(184, 159, 212);
+}
+
+section.content .disclaimer
+{
+  font-size: 0.8rem;
+  color: rgb(255, 0, 0);
+  font-weight: 600;
+}
+
+@media ( prefers-color-scheme: dark )
+{
+  section.content
+  {
+    background-color: rgb(98, 52, 151);
+  }
+
+  section.content .disclaimer
+  {
+    color: rgb(241, 109, 109);
+  }
+}
+
+section.content #alertBox
+{
+  display: none;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  background-color: var( --color-background-alt );
+  color: var( --color-text-alt );
+  font-size: 1.3rem;
+}
+
+section.content label,
+section.content input[type='text']
+{
+  font-size: 1.3rem;
+  display: block;
+}
+
+section.content input[type='text']
+{
+  background-color: var( --color-background-alt );
+  color: var( --color-text );
+  border-width: 0;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+}
+
+section.content .buttons
+{
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+section.content button
+{
+  border-radius: 0.5rem;
+  border-width: 0;
+}
+
+section.content #btnPlay
+{
+  padding: 0.5rem 1rem;
+  font-size: 1.3rem;
+  background-color: var( --color-background-alt );
+  color: var( --color-text-alt );
+}
+
+section.content #btnSwap,
+section.content #btnReset,
+section.content #alertBoxCloseButton
+{
+  padding: 0.3rem 0.8rem;
+  font-size: 1.1rem;
+  background-color: var( --color-text-alt );
+  color: var( --color-background-alt );
+}
