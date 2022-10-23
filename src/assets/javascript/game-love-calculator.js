@@ -46,16 +46,21 @@ function play() {
     return;
   }
   
+  calculate( first_name, second_name );
+}
+
+function calculate( firstName, secondName )
+{
   var score = 0;
   
-  for( var i = 0; i < first_name.length; i++ )
+  for( var i = 0; i < firstName.length; i++ )
   {
-    if( second_name.includes( first_name.charAt( i ) ) )
+    if( secondName.includes( firstName.charAt( i ) ) )
       score++;
   }
   
-  var percentage = score / second_name.length * 100;
-  showMessage( first_name + " could be " + percentage + "% in love with " + second_name + "!" );
+  var percentage = score / secondName.length * 100;
+  showMessage( firstName + " could be " + percentage + "% in love with " + secondName + "!" );
 }
 
 btnSwap.addEventListener( 'click', function()
