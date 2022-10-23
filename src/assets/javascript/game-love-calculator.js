@@ -59,7 +59,8 @@ function calculate( firstName, secondName )
       score++;
   }
   
-  var percentage = score / secondName.length * 100;
+  var percentage = ( score / secondName.length * 100 ).toFixed(2);
+  
   showMessage( firstName + " could be " + percentage + "% in love with " + secondName + "!" );
 }
 
