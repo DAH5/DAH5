@@ -1,5 +1,3 @@
-document.getElementById( 'nojs' ).style.display = 'none';
-
 var txtFirstName = document.getElementById( 'txtFirstName' );
 var txtSecondName = document.getElementById( 'txtSecondName' );
 var btnPlay = document.getElementById( 'btnPlay' );
@@ -7,6 +5,19 @@ var btnSwap = document.getElementById( 'btnSwap' );
 var btnReset = document.getElementById( 'btnReset' );
 var alertBox = document.getElementById( 'alertBox' );
 var alertBoxCloseButton = document.getElementById( 'alertBoxCloseButton' );
+
+enableGameplay();
+
+function enableGameplay()
+{
+  document.getElementById( 'nojs' ).style.display = 'none';
+  
+  txtFirstName.disabled = false;
+  txtSecondName.disabled = false;
+  btnPlay.disabled = false;
+  btnSwap.disabled = false;
+  btnReset.disabled = false;
+}
 
 btnPlay.addEventListener( 'click', play);
 txtFirstName.addEventListener( 'keypress', function(e)
