@@ -1,3 +1,5 @@
+document.getElementById( 'nojs' ).style.display = 'none';
+
 var txtFirstName = document.getElementById( 'txtFirstName' );
 var txtSecondName = document.getElementById( 'txtSecondName' );
 var btnPlay = document.getElementById( 'btnPlay' );

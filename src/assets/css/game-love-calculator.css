@@ -49,11 +49,24 @@ section.content .disclaimer
 section.content #alertBox
 {
   display: none;
+  color: var( --color-text-alt );
+  font-size: 1.3rem;
+}
+
+section.content #nojs
+{
+  color: red;
+  font-weight: bold;
+  font-size: 0.8rem;
+  text-align: center;
+}
+
+section.content #alertBox,
+section.content #nojs
+{
   padding: 0.5rem;
   border-radius: 0.5rem;
   background-color: var( --color-background-alt );
-  color: var( --color-text-alt );
-  font-size: 1.3rem;
 }
 
 section.content label,
