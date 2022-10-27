@@ -1,6 +1,8 @@
 ---
 title: Tools
-layout: 'base.njk'
+layout: "base.njk"
+tags: "mainpage"
+date: 4000-04-04
 ---
 
 # Tools

@@ -1,6 +1,8 @@
 ---
 title: Games
-layout: 'base.njk'
+layout: "base.njk"
+tags: "mainpage"
+date: 3000-03-03
 ---
 
 # Games
