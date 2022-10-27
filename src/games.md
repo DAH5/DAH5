@@ -3,9 +3,9 @@ title: Games
 layout: "base.njk"
 tags: "mainpage"
 date: 3000-03-03
+section: Games
+sectionURL: /games/
 ---
-
-# Games
 
 Here are a selection of games I have created over time.
 

@@ -3,9 +3,9 @@ title: Tools
 layout: "base.njk"
 tags: "mainpage"
 date: 4000-04-04
+section: Tools
+sectionURL: /tools/
 ---
-
-# Tools
 
 _Some web based tools to help with some tedious tasks that can be a pain to do manually._
 
