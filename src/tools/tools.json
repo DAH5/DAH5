@@ -1,0 +1,9 @@
+{
+  "section": "Tools",
+  "sectionURL": "/tools",
+  "layout": "base.njk",
+  "tags": "tool",
+  "stylesheets": [
+    "/assets/css/tools.css"
+  ]
+}
