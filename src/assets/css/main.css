@@ -279,5 +279,11 @@ footer a:hover
   section.content nav
   {
     width: max-content;
+    flex-grow: 1;
+  }
+  
+  section.content .content
+  {
+    flex-grow: 2;
   }
 }
