@@ -3,6 +3,19 @@ section.content
   background-color: rgb(184, 159, 212);
 }
 
+section.content h1
+{
+  font-size: 5vw;
+  font-weight: 900;
+  color: var( --color-text-alt );
+}
+
+section.content h1,
+section.content .description
+{
+  text-align: center;
+}
+
 section.content .disclaimer
 {
   font-size: 0.8rem;
@@ -48,9 +61,23 @@ section.content .disclaimer
 
 section.content #alertBox
 {
-  display: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
   color: var( --color-text-alt );
   font-size: 1.3rem;
+  position: fixed;
+  top: 10vh;
+  bottom: 10vh;
+  left: 10vw;
+  right: 10vw;
+  visibility: hidden;
+}
+
+section.content #alertBox #alertBoxText
+{
+  padding: 4vw;
 }
 
 section.content #nojs
@@ -69,11 +96,19 @@ section.content #nojs
   background-color: var( --color-background-alt );
 }
 
+section.content label
+{
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
 section.content label,
 section.content input[type='text']
 {
-  font-size: 1.3rem;
+  font-size: 8vw;
   display: block;
+  width: 100%;
+  text-align: center;
 }
 
 section.content input[type='text']
@@ -81,13 +116,14 @@ section.content input[type='text']
   background-color: var( --color-background-alt );
   color: var( --color-text );
   border-width: 0;
-  padding: 0.5rem;
+  padding: 2vw;
   border-radius: 0.5rem;
 }
 
 section.content .buttons
 {
   display: flex;
+  justify-content: center;
   gap: 1rem;
   align-items: center;
 }
@@ -114,4 +150,13 @@ section.content #alertBoxCloseButton
   font-size: 1.1rem;
   background-color: var( --color-text-alt );
   color: var( --color-background-alt );
+}
+
+@media ( min-width: 500px )
+{
+  section.content label,
+  section.content input[type='text']
+  {
+    font-size: 6vw;
+  }
 }

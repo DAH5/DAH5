@@ -82,11 +82,11 @@ btnReset.addEventListener( 'click', function()
 
 alertBoxCloseButton.addEventListener( 'click', function()
 {
-  alertBox.style.display = 'none';
+  alertBox.style.visibility = 'hidden';
 });
 
 function showMessage( text )
 {
   document.getElementById( 'alertBoxText' ).innerHTML = text;
-  alertBox.style.display = 'block';
+  alertBox.style.visibility = 'visible';
 }
