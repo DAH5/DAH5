@@ -1,0 +1,5 @@
+{% if scripts.footer %}
+  {% for script in scripts.footer %}
+    <script type="text/javascript" src="{{ script.src }}"></script>
+  {% endfor %}
+{% endif %}

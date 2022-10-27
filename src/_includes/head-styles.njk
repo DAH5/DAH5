@@ -1,0 +1,7 @@
+<link rel="stylesheet" type="text/css" href="/assets/css/main.css">
+
+{% if stylesheets %}
+  {% for stylesheet in stylesheets %}
+    <link rel="stylesheet" type="text/css" href="{{ stylesheet }}">
+  {% endfor %}
+{% endif %}
