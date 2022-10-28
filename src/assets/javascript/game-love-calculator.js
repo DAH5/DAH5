@@ -77,7 +77,7 @@ btnReset.addEventListener( 'click', function()
 {
   txtFirstName.value = "";
   txtSecondName.value = "";
-  alertBox.style.display = 'none';
+  alertBox.style.visibility = 'hidden';
 });
 
 alertBoxCloseButton.addEventListener( 'click', function()
