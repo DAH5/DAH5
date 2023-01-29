@@ -1,7 +1,0 @@
-      <input type="checkbox" id="nav-toggle">
-      
-      <nav class="main">
-        {% for navitem in collections.mainpage %}
-          <a href="{{ navitem.url }}"{% if ( page.url.substr( 0, navitem.url.length ) == navitem.url and navitem.url != "/" ) or ( page.url == "/" and navitem.url == "/" ) %} class="current"{% endif %}>{{ navitem.data.title }}</a>
-        {% endfor %}
-      </nav>

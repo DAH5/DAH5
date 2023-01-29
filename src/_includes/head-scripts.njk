@@ -1,5 +1,0 @@
-{% if scripts.head %}
-  {% for script in scripts.head %}
-    <script type="text/javascript" src="{{ script.src }}"{% if script.defer %} defer="defer"{% endif %}></script>
-  {% endfor %}
-{% endif %}
