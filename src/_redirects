@@ -4,3 +4,5 @@
 /games/lovecalculator /games/love-calculator 307
 /games/lc /games/love-calculator 307
 /game/* /games/:splat
+/faaa /favourite-actors-and-actresses
+/favorite-actors-and-actresses /favourite-actors-and-actresses
