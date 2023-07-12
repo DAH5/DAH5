@@ -1,15 +1,13 @@
-<?php
-
-$page_title = "Ham Blaster";
-$description = "Currently in Development!";
-$current_nav_item = "games";
-$section = "Games";
-$sectionURL = "/games/";
-$stylesheets[] = "/assets/css/game-ham-blaster.css";
-$scripts['footer'][] = "/assets/javascript/game-ham-blaster.js";
-
-$page_content = function() {
-?>
+---
+page_title: Ham Blaster
+description: Currently in Development
+current_naav_item: games
+section: Games
+sectionURL: /games/
+stylesheets: /assets/css/game-ham-blaster.css
+footer_scripts: /assets/javascript/game-ham-blaster.js
+layout: src/_inc/base.php
+---
 
 <div class="hamblaster">
     <h1>Ham Blaster</h1>
@@ -19,8 +17,3 @@ $page_content = function() {
 
     </div>
 </div>
-
-<?php
-};
-
-include __DIR__ . DIRECTORY_SEPARATOR . '..' . DIRECTORY_SEPARATOR . '_inc' . DIRECTORY_SEPARATOR . 'base.php';

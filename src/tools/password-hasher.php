@@ -1,15 +1,12 @@
-<?php
-
-$page_title = "Password Hasher";
-$current_nav_item = "tools";
-$section = "Tools";
-$sectionURL = "/tools/";
-$stylesheets[] = "/assets/css/tools.css";
-$scripts['footer'][] = "https://cdnjs.cloudflare.com/ajax/libs/bcryptjs/2.2.0/bcrypt.min.js";
-$scripts['footer'][] = "/assets/javascript/tool-password-hasher.js";
-
-$page_content = function() {
-?>
+---
+page_title: Password Hasher
+current_nav_item: tools
+section: Tools
+sectionURL: /tools/
+stylesheets: /assets/css/tools.css
+footer_scripts: https://cdnjs.cloudflare.com/ajax/libs/bcryptjs/2.2.0/bcrypt.min.js::/assets/javascript/tools-password-hasher.js
+layout: src/_inc/base.php
+---
 
 <h2>Password Hasher</h2>
 
@@ -27,8 +24,3 @@ $page_content = function() {
 <p id="result">
   
 </p>
-
-<?php
-};
-
-include __DIR__ . DIRECTORY_SEPARATOR . '..' . DIRECTORY_SEPARATOR . '_inc' . DIRECTORY_SEPARATOR . 'base.php';

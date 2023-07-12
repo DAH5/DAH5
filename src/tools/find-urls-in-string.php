@@ -1,14 +1,12 @@
-<?php
-
-$page_title = "Find URLs in String";
-$current_nav_item = "tools";
-$section = "Tools";
-$sectionURL = "/tools/";
-$stylesheets[] = "/assets/css/tools.css";
-$scripts['footer'][] = "/assets/javascript/tool-find-urls-in-string.js";
-
-$page_content = function() {
-?>
+---
+page_title: Find URLs in String
+current_nav_item: tools
+section: Tools
+sectionURL: /tools/
+stylesheets: /assets/css/tools.css
+footer_scripts: /assets/javascript/tool-find-urls-in-string.js
+layout: src/_inc/base.php
+---
 
 <h2>Find URLs in String</h2>
 
@@ -17,8 +15,3 @@ $page_content = function() {
 <p><button id="btnFindUrlsInString" disabled>Go</button></p>
 <p><b>Result:</b></p>
 <div class="result" id="resultFindUrlsInString">Please enable JavaScript to use this tool.</div>
-
-<?php
-};
-
-include __DIR__ . DIRECTORY_SEPARATOR . '..' . DIRECTORY_SEPARATOR . '_inc' . DIRECTORY_SEPARATOR . 'base.php';

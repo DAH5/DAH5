@@ -1,12 +1,10 @@
-<?php
-
-$page_title = "Tools";
-$current_nav_item = "tools";
-$section = "Tools";
-$sectionURL = "/tools/";
-
-$page_content = function() {
-?>
+---
+page_title: Tools
+current_nav_item: tools
+section: Tools
+sectionURL: /tools/
+layout: src/_inc/base.php
+---
 
 <p><i>Some web based tools to help with some tedious tasks that can be a pain to do manually.</i></p>
 
@@ -31,8 +29,3 @@ $tools = array
         <p><b><?php echo $tool['title']; ?></b> - <a href="<?php echo $tool['url']; ?>">Go to Tool</a></p>
     <?php endforeach; ?>
 <?php endif; ?>
-
-<?php
-};
-
-include __DIR__ . DIRECTORY_SEPARATOR . '_inc' . DIRECTORY_SEPARATOR . 'base.php';

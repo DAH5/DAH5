@@ -1,14 +1,12 @@
-<?php
-
-$page_title = "HTML";
-$current_nav_item = "reference";
-$section = "Reference";
-$sectionURL = "/reference/";
-$reference_section = "html";
-$reference_page = "intro";
-
-$page_content = function() {
-?>
+---
+page_title: HTML
+current_nav_item: reference
+section: Reference
+sectionURL: /reference/
+reference_section: html
+reference_page: intro
+layout: src/_inc/base.php
+---
 
 <p><b>Welcome to the HTML Reference!</b></p>
 <p>Everything you need to know about HTML.</p>
@@ -35,8 +33,3 @@ $page_content = function() {
     &lt;/body&gt;
 &lt;/html&gt;
 </pre></code>
-
-<?php
-};
-
-include __DIR__ . DIRECTORY_SEPARATOR . '..' . DIRECTORY_SEPARATOR . '_inc' . DIRECTORY_SEPARATOR . 'base.php';

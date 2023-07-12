@@ -1,9 +1,7 @@
-<?php
-
-$page_title = "Favourite Actors and Actresses";
-
-$page_content = function() {
-?>
+---
+page_title: Favourite Actors and Actresses
+layout: src/_inc/base.php
+---
 
 <h1>Favourite Actors and Actresses</h1>
 
@@ -88,8 +86,3 @@ for( $faaa = 0; $faaa <= count( $favourite_actors_and_actresses ); $faaa++ )
 <?php endif; ?>
 
 <p>More will be added to this list over time, so please check back again.</p>
-
-<?php
-};
-
-include __DIR__ . DIRECTORY_SEPARATOR . '_inc' . DIRECTORY_SEPARATOR . 'base.php';

@@ -1,12 +1,10 @@
-<?php
-
-$page_title = "Games";
-$current_nav_item = "games";
-$section = "Games";
-$sectionURL = "/games/";
-
-$page_content = function() {
-?>
+---
+page_title: Games
+current_nav_item: games
+section: Games
+sectionURL: /games/
+layout: src/_inc/base.php
+---
 
 <p>Here are a selection of games I have created over time.</p>
 
@@ -24,7 +22,7 @@ $games = array
 
 ?>
 
-<?php if( isset( $games ) && is_array( $games ) && count( $games ) > 0 ): ?>
+<?php if( isset( $games ) ): ?>
     <ul>
         <?php foreach( $games as $game ): ?>
             <?php if( ! isset( $game['url'], $game['title'], $game['description'] ) || ! $game['url'] || ! $game['title'] || ! $game['description'] ) continue; ?>
@@ -32,8 +30,3 @@ $games = array
         <?php endforeach; ?>
     </ul>
 <?php endif; ?>
-
-<?php
-};
-
-include __DIR__ . DIRECTORY_SEPARATOR . '_inc' . DIRECTORY_SEPARATOR . 'base.php';

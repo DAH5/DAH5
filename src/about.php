@@ -1,12 +1,9 @@
-<?php
-
-$page_title = "About";
-$current_nav_item = "about";
-
-$scripts['footer'][] = "/assets/javascript/anti-email-harvesting.js";
-
-$page_content = function() {
-?>
+---
+page_title: About
+current_nav_item: about
+layout: src/_inc/base.php
+footer_scripts: /assets/javascript/anti-email-harvesting.js
+---
 
 <h1>About DAH5</h1>
 <p>Hello, I'm David, and this is my website.</p>
@@ -21,8 +18,3 @@ $page_content = function() {
 <h2>Contact</h2>
 <p>If you wish to get in touch, you can send an email.</p>
 <p><b class="email_address">contact [at] dah5 [dot] com</b></p>
-
-<?php
-};
-
-include __DIR__ . DIRECTORY_SEPARATOR . '_inc' . DIRECTORY_SEPARATOR . 'base.php';
