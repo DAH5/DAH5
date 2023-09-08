@@ -10,7 +10,7 @@ ErrorDocument 404 /404.html
     RewriteRule ^games/lc$ /games/love-calculator [R=307,END]
     RewriteRule ^game/(.*)$ /games/$1 [R=307,END]
 
-    RewriteCond %{HTTP_HOST} !^www.dah5.com$ [OR]
+    RewriteCond %{HTTP_HOST} !^www.dah5.me.uk$ [OR]
     RewriteCond %{SERVER_PORT} ^80$
-    RewriteRule ^(.*)$ https://www.dah5.com/$1 [R=307,END]
+    RewriteRule ^(.*)$ https://www.dah5.me.uk/$1 [R=307,END]
 </IfModule>
