@@ -17,4 +17,4 @@ footer_scripts: /assets/javascript/anti-email-harvesting.js
 
 <h2>Contact</h2>
 <p>If you wish to get in touch, you can send an email.</p>
-<p><b class="email_address">contact [at] dah5 [dot] com</b></p>
+<p><b class="email_address">contact [at] dah5 [dot] me [dot] uk</b></p>
