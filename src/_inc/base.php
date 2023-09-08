@@ -9,6 +9,7 @@ content_placeholder: {{ content }}
 
         <title><?php if( isset( $metadata['page_title'] ) && $metadata['page_title'] ): ?><?php echo $metadata['page_title']; ?> - <?php endif; ?>DAH5<?php if( isset( $metadata['section'] ) && $metadata['section'] ): ?> <?php echo $metadata['section']; ?><?php endif; ?></title>
         
+        <link rel="stylesheet" type="text/css" href="/assets/webfonts/poppins/poppins.css">
         <link rel="stylesheet" type="text/css" href="/assets/css/main.css">
 
         <?php if( isset( $metadata['stylesheets'] ) ): ?>
@@ -25,72 +26,69 @@ content_placeholder: {{ content }}
     </head>
     
     <body>
-        <div class="container">
-            <header>
-                <label for="nav-toggle" class="bars">
-                    &#9776;
-                </label>
+        <?php
 
-                <a href="/"><img src="/assets/images/dah5-logo-2022.svg" class="logo"></a>
-                
-                <?php if( isset( $metadata['section'], $metadata['sectionURL'] ) && $metadata['section'] && $metadata['sectionURL'] ): ?>
+        $main_nav_items[] = array
+        (
+            "name" => "about",
+            "text" => "About",
+            "url" => "/about"
+        );
+
+        $main_nav_items[] = array
+        (
+            "name" => "games",
+            "text" => "Games",
+            "url" => "/games"
+        );
+
+        $main_nav_items[] = array
+        (
+            "name" => "tools",
+            "text" => "Tools",
+            "url" => "/tools"
+        );
+
+        $main_nav_items[] = array
+        (
+            "name" => "reference",
+            "text" => "Reference",
+            "url" => "/reference"
+        );
+
+        ?>
+
+        <header>
+            <div class="container">
+                <div class="logo">
+                    <a href="/"><img src="/assets/images/dah5-logo-2022.svg" class="logo"></a>
+                </div>
+
+                <nav>
+                    <?php if( isset( $main_nav_items ) && is_array( $main_nav_items ) ): ?>
+                        <?php foreach( $main_nav_items as $main_nav_item ): ?>
+                            <?php if( ! is_array( $main_nav_item ) || ! isset( $main_nav_item['name'], $main_nav_item['text'], $main_nav_item['url'] ) ) continue; ?>
+                            <a href="<?php echo $main_nav_item['url']; ?>"<?php if( isset( $metadata['current_nav_item'] ) && $metadata['current_nav_item'] == $main_nav_item['name'] ): ?> class="current"<?php endif; ?>><?php echo $main_nav_item['text']; ?></a>
+                        <?php endforeach; ?>
+                    <?php endif; ?>
+                </nav>
+            </div>
+        </header>
+
+        <?php if( isset( $metadata['section'] ) && $metadata['section'] ): ?>
+        <section class="section-title">
+            <div class="container">
+                <?php if( isset( $metadata['sectionURL'] ) && $metadata['section'] && $metadata['sectionURL'] ): ?>
                     <a href="<?php echo $metadata['sectionURL']; ?>" class="section-title"><?php echo $metadata['section']; ?></a>
-                <?php elseif( isset( $metadata['section'] ) && $metadata['section'] ): ?>
+                <?php else: ?>
                     <span class="section-title"><?php echo $metadata['section']; ?></span>
                 <?php endif; ?>
-            </header>
+            </div>
+        </section>
+        <?php endif; ?>
 
-            <input type="checkbox" id="nav-toggle">
-      
-            <nav class="main">
-                <?php
-
-                $main_nav_items[] = array
-                (
-                    "name" => "home",
-                    "text" => "Home",
-                    "url" => "/"
-                );
-
-                $main_nav_items[] = array
-                (
-                    "name" => "about",
-                    "text" => "About",
-                    "url" => "/about"
-                );
-
-                $main_nav_items[] = array
-                (
-                    "name" => "games",
-                    "text" => "Games",
-                    "url" => "/games"
-                );
-
-                $main_nav_items[] = array
-                (
-                    "name" => "tools",
-                    "text" => "Tools",
-                    "url" => "/tools"
-                );
-
-                $main_nav_items[] = array
-                (
-                    "name" => "reference",
-                    "text" => "Reference",
-                    "url" => "/reference"
-                );
-
-                ?>
-                
-                <?php if( isset( $main_nav_items ) && is_array( $main_nav_items ) ): ?>
-                    <?php foreach( $main_nav_items as $main_nav_item ): ?>
-                        <?php if( ! is_array( $main_nav_item ) || ! isset( $main_nav_item['name'], $main_nav_item['text'], $main_nav_item['url'] ) ) continue; ?>
-                        <a href="<?php echo $main_nav_item['url']; ?>"<?php if( isset( $metadata['current_nav_item'] ) && $metadata['current_nav_item'] == $main_nav_item['name'] ): ?> class="current"<?php endif; ?>><?php echo $main_nav_item['text']; ?></a>
-                    <?php endforeach; ?>
-                <?php endif; ?>
-            </nav>
-
-            <section class="content">
+        <section class="content">
+            <div class="container">
                 <?php if( isset( $metadata['current_nav_item'] ) && $metadata['current_nav_item'] == "reference" ): ?>
                     <nav>
                         <a href="/reference/html/"<?php if( isset( $metadata['reference_section'] ) && $metadata['reference_section'] == "html" ): ?> class="current"<?php endif; ?>>HTML</a>
@@ -111,10 +109,21 @@ content_placeholder: {{ content }}
 
                     {{ content }}
                 </div>
-            </section>
+            </div>
+        </section>
 
-            <footer>
-                Unless otherwise stated, website and content is by <a href="https://davidhunter.scot" target="_blank">David Hunter</a>.
+        <footer>
+            <div class="container">
+                <nav>
+                    <a href="/">Home</a>
+                    <a href="/about">About</a>
+                    <a href="/games">Games</a>
+                    <a href="/tools">Tools</a>
+                    <a href="/reference">Reference</a>
+                </nav>
+                
+                <p>Unless otherwise stated, website and content is by <a href="https://davidhunter.scot" target="_blank">David Hunter</a>.</p>
+
                 <script type="text/javascript">
                     document.write( '<br><a href="javascript: toggle_color_scheme();">Toggle Color Scheme</a>' );
                     function toggle_color_scheme()
@@ -122,8 +131,8 @@ content_placeholder: {{ content }}
                         document.body.classList.toggle( 'toggle-color-scheme' );
                     }
                 </script>
-            </footer>
-        </div>
+            </div>
+        </footer>
         
         <?php if( isset( $metadata['footer_scripts'] ) ): ?>
             <?php foreach( explode( "::", $metadata['footer_scripts'] ) as $script ): ?>

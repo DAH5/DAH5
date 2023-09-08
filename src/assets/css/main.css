@@ -1,5 +1,3 @@
-@import url( 'https://webfonts.staticly.ict.rocks/poppins/poppins.css' );
-
 *,
 *::before,
 *::after
@@ -9,10 +7,12 @@
 
 :root
 {
-  --small: 13px;
-  --normal: 16px;
+  --small: 0.8rem;
+  --normal: 1rem;
+  --medium: 1.3rem;
+  --large: 2rem;
   
-  --container-width: 1200px;
+  --container-width: 80rem;
   
   --color-black: #000;
   --color-background-dark: rgb( 38, 38, 38 );
@@ -66,7 +66,6 @@ body
   max-width: var( --container-width );
   margin: 0 auto;
   padding: 0;
-  background-color: var( --color-background-alt );
 }
 
 @media ( prefers-color-scheme: light )
@@ -75,7 +74,7 @@ body
   {
     --color-background: var( --color-black );
     --color-background-alt: var( --color-background-dark );
-    --color-background-alpha: var( --color-background-dark-alpha )
+    --color-background-alpha: var( --color-background-dark-alpha );
     --color-text: var( --color-text-light );
     --color-text-alt: var( --color-white );
     --color-text-muted: var( --color-text-muted-dark );
@@ -107,82 +106,83 @@ a
 
 header
 {
-  display: flex;
-  align-items: center;
-  gap: var( --normal );
-  padding: var( --normal );
   border-bottom: 1px solid var( --color-black );
   background-color: var( --color-background-dark );
   color: var( --color-text-light );
 }
 
-header .bars
+header .container
 {
-  font-size: 24px;
-  line-height: 0.6;
-  height: 18px;
-  cursor: pointer;
+  padding: var( --normal );
+  display: flex;
+  max-width: var( --container-width );
+  flex-direction: column;
+  align-items: center;
+  gap: var( --normal );
+  text-align: center;
+  justify-content: space-between;
 }
 
-header .logo
+header img.logo
 {
   width: 120px;
   margin-top: 5px;
 }
 
-header .section-title
-{
-  font-size: 1.3rem;
-  font-weight: bold;
-  text-decoration: none;
-  color: var( --color-text-muted-dark );
-}
-
-#nav-toggle ~ nav.main
-{
-  display: none;
-}
-
-#nav-toggle:checked ~ nav.main
+header nav
 {
   display: flex;
-}
-
-nav.main
-{
-  display: flex;
+  justify-content: space-between;
   align-items: center;
-  padding: var( --small );
-  border-bottom: 1px solid var( --color-background );
-  flex-direction: column;
-  gap: var( --small );
-  position: absolute;
-  top: 70px;
   width: 100%;
-  max-width: 1200px;
-  background-color: var( --color-background-alpha );
+  gap: var( --medium );
+  flex-direction: column;
 }
 
-nav.main a
+header nav a
 {
   text-decoration: none;
   text-transform: uppercase;
   font-weight: bold;
-  font-size: var( --small );
-  color: var( --color-text );
+  font-size: var( --normal );
+  color: var( --color-text-muted-dark );
 }
 
-nav.main a:hover,
-nav.main a.current
+header nav a:hover,
+header nav a.current
+{
+  color: var( --color-text-light );
+}
+
+header nav a.current
 {
   text-decoration: underline;
   text-decoration-thickness: 2px;
   text-underline-offset: 4px;
-  color: var( --color-text-alt );
 }
 
-section.content
+section.section-title
 {
+  background-color: var( --color-background-alt );
+  font-size: var( --large );
+  font-weight: bold;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+section.section-title .container
+{
+  padding: var( --normal );
+}
+
+section.section-title a
+{
+  text-decoration: none;
+}
+
+section.content .container
+{
+  min-height: 75vh;
   display: flex;
   flex-direction: column;
 }
@@ -245,9 +245,15 @@ section.content pre
 
 footer
 {
+  border-top: 1px solid var( --color-background );
+  background-color: var( --color-background-alt );
+}
+
+footer .container
+{
+  background-color: transparent;
   padding: var( --normal );
   font-size: var( --small );
-  border-top: 1px solid var( --color-background );
   text-align: center;
   color: var( --color-text-muted );
 }
@@ -264,14 +270,42 @@ footer a:hover
   text-decoration: underline;
 }
 
-@media ( min-width: 800px )
+footer nav
 {
-  nav.main
+  display: flex;
+  gap: var( --normal );
+  justify-content: space-evenly;
+  flex-direction: column;
+}
+
+@media ( min-width: 600px )
+{
+  header .container
   {
+    padding: 0 var( --normal );
     flex-direction: row;
+    gap: calc( var( --medium ) * 2 );
   }
 
-  section.content
+  header nav
+  {
+    flex-direction: row;
+    margin-top: 0.3rem;
+    width: 80%;
+  }
+
+  header nav a
+  {
+    padding-top: var( --small );
+    padding-bottom: var( --normal );
+  }
+
+  section.section-title
+  {
+    text-align: left;
+  }
+
+  section.content .container
   {
     flex-direction: row;
   }
@@ -285,5 +319,23 @@ footer a:hover
   section.content .content
   {
     flex-grow: 2;
+  }
+
+  footer nav
+  {
+    flex-direction: row;
+  }
+
+  footer nav a
+  {
+    border-left: 1px solid white;
+    padding-left: var( --normal );
+    width: 20%;
+  }
+
+  footer nav a:first-of-type
+  {
+    border-left-width: 0;
+    padding-left: 0;
   }
 }
