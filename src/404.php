@@ -1,6 +1,6 @@
 ---
 page_title: Not Found (404)
-friently_urls: false
+friendly_urls: false
 layout: src/_inc/base.php
 ---
 
