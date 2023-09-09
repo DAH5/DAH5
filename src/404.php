@@ -4,7 +4,7 @@ friendly_urls: false
 layout: src/_inc/base.php
 ---
 
-<h1>--- section.page_title ---</h1>
+<h1>--- metadata.page_title ---</h1>
 
 <p>The resource you tried to access cannot be found.</p>
 
