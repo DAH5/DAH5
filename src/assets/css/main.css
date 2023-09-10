@@ -297,14 +297,26 @@ footer nav a:first-of-type
   padding-left: 0;
 }
 
+.sitemaps
+{
+  display: flex;
+  flex-direction: column;
+}
+
 .sitemap
 {
-  margin: 0;
+  margin: 1rem 0;
   padding: 0;
   list-style: none;
   display: flex;
+  flex-direction: column;
   gap: 0.5rem;
   flex-wrap: wrap;
+}
+
+.sitemaps .sitemap li:first-of-type a
+{
+  font-weight: 900 !important;
 }
 
 .sitemap a
@@ -312,6 +324,7 @@ footer nav a:first-of-type
   background-color: transparent;
   padding: 0.3rem 0.5rem;
   border-radius: 0.3rem;
+  font-weight: 400 !important;
 }
 
 .sitemap a:hover
@@ -335,5 +348,11 @@ footer nav a:first-of-type
   section.content .content
   {
     flex-grow: 2;
+  }
+
+  .sitemaps
+  {
+    flex-direction: row;
+    justify-content: space-between;
   }
 }
