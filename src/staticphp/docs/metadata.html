@@ -1,0 +1,99 @@
+---
+page_title: MetaData
+current_nav_item: docs
+docs_nav_item: metadata
+layout: src/staticphp/_includes/base.php
+---
+
+<h2>--- metadata.page_title ---</h2>
+
+<p>An area at the top of your source files where you can store information that you can refer back to later, or for StaticPHP to use as part of special metadata.</p>
+                
+                <h3>Defining MetaData</h3>
+                
+                <p>To define MetaData, you put it at the top of your file with the first line being the MetaData Delimiter you set as build configuration. If you haven't defined a delimiter yet, you can do so using the information on the <a href="/docs/getting-started">Getting Started</a> page, or use the default delimiter of triple hyphens (---).</p>
+                
+                <p>Here is an example of MetaData at the top of a source file.</p>
+                
+<pre class="w3-code" style="overflow-x: auto;">---
+some_key: some value
+another_key: another value
+---</pre>
+                
+                <p>Keys and values are separated by a colon and usually a space for clarity. The word key does not need to be part of the key, and the word value does not need to be part of the value, these were put there purely for illustration purposes and clarity.</p>
+                
+                <h3>Placeholders</h3>
+                
+                <p>You can display MetaData values using MetaData placeholders. These are formed using the MetaData Delimiter on either end, the word metadata and a dot and then the key name as defined in metadata you wish to retrieve, similar to accessing an object property in some programming languages. StaticPHP will replace this with the value associated with that key during the build process if a matching key exists in metadata.</p>
+                
+                <p>In the previous example where it shows how to define metadata, we set two keys with associated values. Here is an example of how you can retrieve these values again later.</p>
+                
+<pre class="w3-code" style="overflow-x: auto;">&lt;p&gt;--- metadata.some_key ---&lt;/p&gt;
+
+&lt;p&gt;--- metadata.another_key ---&lt;/p&gt;</pre>
+		
+		<p>The output of having the metadata example and the above placeholders example will be like this.</p>
+
+<pre class="w3-code" style="overflow-x: auto;">&lt;p&gt;some value&lt;/p&gt;
+
+&lt;p&gt;another value&lt;/p&gt;</pre>
+
+		<h3>Special MetaData</h3>
+		
+		<p>These are things defined in MetaData that are used internally by StaticPHP. Defining these special metadata keys with a value will tell StaticPHP to do something differently.</p>
+		
+		<p><u>Overriding Friendly URLs</u></p>
+		
+		<p>As it explains on the <a href="/docs/getting-started">Getting Started</a> page, you can set friendly URLs to true or false globally, but you can also change this value on a per-page basis. If StaticPHP sees you have set the metadata key <u>friendly_urls</u> to either true or false, it will honor this over the global setting.</p>
+		
+		<p><u>Custom Output Path</u></p>
+		
+		<p>By default, StaticPHP will use the Friendly URLs setting to decide what the output path should be. If you wish the output filename to be different, you can set this on a per-page basis. Simply set the metadata key <u>custom_output_path</u> to the path you wish the output file to be located.</p>
+		
+		<p><u>Base Layouts</u></p>
+		
+		<p>One problem you may come across with static websites is how to maintain the same base layout across all pages. You could copy and paste the same header and footer into each page, but this can easily get messy and become a headache as the content on your site grows, as you would need to update each page with the changes you wish to make.</p>
+		
+		<p>Another option, which would make this a lot easier, is to use PHP includes, but that would mean all your pages would need to be PHP based, which may not suit your sites needs. As StaticPHP grows in features, alternative file formats may become available, such as Markdown and basic HTML, so PHP would not be a solution in those cases.</p>
+		
+		<p>StaticPHP makes maintaining the same base layout across all pages easy.</p>
+		
+		<p>Simply add the metadata key <u>layout</u> in the source file of the page you wish the base layout applied to with the value being the path to the base layout file.</p>
+		
+<pre class="w3-code" style="overflow-x: auto;">---
+page_title: Awesome Page
+<b>layout: SOURCE-FILES/IGNORE-FILES/base-layout.php</b>
+---
+
+&lt;h2&gt;&#45;&#45;&#45; metadata.page_title &#45;&#45;&#45;&lt;/h2&gt;
+
+&lt;p&gt;This is a very awesome page. I am so glad you checked it out! :)&lt;/p&gt;</pre>
+		
+		<p>In the base layout file, add metadata key <u>content_placeholder</u> and set it to what you want to use as a placeholder for your page content. This will be where the content of that specific page will be placed.</p>
+		
+<pre class="w3-code" style="overflow-x: auto;">---
+<b>content_placeholder: &#123;&#123; content &#125;&#125;</b>
+---
+
+&lt;!DOCTYPE html&gt;
+&lt;html lang="en&gt;
+	&lt;head&gt;
+		&lt;meta charset="UTF-8"&gt;
+		&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+		
+		&lt;title&gt;Awesome Website - powered by StaticPHP&lt;/title&gt;
+	&lt;/head&gt;
+	
+	&lt;body&gt;
+		&lt;h1&gt;Awesome Website&lt;/h1&gt;
+		&lt;p&gt;powered by StaticPHP&lt;/p&gt;
+		
+		&lt;hr&gt;
+		
+		<b>&#123;&#123; content &#125;&#125;</b>
+		
+		&lt;hr&gt;
+		
+		&lt;p&gt;Copyright &copy; Awesome Developer.&lt;/p&gt;
+	&lt;/body&gt;
+&lt;/html&gt;</pre>

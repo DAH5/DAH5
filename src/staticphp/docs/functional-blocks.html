@@ -1,0 +1,92 @@
+---
+page_title: Functional Blocks
+current_nav_item: docs
+docs_nav_item: functional-blocks
+layout: src/staticphp/_includes/base.php
+---
+
+<h2>--- metadata.page_title ---</h2>
+
+<p>These are blocks of code that actually do things! Think of it like using PHP, but without PHP.</p>
+
+<h3>Syntax</h3>
+
+<p>The opening tag uses the same delimiter used for MetaData, followed by the block name, then within round brackets a set of key equals value parameters separated by a comma (parameters can be in any order), and lastly the MetaData delimiter again.</p>
+
+<p>Close off the block with the end tag, which is the word "end" and the block name surounded by the MetaData delimiter.</p>
+
+<p>Between the opening and close tags, this is where you put the content that will appear whenever the functional block succeeds.</p>
+
+<pre>--- func( key = "value", another-key = "another-value" ) ---
+
+&lt;p&gt;Put anything here.&lt;/p&gt;
+
+--- endfunc ---</pre>
+
+<h3>The Loop Functional Block</h3>
+
+<p>This block allows you to loop through a list of items and display information related to each item however you want.</p>
+
+<h4>Directory Contents</h4>
+
+<p>Use the <code>dir</code> parameter to loop through each file in a directory. You can enter an absolute path here or a relative path by negating the leading slash. For relative paths, these will be relative to StaticPHP and not the file the code is in.</p>
+<p>Then MetaData can be used to set values within each file for you to access within the loop block using MetaData PlaceHolders.</p>
+<p>Note that MetaData placeholders used within the loop use the "loop" prefix instead of "metadata".</p>
+
+<h5>Example</h5>
+
+<pre>--- loop( dir = "src/items" ) ---
+
+&lt;p&gt;&lt;b&gt;Item Name:&lt;/b&gt; --- loop.item-name ---&lt;/p&gt;
+
+--- endloop ---</pre>
+
+<p>Please refer to the page on <a href="/docs/metadata">MetaData</a> to learn more about setting MetaData in files and how to use placeholders.</p>
+
+<p>A special MetaData placeholder is available when using the dir parameter and that is <code>uri</code>. This will display the path to the current dir item suitable for use in links.</p>
+
+<p><code>--- loop.uri ---</code></p>
+
+<h4>Sorting Order</h4>
+
+<p>By default, items will be sorted however the filesystem sorts them, which is usually ascending order. You can specify the sort order by setting the <code>sort</code> parameter to either <code>ascending</code> or <code>descending</code>.</p>
+
+<h5>Example of Sort using Dir</h5>
+
+<pre>--- loop( dir = "src/items", sort = "descending" ) ---
+
+&lt;p&gt;&lt;b&gt;Item Name:&lt;/b&gt; --- loop.item-name ---&lt;/p&gt;
+
+--- endloop ---</pre>
+
+<h4>Outputting JSON</h4>
+
+<p>This feature is useful if you want to make the results of the loop available as a JSON file.</p>
+
+<p>Set the <code>json</code> parameter to a path to where you want the JSON file to be located. Similar to the <code>dir</code> parameter, this path can be relative to StaticPHP or be absolute.</p>
+
+<h5>Example of JSON using Dir</h5>
+
+<pre>--- loop( dir = "src/items", json = "src/api/items.json" ) ---
+
+&lt;p&gt;&lt;b&gt;Item Name:&lt;/b&gt; --- loop.item-name ---&lt;/p&gt;
+
+--- endloop ---</pre>
+
+<h4>Ignoring Items</h4>
+
+<p>The ignore list defined in your build configuration will automatically be applied, but you may wish to have the loop ignore additional items, that is where the <code>ignores</code> parameter comes into play.</p>
+
+<p>Simply define additional items to ignore separated by a semicolon (<code>;</code>). Optionally add spacing to improve readability.</p>
+
+<h5>Example of Ignores</h5>
+
+<pre>--- loop( dir = "src/items", ignores = "ignore-this; ignore-that" ) ---
+
+&lt;p&gt;&lt;b&gt;Item Name:&lt;/b&gt; --- loop.item-name ---&lt;/p&gt;
+
+--- endloop ---</pre>
+
+<h3>More Coming in the Future</h3>
+
+<p>For now, this is how things stand, but it is not a complete feature, so please stay tuned to this page and the other doc pages for more on how this feature expands moving forward.</p>
