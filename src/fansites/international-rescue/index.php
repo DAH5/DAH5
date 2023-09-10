@@ -1,6 +1,6 @@
 ---
 page_title: International Rescue
-layout: src/fansite/international-rescue/_inc/base.php
+layout: src/fansites/international-rescue/_inc/base.php
 ---
 
 <?php
