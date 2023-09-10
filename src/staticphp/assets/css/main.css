@@ -1,157 +1,136 @@
-*,
-*::before,
-*::after
-{
-    box-sizing: border-box;
-}
-
-:root
+.staticphp
 {
     --color-theme-primary: #7A86B8;
     --color-theme-primary-alt: #4F5B93;
     --color-theme-secondary: #E44D26;
+    /* --color-background: #e0e0e0; */
     --color-background-sidebar: #ccc;
     --color-background-sidebar-alt: #bbb;
     --color-background-code: #ccc;
+    /* --color-text: #3f3f3f; */
     --color-line: #666666;
 }
 
-html,
-body
+.staticphp b
 {
-    font-family: "Poppins", sans-serif;
-    font-size: 18px;
-    margin: 0;
-    padding: 0;
-    background-color: #e0e0e0;
+    color: var( --color-text ) !important;
 }
 
-a[ target="_blank" ]:after
+.staticphp a[ target="_blank" ]:after
 {
     content: "⧉";
     padding-left: 4px;
     padding-right: 4px;
 }
 
-img
+.staticphp img
 {
     max-width: 100%;
 }
 
-.container
-{
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 1rem;
-}
-
-header
+.staticphp header
 {
     background-color: var( --color-theme-primary );
+    margin-inline: -3rem;
+    margin-top: -1rem;
+    padding: 0.5rem 3rem;
+    width: calc( 100% + 6rem );
+    display: none;
 }
 
-header h1 a
+.staticphp header h2 a
 {
     text-decoration: none;
     color: white;
 }
 
-nav.main
+.staticphp nav.staticphp
 {
-    background-color: var( --color-theme-primary-alt );
-}
-
-nav.main .container
-{
+    background-color: var( --color-background-alt );
     display: flex;
     gap: 1rem;
+    flex-direction: row;
+    margin-inline: -1rem;
+    margin-top: -1rem;
+    margin-bottom: -1rem;
+    width: calc( 100% + 2rem );
 }
 
-nav.main a
+.staticphp nav.staticphp a
 {
-    color: white;
+    color: var( --color-text );
     text-decoration: none;
+    font-weight: 300 !important;
 }
 
-nav.main a.current
+.staticphp nav.staticphp a.current
 {
-    font-weight: bold;
+    font-weight: bold !important;
 }
 
-section.content
+.staticphp section.content
 {
     min-height: 70vh;
     line-height: 1.8;
     word-wrap: break-word;
 }
 
-section.content a
+.staticphp section.content a
 {
-    color: var( --color-theme-primary-alt );
+    color: var( --color-theme-primary );
     font-weight: bold;
     text-decoration-thickness: 2px;
     text-underline-offset: 4px;
 }
 
-section.content a:hover
+.staticphp section.content a:hover
 {
     color: var( --color-theme-secondary );
 }
 
-section.content code
+.staticphp section.content code
 {
     padding: 2px 4px;
     border-radius: 4px;
-    background-color: #c9c9c9;
+    background-color: var( --color-background-alt );
     font-size: 0.8rem;
 }
 
-footer
+.staticphp section.content b
 {
-    background-color: var( --color-theme-primary );
-    color: #ffffff;
-    border-top: 8px solid var( --color-theme-primary-alt );
-}
-
-footer a
-{
-    color: #ffffff;
-}
-
-footer .small
-{
-    font-size: 0.8rem;
-}
-
-footer .tiny
-{
-    font-size: 0.7rem;
+    color: var( --color-text );
 }
 
 /* Docs Styles */
 
-.container.docs
+.staticphp .docs
 {
     display: flex;
     align-items: stretch;
     min-height: 70vh;
     padding: 0;
     flex-direction: column;
+    margin-inline: -2rem;
 }
 
-.container.docs > .sidebar
+.staticphp .docs > .sidebar
 {
     flex: 0 0 auto;
-    background-color: var( --color-background-sidebar );
+    background-color: var( --color-background-alt );
 }
 
-.container.docs > .sidebar a
+.staticphp .docs > .sidebar a
 {
-    color: #000;
+    color: var( --color-text );
     text-decoration: none;
 }
 
-.container.docs > .sidebar h1
+.staticphp .docs > .sidebar a:hover
+{
+    color: var( --color-text );
+}
+
+.staticphp .docs > .sidebar h1
 {
     margin: 0;
     padding: 1rem;
@@ -162,121 +141,117 @@ footer .tiny
     text-align: center;
 }
 
-.container.docs > .sidebar nav
+.staticphp .docs > .sidebar nav
 {
     flex-direction: column;
+    width: 100%;
 }
 
-.container.docs > .sidebar nav a
+.staticphp .docs > .sidebar nav a
 {
     padding: 0.5rem 1rem;
     font-size: 0.9rem;
     font-weight: 500;
+    color: var( --color-text );
 }
 
-.container.docs > .sidebar nav a.current
+.staticphp .docs > .sidebar nav a.current
 {
-    font-weight: 700;
+    font-weight: 900;
 }
 
-.container.docs > .sidebar nav a.current,
-.container.docs > .sidebar nav a:hover
-{
-    background-color: var( --color-background-sidebar-alt );
-}
-
-.container.docs > .content
+.staticphp .docs > .content
 {
     flex: 1 1 auto;
     line-height: 1.8;
     padding: 1rem;
 }
 
-.container.docs > .content *:first-child
+.staticphp .docs > .content *:first-child
 {
     margin-top: 0;
 }
 
-.container.docs > .content a
+.staticphp .docs > .content a
 {
     font-weight: bold;
 }
 
-.container.docs > .content h2,
-.container.docs > .content h3
+.staticphp .docs > .content h2,
+.staticphp .docs > .content h3
 {
     border-bottom: 1px solid var( --color-line );
     padding-bottom: 4px;
 }
 
-.container.docs > .content h4,
-.container.docs > .content h5
+.staticphp .docs > .content h4,
+.staticphp .docs > .content h5
 {
     text-decoration: underline;
     text-underline-offset: 12px;
     text-decoration-color: var( --color-line );
 }
 
-.container.docs > .content pre
+.staticphp .docs > .content pre
 {
     padding: 1rem;
     overflow-x: auto;
     max-width: 100%;
 }
 
-.container.docs > .content pre,
-.container.docs > .content code
+.staticphp .docs > .content pre,
+.staticphp .docs > .content code
 {
-    background-color: var( --color-background-code );
+    background-color: var( --color-background-alt );
     font-size: 1rem;
     line-height: 0.9;
     border-radius: 0.5rem;
     font-family: monospace;
 }
 
-.container.docs > .content code
+.staticphp .docs > .content code
 {
     padding: 0.3rem 0.5rem;
 }
 
-.container.docs .standalone
+.staticphp .docs .standalone
 {
     padding: 5vh 5vw;
     text-align: center;
 }
 
-.container.docs .standalone h2
+.staticphp .docs .standalone h2
 {
     font-size: 2rem;
 }
 
-.container.docs .standalone p
+.staticphp .docs .standalone p
 {
     font-size: 1.2rem;
 }
 
-.toggle-checkbox
+.staticphp .toggle-checkbox
 {
     display: none;
 }
 
-#toggle-docs-menu ~ nav
+.staticphp #toggle-docs-menu ~ nav
 {
     display: none;
 }
 
-#toggle-docs-menu:checked ~ nav
+.staticphp #toggle-docs-menu:checked ~ nav
 {
     display: flex;
 }
 
-.toggle-docs-menu-btn
+.staticphp .toggle-docs-menu-btn
 {
     margin: 0;
     padding: 0;
 }
 
-.toggle-docs-menu-btn label
+.staticphp .toggle-docs-menu-btn label
 {
     padding: 0.3rem 1rem;
     display: block;
@@ -285,20 +260,9 @@ footer .tiny
     font-size: 0.8rem;
 }
 
-#toggle-docs-menu ~ .toggle-docs-menu-btn label
-{
-    background-color: var( --color-background-sidebar );
-}
-
-#toggle-docs-menu:checked ~ .toggle-docs-menu-btn label,
-#toggle-docs-menu ~ .toggle-docs-menu-btn label:hover
-{
-    background-color: var( --color-background-sidebar-alt );
-}
-
 @media ( max-width: 799px )
 {
-    .container.docs > .sidebar h1
+    .staticphp .docs > .sidebar h1
     {
         padding-bottom: 0;
     }
@@ -306,45 +270,45 @@ footer .tiny
 
 @media ( min-width: 800px )
 {
-    .container.docs
+    .staticphp .docs
     {
         flex-direction: row;
     }
 
-    .container.docs > .sidebar
+    .staticphp .docs > .sidebar
     {
         max-width: 302px;
     }
 
-    .container.docs > .sidebar h1
+    .staticphp .docs > .sidebar h1
     {
         text-align: left;
         padding: 2rem;
     }
 
-    #toggle-docs-menu ~ nav,
-    #toggle-docs-menu:checked ~ nav
+    .staticphp #toggle-docs-menu ~ nav,
+    .staticphp #toggle-docs-menu:checked ~ nav
     {
         display: flex;
     }
 
-    .container.docs > .sidebar nav a
+    .staticphp .docs > .sidebar nav a
     {
         padding: 0.5rem 2rem;
     }
 
-    .container.docs > .content
+    .staticphp .docs > .content
     {
         max-width: 970px;
         padding: 2rem 4rem;
     }
 
-    .toggle-docs-menu-btn
+    .staticphp .toggle-docs-menu-btn
     {
         display: none;
     }
 
-    .container.docs .standalone h2
+    .staticphp .docs .standalone h2
     {
         font-size: 3rem;
     }

@@ -1,6 +1,6 @@
 ---
 page_title: Getting Started
-current_nav_item: docs
+staticphp_nav_item: docs
 docs_nav_item: getting-started
 layout: src/staticphp/_includes/base.php
 ---
@@ -70,7 +70,17 @@ layout: src/staticphp/_includes/base.php
 			<li>
 				<p>In your custom PHP file, include the StaticPHP.php file and create a new instance with the build configuration as parameters/arguments.</p>
 
-    			<pre class="w3-code"><span style="color: #000000"><span style="color: #0000BB">&lt;?php<br /><br /></span><span style="color: #007700">include&nbsp;</span><span style="color: #0000BB">__DIR__&nbsp;</span><span style="color: #007700">.&nbsp;</span><span style="color: #0000BB">DIRECTORY_SEPARATOR&nbsp;</span><span style="color: #007700">.&nbsp;</span><span style="color: #DD0000">'StaticPHP.php'</span><span style="color: #007700">;<br /><br /></span><span style="color: #0000BB">$path_to_source_files&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">__DIR__&nbsp;</span><span style="color: #007700">.&nbsp;</span><span style="color: #0000BB">DIRECTORY_SEPARATOR&nbsp;</span><span style="color: #007700">.&nbsp;</span><span style="color: #DD0000">'SOURCE-FILES'</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">$path_to_public_files&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">__DIR__&nbsp;</span><span style="color: #007700">.&nbsp;</span><span style="color: #0000BB">DIRECTORY_SEPARATOR&nbsp;</span><span style="color: #007700">.&nbsp;</span><span style="color: #DD0000">'PUBLIC-FILES'</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">$paths_to_ignore&nbsp;</span><span style="color: #007700">=&nbsp;array(&nbsp;</span><span style="color: #DD0000">'IGNORE-FILES'&nbsp;</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">$friendly_urls&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">true</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">$metadata_delimiter&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">'---'</span><span style="color: #007700">;<br /><br />new&nbsp;</span><span style="color: #0000BB">StaticPHP</span><span style="color: #007700">(&nbsp;</span><span style="color: #0000BB">$path_to_source_files</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$path_to_public_files</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$paths_to_ignore</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$friendly_urls</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$metadata_delimiter&nbsp;</span><span style="color: #007700">);</span></span></pre>
+    			<pre>&lt;?php
+
+include __DIR__ . DIRECTORY_SEPARATOR . 'StaticPHP.php';
+
+$path_to_source_files = __DIR__ . DIRECTORY_SEPARATOR . 'SOURCE-FILES';
+$path_to_public_files = __DIR__ . DIRECTORY_SEPARATOR . 'PUBLIC-FILES';
+$paths_to_ignore = array( 'IGNORE-FILES' );
+$friendly_urls = true;
+$metadata_delimiter = '---';
+
+new StaticPHP( $path_to_source_files, $path_to_public_files, $paths_to_ignore, $friendly_urls, $metadata_delimiter );</pre>
 			</li>
 			
 			<li>Execute your custom script with the following command php CUSTOM-PHP-SCRIPT.php (where CUSTOM-PHP-SCRIPT is the actual filename of your custom script).</li>

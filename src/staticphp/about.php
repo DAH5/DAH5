@@ -1,6 +1,6 @@
 ---
 page_title: About
-current_nav_item: about
+staticphp_nav_item: about
 layout: src/staticphp/_includes/base.php
 ---
 
@@ -17,5 +17,5 @@ layout: src/staticphp/_includes/base.php
 
 <h3>How does StaticPHP work?</h3>
 <p>It takes any PHP file and processes it. Except without presenting the output onto the screen, it saves the output to a file. Any non-PHP file is simply copied to the designated output directory, so your asset files like images and CSS etc will still work fine.</p>
-<p>With the addition of the <a href="https://staticphp.io/docs/metadata">MetaData</a> feature and support for <a href="https://staticphp.io/docs/html-files">HTML files</a>, you can now develop your site without writing any PHP code or creating any <a href="https://staticphp.io/docs/php-files">PHP files</a> if you don't want to.
-<p>You can set Friendly URLs to true in your build configuration to have the output be an <code>index.html</code> file placed inside a folder with the same name as the input file minus the extension. This lets you have urls such as <code>domain.tld/page</code> instead of <code>domain.tld/page.html</code>. This setting can be overridden on a per-page basis by setting the boolean variable <code>$friendly_urls</code> or the Special <a href="https://staticphp.io/docs/metadata">MetaData</a> key <code>friendly_urls</code> to true to enable it or false to disable it.</p>
+<p>With the addition of the <a href="/staticphp/docs/metadata">MetaData</a> feature and support for <a href="/staticphp/docs/html-files">HTML files</a>, you can now develop your site without writing any PHP code or creating any <a href="/staticphp/docs/php-files">PHP files</a> if you don't want to.
+<p>You can set Friendly URLs to true in your build configuration to have the output be an <code>index.html</code> file placed inside a folder with the same name as the input file minus the extension. This lets you have urls such as <code>domain.tld/page</code> instead of <code>domain.tld/page.html</code>. This setting can be overridden on a per-page basis by setting the boolean variable <code>$friendly_urls</code> or the Special <a href="/staticphp/docs/metadata">MetaData</a> key <code>friendly_urls</code> to true to enable it or false to disable it.</p>
