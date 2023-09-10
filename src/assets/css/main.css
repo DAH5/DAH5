@@ -279,6 +279,28 @@ footer nav
   flex-direction: column;
 }
 
+.sitemap
+{
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.sitemap a
+{
+  background-color: transparent;
+  padding: 0.3rem 0.5rem;
+  border-radius: 0.3rem;
+}
+
+.sitemap a:hover
+{
+  background-color: var( --color-background-alt );
+}
+
 @media ( min-width: 600px )
 {
   header .container

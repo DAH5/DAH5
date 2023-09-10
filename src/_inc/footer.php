@@ -11,6 +11,7 @@
                     <a href="/games">Games</a>
                     <a href="/tools">Tools</a>
                     <a href="/reference">Reference</a>
+                    <a href="/a-z">A-Z</a>
                 </nav>
                 
                 <p>Unless otherwise stated, website and content is by <a href="https://davidhunter.scot" target="_blank">David Hunter</a>.</p>
