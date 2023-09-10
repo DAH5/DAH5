@@ -114,14 +114,15 @@ header
 
 header .container
 {
-  padding: var( --normal );
   display: flex;
   max-width: var( --container-width );
-  flex-direction: column;
   align-items: center;
-  gap: var( --normal );
   text-align: center;
   justify-content: space-between;
+  padding: 0 var( --normal );
+  flex-direction: row;
+  gap: calc( var( --medium ) * 2 );
+  overflow-x: auto;
 }
 
 header img.logo
@@ -135,9 +136,10 @@ header nav
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 100%;
   gap: var( --medium );
-  flex-direction: column;
+  flex-direction: row;
+  margin-top: 0.1rem;
+  width: 80%;
 }
 
 header nav a
@@ -147,6 +149,8 @@ header nav a
   font-weight: bold;
   font-size: var( --normal );
   color: var( --color-text-muted-dark );
+  padding-top: var( --small );
+  padding-bottom: var( --normal );
 }
 
 header nav a:hover,
@@ -168,7 +172,6 @@ section.section-title
   font-size: var( --large );
   font-weight: bold;
   text-transform: uppercase;
-  text-align: center;
 }
 
 section.section-title .container
@@ -276,7 +279,22 @@ footer nav
   display: flex;
   gap: var( --normal );
   justify-content: space-evenly;
-  flex-direction: column;
+  flex-direction: row;
+  overflow-x: auto;
+  word-break: keep-all;
+}
+
+footer nav a
+{
+  border-left: 1px solid white;
+  padding-left: var( --normal );
+  width: 20%;
+}
+
+footer nav a:first-of-type
+{
+  border-left-width: 0;
+  padding-left: 0;
 }
 
 .sitemap
@@ -303,31 +321,6 @@ footer nav
 
 @media ( min-width: 600px )
 {
-  header .container
-  {
-    padding: 0 var( --normal );
-    flex-direction: row;
-    gap: calc( var( --medium ) * 2 );
-  }
-
-  header nav
-  {
-    flex-direction: row;
-    margin-top: 0.3rem;
-    width: 80%;
-  }
-
-  header nav a
-  {
-    padding-top: var( --small );
-    padding-bottom: var( --normal );
-  }
-
-  section.section-title
-  {
-    text-align: left;
-  }
-
   section.content .container
   {
     flex-direction: row;
@@ -342,23 +335,5 @@ footer nav
   section.content .content
   {
     flex-grow: 2;
-  }
-
-  footer nav
-  {
-    flex-direction: row;
-  }
-
-  footer nav a
-  {
-    border-left: 1px solid white;
-    padding-left: var( --normal );
-    width: 20%;
-  }
-
-  footer nav a:first-of-type
-  {
-    border-left-width: 0;
-    padding-left: 0;
   }
 }
