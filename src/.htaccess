@@ -9,6 +9,10 @@ ErrorDocument 404 /404.html
     RewriteRule ^games/lovecalculator$ /games/love-calculator [R=307,END]
     RewriteRule ^games/lc$ /games/love-calculator [R=307,END]
     RewriteRule ^game/(.*)$ /games/$1 [R=307,END]
+    RewriteRule ^internationalrescue/?$ /fansites/international-rescue [R=307,END]
+    RewriteRule ^internationalrescue/(.*)$ /fansites/international-rescue/$1 [R=307,END]
+    RewriteRule ^ir/?$ /fansites/international-rescue [R=307,END]
+    RewriteRule ^ir/(.*)$ /fansites/international-rescue/$1 [R=307,END]
 
     RewriteCond %{HTTP_HOST} !^www.dah5.me.uk$ [OR]
     RewriteCond %{SERVER_PORT} ^80$
