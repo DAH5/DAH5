@@ -51,7 +51,7 @@ layout: src/_inc/base.php
 
 <div class="sitemaps">
     <ul class="sitemap">
-        <li>Fan Sites</li>
+        <li><a href="/fansites">Fan Sites</a></li>
         <li><a href="/fansites/international-rescue">International Rescue</a></li>
     </ul>
 </div>

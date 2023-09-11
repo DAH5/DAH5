@@ -100,6 +100,11 @@ a
   color: var( --color-text );
 }
 
+img
+{
+  max-width: 100%;
+}
+
 #nav-toggle
 {
   display: none;
@@ -321,14 +326,9 @@ footer nav a:first-of-type
   color: var( --color-text-alt );
 }
 
-.sitemaps .sitemap li:first-of-type:not( > a ),
 .sitemap a
 {
   padding: 0.3rem 0.5rem;
-}
-
-.sitemap a
-{
   background-color: transparent;
   border-radius: 0.3rem;
   font-weight: 400 !important;
@@ -338,6 +338,21 @@ footer nav a:first-of-type
 .sitemap a:hover
 {
   background-color: var( --color-background-alt );
+}
+
+.fansites
+{
+  display: flex;
+  flex-direction: column;
+}
+
+.fansites .fansite
+{
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  text-align: center;
+  width: 100%;
 }
 
 @media ( min-width: 600px )
@@ -362,5 +377,15 @@ footer nav a:first-of-type
   {
     flex-direction: row;
     justify-content: space-between;
+  }
+
+  .fansites
+  {
+    flex-direction: row;
+  }
+
+  .fansites .fansite
+  {
+    width: 25%;
   }
 }

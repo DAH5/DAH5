@@ -130,6 +130,11 @@ body
     text-align: center;
 }
 
+.international-rescue .footer a
+{
+    color: var( --color-text );
+}
+
 @keyframes member-eyes
 {
     0%,
