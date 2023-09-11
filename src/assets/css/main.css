@@ -314,17 +314,25 @@ footer nav a:first-of-type
   flex-wrap: wrap;
 }
 
+.sitemaps .sitemap li:first-of-type,
 .sitemaps .sitemap li:first-of-type a
 {
   font-weight: 900 !important;
+  color: var( --color-text-alt );
+}
+
+.sitemaps .sitemap li:first-of-type:not( > a ),
+.sitemap a
+{
+  padding: 0.3rem 0.5rem;
 }
 
 .sitemap a
 {
   background-color: transparent;
-  padding: 0.3rem 0.5rem;
   border-radius: 0.3rem;
   font-weight: 400 !important;
+  color: var( --color-text-alt );
 }
 
 .sitemap a:hover

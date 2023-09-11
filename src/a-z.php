@@ -48,3 +48,10 @@ layout: src/_inc/base.php
         <li><a href="/tools/find-urls-in-string">Find URLs in String</a></li>
     </ul>
 </div>
+
+<div class="sitemaps">
+    <ul class="sitemap">
+        <li>Fan Sites</li>
+        <li><a href="/fansites/international-rescue">International Rescue</a></li>
+    </ul>
+</div>
