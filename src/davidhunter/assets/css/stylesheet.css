@@ -1,0 +1,410 @@
+header.dh
+{
+  background-color: var( --color-background-alt );
+  box-shadow: 3px 3px 5px var( --color-shadow );
+  padding: 1rem 2rem;
+  display: flex;
+  flex-direction: column;
+  margin: -1rem -2rem;
+  margin-bottom: 1rem;
+}
+
+header.dh .logo
+{
+  display: flex;
+  width: 190px;
+}
+
+header.dh .logo .title
+{
+  font-size: 2rem;
+  text-transform: uppercase;
+  margin: 0;
+  padding: 0;
+  line-height: 1;
+}
+
+header.dh .logo .title a
+{
+  text-decoration: none;
+}
+
+header.dh .logo .tagline
+{
+  color: var( --color-text-muted );
+  margin: 0;
+  padding: 0;
+  font-size: 1rem;
+  text-transform: uppercase;
+  font-weight: 400;
+  border-left: 1px solid var( --color-text-muted );
+  margin-left: 1rem;
+  padding-left: 1rem;
+  padding-top: 0.3rem;
+  font-style: italic;
+  line-height: 1.1;
+}
+
+header.dh nav
+{
+  background-color: var( --color-background-alt );
+  display: flex;
+  gap: 1rem;
+  flex-direction: column !important;
+  margin: -1rem;
+  justify-content: initial !important;
+}
+
+header.dh nav a
+{
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1rem;
+  text-transform: uppercase;
+}
+
+header.dh nav a:hover,
+header.dh nav a.current
+{
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 4px;
+}
+
+.home_hero
+{
+  display: flex;
+  gap: 3rem;
+  flex-direction: column;
+  align-items: center;
+}
+
+.home_hero .info .head_line_1
+{
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+.home_hero .into .head_line_1 b
+{
+  font-weight: 900;
+}
+
+.home_hero .info .head_line_2
+{
+  font-size: 3.3rem;
+  font-weight: bold;
+  margin: 1rem 0;
+}
+
+.home_hero .avatar img
+{
+  width: 100%;
+  max-width: 300px;
+  border-radius: 50%;
+  padding: 1rem;
+  background-color: var( --color-background-alt );
+}
+
+.blog-search-form
+{
+  display: none;
+}
+
+.blog-search-form fieldset
+{
+  border-width: 0;
+  padding: 0;
+}
+
+.blog-search-form input,
+.blog-search-form button
+{
+  border-width: 0;
+  font-size: 1.2rem;
+  padding: 0.4rem 0.8rem;
+  background-color: var( --color-text-muted );
+}
+
+.blog-entries,
+.blog-entry
+{
+  max-width: 800px;
+}
+
+.blog-entry
+{
+  display: flex;
+  flex-direction: column;
+}
+
+.blog-entries .title
+{
+  font-size: 1.6rem;
+  margin: 0;
+  text-transform: uppercase;
+}
+
+.blog-entries .metadata .avatar
+{
+  max-width: 20px;
+  max-height: 20px;
+  vertical-align: middle;
+  border-radius: 50%;
+}
+
+.blog-entry .blog-title
+{
+  margin: 0;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  font-weight: bold;
+  color: var( --color-text-muted );
+}
+
+.blog-entry .title
+{
+  font-size: 2rem;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+.blog-entry .content .title
+{
+  font-size: 2.5rem;
+  font-weight: 900;
+}
+
+.blog-entries .metadata,
+.blog-entry .metadata
+{
+  font-size: 0.8rem;
+  margin: 0;
+}
+
+.blog-entry .content
+{
+  order: 1;
+}
+
+.blog-entry .content img
+{
+  margin-left: -1rem;
+  margin-right: -1rem;
+  max-width: calc( 100% + 2rem );
+}
+
+.blog-entry .metadata
+{
+  order: 2;
+  display: flex;
+  flex-direction: row;
+}
+
+.blog-entry .metadata .avatar img
+{
+  width: 100px;
+  border-radius: 50%;
+}
+
+.blog-entries .buttons
+{
+  display: flex;
+}
+
+.blog-entries .buttons a
+{
+  padding: 0.5rem 1rem;
+  background-color: var( --color-background-alt );
+  color: var( --color-text-muted );
+  border-radius: 8px;
+  text-decoration: none;
+}
+
+.projects
+{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding: 0;
+    margin: 0;
+}
+
+.projects .project
+{
+    background-color: var( --color-background-alt );
+    border-radius: 0.4rem;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    box-shadow: 0 0 #0000, 0 0 #0000, 0 1px 3px 0 rgba(0,0,0,.1), 0 1px 2px -1px rgba(0,0,0,.1);
+}
+
+.projects .project:hover
+{
+    transform: translate( 0, -0.25rem ) rotate( 0 ) skewX( 0 ) skewY( 0 ) scaleX( 1 ) scaleY( 1 );
+    box-shadow: 0 0 #0000, 0 0 #0000, 0 4px 6px -1px rgba(0,0,0,.1),0 2px 4px -2px rgba(0,0,0,.1);
+}
+
+.projects .project .info
+{
+    padding: 3rem 1.5rem;
+}
+
+.projects .project .title
+{
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+
+.projects .project .description
+{
+    font-size: 1.135rem;
+}
+
+.projects .project .url
+{
+    font-family: monospace;
+    letter-spacing: 2px;
+    font-size: 0.9rem;
+    white-space: nowrap;
+    overflow-x: auto;
+    padding-bottom: 2px;
+}
+
+.projects .project .url a
+{
+    text-underline-offset: 4px;
+}
+
+.projects .project .image
+{
+    --angle: 0deg;
+    --angle-alt: 0deg;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 25vw;
+    border-radius: 0 0 0.4rem 0.4rem;
+}
+
+/* Responsive Videos (Embed and iFrame) */
+
+embed.video, iframe.video, video.video
+{
+  aspect-ratio: 16 / 9;
+  margin-left: -1rem;
+  margin-right: -1rem;
+  max-width: calc( 100% + 2rem );
+  width: calc( 100% + 2rem );
+}
+
+@media ( max-width:800px )
+{
+  .hide-mobile
+  {
+    display: none;
+  }
+}
+
+@media ( min-width: 800px )
+{
+  header.dh
+  {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  header.dh nav
+  {
+    flex-direction: row !important;
+    flex-grow: 0;
+  }
+
+  header.dh nav a
+  {
+    color: var( --color-text );
+  }
+
+  .home_hero
+  {
+    flex-direction: row;
+  }
+
+  .home_hero .info
+  {
+    width: 60%;
+  }
+
+  .home_hero .avatar
+  {
+    width: 40%;
+    text-align: right;
+  }
+
+  .blog-entry
+  {
+    flex-direction: row;
+    justify-content: center;
+    max-width: 100%;
+  }
+
+  .blog-entry .metadata
+  {
+    width: 300px;
+    margin-top: 20px;
+    order: 1;
+    flex-direction: column;
+  }
+
+  .blog-entry .metadata .avatar img
+  {
+    width: 150px;
+  }
+
+  .blog-entry .content
+  {
+    max-width: 600px;
+    order: 2;
+    padding: 1rem;
+  }
+
+  .blog-entry .content:first-child
+  {
+    margin-top: 0;
+  }
+
+  .projects .project
+  {
+      flex-direction: row;
+  }
+
+  .projects .project .info
+  {
+      width: 60%;
+      padding: 5rem 1.5rem;
+  }
+
+  .projects .project .image
+  {
+      --angle: 270deg;
+      --angle-alt: -270deg;
+      width: 40%;
+      height: auto;
+  }
+
+  .projects .project .image.left
+  {
+    border-radius: 0.4rem 0 0 0.4rem;
+  }
+
+  .projects .project .image.right
+  {
+    border-radius: 0 0.4rem 0.4rem 0;
+  }
+
+  .hide-desktop
+  {
+    display: none;
+  }
+}

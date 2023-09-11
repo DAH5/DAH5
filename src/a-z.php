@@ -9,6 +9,7 @@ layout: src/_inc/base.php
 
 <ul class="sitemap">
     <li><a href="/about">About</a></li>
+    <li><a href="/davidhunter">David Hunter</a></li>
     <li><a href="/favourite-actors-and-actresses">Favourite Actors and Actresses</a></li>
     <li><a href="/games">Games</a></li>
     <li><a href="/">Home</a></li>
@@ -18,6 +19,17 @@ layout: src/_inc/base.php
 </ul>
 
 <div class="sitemaps">
+<ul class="sitemap">
+        <li><a href="/davidhunter">David Hunter</a></li>
+        <li><a href="/davidhunter/blog">Blog</a></li>
+        <li><a href="/davidhunter/projects">Projects</a></li>
+    </ul>
+
+    <ul class="sitemap">
+        <li><a href="/fansites">Fan Sites</a></li>
+        <li><a href="/fansites/international-rescue">International Rescue</a></li>
+    </ul>
+
     <ul class="sitemap">
         <li><a href="/games">Games</a></li>
         <li><a href="/games/love-calculator">Love Calculator</a></li>
@@ -33,7 +45,9 @@ layout: src/_inc/base.php
         <li><a href="/staticphp/about">About</a></li>
         <li><a href="/staticphp/docs">Docs</a></li>
     </ul>
+</div>
 
+<div class="sitemaps">
     <ul class="sitemap">
         <li><a href="/staticphp/docs">StaticPHP Docs</a></li>
         <li><a href="/staticphp/docs/functional-blocks">Functional Blocks</a></li>
@@ -46,12 +60,5 @@ layout: src/_inc/base.php
     <ul class="sitemap">
         <li><a href="/tools">Tools</a></li>
         <li><a href="/tools/find-urls-in-string">Find URLs in String</a></li>
-    </ul>
-</div>
-
-<div class="sitemaps">
-    <ul class="sitemap">
-        <li><a href="/fansites">Fan Sites</a></li>
-        <li><a href="/fansites/international-rescue">International Rescue</a></li>
     </ul>
 </div>
