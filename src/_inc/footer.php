@@ -14,7 +14,7 @@
                     <a href="/a-z">A-Z</a>
                 </nav>
                 
-                <p>Unless otherwise stated, website and content is by <a href="https://davidhunter.scot" target="_blank">David Hunter</a>.</p>
+                <p>Unless otherwise stated, website and content is by <a href="/davidhunter">David Hunter</a>.</p>
 
                 <script type="text/javascript">
                     document.write( '<br><a href="javascript: toggle_color_scheme();">Toggle Color Scheme</a>' );
