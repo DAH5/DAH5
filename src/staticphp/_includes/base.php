@@ -8,6 +8,7 @@ content_placeholder: {{ content }}
 stylesheets: /staticphp/assets/css/main.css
 section: StaticPHP
 sectionURL: /staticphp
+current_nav_item: staticphp
 ---
 <?php include 'src/_inc/header.php'; ?>
 

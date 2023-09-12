@@ -8,14 +8,14 @@ layout: src/_inc/base.php
 <p>This page has a complete list of all pages on the DAH5 website. It may also include pages in development with broken features.</p>
 
 <ul class="sitemap">
-    <li><a href="/about">About</a></li>
+    <li><a href="/about">About DAH5</a></li>
     <li><a href="/davidhunter">David Hunter</a></li>
     <li><a href="/favourite-actors-and-actresses">Favourite Actors and Actresses</a></li>
-    <li><a href="/games">Games</a></li>
-    <li><a href="/">Home</a></li>
-    <li><a href="/reference">Reference</a></li>
+    <li><a href="/games">DAH5 Games</a></li>
+    <li><a href="/">DAH5 Home</a></li>
+    <li><a href="/reference">DAH5 Reference</a></li>
     <li><a href="/staticphp">StaticPHP</a></li>
-    <li><a href="/tools">Tools</a></li>
+    <li><a href="/tools">DAH5 Tools</a></li>
 </ul>
 
 <div class="sitemaps">
@@ -31,12 +31,12 @@ layout: src/_inc/base.php
     </ul>
 
     <ul class="sitemap">
-        <li><a href="/games">Games</a></li>
+        <li><a href="/games">DAH5 Games</a></li>
         <li><a href="/games/love-calculator">Love Calculator</a></li>
     </ul>
 
     <ul class="sitemap">
-        <li><a href="/reference">Reference</a></li>
+        <li><a href="/reference">DAH5 Reference</a></li>
         <li><a href="/reference/html">HTML</a></li>
     </ul>
 
@@ -58,7 +58,7 @@ layout: src/_inc/base.php
     </ul>
 
     <ul class="sitemap">
-        <li><a href="/tools">Tools</a></li>
+        <li><a href="/tools">DAH5 Tools</a></li>
         <li><a href="/tools/find-urls-in-string">Find URLs in String</a></li>
     </ul>
 </div>

@@ -6,11 +6,11 @@
         <footer>
             <div class="container">
                 <nav>
-                    <a href="/">Home</a>
-                    <a href="/about">About</a>
-                    <a href="/games">Games</a>
-                    <a href="/tools">Tools</a>
-                    <a href="/reference">Reference</a>
+                    <a href="/">DAH5 Home</a>
+                    <a href="/about">About DAH5</a>
+                    <a href="/games">DAH5 Games</a>
+                    <a href="/davidhunter">David Hunter</a>
+                    <a href="/staticphp">StaticPHP</a>
                     <a href="/a-z">A-Z</a>
                 </nav>
                 

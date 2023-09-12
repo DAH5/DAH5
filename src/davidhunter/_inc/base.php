@@ -5,6 +5,7 @@ images_url: /davidhunter/assets/images
 videos_url: https://videos.storage.dah5.me.uk
 stylesheets: /davidhunter/assets/css/stylesheet.css
 content_placeholder: {{ content }}
+current_nav_item: davidhunter
 ---
 
 <?php include 'src/_inc/header.php'; ?>

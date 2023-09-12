@@ -27,30 +27,23 @@
 
         $main_nav_items[] = array
         (
-            "name" => "about",
-            "text" => "About",
-            "url" => "/about"
-        );
-
-        $main_nav_items[] = array
-        (
             "name" => "games",
-            "text" => "Games",
+            "text" => "DAH5 Games",
             "url" => "/games"
         );
 
         $main_nav_items[] = array
         (
-            "name" => "tools",
-            "text" => "Tools",
-            "url" => "/tools"
+            "name" => "davidhunter",
+            "text" => "David Hunter",
+            "url" => "/davidhunter"
         );
 
         $main_nav_items[] = array
         (
-            "name" => "reference",
-            "text" => "Reference",
-            "url" => "/reference"
+            "name" => "staticphp",
+            "text" => "StaticPHP",
+            "url" => "/staticphp"
         );
 
         ?>
