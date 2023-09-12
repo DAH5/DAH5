@@ -31,6 +31,7 @@ $projects = array
         "title" => "Staticly",
         "description" => "The essential repository for Front End Web Developers.",
         "url" => "https://staticly.cc",
+        "target" => "_blank",
         "image" => "",
         "color" => "#4A9CB3",
     ),
@@ -39,6 +40,7 @@ $projects = array
         "title" => "Network Tools",
         "description" => "Web based tools related to computer networks.",
         "url" => "https://networktools.ict.rocks",
+        "target" => "_blank",
         "image" => "",
         "color" => "#ffffff",
     ),
@@ -69,7 +71,7 @@ $projects = array
         <div class="info">
             <div class="title"><?php echo $project['title']; ?></div>
             <div class="description"><?php echo $project['description']; ?></div>
-            <div class="url"><a href="<?php echo $project['url']; ?>" target="_blank"><?php echo $project['url']; ?></a></div>
+            <div class="url"><a href="<?php echo $project['url']; ?>"<?php if( isset( $project['target'] ) ) echo ' target="' . $project['target'] . '"'; ?>><?php echo $project['url']; ?></a></div>
         </div>
         <?php if( $p % 2 !== 0 ): ?>
             <div class="image right" style="background-image: url( '<?php echo $project['image']; ?>' ), linear-gradient( var( --angle ), <?php if( isset( $project['color'] ) && $project['color'] ) echo $project['color']; else echo "#262626"; ?> 0%, var( --color-background-alt ) 50% );">&nbsp;</div>
