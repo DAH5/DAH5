@@ -50,8 +50,9 @@ header.dh nav
   background-color: var( --color-background-alt );
   display: flex;
   gap: 1rem;
-  flex-direction: column !important;
-  margin: -1rem;
+  flex-direction: row !important;
+  margin: 0 -1rem;
+  margin-top: 0.5rem;
   justify-content: initial !important;
 }
 
@@ -319,6 +320,7 @@ embed.video, iframe.video, video.video
   {
     flex-direction: row !important;
     flex-grow: 0;
+    margin: -1rem;
   }
 
   header.dh nav a
