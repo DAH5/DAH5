@@ -133,6 +133,7 @@ header .container
 header img.logo
 {
   width: 120px;
+  max-width: 120px;
   margin-top: 5px;
 }
 
