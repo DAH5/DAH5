@@ -157,6 +157,7 @@ header nav a
   color: var( --color-text-muted-dark );
   padding-top: var( --small );
   padding-bottom: var( --normal );
+  min-width: fit-content;
 }
 
 header nav a:hover,
@@ -287,7 +288,6 @@ footer nav
   justify-content: space-evenly;
   flex-direction: row;
   overflow-x: auto;
-  word-break: keep-all;
 }
 
 footer nav a
@@ -295,6 +295,7 @@ footer nav a
   border-left: 1px solid white;
   padding-left: var( --normal );
   width: 20%;
+  min-width: fit-content;
 }
 
 footer nav a:first-of-type
