@@ -14,6 +14,24 @@ ErrorDocument 404 /404.html
     RewriteRule ^ir/?$ /fansites/international-rescue [R=307,END]
     RewriteRule ^ir/(.*)$ /fansites/international-rescue/$1 [R=307,END]
 
+    RewriteCond %{HTTP_HOST} ^davidhunter.scot$ [OR]
+    RewriteCond %{HTTP_HOST} ^www.davidhunter.scot$ [OR]
+    RewriteCond %{HTTP_HOST} ^david-hunter.net$ [OR]
+    RewriteCond %{HTTP_HOST} ^www.david-hunter.net$ [OR]
+    RewriteCond %{HTTP_HOST} ^dah.scot$ [OR]
+    RewriteCond %{HTTP_HOST} ^www.dah.scot$ [OR]
+    RewriteCond %{HTTP_HOST} ^davidhunter.ict.rocks$ [OR]
+    RewriteCond %{HTTP_HOST} ^www.davidhunter.ict.rocks$
+    RewriteRule ^(.*)$ https://www.dah5.me.uk/davidhunter/$1 [R=307,END]
+
+    RewriteCond %{HTTP_HOST} ^staticphp.io$ [OR]
+    RewriteCond %{HTTP_HOST} ^www.staticphp.io$ [OR]
+    RewriteCond %{HTTP_HOST} ^staticphp.ict.rocks$ [OR]
+    RewriteCond %{HTTP_HOST} ^www.staticphp.ict.rocks$ [OR]
+    RewriteCond %{HTTP_HOST} ^staticphp.bydh.me$ [OR]
+    RewriteCond %{HTTP_HOST} ^staticphp.davidhunter.scot$
+    RewriteRule ^(.*)$ https://www.dah5.me.uk/staticphp/$1 [R=307,END]
+
     RewriteCond %{HTTP_HOST} !^www.dah5.me.uk$ [OR]
     RewriteCond %{SERVER_PORT} ^80$
     RewriteRule ^(.*)$ https://www.dah5.me.uk/$1 [R=307,END]
