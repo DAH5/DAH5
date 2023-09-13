@@ -2,10 +2,14 @@
 
 if( ! defined( "DOMAIN" ) )
     define( "DOMAIN", "dah5.me.uk" );
+if( ! defined( "STORAGE_DOMAIN" ) )
+    define( "STORAGE_DOMAIN", "storage.ict.rocks" );
 if( ! defined( "IMAGES_URL" ) )
-    define( "IMAGES_URL", "https://images.storage." . DOMAIN );
+    define( "IMAGES_URL", "https://images." . STORAGE_DOMAIN );
 if( ! defined( "VIDEOS_URL" ) )
-    define( "VIDEOS_URL", "https://videos.storage." . DOMAIN );
+    define( "VIDEOS_URL", "https://videos." . STORAGE_DOMAIN );
+if( ! defined( "WEBFONTS_URL" ) )
+    define( "WEBFONTS_URL", "https://webfonts." . STORAGE_DOMAIN );
 
 ?>
 <!DOCTYPE html>
@@ -16,7 +20,7 @@ if( ! defined( "VIDEOS_URL" ) )
 
         <title><?php if( isset( $metadata['page_title'] ) && $metadata['page_title'] ): ?><?php echo $metadata['page_title']; ?> - <?php endif; if( isset( $metadata['article_title'] ) && $metadata['article_title'] ): echo $metadata['article_title'] . ' - '; endif; if( isset( $metadata['staticphp_nav_item'], $metadata['docs_nav_item'] ) && $metadata['staticphp_nav_item'] == "docs" ) echo 'Docs - '; if( isset( $metadata['dh_current_page'], $metadata['article_title'] ) && $metadata['dh_current_page'] == "blog" ) echo 'Blog - '; if( isset( $metadata['dh_current_page'] ) ) echo 'David Hunter - '; ?>DAH5<?php if( isset( $metadata['section'] ) && $metadata['section'] ): ?> <?php echo $metadata['section']; ?><?php endif; ?></title>
         
-        <link rel="stylesheet" type="text/css" href="https://webfonts.storage.dah5.me.uk/poppins/poppins.css">
+        <link rel="stylesheet" type="text/css" href="<?php echo WEBFONTS_URL; ?>/poppins/poppins.css">
         <link rel="stylesheet" type="text/css" href="/assets/css/main.css">
 
         <?php if( isset( $metadata['stylesheets'] ) ): ?>
