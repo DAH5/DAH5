@@ -16,7 +16,7 @@ if( ! defined( "VIDEOS_URL" ) )
 
         <title><?php if( isset( $metadata['page_title'] ) && $metadata['page_title'] ): ?><?php echo $metadata['page_title']; ?> - <?php endif; if( isset( $metadata['article_title'] ) && $metadata['article_title'] ): echo $metadata['article_title'] . ' - '; endif; if( isset( $metadata['staticphp_nav_item'], $metadata['docs_nav_item'] ) && $metadata['staticphp_nav_item'] == "docs" ) echo 'Docs - '; if( isset( $metadata['dh_current_page'], $metadata['article_title'] ) && $metadata['dh_current_page'] == "blog" ) echo 'Blog - '; if( isset( $metadata['dh_current_page'] ) ) echo 'David Hunter - '; ?>DAH5<?php if( isset( $metadata['section'] ) && $metadata['section'] ): ?> <?php echo $metadata['section']; ?><?php endif; ?></title>
         
-        <link rel="stylesheet" type="text/css" href="/assets/webfonts/poppins/poppins.css">
+        <link rel="stylesheet" type="text/css" href="https://webfonts.storage.dah5.me.uk/poppins/poppins.css">
         <link rel="stylesheet" type="text/css" href="/assets/css/main.css">
 
         <?php if( isset( $metadata['stylesheets'] ) ): ?>
