@@ -1,7 +1,6 @@
 body
 {
     background-color: #336699;
-    background-image: url( '../images/bg-logo-1.png' );
 }
 
 .international-rescue
@@ -57,68 +56,7 @@ body
     aspect-ratio: 418 / 443;
 }
 
-.international-rescue .member.jeff-tracy .img
-{
-    --img-member: url( '../images/jeff-tracy-uniform-portrait.png' );
-    --img-member-eyes: url( '../images/jeff-tracy-uniform-portrait-eyes.png' );
-}
-
-.international-rescue .member.jeff-tracy:hover .img
-{
-    animation: member-eyes 2s infinite;
-}
-
-.international-rescue .member.scott-tracy .img
-{
-    --img-member: url( '../images/scott-tracy-uniform-portrait.png' );
-    --img-member-eyes: url( '../images/scott-tracy-uniform-portrait-eyes.png' );
-}
-
-.international-rescue .member.scott-tracy:hover .img
-{
-    animation: member-eyes 2s infinite;
-}
-
-.international-rescue .member.virgil-tracy .img
-{
-    --img-member: url( '../images/virgil-tracy-uniform-portrait.png' );
-    --img-member-eyes: url( '../images/virgil-tracy-uniform-portrait-eyes.png' );
-}
-
-.international-rescue .member.virgil-tracy:hover .img
-{
-    animation: member-eyes 2s infinite;
-}
-
-.international-rescue .member.alan-tracy .img
-{
-    --img-member: url( '../images/alan-tracy-uniform-portrait.png' );
-    --img-member-eyes: url( '../images/alan-tracy-uniform-portrait-eyes.png' );
-}
-
-.international-rescue .member.alan-tracy:hover .img
-{
-    animation: member-eyes 2s infinite;
-}
-
-.international-rescue .member.gordon-tracy .img
-{
-    --img-member: url( '../images/gordon-tracy-uniform-portrait.png' );
-    --img-member-eyes: url( '../images/gordon-tracy-uniform-portrait-eyes.png' );
-}
-
-.international-rescue .member.gordon-tracy:hover .img
-{
-    animation: member-eyes 2s infinite;
-}
-
-.international-rescue .member.john-tracy .img
-{
-    --img-member: url( '../images/john-tracy-uniform-portrait.png' );
-    --img-member-eyes: url( '../images/john-tracy-uniform-portrait-eyes.png' );
-}
-
-.international-rescue .member.john-tracy:hover .img
+.international-rescue .member:hover .img
 {
     animation: member-eyes 2s infinite;
 }

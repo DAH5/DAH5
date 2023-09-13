@@ -8,8 +8,8 @@ layout: src/davidhunter/_inc/base.php
 dh_current_page: blog
 ---
 
-<video class="video" poster="--- metadata.images_url ---/videos/SleeplessNight-Thumb.png" preload="none" controls>
-    <source src="--- metadata.videos_url ---/davidhunter/sleepless-night-a-short-film.mp4" type="video/mp4">
+<video class="video" poster="<?php echo IMAGES_URL; ?>/videos/SleeplessNight-Thumb.png" preload="none" controls>
+    <source src="<?php echo VIDEOS_URL; ?>/davidhunter/sleepless-night-a-short-film.mp4" type="video/mp4">
 </video>
 
 <p>This is my very first short film I produced entirely by myself in my bedroom. Hopefully you like it.</p>

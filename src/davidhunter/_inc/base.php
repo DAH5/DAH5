@@ -1,8 +1,6 @@
 ---
 site_title: David Hunter
 site_tagline: Internet Services Specialist
-images_url: /davidhunter/assets/images
-videos_url: https://videos.storage.dah5.me.uk
 stylesheets: /davidhunter/assets/css/stylesheet.css
 content_placeholder: {{ content }}
 current_nav_item: davidhunter
@@ -25,8 +23,8 @@ current_nav_item: davidhunter
 
 <?php
 
-if( $metadata['article_author'] == "David Hunter" )
-    $avatar_url = $metadata['images_url'] . "/avatars/davidhunter_illustration_transparent_1.png";
+if( isset( $metadata['article_author'] ) && $metadata['article_author'] == "David Hunter" )
+    $avatar_url = IMAGES_URL . "/avatars/davidhunter_illustration_transparent_1.png";
 
 ?>
 

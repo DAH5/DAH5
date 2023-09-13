@@ -23,6 +23,6 @@ footer_scripts: /assets/javascript/anti-email-harvesting.js
     </div>
 
     <div class="avatar">
-        <img src="--- metadata.images_url ---/avatars/davidhunter_illustration_transparent_1.png">
+        <img src="<?php echo IMAGES_URL; ?>/avatars/davidhunter_illustration_transparent_1.png">
     </div>
 </div>

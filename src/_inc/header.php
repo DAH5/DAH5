@@ -1,3 +1,13 @@
+<?php
+
+if( ! defined( "DOMAIN" ) )
+    define( "DOMAIN", "dah5.me.uk" );
+if( ! defined( "IMAGES_URL" ) )
+    define( "IMAGES_URL", "https://images.storage." . DOMAIN );
+if( ! defined( "VIDEOS_URL" ) )
+    define( "VIDEOS_URL", "https://videos.storage." . DOMAIN );
+
+?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -51,7 +61,7 @@
         <header>
             <div class="container">
                 <div class="logo">
-                    <a href="/"><img src="/assets/images/dah5-logo-2022.svg" class="logo"></a>
+                    <a href="/"><img src="<?php echo IMAGES_URL; ?>/logos/dah5-logo-2022.svg" class="logo"></a>
                 </div>
 
                 <nav>
@@ -77,7 +87,7 @@
         </section>
         <?php endif; ?>
 
-        <section class="content">
+        <section class="content"<?php if( isset( $metadata['content_background'] ) && $metadata['content_background'] ) echo ' style="background-image: url(\'' . IMAGES_URL . '/backgrounds/' . $metadata['content_background'] . '\');"'; ?>>
             <div class="container">
                 <?php if( isset( $metadata['current_nav_item'] ) && $metadata['current_nav_item'] == "reference" ): ?>
                     <nav>
