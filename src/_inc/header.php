@@ -3,7 +3,7 @@
 if( ! defined( "DOMAIN" ) )
     define( "DOMAIN", "dah5.me.uk" );
 if( ! defined( "STORAGE_DOMAIN" ) )
-    define( "STORAGE_DOMAIN", "staticly.cc" );
+    define( "STORAGE_DOMAIN", "storage.dah5.me.uk" );
 if( ! defined( "IMAGES_URL" ) )
     define( "IMAGES_URL", "https://images." . STORAGE_DOMAIN );
 if( ! defined( "VIDEOS_URL" ) )
@@ -91,7 +91,7 @@ if( ! defined( "WEBFONTS_URL" ) )
         </section>
         <?php endif; ?>
 
-        <section class="content"<?php if( isset( $metadata['content_background'] ) && $metadata['content_background'] ) echo ' style="background-image: url(\'' . IMAGES_URL . '/backgrounds/' . $metadata['content_background'] . '\');"'; ?>>
+        <section class="content"<?php if( isset( $metadata['content_background_image'] ) && $metadata['content_background_image'] ) echo ' style="background-image: url(\'' . IMAGES_URL . $metadata['content_background_image'] . '\');"'; ?>>
             <div class="container">
                 <?php if( isset( $metadata['current_nav_item'] ) && $metadata['current_nav_item'] == "reference" ): ?>
                     <nav>
