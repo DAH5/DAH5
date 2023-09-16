@@ -3,11 +3,13 @@
 if( ! defined( "DOMAIN" ) )
     define( "DOMAIN", "dah5.me.uk" );
 if( ! defined( "STORAGE_DOMAIN" ) )
-    define( "STORAGE_DOMAIN", "staticly.cc" );
+    define( "STORAGE_DOMAIN", "storage.dah5.me.uk" );
 if( ! defined( "IMAGES_URL" ) )
     define( "IMAGES_URL", "https://images." . STORAGE_DOMAIN );
 if( ! defined( "VIDEOS_URL" ) )
     define( "VIDEOS_URL", "https://videos." . STORAGE_DOMAIN );
+if( ! defined( "W3CSS_URL" ) )
+    define( "W3CSS_URL", "https://w3css." . STORAGE_DOMAIN );
 if( ! defined( "WEBFONTS_URL" ) )
     define( "WEBFONTS_URL", "https://webfonts." . STORAGE_DOMAIN );
 
@@ -41,13 +43,6 @@ if( ! defined( "WEBFONTS_URL" ) )
 
         $main_nav_items[] = array
         (
-            "name" => "games",
-            "text" => "DAH5 Games",
-            "url" => "/games"
-        );
-
-        $main_nav_items[] = array
-        (
             "name" => "davidhunter",
             "text" => "David Hunter",
             "url" => "/davidhunter"
@@ -58,6 +53,13 @@ if( ! defined( "WEBFONTS_URL" ) )
             "name" => "staticphp",
             "text" => "StaticPHP",
             "url" => "/staticphp"
+        );
+
+        $main_nav_items[] = array
+        (
+            "name" => "staticly",
+            "text" => "Staticly",
+            "url" => "/staticly"
         );
 
         ?>

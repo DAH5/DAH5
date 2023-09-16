@@ -1,0 +1,41 @@
+:root
+{
+    --color-html-bracket: #808080;
+    --color-html-tag: #4A9CB3;
+    --color-html-attr: #68CDFE;
+    --color-html-equals: #D4D4D4;
+    --color-html-string: #CE9178;
+    --color-html-text: #ffffff;
+}
+
+html
+{
+    overflow-x: initial;
+}
+
+html, body, h1, h2, h3, h4, h5, h6, p
+{
+    font-family: "Poppins", sans-serif;
+}
+
+section.content .container
+{
+    display: none;
+}
+
+nav.w3-bar a,
+nav.w3-bar a:hover
+{
+    color: var( --color-text ) !important;
+}
+
+p.overflow
+{
+    overflow-x: auto;
+    white-space: nowrap;
+}
+
+.padding-64
+{
+    padding-block: 64px;
+}

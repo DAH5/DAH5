@@ -41,13 +41,19 @@ layout: src/_inc/base.php
     </ul>
 
     <ul class="sitemap">
-        <li><a href="/staticphp">StaticPHP</a></li>
-        <li><a href="/staticphp/about">About</a></li>
-        <li><a href="/staticphp/docs">Docs</a></li>
+        <li><a href="/staticly">Staticly</a></li>
+        <li><a href="/staticly/w3css">W3.CSS</a></li>
+        <li><a href="/staticly/webfonts">WebFonts</a></li>
     </ul>
 </div>
 
 <div class="sitemaps">
+    <ul class="sitemap">
+        <li><a href="/staticphp">StaticPHP</a></li>
+        <li><a href="/staticphp/about">About</a></li>
+        <li><a href="/staticphp/docs">Docs</a></li>
+    </ul>
+
     <ul class="sitemap">
         <li><a href="/staticphp/docs">StaticPHP Docs</a></li>
         <li><a href="/staticphp/docs/functional-blocks">Functional Blocks</a></li>
