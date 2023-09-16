@@ -30,8 +30,7 @@ $projects = array
     (
         "title" => "Staticly",
         "description" => "The essential repository for Front End Web Developers.",
-        "url" => "https://staticly.cc",
-        "target" => "_blank",
+        "url" => "https://www.dah5.me.uk/staticly",
         "image" => "",
         "color" => "#4A9CB3",
     ),
