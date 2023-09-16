@@ -3,7 +3,7 @@
 if( ! defined( "DOMAIN" ) )
     define( "DOMAIN", "dah5.me.uk" );
 if( ! defined( "STORAGE_DOMAIN" ) )
-    define( "STORAGE_DOMAIN", "storage.dah5.me.uk" );
+    define( "STORAGE_DOMAIN", "staticly.cc" );
 if( ! defined( "IMAGES_URL" ) )
     define( "IMAGES_URL", "https://images." . STORAGE_DOMAIN );
 if( ! defined( "VIDEOS_URL" ) )
