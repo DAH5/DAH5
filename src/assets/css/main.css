@@ -308,6 +308,8 @@ footer nav a:first-of-type
 {
   display: flex;
   flex-direction: column;
+  flex-wrap: wrap;
+  gap: 3rem;
 }
 
 .sitemap
@@ -378,7 +380,6 @@ footer nav a:first-of-type
   .sitemaps
   {
     flex-direction: row;
-    justify-content: space-between;
   }
 
   .fansites

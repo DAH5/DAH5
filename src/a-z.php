@@ -45,9 +45,7 @@ layout: src/_inc/base.php
         <li><a href="/staticly/w3css">W3.CSS</a></li>
         <li><a href="/staticly/webfonts">WebFonts</a></li>
     </ul>
-</div>
-
-<div class="sitemaps">
+    
     <ul class="sitemap">
         <li><a href="/staticphp">StaticPHP</a></li>
         <li><a href="/staticphp/about">About</a></li>
