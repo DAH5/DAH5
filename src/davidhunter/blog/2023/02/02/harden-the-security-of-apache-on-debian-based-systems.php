@@ -86,7 +86,7 @@ sudo useradd -g apache apache
 <p>Remember to swap out <code>apache</code> for the user name you chose if you decided on a different one.</p>
 
 <p><b>Step 3:</b> Find your Apache installation directory.</p>
-<p><code>which apache2</code></p>
+<p><code>sudo which apache2</code></p>
 
 <p><b>Step 4:</b> Change ownership of the Apache installation directory to that of the new user and group you just created.</p>
 <p><code>sudo chown -R apache:apache /path/to/apache</code></p>
