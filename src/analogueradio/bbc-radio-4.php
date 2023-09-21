@@ -1,6 +1,6 @@
 ---
 analogueradio_nav_item: bbc-radio-4
-page_title: BBC Radio 4
+page_title: BBC Radio 4 - Analogue Radio
 layout: src/analogueradio/_inc/base.php
 ---
 
