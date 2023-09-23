@@ -7,7 +7,7 @@ layout: src/analogueradio/_inc/base.php
 <h2>BBC Radio 4</h2>
 <p>An archive containing various clips of this radio station. Analogue and Digital versions available.</p>
 
---- loop( dir = "src/analogueradio/bbc-radio-4" ) ---
+--- loop( dir = "src/analogueradio/bbc-radio-4/198kHz-LW" ) ---
 
 <div class="w3-row">
     <div class="w3-col m3">
