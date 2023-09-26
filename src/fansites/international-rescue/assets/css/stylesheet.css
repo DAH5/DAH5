@@ -73,6 +73,61 @@ body
     color: var( --color-text );
 }
 
+.four-oh-four
+{
+    margin-top: 100px;
+    margin-bottom: 300px;
+    margin-inline: auto;
+    font-size: 1.2rem;
+    max-width: 800px;
+    text-align: center;
+}
+
+.four-oh-four > .hood
+{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 100px;
+    align-items: center;
+}
+
+.four-oh-four > .hood .img
+{
+    width: 80%;
+    order: 1;
+}
+
+.four-oh-four > .hood .message
+{
+    width: 100%;
+    order: 2;
+}
+
+.four-oh-four img.hood
+{
+    max-width: 100%;
+    border-radius: 50%;
+}
+
+.four-oh-four img.scott
+{
+    max-width: 100%;
+    border-radius: 10%;
+}
+
+.four-oh-four > .scott
+{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    align-items: center;
+}
+
+.four-oh-four > .scott .img
+{
+    width: 80%;
+}
+
 @keyframes member-eyes
 {
     0%,
@@ -97,5 +152,32 @@ body
     .international-rescue .member
     {
         width: 16.66666666666667%;
+    }
+
+    .four-oh-four
+    {
+        text-align: left;
+    }
+
+    .four-oh-four > .hood,
+    .four-oh-four > .scott
+    {
+        flex-direction: row;
+    }
+
+    .four-oh-four > .hood .message
+    {
+        order: 1;
+    }
+
+    .four-oh-four > .hood .img
+    {
+        width: 300px;
+        order: 2;
+    }
+
+    .four-oh-four > .scott .img
+    {
+        width: 200px;
     }
 }
