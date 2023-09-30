@@ -304,6 +304,53 @@ footer nav a:first-of-type
   padding-left: 0;
 }
 
+.dah5-homepage
+{
+  padding: 3rem 0;
+  text-align: center;
+}
+
+.dah5-homepage h1
+{
+  font-size: 3rem;
+}
+
+.dah5-homepage .sections
+{
+  display: flex;
+  gap: 1rem;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  flex-direction: column;
+}
+
+.dah5-homepage .section
+{
+  width: 100%;
+}
+
+.dah5-homepage .section .img
+{
+  background-size: cover;
+  background-position: center;
+  aspect-ratio: 16 / 9;
+  margin-inline: -2rem;
+}
+
+.dah5-homepage .section .button
+{
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  border-radius: 1rem;
+  background-color: var( --color-background-alt );
+  color: var( --color-text-alt );
+}
+
+.dah5-homepage .section .button:hover
+{
+  background-color: var( --color-text-muted );
+}
+
 .sitemaps
 {
   display: flex;
@@ -380,6 +427,11 @@ footer nav a:first-of-type
   padding: 1rem;
 }
 
+.hide-small
+{
+  display: none;
+}
+
 @media ( min-width: 600px )
 {
   section.content .container
@@ -398,6 +450,22 @@ footer nav a:first-of-type
     flex-grow: 2;
   }
 
+  .dah5-homepage .sections
+  {
+    flex-wrap: wrap;
+    flex-direction: row;
+  }
+
+  .dah5-homepage .section
+  {
+    width: 30%;
+  }
+
+  .dah5-homepage .section .img
+  {
+    margin-inline: 0;
+  }
+
   .sitemaps
   {
     flex-direction: row;
@@ -411,5 +479,10 @@ footer nav a:first-of-type
   .fansites .fansite
   {
     width: 25%;
+  }
+
+  .hide-small
+  {
+    display: block;
   }
 }
