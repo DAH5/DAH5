@@ -1,5 +1,6 @@
 ---
 page_title: A-Z
+current_nav_item: a-z
 layout: src/_inc/base.php
 ---
 
@@ -7,21 +8,19 @@ layout: src/_inc/base.php
 
 <p>This page has a complete list of all pages on the DAH5 website. It may also include pages in development with broken features.</p>
 
-<ul class="sitemap">
-    <li><a href="/about">About DAH5</a></li>
-    <li><a href="/davidhunter">David Hunter</a></li>
-    <li><a href="/favourite-actors-and-actresses">Favourite Actors and Actresses</a></li>
-    <li><a href="/games">DAH5 Games</a></li>
-    <li><a href="/">DAH5 Home</a></li>
-    <li><a href="/reference">DAH5 Reference</a></li>
-    <li><a href="/staticphp">StaticPHP</a></li>
-    <li><a href="/tools">DAH5 Tools</a></li>
-</ul>
-
 <div class="sitemaps">
     <ul class="sitemap">
         <li><a href="/analogueradio">Analogue Radio</a></li>
         <li><a href="/analogueradio/bbc-radio-4">BBC Radio 4</a></li>
+    </ul>
+
+    <ul class="sitemap">
+        <li><a href="/">DAH5</a></li>
+        <li><a href="/fansites">Fan Sites</a></li>
+        <li><a href="/favourite-actors-and-actresses">Favourite Actors and Actresses</a></li>
+        <li><a href="/games">Games</a></li>
+        <li><a href="/reference">Reference</a></li>
+        <li><a href="/tools">Tools</a></li>
     </ul>
 
     <ul class="sitemap">

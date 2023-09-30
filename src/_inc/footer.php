@@ -8,7 +8,7 @@
                 <nav>
                     <a href="/">DAH5 Home</a>
                     <a href="/about">About DAH5</a>
-                    <a href="/davidhunter">David Hunter</a>
+                    <a href="/analogueradio">Analogue Radio</a>
                     <a href="/staticphp">StaticPHP</a>
                     <a href="/staticly">Staticly</a>
                     <a href="/a-z">A-Z</a>

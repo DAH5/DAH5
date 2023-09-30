@@ -310,6 +310,7 @@ footer nav a:first-of-type
   flex-direction: column;
   flex-wrap: wrap;
   gap: 3rem;
+  justify-content: space-between;
 }
 
 .sitemap

@@ -43,9 +43,9 @@ if( ! defined( "WEBFONTS_URL" ) )
 
         $main_nav_items[] = array
         (
-            "name" => "davidhunter",
-            "text" => "David Hunter",
-            "url" => "/davidhunter"
+            "name" => "analogueradio",
+            "text" => "Analogue Radio",
+            "url" => "/analogueradio"
         );
 
         $main_nav_items[] = array
@@ -60,6 +60,13 @@ if( ! defined( "WEBFONTS_URL" ) )
             "name" => "staticly",
             "text" => "Staticly",
             "url" => "/staticly"
+        );
+
+        $main_nav_items[] = array
+        (
+            "name" => "a-z",
+            "text" => "A-Z",
+            "url" => "/a-z"
         );
 
         ?>
