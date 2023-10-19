@@ -1,7 +1,7 @@
 ---
 content_placeholder: {{ content }}
 current_nav_item: analogueradio
-stylesheets: https://w3css.storage.dah5.com/4.15/w3.css::https://w3css.storage.dah5.com/w3-colors-metro.css::https://webfonts.storage.dah5.com/poppins/poppins.css::/analogueradio/assets/css/analogueradio.css
+stylesheets: /assets/w3css/4.15/w3.css::https://w3css.storage.dah5.com/w3-colors-metro.css::/assets/webfonts/poppins/poppins.css::/analogueradio/assets/css/analogueradio.css
 ---
 <?php include 'src/_inc/header.php'; ?>
         </div>

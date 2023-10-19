@@ -2,7 +2,7 @@
 section: Staticly
 sectionURL: /staticly
 current_nav_item: staticly
-stylesheets: https://w3css.storage.dah5.com/4.15/w3.css::https://w3css.storage.dah5.com/w3-colors-camo.css::https://w3css.storage.dah5.com/w3-colors-metro.css::/staticly/assets/css/staticly.css
+stylesheets: /assets/w3css/4.15/w3.css::/assets/w3css/w3-colors-camo.css::/assets/w3css/w3-colors-metro.css::/staticly/assets/css/staticly.css
 content_placeholder: {{ content }}
 ---
 <?php include 'src/_inc/header.php'; ?>
