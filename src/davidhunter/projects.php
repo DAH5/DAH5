@@ -14,7 +14,7 @@ $projects = array
     (
         "title" => "Personal Website",
         "description" => "It is all about me",
-        "url" => "https://www.dah5.me.uk/davidhunter",
+        "url" => "https://www." . DOMAIN . "/davidhunter",
         "image" => IMAGES_URL . "/avatars/davidhunter_illustration_transparent_1.png",
         "color" => "#333",
     ),
@@ -22,7 +22,7 @@ $projects = array
     (
         "title" => "StaticPHP",
         "description" => "A Static Site Generator that turns PHP files into HTML files.",
-        "url" => "https://www.dah5.me.uk/staticphp",
+        "url" => "https://www." . DOMAIN . "/staticphp",
         "image" => IMAGES_URL . "/logos/StaticPHP-Promo1.png",
         "color" => "#7A86B8",
     ),
@@ -30,7 +30,7 @@ $projects = array
     (
         "title" => "Staticly",
         "description" => "The essential repository for Front End Web Developers.",
-        "url" => "https://www.dah5.me.uk/staticly",
+        "url" => "https://www." . DOMAIN . "/staticly",
         "image" => "",
         "color" => "#4A9CB3",
     ),
@@ -47,7 +47,7 @@ $projects = array
     (
         "title" => "DAH5",
         "description" => "The website that started it all, originally launched back in April 2005!",
-        "url" => "https://www.dah5.me.uk",
+        "url" => "https://www." . DOMAIN,
         "image" => IMAGES_URL . "/logos/dah5-logo-2022.svg",
         "color" => "rgb( 38, 38, 38 )",
     ),
