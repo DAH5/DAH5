@@ -300,6 +300,34 @@ embed.video, iframe.video, video.video
   width: calc( 100% + 2rem );
 }
 
+pre
+{
+  overflow-x: initial !important;
+  font-size: initial !important;
+  box-shadow: initial !important;
+  border-radius: initial !important;
+  padding: initial !important;
+}
+
+pre code
+{
+  display: block;
+  white-space: unset;
+}
+
+code
+{
+  background-color: var( --color-background-alt );
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  overflow-x: auto;
+  word-break: keep-all;
+  white-space: nowrap;
+  max-width: 100%;
+  display: inline-block;
+  vertical-align: middle;
+}
+
 @media ( max-width:800px )
 {
   .hide-mobile
