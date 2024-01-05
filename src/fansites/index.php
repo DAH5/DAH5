@@ -11,7 +11,7 @@ layout: src/_inc/base.php
 
 <div class="fansites">
     <div class="fansite">
-        <a href="/fansites/international-rescue"><img src="/fansites/international-rescue/assets/images/logo.svg" alt="International Rescue Logo"></a>
+        <a href="/fansites/international-rescue"><img src="/assets/images/fansites/international-rescue/international-rescue-logo.svg" alt="International Rescue Logo"></a>
         <a href="/fansites/international-rescue">International Rescue</a>
     </div>
 </div>
