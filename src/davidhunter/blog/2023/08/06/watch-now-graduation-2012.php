@@ -12,7 +12,7 @@ dh_current_page: blog
 
 <p>This was one of my proudest moments, and after over a decade later, I want to share and remember this moment that luckily enough was caught on camera.</p>
 
-<p>Duration: 1 minute and 39 seconds</p>
+<p>Duration: 1 minute and 29 seconds</p>
 
 <video class="video" poster="<?php echo IMAGES_URL; ?>/videos/Gradulation2012-ProVersion-Thumb.png" preload="none" controls>
     <source src="<?php echo VIDEOS_URL; ?>/davidhunter/kilmarnockcollege_graduation_2012.mp4" type="video/mp4">
