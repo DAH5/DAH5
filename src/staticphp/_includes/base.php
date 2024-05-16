@@ -72,6 +72,13 @@ current_nav_item: staticphp
             "text" => "Functional Blocks"
         );
 
+        $staticphp_docs_navitems[] = array
+        (
+            "id" => "minify",
+            "url" => "/staticphp/docs/minify",
+            "text" => "Minify"
+        );
+
         ?>
 
         <nav class="staticphp">
