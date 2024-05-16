@@ -18,10 +18,10 @@ layout: src/staticphp/_includes/base.php
 <p>Between the opening and close tags, this is where you put the content that will appear whenever the functional block succeeds.</p>
 
 <pre>--- func( key = "value", another-key = "another-value" ) ---
-
-&lt;p&gt;Put anything here.&lt;/p&gt;
-
---- endfunc ---</pre>
+<br>
+<br>&lt;p&gt;Put anything here.&lt;/p&gt;
+<br>
+<br>--- endfunc ---</pre>
 
 <h3>The Loop Functional Block</h3>
 
@@ -36,10 +36,10 @@ layout: src/staticphp/_includes/base.php
 <h5>Example</h5>
 
 <pre>--- loop( dir = "src/items" ) ---
-
-&lt;p&gt;&lt;b&gt;Item Name:&lt;/b&gt; --- loop.item-name ---&lt;/p&gt;
-
---- endloop ---</pre>
+<br>
+<br>&lt;p&gt;&lt;b&gt;Item Name:&lt;/b&gt; --- loop.item-name ---&lt;/p&gt;
+<br>
+<br>--- endloop ---</pre>
 
 <p>Please refer to the page on <a href="/staticphp/docs/metadata">MetaData</a> to learn more about setting MetaData in files and how to use placeholders.</p>
 
@@ -54,10 +54,10 @@ layout: src/staticphp/_includes/base.php
 <h5>Example of Sort using Dir</h5>
 
 <pre>--- loop( dir = "src/items", sort = "descending" ) ---
-
-&lt;p&gt;&lt;b&gt;Item Name:&lt;/b&gt; --- loop.item-name ---&lt;/p&gt;
-
---- endloop ---</pre>
+<br>
+<br>&lt;p&gt;&lt;b&gt;Item Name:&lt;/b&gt; --- loop.item-name ---&lt;/p&gt;
+<br>
+<br>--- endloop ---</pre>
 
 <h4>Outputting JSON</h4>
 
@@ -68,10 +68,10 @@ layout: src/staticphp/_includes/base.php
 <h5>Example of JSON using Dir</h5>
 
 <pre>--- loop( dir = "src/items", json = "src/api/items.json" ) ---
-
-&lt;p&gt;&lt;b&gt;Item Name:&lt;/b&gt; --- loop.item-name ---&lt;/p&gt;
-
---- endloop ---</pre>
+<br>
+<br>&lt;p&gt;&lt;b&gt;Item Name:&lt;/b&gt; --- loop.item-name ---&lt;/p&gt;
+<br>
+<br>--- endloop ---</pre>
 
 <h4>Ignoring Items</h4>
 
@@ -82,10 +82,10 @@ layout: src/staticphp/_includes/base.php
 <h5>Example of Ignores</h5>
 
 <pre>--- loop( dir = "src/items", ignores = "ignore-this; ignore-that" ) ---
-
-&lt;p&gt;&lt;b&gt;Item Name:&lt;/b&gt; --- loop.item-name ---&lt;/p&gt;
-
---- endloop ---</pre>
+<br>
+<br>&lt;p&gt;&lt;b&gt;Item Name:&lt;/b&gt; --- loop.item-name ---&lt;/p&gt;
+<br>
+<br>--- endloop ---</pre>
 
 <h3>More Coming in the Future</h3>
 

@@ -76,29 +76,29 @@ layout: src/staticphp/_includes/base.php
 			<li>
 				<p>In your custom PHP file, include the StaticPHP.php file and create a new instance with the build configuration as parameters/arguments.</p>
 
-    			<pre>&lt;?php<br>
+    			<pre>&lt;?php
 <br>
-include __DIR__ . DIRECTORY_SEPARATOR . 'StaticPHP.php';<br>
-<br>
-<br>
-$path_to_source_files = __DIR__ . DIRECTORY_SEPARATOR . 'SOURCE-FILES';<br>
-<br>
-$path_to_public_files = __DIR__ . DIRECTORY_SEPARATOR . 'PUBLIC-FILES';<br>
-<br>
-$paths_to_ignore = array( 'IGNORE-FILES' );<br>
-<br>
-$friendly_urls = true;<br>
-<br>
-$metadata_delimiter = '---';<br>
-<br>
-$minify_html = false;<br>
-<br>
-$minify_css = false;<br>
-<br>
-$minify_js = false;<br>
+<br>include __DIR__ . DIRECTORY_SEPARATOR . 'StaticPHP.php';
 <br>
 <br>
-new StaticPHP( $path_to_source_files, $path_to_public_files, $paths_to_ignore, $friendly_urls, $metadata_delimiter, $minify_html, $minify_css, $minify_js );</pre>
+<br>$path_to_source_files = __DIR__ . DIRECTORY_SEPARATOR . 'SOURCE-FILES';
+<br>
+<br>$path_to_public_files = __DIR__ . DIRECTORY_SEPARATOR . 'PUBLIC-FILES';
+<br>
+<br>$paths_to_ignore = array( 'IGNORE-FILES' );
+<br>
+<br>$friendly_urls = true;
+<br>
+<br>$metadata_delimiter = '---';
+<br>
+<br>$minify_html = false;
+<br>
+<br>$minify_css = false;
+<br>
+<br>$minify_js = false;
+<br>
+<br>
+<br>new StaticPHP( $path_to_source_files, $path_to_public_files, $paths_to_ignore, $friendly_urls, $metadata_delimiter, $minify_html, $minify_css, $minify_js );</pre>
 			</li>
 			
 			<li>Execute your custom script with the following command php CUSTOM-PHP-SCRIPT.php (where CUSTOM-PHP-SCRIPT is the actual filename of your custom script).</li>

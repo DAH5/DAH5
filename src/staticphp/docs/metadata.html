@@ -16,9 +16,9 @@ layout: src/staticphp/_includes/base.php
                 <p>Here is an example of MetaData at the top of a source file.</p>
                 
 <pre class="w3-code" style="overflow-x: auto;">---
-some_key: some value
-another_key: another value
----</pre>
+<br>some_key: some value
+<br>another_key: another value
+<br>---</pre>
                 
                 <p>Keys and values are separated by a colon and usually a space for clarity. The word key does not need to be part of the key, and the word value does not need to be part of the value, these were put there purely for illustration purposes and clarity.</p>
                 
@@ -29,14 +29,14 @@ another_key: another value
                 <p>In the previous example where it shows how to define metadata, we set two keys with associated values. Here is an example of how you can retrieve these values again later.</p>
                 
 <pre class="w3-code" style="overflow-x: auto;">&lt;p&gt;--- metadata.some_key ---&lt;/p&gt;
-
-&lt;p&gt;--- metadata.another_key ---&lt;/p&gt;</pre>
+<br>
+<br>&lt;p&gt;--- metadata.another_key ---&lt;/p&gt;</pre>
 		
 		<p>The output of having the metadata example and the above placeholders example will be like this.</p>
 
 <pre class="w3-code" style="overflow-x: auto;">&lt;p&gt;some value&lt;/p&gt;
-
-&lt;p&gt;another value&lt;/p&gt;</pre>
+<br>
+<br>&lt;p&gt;another value&lt;/p&gt;</pre>
 
 		<h3>Special MetaData</h3>
 		
@@ -61,39 +61,39 @@ another_key: another value
 		<p>Simply add the metadata key <u>layout</u> in the source file of the page you wish the base layout applied to with the value being the path to the base layout file.</p>
 		
 <pre class="w3-code" style="overflow-x: auto;">---
-page_title: Awesome Page
-<b>layout: SOURCE-FILES/IGNORE-FILES/base-layout.php</b>
----
-
-&lt;h2&gt;&#45;&#45;&#45; metadata.page_title &#45;&#45;&#45;&lt;/h2&gt;
-
-&lt;p&gt;This is a very awesome page. I am so glad you checked it out! :)&lt;/p&gt;</pre>
+<br>page_title: Awesome Page
+<br><br><b>layout: SOURCE-FILES/IGNORE-FILES/base-layout.php</b>
+<br>---
+<br>
+<br>&lt;h2&gt;&#45;&#45;&#45; metadata.page_title &#45;&#45;&#45;&lt;/h2&gt;
+<br>
+<br>&lt;p&gt;This is a very awesome page. I am so glad you checked it out! :)&lt;/p&gt;</pre>
 		
 		<p>In the base layout file, add metadata key <u>content_placeholder</u> and set it to what you want to use as a placeholder for your page content. This will be where the content of that specific page will be placed.</p>
 		
 <pre class="w3-code" style="overflow-x: auto;">---
-<b>content_placeholder: &#123;&#123; content &#125;&#125;</b>
----
-
-&lt;!DOCTYPE html&gt;
-&lt;html lang="en&gt;
-	&lt;head&gt;
-		&lt;meta charset="UTF-8"&gt;
-		&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
-		
-		&lt;title&gt;Awesome Website - powered by StaticPHP&lt;/title&gt;
-	&lt;/head&gt;
-	
-	&lt;body&gt;
-		&lt;h1&gt;Awesome Website&lt;/h1&gt;
-		&lt;p&gt;powered by StaticPHP&lt;/p&gt;
-		
-		&lt;hr&gt;
-		
-		<b>&#123;&#123; content &#125;&#125;</b>
-		
-		&lt;hr&gt;
-		
-		&lt;p&gt;Copyright &copy; Awesome Developer.&lt;/p&gt;
-	&lt;/body&gt;
-&lt;/html&gt;</pre>
+<br><b>content_placeholder: &#123;&#123; content &#125;&#125;</b>
+<br>---
+<br>
+<br>&lt;!DOCTYPE html&gt;
+<br>&lt;html lang="en&gt;<br>
+<br>&#9;&lt;head&gt;
+<br>&#9;&#9;&lt;meta charset="UTF-8"&gt;
+<br>&#9;&#9;&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+<br>&#9;&#9;
+<br>&#9;&#9;&lt;title&gt;Awesome Website - powered by StaticPHP&lt;/title&gt;
+<br>&#9;&lt;/head&gt;
+<br>&#9;
+<br>&#9;&lt;body&gt;
+<br>&#9;&#9;&lt;h1&gt;Awesome Website&lt;/h1&gt;
+<br>&#9;&#9;&lt;p&gt;powered by StaticPHP&lt;/p&gt;
+<br>&#9;&#9;
+<br>&#9;&#9;&lt;hr&gt;
+<br>&#9;&#9;
+<br>&#9;&#9;<b>&#123;&#123; content &#125;&#125;</b>
+<br>&#9;&#9;
+<br>&#9;&#9;&lt;hr&gt;
+<br>&#9;&#9;
+<br>&#9;&#9;&lt;p&gt;Copyright &copy; Awesome Developer.&lt;/p&gt;
+<br>&#9;&lt;/body&gt;
+<br>&lt;/html&gt;</pre>
