@@ -62,6 +62,7 @@ layout: src/_inc/base.php
         <li><a href="/staticphp/docs/getting-started">Getting Started</a></li>
         <li><a href="/staticphp/docs/html-files">HTML Files</a></li>
         <li><a href="/staticphp/docs/metadata">MetaData</a></li>
+        <li><a href="/staticphp/docs/minify">Minify</a></li>
         <li><a href="/staticphp/docs/php-files">PHP Files</a></li>
     </ul>
 
