@@ -74,7 +74,7 @@ if( ! defined( "WEBFONTS_URL" ) )
         <header>
             <div class="container">
                 <div class="logo">
-                    <a href="/"><img src="<?php echo IMAGES_URL; ?>/logos/dah5-logo-2022.svg" class="logo"></a>
+                    <a href="/"><img src="<?php echo IMAGES_URL; ?>/logos/dah5-logo-2024-alternate.png" class="logo"></a>
                 </div>
 
                 <nav>
