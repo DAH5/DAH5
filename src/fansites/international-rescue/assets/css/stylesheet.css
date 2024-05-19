@@ -1,7 +1,11 @@
-body
+.body
 {
     background-color: #336699;
+    background-image: url( '/assets/images/fansites/international-rescue/international-rescue-bg-logo-1.png' );
+    color: white;
 }
+
+.body
 
 .international-rescue
 {

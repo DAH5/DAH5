@@ -11,7 +11,7 @@ content_placeholder: {{ content }}
 </section>
 
 <nav class="w3-bar" style="background-color: var( --color-background-alt ); color: var( --color-text );">
-    <div class="container">
+    <div class="w3-auto">
         <a href="/staticly" class="w3-bar-item w3-button w3-hover-none"><?php if( isset( $metadata['staticly_page'] ) && $metadata['staticly_page'] == "home" ) echo '<b>Home</b>'; else echo 'Home'; ?></a>
         <a href="/staticly/w3css" class="w3-bar-item w3-button w3-hover-none"><?php if( isset( $metadata['staticly_page'] ) && $metadata['staticly_page'] == "w3css" ) echo '<b>W3.CSS</b>'; else echo 'W3.CSS'; ?></a>
         <a href="/staticly/webfonts" class="w3-bar-item w3-button w3-hover-none"><?php if( isset( $metadata['staticly_page'] ) && $metadata['staticly_page'] == "webfonts" ) echo '<b>WebFonts</b>'; else echo 'WebFonts'; ?></a>

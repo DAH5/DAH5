@@ -1,5 +1,23 @@
 textarea
 {
+  --color-black: #000;
+  --color-background-dark: rgb( 38, 38, 38 );
+  --color-background-dark-alpha: rgb( 38, 38, 38, 0.9 );
+  --color-background-light: rgb( 230, 230, 230 );
+  --color-background-light-alpha: rgb( 230, 230, 230, 0.9 );
+  --color-text-dark: #333;
+  --color-text-light: #ccc;
+  --color-text-muted-light: #aaa;
+  --color-text-muted-dark: #777;
+  --color-white: #fff;
+  
+  --color-background: var( --color-background-light );
+  --color-background-alt: var( --color-white );
+  --color-background-alpha: var( --color-background-light-alpha );
+  --color-text: var( --color-text-dark );
+  --color-text-alt: var( --color-black );
+  --color-text-muted: var( --color-text-muted-light );
+  
   width: 100%;
   height: 200px;
   background-color: var( --color-background );

@@ -1,5 +1,23 @@
-section.content
+.body
 {
+  --color-black: #000;
+  --color-background-dark: rgb( 38, 38, 38 );
+  --color-background-dark-alpha: rgb( 38, 38, 38, 0.9 );
+  --color-background-light: rgb( 230, 230, 230 );
+  --color-background-light-alpha: rgb( 230, 230, 230, 0.9 );
+  --color-text-dark: #333;
+  --color-text-light: #ccc;
+  --color-text-muted-light: #aaa;
+  --color-text-muted-dark: #777;
+  --color-white: #fff;
+  
+  --color-background: var( --color-background-light );
+  --color-background-alt: var( --color-white );
+  --color-background-alpha: var( --color-background-light-alpha );
+  --color-text: var( --color-text-dark );
+  --color-text-alt: var( --color-black );
+  --color-text-muted: var( --color-text-muted-light );
+  
   background-color: rgb(184, 159, 212);
 }
 
@@ -23,42 +41,15 @@ section.content .disclaimer
   font-weight: 600;
 }
 
-@media ( prefers-color-scheme: light )
+body.toggle-color-scheme section.content
 {
-  body.toggle-color-scheme section.content
-  {
-    background-color: rgb(98, 52, 151);
-    color: var( --color-text-light ) !important;
-  }
-  
-  body.toggle-color-scheme section.content .disclaimer
-  {
-    color: rgb(255, 0, 0);
-  }
+  background-color: rgb(98, 52, 151);
+  color: var( --color-text-light ) !important;
 }
 
-@media ( prefers-color-scheme: dark )
+body.toggle-color-scheme section.content .disclaimer
 {
-  section.content
-  {
-    background-color: rgb(98, 52, 151);
-  }
-  
-  body.toggle-color-scheme section.content
-  {
-    background-color: rgb(184, 159, 212);
-    color: var( --color-text-dark ) !important;
-  }
-
-  section.content .disclaimer
-  {
-    color: rgb(241, 109, 109);
-  }
-  
-  body.toggle-color-scheme section.content .disclaimer
-  {
-    color: rgb(255, 0, 0);
-  }
+  color: rgb(255, 0, 0);
 }
 
 section.content #alertBox
