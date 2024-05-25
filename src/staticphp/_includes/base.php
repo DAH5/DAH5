@@ -3,16 +3,14 @@ site_title: StaticPHP
 site_tagline: A Static Site Generator written in PHP. It turns source PHP files into static HTML files.
 content_placeholder: {{ content }}
 stylesheets: /staticphp/assets/css/main.css
-section: StaticPHP
-sectionURL: /staticphp
 current_nav_item: staticphp
 ---
 <?php include 'src/_inc/header.php'; ?>
 
     <div class="staticphp">
-        <header>
-            <h2><a href="/">--- metadata.site_title ---</a></h2>
-        </header>
+        <div class="header">
+            <h2 class="container padding-16"><a href="/">--- metadata.site_title ---</a></h2>
+        </div>
 
         <?php
 
@@ -81,16 +79,20 @@ current_nav_item: staticphp
 
         ?>
 
-        <nav class="w3-bar w3-auto">
-            <?php foreach( $staticphp_nav_items as $main_nav_item ): ?>
+        <div class="container padding-16 inline-block-parent nav">
+            <?php for( $sni = 0; $sni < count( $staticphp_nav_items ); $sni++ ): ?>
+                <?php $main_nav_item = $staticphp_nav_items[ $sni ]; ?>
                 
-            <a href="<?php echo $main_nav_item['url']; ?>" class="w3-bar-item w3-button<?php if( isset( $metadata['staticphp_nav_item'] ) && $metadata['staticphp_nav_item'] == $main_nav_item['id'] ) echo ' w3-border-bottom w3-border-black'; ?>"<?php if( substr( $main_nav_item['url'], 0, 7 ) == "http://" || substr( $main_nav_item['url'], 0, 8 ) == "https://" ) echo ' target="_blank"'; ?>><?php echo $main_nav_item['text']; ?></a>
-            
-            <?php endforeach; ?>
-        </nav>
+                <a href="<?php echo $main_nav_item['url']; ?>" class="<?php if( isset( $metadata['staticphp_nav_item'] ) && $metadata['staticphp_nav_item'] == $main_nav_item['id'] ) echo ' current'; ?>"<?php if( substr( $main_nav_item['url'], 0, 7 ) == "http://" || substr( $main_nav_item['url'], 0, 8 ) == "https://" ) echo ' target="_blank"'; ?>><?php echo $main_nav_item['text']; ?></a>
+                
+                <?php if( $sni < count( $staticphp_nav_items ) - 1 ): ?>
+                    &nbsp;
+                <?php endif; ?>
+            <?php endfor; ?>
+        </div>
 
-        <section class="w3-white">
-            <div class="w3-auto w3-padding">
+        <div class="background-white">
+            <div class="container padding-16">
                 <?php if( isset( $metadata['staticphp_nav_item'] ) && $metadata['staticphp_nav_item'] == "docs" ): ?>
                     <div class="docs">
                         <div class="sidebar">
@@ -100,11 +102,11 @@ current_nav_item: staticphp
                             
                             <p class="toggle-docs-menu-btn"><label for="toggle-docs-menu">Toggle Menu</label></p>
 
-                            <nav class="staticphp-docs">
+                            <div class="nav staticphp-docs">
                                 <?php foreach( $staticphp_docs_navitems as $navitem ): ?>
                                     <a href="<?php echo $navitem['url']; ?>"<?php if( isset( $metadata['docs_nav_item'] ) && $metadata['docs_nav_item'] == $navitem['id'] ) echo ' class="current"'; ?>><?php echo $navitem['text']; ?></a>
                                 <?php endforeach; ?>
-                            </nav>
+                            </div>
                         </div>
 
                         <div class="content">
@@ -115,7 +117,7 @@ current_nav_item: staticphp
                     {{ content }}
                 <?php endif; ?>
             </div>
-        </section>
+        </div>
     </div>
 
 <?php include 'src/_inc/footer.php'; ?>

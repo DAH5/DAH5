@@ -13,7 +13,7 @@
 
 .staticphp b
 {
-    color: var( --color-text ) !important;
+    color: #000000 !important;
 }
 
 .staticphp a[ target="_blank" ]:after
@@ -28,42 +28,25 @@
     max-width: 100%;
 }
 
-.staticphp header
+.staticphp .header
 {
-    background-color: var( --color-theme-primary );
-    margin-inline: -3rem;
-    margin-top: -1rem;
+    background-color: #7A86B8 !important;
     padding: 0.5rem 3rem;
-    width: calc( 100% + 6rem );
-    display: none;
 }
 
-.staticphp header h2 a
+.staticphp .header h2 a
 {
     text-decoration: none;
     color: white;
 }
 
-.staticphp nav.staticphp
+.staticphp .nav a
 {
-    background-color: var( --color-background-alt );
-    display: flex;
-    gap: 1rem;
-    flex-direction: row;
-    margin-inline: -1rem;
-    margin-top: -1rem;
-    margin-bottom: -1rem;
-    width: calc( 100% + 2rem );
-}
-
-.staticphp nav.staticphp a
-{
-    color: var( --color-text );
     text-decoration: none;
     font-weight: 300 !important;
 }
 
-.staticphp nav.staticphp a.current
+.staticphp .nav a.current
 {
     font-weight: bold !important;
 }
@@ -77,7 +60,7 @@
 
 .staticphp section.content a
 {
-    color: var( --color-theme-primary );
+    color: #7A86B8;
     font-weight: bold;
     text-decoration-thickness: 2px;
     text-underline-offset: 4px;
@@ -85,20 +68,19 @@
 
 .staticphp section.content a:hover
 {
-    color: var( --color-theme-secondary );
+    color: #E44D26;
 }
 
 .staticphp section.content code
 {
     padding: 2px 4px;
     border-radius: 4px;
-    background-color: var( --color-background-alt );
     font-size: 0.8rem;
 }
 
 .staticphp section.content b
 {
-    color: var( --color-text );
+    color: #000000;
 }
 
 /* Docs Styles */
@@ -141,13 +123,13 @@
     text-align: center;
 }
 
-.staticphp .docs > .sidebar nav
+.staticphp .docs > .sidebar .nav
 {
     flex-direction: column;
     width: 100%;
 }
 
-.staticphp .docs > .sidebar nav a
+.staticphp .docs > .sidebar .nav a
 {
     padding: 0.5rem 1rem;
     font-size: 0.9rem;
@@ -155,7 +137,7 @@
     color: var( --color-text );
 }
 
-.staticphp .docs > .sidebar nav a.current
+.staticphp .docs > .sidebar .nav a.current
 {
     font-weight: 900;
 }
@@ -235,12 +217,12 @@
     display: none;
 }
 
-.staticphp #toggle-docs-menu ~ nav
+.staticphp #toggle-docs-menu ~ .nav
 {
     display: none;
 }
 
-.staticphp #toggle-docs-menu:checked ~ nav
+.staticphp #toggle-docs-menu:checked ~ .nav
 {
     display: flex;
 }
@@ -286,13 +268,13 @@
         padding: 2rem;
     }
 
-    .staticphp #toggle-docs-menu ~ nav,
-    .staticphp #toggle-docs-menu:checked ~ nav
+    .staticphp #toggle-docs-menu ~ .nav,
+    .staticphp #toggle-docs-menu:checked ~ .nav
     {
         display: flex;
     }
 
-    .staticphp .docs > .sidebar nav a
+    .staticphp .docs > .sidebar .nav a
     {
         padding: 0.5rem 2rem;
     }

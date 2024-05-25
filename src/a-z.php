@@ -4,21 +4,19 @@ current_nav_item: a-z
 layout: src/_inc/base.php
 ---
 
-<header>
-    <div class="w3-auto w3-padding w3-padding-64">
-        <h1 class="w3-center w3-xxxlarge"><b>--- metadata.page_title ---</b></h1>
-        <p class="w3-center w3-xlarge">This page has a complete list of all pages on the DAH5 website. It may also include pages in development with broken features.</p>
-    </div>
-</header>
+<div class="container padding-16 padding-y-64">
+    <h1 class="text-center text-xxxlarge"><b>--- metadata.page_title ---</b></h1>
+    <p class="text-center text-xlarge">This page has a complete list of all pages on the DAH5 website. It may also include pages in development with broken features.</p>
+</div>
 
-<section class="w3-white">
-    <div class="w3-auto w3-padding-64 w3-row-padding">
-        <ul class="w3-quarter w3-ul">
+<div class="background-white">
+    <div class="container padding-y-64">
+        <ul class="quarter ul inline-block">
             <li><h2><b><a href="/analogueradio">Analogue Radio</a></b></h2></li>
             <li><a href="/analogueradio/bbc-radio-4">BBC Radio 4</a></li>
         </ul>
 
-        <ul class="w3-quarter w3-ul">
+        <ul class="quarter ul inline-block">
             <li><h2><b><a href="/">DAH5</a></b></h2></li>
             <li><a href="/fansites">Fan Sites</a></li>
             <li><a href="/favourite-actors-and-actresses">Favourite Actors and Actresses</a></li>
@@ -27,40 +25,40 @@ layout: src/_inc/base.php
             <li><a href="/tools">Tools</a></li>
         </ul>
 
-        <ul class="w3-quarter w3-ul">
+        <ul class="quarter ul inline-block">
             <li><h2><b><a href="/davidhunter">David Hunter</a></b></h2></li>
             <li><a href="/davidhunter/blog">Blog</a></li>
             <li><a href="/davidhunter/projects">Projects</a></li>
         </ul>
 
-        <ul class="w3-quarter w3-ul">
+        <ul class="quarter ul inline-block">
             <li><h2><b><a href="/fansites">Fan Sites</a></b></h2></li>
             <li><a href="/fansites/international-rescue">International Rescue</a></li>
         </ul>
 
-        <ul class="w3-quarter w3-ul">
+        <ul class="quarter ul inline-block">
             <li><h2><b><a href="/games">DAH5 Games</a></b></h2></li>
             <li><a href="/games/love-calculator">Love Calculator</a></li>
         </ul>
 
-        <ul class="w3-quarter w3-ul">
+        <ul class="quarter ul inline-block">
             <li><h2><b><a href="/reference">DAH5 Reference</a></b></h2></li>
             <li><a href="/reference/html">HTML</a></li>
         </ul>
 
-        <ul class="w3-quarter w3-ul">
+        <ul class="quarter ul inline-block">
             <li><h2><b><a href="/staticly">Staticly</a></b></h2></li>
             <li><a href="/staticly/w3css">W3.CSS</a></li>
             <li><a href="/staticly/webfonts">WebFonts</a></li>
         </ul>
         
-        <ul class="w3-quarter w3-ul">
+        <ul class="quarter ul inline-block">
             <li><h2><b><a href="/staticphp">StaticPHP</a></b></h2></li>
             <li><a href="/staticphp/about">About</a></li>
             <li><a href="/staticphp/docs">Docs</a></li>
         </ul>
 
-        <ul class="w3-quarter w3-ul">
+        <ul class="quarter ul inline-block">
             <li><h2><b><a href="/staticphp/docs">StaticPHP Docs</a></b></h2></li>
             <li><a href="/staticphp/docs/functional-blocks">Functional Blocks</a></li>
             <li><a href="/staticphp/docs/getting-started">Getting Started</a></li>
@@ -70,9 +68,9 @@ layout: src/_inc/base.php
             <li><a href="/staticphp/docs/php-files">PHP Files</a></li>
         </ul>
 
-        <ul class="w3-quarter w3-ul">
+        <ul class="quarter ul inline-block">
             <li><h2><b><a href="/tools">DAH5 Tools</a></b></h2></li>
             <li><a href="/tools/find-urls-in-string">Find URLs in String</a></li>
         </ul>
     </div>
-</section>
+</div>

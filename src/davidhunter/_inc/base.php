@@ -9,7 +9,7 @@ current_nav_item: davidhunter
 <?php include 'src/_inc/header.php'; ?>
 
 <header>
-    <div class="w3-auto">
+    <div class="container padding-16">
         <h2><a href="/" class="w3-button"><b>--- metadata.site_title ---</b></a></h2>
     </div>
 </header>
@@ -39,12 +39,16 @@ $dh_nav_items[] = array
 
 ?>
 
-<nav class="w3-bar w3-auto">
-    <?php foreach( $dh_nav_items as $dh_nav_item ): ?>
+<nav class="container padding-16 inline-block-parent nav">
+    <?php for( $dni = 0; $dni < count( $dh_nav_items ); $dni++ ): ?>
+        <?php $dh_nav_item = $dh_nav_items[ $dni ]; ?>
         
-    <a href="<?php echo $dh_nav_item['url']; ?>" class="w3-bar-item w3-button<?php if( isset( $metadata['dh_current_page'] ) && $metadata['dh_current_page'] == $dh_nav_item['id'] ) echo ' w3-bottombar w3-border-gray'; ?>"<?php if( substr( $dh_nav_item['url'], 0, 7 ) == "http://" || substr( $dh_nav_item['url'], 0, 8 ) == "https://" ) echo ' target="_blank"'; ?>><?php echo $dh_nav_item['text']; ?></a>
-    
-    <?php endforeach; ?>
+        <a href="<?php echo $dh_nav_item['url']; ?>" class="<?php if( isset( $metadata['dh_current_page'] ) && $metadata['dh_current_page'] == $dh_nav_item['id'] ) echo ' current'; ?>"<?php if( substr( $dh_nav_item['url'], 0, 7 ) == "http://" || substr( $dh_nav_item['url'], 0, 8 ) == "https://" ) echo ' target="_blank"'; ?>><?php echo $dh_nav_item['text']; ?></a>
+        
+        <?php if( $dni < count( $dh_nav_items ) - 1 ): ?>
+            &nbsp;
+        <?php endif; ?>
+    <?php endfor; ?>
 </nav>
 
 <?php
@@ -54,8 +58,8 @@ if( isset( $metadata['article_author'] ) && $metadata['article_author'] == "Davi
 
 ?>
 
-<main class="w3-white">
-    <div class="w3-auto w3-padding">
+<main class="background-white">
+    <div class="container padding-16">
         <?php if( isset( $metadata['article_title'], $metadata['article_description'], $metadata['article_author'], $metadata['article_date'], $metadata['article_time'] ) ): ?>
             <article class="blog-entry">
                 <div class="metadata">

@@ -1,4 +1,4 @@
-header.dh
+.header.dh
 {
   background-color: var( --color-background-alt );
   box-shadow: 3px 3px 5px var( --color-shadow );
@@ -9,13 +9,13 @@ header.dh
   margin-bottom: 1rem;
 }
 
-header.dh .logo
+.header.dh .logo
 {
   display: flex;
   width: 190px;
 }
 
-header.dh .logo .title
+.header.dh .logo .title
 {
   font-size: 2rem;
   text-transform: uppercase;
@@ -24,12 +24,12 @@ header.dh .logo .title
   line-height: 1;
 }
 
-header.dh .logo .title a
+.header.dh .logo .title a
 {
   text-decoration: none;
 }
 
-header.dh .logo .tagline
+.header.dh .logo .tagline
 {
   color: var( --color-text-muted );
   margin: 0;
@@ -45,18 +45,7 @@ header.dh .logo .tagline
   line-height: 1.1;
 }
 
-header.dh nav
-{
-  background-color: var( --color-background-alt );
-  display: flex;
-  gap: 1rem;
-  flex-direction: row !important;
-  margin: 0 -1rem;
-  margin-top: 0.5rem;
-  justify-content: initial !important;
-}
-
-header.dh nav a
+.nav a
 {
   text-decoration: none;
   font-weight: bold;
@@ -64,8 +53,8 @@ header.dh nav a
   text-transform: uppercase;
 }
 
-header.dh nav a:hover,
-header.dh nav a.current
+.nav a:hover,
+.nav a.current
 {
   text-decoration: underline;
   text-decoration-thickness: 2px;

@@ -1,0 +1,190 @@
+*,
+*::before,
+*::after
+{
+    box-sizing: border-box;
+}
+
+html,
+body
+{
+    font-family: "Poppins", sans-serif;
+    font-size: 16px;
+    margin: 0;
+    padding: 0;
+    color: #1d1d1d;
+}
+
+a
+{
+    color: #1d1d1d;
+}
+
+img
+{
+    border-width: 0px;
+}
+
+.background-light-gray
+{
+    background-color: #f1f1f1;
+}
+
+.background-very-dark
+{
+    background-color: #1d1d1d;
+}
+
+.background-very-dark a
+{
+    color: #f1f1f1;
+}
+
+.background-dark-gray
+{
+    background-color: #616161;
+}
+
+.background-white
+{
+    background-color: #ffffff;
+}
+
+.container
+{
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.padding-16
+{
+    padding: 16px;
+}
+
+.padding-y-24
+{
+    padding-top: 24px;
+    padding-bottom: 24px;
+}
+
+.padding-y-64
+{
+    padding-top: 64px;
+    padding-bottom: 64px;
+}
+
+.text-center
+{
+    text-align: center;
+}
+
+.text-xxxlarge
+{
+    font-size: 48px;
+}
+
+.text-xlarge
+{
+    font-size: 24px;
+}
+
+.inline-block
+{
+    display: inline-block;
+    vertical-align: top;
+}
+
+.inline-block-parent > a,
+.inline-block-parent > span,
+.inline-block-parent > div,
+.inline-block-parent > ul
+{
+    display: inline-block;
+    vertical-align: top;
+}
+
+.middle
+{
+    vertical-align: middle !important;
+}
+
+.third
+{
+    width: 33.33333%;
+}
+
+.quarter
+{
+    width: 25%;
+}
+
+.button
+{
+    padding: 8px 16px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.button.background-dark-gray
+{
+    color: #f1f1f1;
+}
+
+.button.background-dark-gray:hover
+{
+    background-color: #a1a1a1;
+}
+
+.ul
+{
+    list-style: none;
+}
+
+.header-nav a
+{
+    color: #a1a1a1;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.header-nav a:hover
+{
+    text-decoration: underline;
+}
+
+.header-nav a:hover,
+.header-nav a.current
+{
+    color: #f1f1f1;
+}
+
+.header-nav a.current
+{
+    font-weight: bold;
+}
+
+.header-nav .logo,
+.header-nav .logo img
+{
+    width: 140px;
+    vertical-align: middle;
+}
+
+.image
+{
+    max-width: 100%;
+    vertical-align: middle;
+}
+
+.footer a
+{
+    color: #1d1d1d;
+}
+
+.footer-nav .logo,
+.footer-nav .logo img
+{
+    width: 90px;
+    vertical-align: middle;
+}
