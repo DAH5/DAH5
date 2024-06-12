@@ -26,23 +26,23 @@ dh_current_page: blog
 
 <p>Firstly though, you must change the parts at the top of the script to match your situation.</p>
 
-<pre><code>git filter-branch --env-filter '
-OLD_EMAIL="your.name@olddomain.tld"
-NEW_NAME="Your Updated Name"
-NEW_EMAIL="your.name@newdomain.tld"
-
-if [ "$GIT_COMMITTER_EMAIL" = "$OLD_EMAIL" ]
-then
-    export GIT_COMMITER_NAME="$NEW_NAME"
-    export GIT_COMMITER_EMAIL="$NEW_EMAIL"
-fi
-
-if [ "$GIT_AUTHOR_EMAIL" = "$OLD_EMAIL" ]
-then
-    export GIT_AUTHOR_NAME="$NEW_NAME"
-    export GIT_AUTHOR_EMAIL="$NEW_EMAIL"
-fi
-' -- tag-name-filter cat -- --branches --tags</code></pre>
+<pre><code>
+    git filter-branch --env-filter '<br>
+    OLD_EMAIL="your.name@email.tld"<br>
+    CORRECT_NAME="Your Name"<br>
+    CORRECT_EMAIL="your.name@newemail.tld"<br>
+    if [ "$GIT_COMMITTER_EMAIL" = "$OLD_EMAIL" ]<br>
+    then<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;export GIT_COMMITTER_NAME="$CORRECT_NAME"<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;export GIT_COMMITTER_EMAIL="$CORRECT_EMAIL"<br>
+    fi<br>
+    if [ "$GIT_AUTHOR_EMAIL" = "$OLD_EMAIL" ]<br>
+    then<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;export GIT_AUTHOR_NAME="$CORRECT_NAME"<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;export GIT_AUTHOR_EMAIL="$CORRECT_EMAIL"<br>
+    fi<br>
+    ' --tag-name-filter cat -- --branches --tags
+</code></pre>
 
 <p>Copy the above into a text editor of your choice. Modify the details at the top, and then copy and paste it into your terminal / command prompt and hit enter to run the script.</p>
 
