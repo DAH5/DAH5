@@ -1,107 +1,95 @@
 ---
 page_title: Getting Started
-staticphp_nav_item: docs
+current_nav_item: docs
 docs_nav_item: getting-started
 layout: src/staticphp/_includes/base.php
 ---
 
-<h2>--- metadata.page_title ---</h2>
-
-<p>It is super easy to get started with StaticPHP for your next website project.</p>
-
-<p>Before you use StaticPHP, make sure you create your source directory (e.g. src) and put your website files in there, including your PHP files.</p>
-
-<h3>Use the StaticPHP Launcher (Recommended)</h3>
-
-<p>The recommended and easiest way to use StaticPHP is with the Launcher.</p>
-
-<p>The launcher will ensure you are always running the latest StaticPHP version upon each execution, and allow you to save your build configuration for easy execution in future.</p>
+<div class="hero">
+	<div class="container">
+		<h2>--- metadata.page_title ---</h2>
 		
-		<ol>
-			<li>Download the latest StaticPHP Launcher file from GitHub.
-			<ul>
-				<li><a href="https://raw.githubusercontent.com/DavidHunterScot/StaticPHP/master/StaticPHP-Launcher.php" target="_blank">https://raw.githubusercontent.com/DavidHunterScot/StaticPHP/master/StaticPHP-Launcher.php</a>.</li>
-			</ul>
-			<li>Modify the configurable options in that file to suit your project.</li>
-        		<ul>
-        			<li><code>$path_to_source_files</code> = Set this to the path where you have put your source files. A good name for the source directory is src but this is up to you.</li>
-				<li><code>$path_to_public_files</code> = Set this to the path where you wish your generated output files. A good name for the public files is public but this is up to you.</li>
-				<li><code>$paths_to_ignore</code> = Modify this array to include elements that will form parts of paths you wish to ignore.</li>
-				<li><code>$friendly_urls</code> = Setting friendly URLs to false will turn PHP files into their respective HTML files. Setting friendly URLs to true will turn PHP files into their respective directories with an index.html file inside.</li>
-				<li><code>$metadata_delimiter</code> = This will define the start and end lines of metadata and should be set to something you do not intend to use as metadata itself, such as three hyphens (---).</li>
-				<li><code>$minify_html</code> = Setting this to true will make all HTML (and processed PHP to HTML) files become minified.</li>
-				<li><code>$minify_css</code> = Setting this to true will make all CSS files become minified.</li>
-				<li><code>$minify_js</code> = Setting this to true will make all JavaScript files become minified.</li>
-			</ul>
-			<li>Execute the StaticPHP Launcher with the following command: <code>php StaticPHP-Launcher.php</code></li>
-			<li>Check the output log for errors and fix them. Remember to re-execute StaticPHP Launcher after each modification of the source files or the output files may not reflect the changes.</li>
-		</ol>
+		<p>Your next project begins here.</p>
+	</div>
+</div>
 
-		<h3>Use the Command Line</h3>
-		
-		<ol>
-			<li>Download the latest StaticPHP file from GitHub.</li>
-			<ul>
-				<li><a href="https://raw.githubusercontent.com/DavidHunterScot/StaticPHP/master/StaticPHP.php" target="_blank">https://raw.githubusercontent.com/DavidHunterScot/StaticPHP/master/StaticPHP.php</a></li>
-			</ul>
-			<li>Execute StaticPHP with the following command <code>php StaticPHP.php PATH_TO_SOURCE_FILES PATH_TO_PUBLIC_FILES PATH_TO_IGNORE FRIENDLY_URLS_TRUE_OR_FALSE METADATA_DELIMITER_TRIPLE_HYPHENS MINIFY_HTML_TRUE_OR_FALSE MINIFY_CSS_TRUE_OR_FALSE MINIFY_JS_TRUE_OR_FALSE</code></li>
-			<ul>
-				<li>The above command explained:</li>
-				<ul>
-					<li>First part is you wanting to run PHP.</li>
-					<li>The second part is the file you wish PHP to execute.</li>
-					<li>The rest are parameters/arguments with information for StaticPHP. All should be self explanatory, but note the following.</li>
-					<ul>
-						<li>PATH_TO_IGNORE is treated as a string, and therefore can only contain one element.</li>
-						<li>FRIENDLY_URLS_TRUE_OR_FALSE is treated as a boolean, so only true or false is acceptable, anything else will be treated as false.</li>
-						<li>METADATA_DELIMITER_TRIPLE_HYPHENS relates to what defines the start and end lines of metadata. This should be something you don't intend to use as metadata itself, such as three hyphens (---).</li>
-						<li>MINIFY_HTML_TRUE_OR_FALSE is treated as a boolean, so only true or false is acceptable, anything else will be treated as false.</li>
-						<li>MINIFY_CSS_TRUE_OR_FALSE is treated as a boolean, so only true or false is acceptable, anything else will be treated as false.</li>
-						<li>MINIFY_JS_TRUE_OR_FALSE is treated as a boolean, so only true or false is acceptable, anything else will be treated as false.</li>
-					</ul>
-				</ul>
-			</ul>
-			<li>Check the output log for errors and fix them. Remember to re-execute StaticPHP after each modification of the source files or the output files may not reflect the changes.</li>
-		</ol>
-		
-		<h3>Use your own Custom PHP Script</h3>
-		
-		<ol>
-			<li>Download the latest StaticPHP file from GitHub.</li>
-			
-			<ul>
-				<li><a href="https://raw.githubusercontent.com/DavidHunterScot/StaticPHP/master/StaticPHP.php" target="_blank">https://raw.githubusercontent.com/DavidHunterScot/StaticPHP/master/StaticPHP.php</a></li>
-			</ul>
-			
-			<li>
-				<p>In your custom PHP file, include the StaticPHP.php file and create a new instance with the build configuration as parameters/arguments.</p>
+<div class="container">
+	<h3>Step One: Download and Install</h3>
+	
+	<p>Download the latest version to your project folder/directory. It is recommended to download the launcher, as this will keep you up-to-date with the latest StaticPHP features and provide easy customization options.</p>
 
-    			<pre>&lt;?php
+	<h3>Step Two: Develop Your Website</h3>
+
+	<p>Start creating HTML and PHP files, and let StaticPHP handle the rest. Ensure that any file paths, such as those for including other files, are relative to the location of the StaticPHP file.</p>
+	
+	<p>Refer to the <a href="/staticphp/docs/metadata">MetaData</a> feature to explore additional capabilities for your website files.</p>
+
+	<h3>Step Three: Build and Deploy</h3>
+	
+	<p>Run StaticPHP to generate the static version of your website in the output folder/directory.</p>
+
+	<p>If using the launcher, simply run the following command:</p>
+
+	<pre>php StaticPHP-Launcher.php</pre>
+
+	<p>For those using the StaticPHP file itself, there are two options:</p>
+
+	<h4>Using Command-Line Parameters</h4>
+
+	<p>This method is less recommended due to the potential difficulty in remembering configuration options. However, for those who prefer this approach, here’s how to do it:</p>
+
+	<p>Open a terminal in your project directory/folder, and type the following command, adjusting the parameters to suit your project:</p>
+
+	<pre>php StaticPHP.php PATH_TO_INPUT_FILES_DIR PATH_TO_OUTPUT_FILES_DIR PATH_PART_TO_IGNORE FRIENDLY_URLS_BOOL METADATA_DELIMITER MINIFY_HTML_BOOL MINIFY_CSS_BOOL MINIFY_JS_BOOL</pre>
+
+	<ul>
+		<li><code>PATH_TO_INPUT_FILES_DIR</code>: The path relative to StaticPHP that contains your source input files.</li>
+		
+		<li><code>PATH_TO_OUTPUT_FILES_DIR</code>: The path relative to StaticPHP that contains your generated output files.</li>
+		
+		<li><code>PATH_PART_TO_IGNORE</code>: Any string of text in file paths that StaticPHP should ignore as individual files. Useful for PHP includes that you don't want to output.</li>
+		
+		<li><code>FRIENDLY_URLS_BOOL</code>: A boolean (true/false) indicating whether StaticPHP should create friendly URLs (e.g., domain.tld/page) or keep the paths the same as the source (e.g., domain.tld/page.html).</li>
+		
+		<li><code>METADATA_DELIMITER</code>: A delimiter indicating where Metadata starts and ends. See the Metadata page for more details.</li>
+		
+		<li><code>MINIFY_HTML_BOOL</code>: A boolean indicating whether StaticPHP should minify HTML files. This affects only the output files; source files remain unminified.</li>
+		
+		<li><code>MINIFY_CSS_BOOL</code>: A boolean indicating whether StaticPHP should minify CSS files. This affects only the output files; source files remain unminified.</li>
+		
+		<li><code>MINIFY_JS_BOOL</code>: A boolean indicating whether StaticPHP should minify JavaScript files. This affects only the output files; source files remain unminified.</li>
+	</ul>
+
+	<h4>Using a Custom Launcher Script</h4>
+
+	<p>You can create a custom launcher script for more flexibility. Here is an example:</p>
+
+	<pre>
+&lt;?php<br>
 <br>
-<br>include __DIR__ . DIRECTORY_SEPARATOR . 'StaticPHP.php';
+$path_to_input_files_dir = __DIR__ . DIRECTORY_SEPARATOR . 'src';<br>
+$path_to_output_files_dir = __DIR__ . DIRECTORY_SEPARATOR . 'public';<br>
+$path_parts_to_ignore = array( '_includes' );<br>
+$friendly_urls_bool = true;<br>
+$metadata_delimiter = '---';<br>
+$minify_html_bool = true;<br>
+$minify_css_bool = true;<br>
+$minify_js_bool = true;<br>
 <br>
+include __DIR__ . DIRECTORY_SEPARATOR . 'StaticPHP.php';<br>
 <br>
-<br>$path_to_source_files = __DIR__ . DIRECTORY_SEPARATOR . 'SOURCE-FILES';
-<br>
-<br>$path_to_public_files = __DIR__ . DIRECTORY_SEPARATOR . 'PUBLIC-FILES';
-<br>
-<br>$paths_to_ignore = array( 'IGNORE-FILES' );
-<br>
-<br>$friendly_urls = true;
-<br>
-<br>$metadata_delimiter = '---';
-<br>
-<br>$minify_html = false;
-<br>
-<br>$minify_css = false;
-<br>
-<br>$minify_js = false;
-<br>
-<br>
-<br>new StaticPHP( $path_to_source_files, $path_to_public_files, $paths_to_ignore, $friendly_urls, $metadata_delimiter, $minify_html, $minify_css, $minify_js );</pre>
-			</li>
-			
-			<li>Execute your custom script with the following command php CUSTOM-PHP-SCRIPT.php (where CUSTOM-PHP-SCRIPT is the actual filename of your custom script).</li>
-			
-			<li>Check the output log for errors and fix them. Remember to re-execute your custom script after each modification of the source files or the output files may not reflect the changes.</li>
-		</ol>
+new StaticPHP<br>
+(<br>
+&nbsp;&nbsp;&nbsp;&nbsp;$path_to_input_files_dir,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;$path_to_output_files_dir,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;$path_parts_to_ignore,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;$friendly_urls_bool,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;$metadata_delimiter,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;$minify_html_bool,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;$minify_css_bool,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;$minify_js_bool<br>
+);<br>
+	</pre>
+
+	<p>By following these steps, you can get started with StaticPHP and easily build and deploy your static websites. For more detailed information, refer to the accompanying documentation and guides.</p>
+</div>

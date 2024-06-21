@@ -5,7 +5,7 @@ article_author: David Hunter
 article_date: 2023-08-06
 article_time: 00:55
 layout: src/davidhunter/_inc/base.php
-dh_current_page: blog
+current_page: blog
 ---
 
 <p>Back in 2012, I graduated Kilmarnock College with a Higher National Certificate in Computing Software Development.</p>
@@ -14,6 +14,6 @@ dh_current_page: blog
 
 <p>Duration: 1 minute and 29 seconds</p>
 
-<video class="video" poster="<?php echo IMAGES_URL; ?>/videos/Gradulation2012-ProVersion-Thumb.png" preload="none" controls>
-    <source src="<?php echo VIDEOS_URL; ?>/davidhunter/kilmarnockcollege_graduation_2012.mp4" type="video/mp4">
+<video class="video" poster="/assets/images/videos/Gradulation2012-ProVersion-Thumb.png" preload="none" controls>
+    <source src="https://videos.storage.dah5.me.uk/davidhunter/kilmarnockcollege_graduation_2012.mp4" type="video/mp4">
 </video>

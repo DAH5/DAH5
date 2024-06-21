@@ -5,7 +5,7 @@ article_author: David Hunter
 article_date: 2023-02-02
 article_time: 21:21
 layout: src/davidhunter/_inc/base.php
-dh_current_page: blog
+current_page: blog
 ---
 
 <p>Apache is the software used to run a web server, but default installation isn't that secure. Let's harden it!</p>

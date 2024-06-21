@@ -1,9 +1,9 @@
 <?php
 
 if( ! defined( "DOMAIN" ) )
-    define( "DOMAIN", "dah5.com" );
+    define( "DOMAIN", "dah5.me.uk" );
 if( ! defined( "STORAGE_DOMAIN" ) )
-    define( "STORAGE_DOMAIN", "storage.dah5.com" );
+    define( "STORAGE_DOMAIN", "storage." . DOMAIN );
 if( ! defined( "IMAGES_URL" ) )
     define( "IMAGES_URL", "/assets/images" );
 if( ! defined( "VIDEOS_URL" ) )

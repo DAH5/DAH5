@@ -5,7 +5,7 @@ article_author: David Hunter
 article_date: 2022-10-23
 article_time: 01:30
 layout: src/davidhunter/_inc/base.php
-dh_current_page: blog
+current_page: blog
 ---
 
 <p>I have been working hard on new updates to the DAH5 website, also known as my oldest and longest standing website, originally lauched back in April 2005.</p>

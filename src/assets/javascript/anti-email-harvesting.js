@@ -1,4 +1,4 @@
-var email_addresses = document.getElementsByClassName( 'email_address' );
+var email_addresses = document.getElementsByClassName( 'email-address' );
 
 for( let i = 0; i < email_addresses.length; i++ )
 {

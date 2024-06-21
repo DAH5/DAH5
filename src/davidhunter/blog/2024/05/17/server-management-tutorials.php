@@ -5,7 +5,7 @@ article_author: David Hunter
 article_date: 2024-05-17
 article_time: 14:15
 layout: src/davidhunter/_inc/base.php
-dh_current_page: blog
+current_page: blog
 ---
 
 <p>--- metadata.article_description ---</p>

@@ -1,5 +1,5 @@
 ---
-dh_current_page: home
+current_page: home
 layout: src/davidhunter/_inc/base.php
 footer_scripts: /assets/javascript/anti-email-harvesting.js
 ---
@@ -15,7 +15,7 @@ footer_scripts: /assets/javascript/anti-email-harvesting.js
 
         <p>Just send me an email, and I will respond soon.</p>
 
-        <p><span class="email_address">david [dot] hunter [at] dah5 [dot] me [dot] uk</span></p>
+        <p class="email-address">david [dot] hunter [at] dah5 [dot] me [dot] uk</p>
 
         <p>One more thing, if you're not doing much else right now, maybe you could check out my <a href="/davidhunter/blog">blog</a>?</p>
 
@@ -23,6 +23,6 @@ footer_scripts: /assets/javascript/anti-email-harvesting.js
     </div>
 
     <div class="avatar">
-        <img src="<?php echo IMAGES_URL; ?>/avatars/davidhunter_illustration_transparent_1.png">
+        <img src="/assets/images/avatars/davidhunter_illustration_transparent_1.png">
     </div>
 </div>

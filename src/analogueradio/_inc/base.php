@@ -1,26 +1,40 @@
 ---
 content_placeholder: {{ content }}
-current_nav_item: analogueradio
-stylesheets: /assets/w3css/4.15/w3.css::https://w3css.storage.dah5.com/w3-colors-metro.css::/assets/webfonts/poppins/poppins.css::/analogueradio/assets/css/analogueradio.css
 ---
-<?php include 'src/_inc/header.php'; ?>
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <title><?php if( isset( $page_title ) && $page_title ) echo $page_title . " - "; ?>Analogue Radio</title>
+
+        <link rel="stylesheet" type="text/css" href="/assets/w3css/4.15/w3.css">
+        <link rel="stylesheet" type="text/css" href="/assets/w3css/w3-colors-metro.css">
+        <link rel="stylesheet" type="text/css" href="/assets/webfonts/poppins/poppins.css">
+
+        <style type="text/css">
+            body, h1, h2, h3, h4, h5, h6
+            {
+                font-family: "Poppins", sans-serif;
+            }
+        </style>
+    </head>
+
+    <body class="w3-metro-darken">
+        <div class="w3-auto w3-padding w3-black" style="border-radius: 0 0 20px 20px;">
+            <h1><b><a href="/" style="text-decoration: none;">Analoge Radio</a></b></h1>
+            <nav class="w3-bar w3-border-bottom w3-border-white">
+                <a href="/analogueradio" class="w3-bar-item w3-button w3-hover-none w3-hover-text-white"><?php echo isset( $metadata[ 'nav_item' ] ) && $metadata[ 'nav_item' ] == "home" ? '<b>Home</b>' : 'Home' ?></a>
+                <a href="/analogueradio/bbc-radio-4" class="w3-bar-item w3-button w3-hover-none w3-hover-text-white"><?php echo isset( $metadata[ 'nav_item' ] ) && $metadata[ 'nav_item' ] == "bbc-radio-4" ? '<b>BBC Radio 4</b>' : 'BBC Radio 4'; ?></a>
+            </nav>
+            
+            {{ content }}
         </div>
-    </div>
-</section>
 
-<div>
-    <div class="w3-auto w3-padding" style="border-radius: 0 0 20px 20px;">
-        <h1><b><a href="/analogueradio" style="text-decoration: none;">Analoge Radio</a></b></h1>
-        <nav class="w3-bar w3-border-bottom w3-border-white">
-            <a href="/analogueradio" class="w3-bar-item w3-button w3-hover-none w3-hover-text-white"><?php echo isset( $metadata['analogueradio_nav_item'] ) && $metadata['analogueradio_nav_item'] == "home" ? '<b>Home</b>' : 'Home' ?></a>
-            <a href="/analogueradio/bbc-radio-4" class="w3-bar-item w3-button w3-hover-none w3-hover-text-white"><?php echo isset( $metadata['analogueradio_nav_item'] ) && $metadata['analogueradio_nav_item'] == "bbc-radio-4" ? '<b>BBC Radio 4</b>' : 'BBC Radio 4'; ?></a>
-        </nav>
-        
-        {{ content }}
-    </div>
-</div>
-
-<section>
-    <div>
-        <div>
-<?php include 'src/_inc/footer.php'; ?>
+        <footer class="w3-padding w3-center w3-small">
+            <p>Archive by <a href="/davidhunter">David Hunter</a>.</p>
+            <p><a href="/"><img src="/assets/images/logos/dah5-logo-2024-alternate-150x35.png" alt="DAH5 Logo"></a></p>
+        </footer>
+    </body>
+</html>

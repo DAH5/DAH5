@@ -5,7 +5,7 @@ article_author: David Hunter
 article_date: 2022-10-24
 article_time: 01:14
 layout: src/davidhunter/_inc/base.php
-dh_current_page: blog
+current_page: blog
 ---
 
 <h2>The result is now rounded to the nearest whole number.</h2>

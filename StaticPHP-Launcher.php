@@ -79,7 +79,7 @@ $minify_css = true;
 	Set to true to enable, or false to disable. Default is false.
 */
 
-$minify_js = true;
+$minify_js = false;
 
 
 //	END OF CONFIGURABLE OPTIONS
@@ -91,7 +91,7 @@ $minify_js = true;
 
 
 $project_name = "StaticPHP";
-$project_author_username = "DavidHunterScot";
+$project_author_username = "StaticPHP";
 $project_branch = "master";
 
 $path_to_latest_code = "https://raw.githubusercontent.com/" . $project_author_username . "/" . $project_name . "/" . $project_branch . "/" . $project_name . ".php";

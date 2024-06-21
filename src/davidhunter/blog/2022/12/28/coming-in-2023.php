@@ -5,7 +5,7 @@ article_author: David Hunter
 article_date: 2022-12-28
 article_time: 19:00
 layout: src/davidhunter/_inc/base.php
-dh_current_page: blog
+current_page: blog
 ---
 
 <p>In this blog article, I will lay out what I hope the new year will bring.</p>

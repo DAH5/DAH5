@@ -1,5 +1,5 @@
 ---
-dh_current_page: blog
+current_page: blog
 page_title: Blog
 footer_scripts: /davidhunter/assets/js/blog-search.js
 layout: src/davidhunter/_inc/base.php

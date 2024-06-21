@@ -5,7 +5,7 @@ article_author: David Hunter
 article_date: 2022-12-27
 article_time: 14:30
 layout: src/davidhunter/_inc/base.php
-dh_current_page: blog
+current_page: blog
 ---
 
 <p>Hey all, I hope you are having a good festive period surrounded by those that matter to you, and that you are all warm and healthy.</p>

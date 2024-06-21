@@ -1,26 +1,51 @@
 ---
-section: Staticly
-sectionURL: /staticly
-current_nav_item: staticly
-stylesheets: /assets/w3css/4.15/w3.css::/assets/w3css/w3-colors-camo.css::/assets/w3css/w3-colors-metro.css::/staticly/assets/css/staticly.css
+site_name: Staticly
+
+stylesheets: /assets/w3css/4.15/w3.css::/assets/w3css/w3-colors-metro.css::/assets/w3css/w3-colors-camo.css::/webfonts/poppins/poppins.css::/staticly/assets/css/staticly.css
+
 content_placeholder: {{ content }}
 ---
-<?php include 'src/_inc/header.php'; ?>
-        </div>
-    </div>
-</section>
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<nav class="w3-bar" style="background-color: var( --color-background-alt ); color: var( --color-text );">
-    <div class="w3-auto">
-        <a href="/staticly" class="w3-bar-item w3-button w3-hover-none"><?php if( isset( $metadata['staticly_page'] ) && $metadata['staticly_page'] == "home" ) echo '<b>Home</b>'; else echo 'Home'; ?></a>
-        <a href="/staticly/w3css" class="w3-bar-item w3-button w3-hover-none"><?php if( isset( $metadata['staticly_page'] ) && $metadata['staticly_page'] == "w3css" ) echo '<b>W3.CSS</b>'; else echo 'W3.CSS'; ?></a>
-        <a href="/staticly/webfonts" class="w3-bar-item w3-button w3-hover-none"><?php if( isset( $metadata['staticly_page'] ) && $metadata['staticly_page'] == "webfonts" ) echo '<b>WebFonts</b>'; else echo 'WebFonts'; ?></a>
-    </div>
-</nav>
+        <title><?php if( isset( $metadata[ 'page_title' ] ) && $metadata[ 'page_title' ] ) echo $metadata[ 'page_title' ] . " - "; ?><?php echo $metadata[ 'site_name' ]; ?></title>
 
-{{ content }}
+        <?php if( isset( $metadata[ 'stylesheets' ] ) ): ?>
+            <?php foreach( explode( '::', $metadata[ 'stylesheets' ] ) as $stylesheet ): ?>
+                <link rel="stylesheet" type="text/css" href="<?php echo $stylesheet; ?>">
+            <?php endforeach; ?>
+        <?php endif; ?>
+    </head>
 
-<section>
-    <div>
-        <div>
-<?php include 'src/_inc/footer.php'; ?>
+    <body class="w3-camo-black">
+        <header class="w3-black w3-border-bottom w3-border-amber w3-center">
+            <div class="w3-auto">
+                <div class="w3-row">
+                    <div class="w3-left w3-mobile">
+                        <h1><b><a href="/staticly" class="w3-button w3-hover-none w3-hover-text-gray" style="color: var( --color-html-tag );"><span style="color: var( --color-html-bracket );">&lt;</span>--- metadata.site_name ---<span style="color: var( --color-html-bracket );">&gt;</span></a></b></h1>
+                    </div>
+
+                    <div class="w3-right w3-mobile">
+                        <nav class="w3-bar w3-padding-24 w3-large ">
+                            <a href="/staticly" class="w3-bar-item w3-button w3-hover-none w3-hover-text-gray w3-text-gray">Home</a>
+                            <a href="/staticly/w3css" class="w3-bar-item w3-button w3-hover-none w3-hover-text-gray w3-text-gray"><b>W3</b><span class="w3-text-green">&bullet;</span>CSS</a>
+                            <a href="/staticly/webfonts" class="w3-bar-item w3-button w3-hover-none w3-hover-text-gray w3-text-gray"><i>Web<b>Fonts</b></i></a>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        {{ content }}
+
+        <footer class="w3-black w3-text-gray w3-center w3-border-top w3-border-amber w3-small w3-padding-16">
+            <div class="w3-auto w3-row">
+                <p class="w3-half">Copyright &copy; <a href="/davidhunter">David Hunter</a>.</p>
+                <p class="w3-half"><a href="/"><img src="/assets/images/logos/dah5-logo-2024-alternate-150x35.png" alt="DAH5 Logo"></a></p>
+            </div>
+        </footer>
+    </body>
+</html>

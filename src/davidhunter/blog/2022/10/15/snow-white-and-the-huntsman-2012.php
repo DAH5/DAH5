@@ -5,7 +5,7 @@ article_author: David Hunter
 article_date: 2022-10-15
 article_time: 02:42
 layout: src/davidhunter/_inc/base.php
-dh_current_page: blog
+current_page: blog
 ---
 
 <p>Oh wow, what an amazing movie!</p>

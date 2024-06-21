@@ -5,7 +5,7 @@ article_author: David Hunter
 article_date: 2022-10-20
 article_time: 01:00
 layout: src/davidhunter/_inc/base.php
-dh_current_page: blog
+current_page: blog
 ---
 
 <p>My brand new games website is now live!</p>

@@ -5,7 +5,7 @@ article_author: David Hunter
 article_date: 2022-10-18
 article_time: 18:05
 layout: src/davidhunter/_inc/base.php
-dh_current_page: blog
+current_page: blog
 ---
 
 <p>Basicly, it is a personal preference of whether you want to see more white and colors closer to white, or more black and colors closer to black.</p>

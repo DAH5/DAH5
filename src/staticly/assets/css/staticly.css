@@ -8,34 +8,13 @@
     --color-html-text: #ffffff;
 }
 
-html
-{
-    overflow-x: initial;
-}
-
-html, body, h1, h2, h3, h4, h5, h6, p
+h1, h2, h3, h4, h5, h6, p
 {
     font-family: "Poppins", sans-serif;
-}
-
-section.content .container
-{
-    display: none;
-}
-
-nav.w3-bar a,
-nav.w3-bar a:hover
-{
-    color: var( --color-text ) !important;
 }
 
 p.overflow
 {
     overflow-x: auto;
     white-space: nowrap;
-}
-
-.padding-64
-{
-    padding-block: 64px;
 }

@@ -1,92 +1,100 @@
 ---
 page_title: Functional Blocks
-staticphp_nav_item: docs
+current_nav_item: docs
 docs_nav_item: functional-blocks
 layout: src/staticphp/_includes/base.php
 ---
 
-<h2>--- metadata.page_title ---</h2>
+<div class="hero">
+	<div class="container">
+		<h2>--- metadata.page_title ---</h2>
+	</div>
+</div>
 
-<p>These are blocks of code that actually do things! Think of it like using PHP, but without PHP.</p>
+<div class="container">
+    <p>Functional Blocks in StaticPHP allow you to create dynamic content without writing PHP. They are similar to using PHP functions but with a simplified syntax.</p>
 
-<h3>Syntax</h3>
+    <h3>Syntax</h3>
 
-<p>The opening tag uses the same delimiter used for MetaData, followed by the block name, then within round brackets a set of key equals value parameters separated by a comma (parameters can be in any order), and lastly the MetaData delimiter again.</p>
+    <p>A Functional Block starts with an opening tag using the same delimiter as MetaData, followed by the block name, and then a set of key-value parameters within parentheses. The block is closed with an end tag, which is the word "end" followed by the block name, surrounded by the MetaData delimiter.</p>
 
-<p>Close off the block with the end tag, which is the word "end" and the block name surounded by the MetaData delimiter.</p>
+    <p>Here's an example:</p>
 
-<p>Between the opening and close tags, this is where you put the content that will appear whenever the functional block succeeds.</p>
+    <pre>
+        --- func(key = "value", another-key = "another-value") ---<br>
+        <br>
+        Put anything here.<br>
+        <br>
+        --- endfunc ---
+    </pre>
 
-<pre>--- func( key = "value", another-key = "another-value" ) ---
-<br>
-<br>&lt;p&gt;Put anything here.&lt;/p&gt;
-<br>
-<br>--- endfunc ---</pre>
+    <h3>The Loop Functional Block</h3>
 
-<h3>The Loop Functional Block</h3>
+    <p>The <code>loop</code> block allows you to iterate through a list of items and display information for each item as you define.</p>
 
-<p>This block allows you to loop through a list of items and display information related to each item however you want.</p>
+    <h4>Directory Contents</h4>
 
-<h4>Directory Contents</h4>
+    <p>Use the dir parameter to loop through each file in a directory. You can specify an absolute path or a relative path (without a leading slash). Relative paths are relative to the location of the StaticPHP file, not the file containing the loop block.</p>
 
-<p>Use the <code>dir</code> parameter to loop through each file in a directory. You can enter an absolute path here or a relative path by negating the leading slash. For relative paths, these will be relative to StaticPHP and not the file the code is in.</p>
-<p>Then MetaData can be used to set values within each file for you to access within the loop block using MetaData PlaceHolders.</p>
-<p>Note that MetaData placeholders used within the loop use the "loop" prefix instead of "metadata".</p>
+    <p>You can access MetaData within each file using placeholders prefixed with "loop" instead of "metadata."</p>
 
-<h5>Example</h5>
+    <p>Example:</p>
 
-<pre>--- loop( dir = "src/items" ) ---
-<br>
-<br>&lt;p&gt;&lt;b&gt;Item Name:&lt;/b&gt; --- loop.item-name ---&lt;/p&gt;
-<br>
-<br>--- endloop ---</pre>
+    <pre>
+        --- loop(dir = "src/items") ---<br>
+        <br>
+        Item Name: --- loop.item-name ---<br>
+        <br>
+        --- endloop ---
+    </pre>
 
-<p>Please refer to the page on <a href="/staticphp/docs/metadata">MetaData</a> to learn more about setting MetaData in files and how to use placeholders.</p>
+    <p>For more information on setting MetaData in files and using placeholders, refer to the <a href="/staticphp/docs/metadata">MetaData</a> page.</p>
 
-<p>A special MetaData placeholder is available when using the dir parameter and that is <code>uri</code>. This will display the path to the current dir item suitable for use in links.</p>
+    <p>A special placeholder <code>--- loop.uri ---</code> is available when using the <code>dir</code> parameter, displaying the path to the current directory item for use in links.</p>
 
-<p><code>--- loop.uri ---</code></p>
+    <h4>Sorting Order</h4>
 
-<h4>Sorting Order</h4>
+    <p>By default, items are sorted as the filesystem sorts them, typically in ascending order. You can change this by setting the <code>sort</code> parameter to either <code>ascending</code> or <code>descending</code>.</p>
 
-<p>By default, items will be sorted however the filesystem sorts them, which is usually ascending order. You can specify the sort order by setting the <code>sort</code> parameter to either <code>ascending</code> or <code>descending</code>.</p>
+    <h5>Example of sorting using <code>dir</code>:</h5>
 
-<h5>Example of Sort using Dir</h5>
+    <pre>
+        --- loop(dir = "src/items", sort = "descending") ---<br>
+        <br>
+        Item Name: --- loop.item-name ---<br>
+        <br>
+        --- endloop ---
+    </pre>
 
-<pre>--- loop( dir = "src/items", sort = "descending" ) ---
-<br>
-<br>&lt;p&gt;&lt;b&gt;Item Name:&lt;/b&gt; --- loop.item-name ---&lt;/p&gt;
-<br>
-<br>--- endloop ---</pre>
+    <h4>Outputting JSON</h4>
 
-<h4>Outputting JSON</h4>
+    <p>You can make the loop results available as a JSON file by setting the <code>json</code> parameter to the desired file path. Similar to <code>dir</code>, this path can be relative to StaticPHP or absolute.</p>
 
-<p>This feature is useful if you want to make the results of the loop available as a JSON file.</p>
+    <p>Example of JSON output:</p>
 
-<p>Set the <code>json</code> parameter to a path to where you want the JSON file to be located. Similar to the <code>dir</code> parameter, this path can be relative to StaticPHP or be absolute.</p>
+    <pre>
+        --- loop(dir = "src/items", json = "src/api/items.json") ---<br>
+        <br>
+        Item Name: --- loop.item-name ---<br>
+        <br>
+        --- endloop ---
+    </pre>
 
-<h5>Example of JSON using Dir</h5>
+    <h4>Ignoring Items</h4>
 
-<pre>--- loop( dir = "src/items", json = "src/api/items.json" ) ---
-<br>
-<br>&lt;p&gt;&lt;b&gt;Item Name:&lt;/b&gt; --- loop.item-name ---&lt;/p&gt;
-<br>
-<br>--- endloop ---</pre>
+    <p>You can specify additional items for the loop to ignore using the <code>ignores</code> parameter. This parameter takes a semicolon-separated list of items to ignore, optionally with spaces for readability.</p>
 
-<h4>Ignoring Items</h4>
+    <p>Example of ignoring items:</p>
 
-<p>The ignore list defined in your build configuration will automatically be applied, but you may wish to have the loop ignore additional items, that is where the <code>ignores</code> parameter comes into play.</p>
+    <pre>
+        --- loop(dir = "src/items", ignores = "ignore-this; ignore-that") ---<br>
+        <br>
+        Item Name: --- loop.item-name ---<br>
+        <br>
+        --- endloop ---
+    </pre>
 
-<p>Simply define additional items to ignore separated by a semicolon (<code>;</code>). Optionally add spacing to improve readability.</p>
+    <h3>More Features Coming Soon</h3>
 
-<h5>Example of Ignores</h5>
-
-<pre>--- loop( dir = "src/items", ignores = "ignore-this; ignore-that" ) ---
-<br>
-<br>&lt;p&gt;&lt;b&gt;Item Name:&lt;/b&gt; --- loop.item-name ---&lt;/p&gt;
-<br>
-<br>--- endloop ---</pre>
-
-<h3>More Coming in the Future</h3>
-
-<p>For now, this is how things stand, but it is not a complete feature, so please stay tuned to this page and the other doc pages for more on how this feature expands moving forward.</p>
+    <p>This is just the beginning for Functional Blocks in StaticPHP. Stay tuned for updates and additional features in the documentation.</p>
+</div>

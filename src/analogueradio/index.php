@@ -1,6 +1,6 @@
 ---
 page_title: Analogue Radio
-analogueradio_nav_item: home
+nav_item: home
 layout: src/analogueradio/_inc/base.php
 ---
 
