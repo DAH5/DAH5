@@ -1,21 +1,30 @@
 ---
 content_placeholder: CONTENT GOES HERE
 ---
+<?php include 'src/_inc/config.php'; ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" style="background-image: url( '<?php echo IMAGES_URL; ?>/gifs/backgrounds/fireworks_background.gif' );">
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
         <title><?php if( isset( $metadata[ 'page-title' ] ) ) echo $metadata[ 'page-title' ] . ' - '; ?>DAH5</title>
 
-        <link rel="stylesheet" type="text/css" href="/assets/css/base2.css">
+        <link rel="stylesheet" type="text/css" href="/assets/css/base.css">
+
+        <?php if( isset( $metadata[ 'stylesheets' ] ) && $metadata[ 'stylesheets' ] ): ?>
+            <?php $stylesheets = explode( '::', $metadata[ 'stylesheets' ] ); ?>
+            
+            <?php foreach( $stylesheets as $stylesheet ): ?>
+                <link rel="stylesheet" type="text/css" href="<?php echo $stylesheet; ?>">
+            <?php endforeach; ?>
+        <?php endif; ?>
     </head>
 
     <body>
         <div class="container">
             <header>
-                <h1><img src="/assets/images/logos/dah5-logo-2024-alternate-150x35.png" alt="DAH5 Logo"></h1>
+                <h1><img src="<?php echo IMAGES_URL; ?>/logos/dah5-logo-2024-alternate-150x35.png" alt="DAH5 Logo"></h1>
             </header>
 
             <main>
@@ -38,7 +47,7 @@ content_placeholder: CONTENT GOES HERE
 
             <footer>
                 <p>
-                    <img src="/assets/images/gifs/bluline.gif" alt="Line Gif">
+                    <img src="<?php echo IMAGES_URL; ?>/gifs/bluline.gif" alt="Line Gif">
                 </p>
 
                 <p>

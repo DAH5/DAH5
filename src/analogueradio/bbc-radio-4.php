@@ -11,7 +11,7 @@ layout: src/analogueradio/_inc/base.php
 
 <div class="w3-row">
     <div class="w3-col m3">
-        <p><a href="--- loop.uri ---"><img src="/assets/images/analogueradio--- loop.clip-thumbnail-uri ---" class="w3-image w3-round-large"></a></p>
+        <p><a href="--- loop.uri ---"><img src="<?php echo IMAGES_URL; ?>/analogueradio--- loop.clip-thumbnail-uri ---" class="w3-image w3-round-large"></a></p>
     </div>
 
     <div class="w3-col m9 w3-padding w3-padding-16">

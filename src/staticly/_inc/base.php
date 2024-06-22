@@ -1,8 +1,6 @@
 ---
 site_name: Staticly
 
-stylesheets: /assets/w3css/4.15/w3.css::/assets/w3css/w3-colors-metro.css::/assets/w3css/w3-colors-camo.css::/webfonts/poppins/poppins.css::/staticly/assets/css/staticly.css
-
 content_placeholder: {{ content }}
 ---
 <!DOCTYPE html>
@@ -13,11 +11,11 @@ content_placeholder: {{ content }}
 
         <title><?php if( isset( $metadata[ 'page_title' ] ) && $metadata[ 'page_title' ] ) echo $metadata[ 'page_title' ] . " - "; ?><?php echo $metadata[ 'site_name' ]; ?></title>
 
-        <?php if( isset( $metadata[ 'stylesheets' ] ) ): ?>
-            <?php foreach( explode( '::', $metadata[ 'stylesheets' ] ) as $stylesheet ): ?>
-                <link rel="stylesheet" type="text/css" href="<?php echo $stylesheet; ?>">
-            <?php endforeach; ?>
-        <?php endif; ?>
+        <link rel="stylesheet" type="text/css" href="<?php echo W3CSS_URL; ?>/4.15/w3.css">
+        <link rel="stylesheet" type="text/css" href="<?php echo W3CSS_URL; ?>/w3-colors-metro.css">
+        <link rel="stylesheet" type="text/css" href="<?php echo W3CSS_URL; ?>/w3-colors-camo.css">
+        <link rel="stylesheet" type="text/css" href="<?php echo WEBFONTS_URL; ?>/poppins/poppins.css">
+        <link rel="stylesheet" type="text/css" href="/staticly/assets/css/staticly.css">
     </head>
 
     <body class="w3-camo-black">

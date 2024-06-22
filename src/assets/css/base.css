@@ -8,183 +8,168 @@
 html,
 body
 {
-    font-family: "Poppins", sans-serif;
-    font-size: 16px;
-    margin: 0;
-    padding: 0;
-    color: #1d1d1d;
+    font-family: system-ui, sans-serif;
+    font-size: 1rem;
+    color: #cccccc;
 }
 
-a
+html
 {
-    color: #1d1d1d;
-}
-
-img
-{
-    border-width: 0px;
-}
-
-.background-light-gray
-{
-    background-color: #f1f1f1;
-}
-
-.background-very-dark
-{
-    background-color: #1d1d1d;
-}
-
-.background-very-dark a
-{
-    color: #f1f1f1;
-}
-
-.background-dark-gray
-{
-    background-color: #616161;
-}
-
-.background-white
-{
-    background-color: #ffffff;
+    background-color: #000000;
+    background-position: center;
 }
 
 .container
 {
     max-width: 1200px;
-    margin: 0 auto;
+    margin: 0;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0;
 }
 
-.padding-16
+a
 {
-    padding: 16px;
+    color: #ffffff;
+    font-weight: bold;
 }
 
-.padding-y-24
+img
 {
-    padding-top: 24px;
-    padding-bottom: 24px;
+    max-width: 100%;
 }
 
-.padding-y-64
+header
 {
-    padding-top: 64px;
-    padding-bottom: 64px;
+    text-align: center;
+    padding: 2rem;
 }
 
-.text-center
+main
 {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+main nav
+{
+    background-color: rgba( 0, 0, 0, 0.8 );
+    width: 100%;
+    font-size: 1.3rem;
+    border-radius: 1rem;
+}
+
+main nav a
+{
+    display: block;
+    padding: 1rem 2rem;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+main nav a .bullet
+{
+    font-size: 2em;
+    color: #ff0000;
+    vertical-align: middle;
+    margin: 0;
+    padding: 0;
+    margin-right: 1rem;
+}
+
+main nav a:hover .bullet
+{
+    color: #F57C00;
+}
+
+main nav a.current .bullet
+{
+    color: #00ff00;
+}
+
+main section.content
+{
+    background-color: rgba( 0, 0, 0, 0.8 );
+    width: 100%;
+    border-radius: 1rem;
+}
+
+main nav h2,
+main section.content h2
+{
+    text-align: center;
+    font-size: 2rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    background-color: rgba( 245, 124, 0, 1 );
+    margin: 0;
+    padding: 1rem;
+    border-radius: 1rem 1rem 0 0;
+}
+
+main section.content article
+{
+    padding: 1rem;
+    font-size: 1.3rem;
+}
+
+footer
+{
+    text-align: center;
+    padding: 1rem;
+    font-size: 0.8rem;
+    color: #cccccc;
+}
+
+.a-z
+{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    flex-direction: column;
     text-align: center;
 }
 
-.text-xxxlarge
+.a-z ul
 {
-    font-size: 48px;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    font-size: 1rem;
 }
 
-.text-xlarge
+.a-z h4
 {
-    font-size: 24px;
+    font-size: 1.6rem;
 }
 
-.inline-block
+.a-z li > a
 {
-    display: inline-block;
-    vertical-align: top;
+    font-weight: normal;
 }
 
-.inline-block-parent > a,
-.inline-block-parent > span,
-.inline-block-parent > div,
-.inline-block-parent > ul
+@media ( min-width: 800px )
 {
-    display: inline-block;
-    vertical-align: top;
-}
+    main
+    {
+        flex-direction: row;
+    }
 
-.middle
-{
-    vertical-align: middle !important;
-}
+    main nav
+    {
+        width: 450px;
+    }
 
-.third
-{
-    width: 33.33333%;
-}
+    .a-z
+    {
+        flex-direction: row;
+        text-align: left;
+    }
 
-.quarter
-{
-    width: 25%;
-}
-
-.button
-{
-    padding: 8px 16px;
-    border-radius: 4px;
-    text-decoration: none;
-    font-weight: bold;
-}
-
-.button.background-dark-gray
-{
-    color: #f1f1f1;
-}
-
-.button.background-dark-gray:hover
-{
-    background-color: #a1a1a1;
-}
-
-.ul
-{
-    list-style: none;
-}
-
-.header-nav a
-{
-    color: #a1a1a1;
-    text-decoration: none;
-    font-size: 18px;
-}
-
-.header-nav a:hover
-{
-    text-decoration: underline;
-}
-
-.header-nav a:hover,
-.header-nav a.current
-{
-    color: #f1f1f1;
-}
-
-.header-nav a.current
-{
-    font-weight: bold;
-}
-
-.header-nav .logo,
-.header-nav .logo img
-{
-    width: 140px;
-    vertical-align: middle;
-}
-
-.image
-{
-    max-width: 100%;
-    vertical-align: middle;
-}
-
-.footer a
-{
-    color: #1d1d1d;
-}
-
-.footer-nav .logo,
-.footer-nav .logo img
-{
-    width: 90px;
-    vertical-align: middle;
+    .a-z ul
+    {
+        width: calc( 50% - 1rem );
+    }
 }

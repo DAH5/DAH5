@@ -9,9 +9,9 @@ content_placeholder: {{ content }}
 
         <title><?php if( isset( $page_title ) && $page_title ) echo $page_title . " - "; ?>Analogue Radio</title>
 
-        <link rel="stylesheet" type="text/css" href="/assets/w3css/4.15/w3.css">
-        <link rel="stylesheet" type="text/css" href="/assets/w3css/w3-colors-metro.css">
-        <link rel="stylesheet" type="text/css" href="/assets/webfonts/poppins/poppins.css">
+        <link rel="stylesheet" type="text/css" href="<?php echo W3CSS_URL; ?>/4.15/w3.css">
+        <link rel="stylesheet" type="text/css" href="<?php echo W3CSS_URL; ?>/w3-colors-metro.css">
+        <link rel="stylesheet" type="text/css" href="<?php echo WEBFONTS_URL; ?>/poppins/poppins.css">
 
         <style type="text/css">
             body, h1, h2, h3, h4, h5, h6
@@ -33,8 +33,8 @@ content_placeholder: {{ content }}
         </div>
 
         <footer class="w3-padding w3-center w3-small">
-            <p>Archive by <a href="/davidhunter">David Hunter</a>.</p>
-            <p><a href="/"><img src="/assets/images/logos/dah5-logo-2024-alternate-150x35.png" alt="DAH5 Logo"></a></p>
+            <p>Archive by <a href="/davidhunter">David Hunter</a>. <?php include 'src/_inc/poweredby.php'; ?></p>
+            <p><a href="/"><img src="<?php echo IMAGES_URL; ?>/logos/dah5-logo-2024-alternate-150x35.png" alt="DAH5 Logo"></a></p>
         </footer>
     </body>
 </html>

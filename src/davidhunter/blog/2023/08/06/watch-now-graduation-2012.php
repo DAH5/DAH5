@@ -14,6 +14,6 @@ current_page: blog
 
 <p>Duration: 1 minute and 29 seconds</p>
 
-<video class="video" poster="/assets/images/videos/Gradulation2012-ProVersion-Thumb.png" preload="none" controls>
-    <source src="https://videos.storage.dah5.me.uk/davidhunter/kilmarnockcollege_graduation_2012.mp4" type="video/mp4">
+<video class="video" poster="<?php echo IMAGES_URL; ?>/videos/Gradulation2012-ProVersion-Thumb.png" preload="none" controls>
+    <source src="<?php echo VIDEOS_URL; ?>/davidhunter/kilmarnockcollege_graduation_2012.mp4" type="video/mp4">
 </video>

@@ -14,6 +14,6 @@ javascripts: /assets/javascript/anti-email-harvesting.js
 
     <h4>Contact</h4>
     <p>If you wish to get in touch, you can send an email.</p>
-    <p><b class="email-address">contact [at] dah5 [dot] me [dot] uk</b></p>
+    <p><b class="email-address">contact [at] <?php echo str_replace( '.', ' [dot] ', DOMAIN ); ?></b></p>
 </article>
 

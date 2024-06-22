@@ -23,6 +23,6 @@
         ?></div>
 </div>
 
-<video style="width: 100%; aspect-radio: 16 / 9;" controls preload="none" poster="/assets/images/analogueradio--- metadata.clip-thumbnail-uri ---">
-    <source src="https://videos.storage.dah5.me.uk/analogueradio--- metadata.clip-storage-uri ---" type="video/mp4">
+<video style="width: 100%; aspect-radio: 16 / 9;" controls preload="none" poster="<?php echo IMAGES_URL; ?>/analogueradio--- metadata.clip-thumbnail-uri ---">
+    <source src="<?php echo VIDEOS_URL; ?>/analogueradio--- metadata.clip-storage-uri ---" type="video/mp4">
 </video>

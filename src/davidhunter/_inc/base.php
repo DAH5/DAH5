@@ -4,7 +4,7 @@ site_tagline: Internet Services Specialist
 stylesheets: /davidhunter/assets/css/stylesheet.css::/assets/webfonts/poppins/poppins.css
 content_placeholder: {{ content }}
 ---
-
+<?php include 'src/_inc/config.php'; ?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -13,7 +13,7 @@ content_placeholder: {{ content }}
 
         <title><?php if( isset( $metadata['article_title'] ) && $metadata['article_title'] ): echo $metadata['article_title'] . ' - Blog - '; endif; if( isset( $metadata['page_title'] ) && $metadata['page_title'] ) echo $metadata['page_title'] . ' - '; ?><?php echo $metadata['site_title']; ?><?php if( ! isset( $metadata['page_title'] ) && ! isset( $metadata['article_title'] ) ) echo ' - ' . $metadata['site_tagline']; ?></title>
 
-        <link rel="icon" type="image/x-icon" href="/favicon.ico">
+        <link rel="icon" type="image/x-icon" href="/davidhunter/assets/images/favicon.ico">
 
         <?php include __DIR__ . DIRECTORY_SEPARATOR . 'stylesheets.php'; ?>
     </head>
@@ -24,7 +24,7 @@ content_placeholder: {{ content }}
         <?php
 
         if( isset( $metadata['article_author'] ) && $metadata['article_author'] == "David Hunter" )
-            $avatar_url = "/assets/images/avatars/davidhunter_illustration_transparent_1.png";
+            $avatar_url = IMAGES_URL . "/avatars/davidhunter_illustration_transparent_1.png";
 
         ?>
 
