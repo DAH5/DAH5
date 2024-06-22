@@ -221,7 +221,7 @@ a:hover
     display: flex;
     justify-content: space-between;
     gap: 2rem;
-    line-height: 35px;
+    line-height: 20px;
 }
 
 .docs-nav
