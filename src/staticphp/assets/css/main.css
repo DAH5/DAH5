@@ -370,4 +370,22 @@ code
     {
         background-color: #4F5B93;
     }
+
+    .key-features .feature,
+    .features .feature,
+    .howitworks .step
+    {
+        width: 100%;
+    }
+
+    .footer .container
+    {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .hero .call2action .button
+    {
+        display: block;
+    }
 }
