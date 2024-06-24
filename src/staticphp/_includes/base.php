@@ -59,7 +59,7 @@ content_placeholder: {{ content }}
 
         <div class="footer">
             <div class="container">
-                <p class="text">Copyright &copy; <a href="--- metadata.site_author_url ---">--- metadata.site_author ---</a>.<br>StaticPHP is available on <a href="http://github.com/StaticPHP" target="_blank">GitHub</a> and <a href="http://gitlab.com/StaticPHP" target="_blank">GitLab</a>.</p>
+                <p class="text">Copyright &copy; <a href="--- metadata.site_author_url ---">--- metadata.site_author ---</a>.<br>StaticPHP is available on <a href="http://github.com/DAH5/StaticPHP" target="_blank">GitHub</a> and <a href="http://gitlab.com/DAH5/StaticPHP" target="_blank">GitLab</a>.</p>
                 <p class="logo"><a href="/"><img src="<?php echo IMAGES_URL; ?>/logos/dah5-logo-2024-alternate-150x35.png" alt="DAH5 Logo"></a></p>
             </div>
         </div>
