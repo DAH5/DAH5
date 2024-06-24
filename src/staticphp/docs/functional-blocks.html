@@ -94,6 +94,36 @@ layout: src/staticphp/_includes/base.php
         --- endloop ---
     </pre>
 
+    <h3>The If Functional Block</h3>
+
+    <p>The <code>if</code> functional block allows you to perform conditional checks on MetaData.</p>
+
+    <h4>Example of Use</h4>
+
+    <p>Assume you have the following MetaData at the top of your home page file, indicating that this page is the home page.</p>
+
+    <pre>
+        ---<br>
+        current-page: home<br>
+        ---
+    </pre>
+
+    <p>You can perform a check that the current page is the home page using the following <code>if</code> functional block.</p>
+
+    <pre>
+        ---&nbsp;if( current-page == "home" )&nbsp;---<br>
+            &lt;p&gt;This is the home page.&lt;/p&gt;<br>
+        ---&nbsp;endif&nbsp;---
+    </pre>
+
+    <p>When the condition is true, it will output the content inside.</p>
+
+    <pre>
+        &lt;p&gt;This is the home page.&lt;/p&gt;
+    </pre>
+
+    <p>It is currently limited to this basic functionality. The functionality may get extended in the future.</p>
+
     <h3>More Features Coming Soon</h3>
 
     <p>This is just the beginning for Functional Blocks in StaticPHP. Stay tuned for updates and additional features in the documentation.</p>
