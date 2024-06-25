@@ -51,6 +51,7 @@ layout: src/_inc/layout.php
             <li><a href="/staticphp/docs/functional-blocks">Functional Blocks</a></li>
             <li><a href="/staticphp/docs/getting-started">Getting Started</a></li>
             <li><a href="/staticphp/docs/html-files">HTML Files</a></li>
+            <li><a href="/staticphp/docs/markdown-files">Markdown Files</a></li>
             <li><a href="/staticphp/docs/metadata">MetaData</a></li>
             <li><a href="/staticphp/docs/php-files">PHP Files</a></li>
         </ul>

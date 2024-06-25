@@ -47,6 +47,7 @@ content_placeholder: {{ content }}
                             <li><a href="/staticphp/docs/customisation"<?php if( isset( $metadata[ 'docs_nav_item' ] ) && $metadata[ 'docs_nav_item' ] == 'customisation' ) echo ' class="current"'; ?>>Customisation</a></li>
                             <li><a href="/staticphp/docs/html-files"<?php if( isset( $metadata[ 'docs_nav_item' ] ) && $metadata[ 'docs_nav_item' ] == 'html-files' ) echo ' class="current"'; ?>>HTML Files</a></li>
                             <li><a href="/staticphp/docs/php-files"<?php if( isset( $metadata[ 'docs_nav_item' ] ) && $metadata[ 'docs_nav_item' ] == 'php-files' ) echo ' class="current"'; ?>>PHP Files</a></li>
+                            <li><a href="/staticphp/docs/markdown-files"<?php if( isset( $metadata[ 'docs_nav_item' ] ) && $metadata[ 'docs_nav_item' ] == 'markdown-files' ) echo ' class="current"'; ?>>Markdown Files</a></li>
 
                             <div class="clearfloat"></div>
                         </ul>
