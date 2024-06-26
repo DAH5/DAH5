@@ -1,0 +1,79 @@
+*,
+*::before,
+*::after
+{
+    box-sizing: border-box;
+}
+
+html,
+body
+{
+    font-family: system-ui, sans-serif;
+    font-size: 1rem;
+}
+
+html
+{
+    background-image: url( '/start/assets/images/wallpapers/purple-abstract-wallpaper-1.jpg' );
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 100%;
+}
+
+.logo
+{
+    text-align: center;
+    font-size: 28px;
+    line-height: 35px;
+    color: #ffffff;
+}
+
+.logo img
+{
+    vertical-align: middle;
+}
+
+.container
+{
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+#queryTXT
+{
+    font-size: 1.5rem;
+    padding: 1.5rem;
+    border-radius: 2rem 1rem;
+    width: 100%;
+    margin: 4rem 0;
+}
+
+#queryTXT:focus
+{
+    outline: 4px solid #ff008c;
+}
+
+.buttons
+{
+    text-align: center;
+}
+
+.buttons .button
+{
+    font-size: 1.3rem;
+    padding: 1.5rem 2rem;
+    border: 1px solid #ffffff;
+    border-radius: 1.5rem 1rem;
+    font-weight: bold;
+    background-color: #582989;
+    color: #ffffff;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+#searchBTN
+{
+    background-color: #ff008c;
+}
