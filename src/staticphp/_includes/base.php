@@ -56,7 +56,22 @@ content_placeholder: {{ content }}
             </div>
         <?php endif; ?>
 
+        <?php if( isset( $metadata[ 'current_nav_item' ] ) && $metadata[ 'current_nav_item' ] == "docs" ): ?>
+            <div class="hero">
+                <div class="container">
+                    <h2>--- metadata.page_title ---</h2>
+                </div>
+            </div>
+
+            <div class="container">
+
+        <?php endif; ?>
+
         {{ content }}
+
+        <?php if( isset( $metadata[ 'current_nav_item' ] ) && $metadata[ 'current_nav_item' ] == "docs" ): ?>
+            </div>
+        <?php endif; ?>
 
         <div class="footer">
             <div class="container">

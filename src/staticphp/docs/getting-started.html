@@ -5,66 +5,57 @@ docs_nav_item: getting-started
 layout: src/staticphp/_includes/base.php
 ---
 
-<div class="hero">
-	<div class="container">
-		<h2>--- metadata.page_title ---</h2>
-		
-		<p>Your next project begins here.</p>
-	</div>
-</div>
+<h3>Step One: Download and Install</h3>
 
-<div class="container">
-	<h3>Step One: Download and Install</h3>
+<p>Download the latest version to your project folder/directory. It is recommended to download the launcher, as this will keep you up-to-date with the latest StaticPHP features and provide easy customization options.</p>
+
+<h3>Step Two: Develop Your Website</h3>
+
+<p>Start creating HTML and PHP files, and let StaticPHP handle the rest. Ensure that any file paths, such as those for including other files, are relative to the location of the StaticPHP file.</p>
+
+<p>Refer to the <a href="/staticphp/docs/metadata">MetaData</a> feature to explore additional capabilities for your website files.</p>
+
+<h3>Step Three: Build and Deploy</h3>
+
+<p>Run StaticPHP to generate the static version of your website in the output folder/directory.</p>
+
+<p>If using the launcher, simply run the following command:</p>
+
+<pre>php StaticPHP-Launcher.php</pre>
+
+<p>For those using the StaticPHP file itself, there are two options:</p>
+
+<h4>Using Command-Line Parameters</h4>
+
+<p>This method is less recommended due to the potential difficulty in remembering configuration options. However, for those who prefer this approach, here’s how to do it:</p>
+
+<p>Open a terminal in your project directory/folder, and type the following command, adjusting the parameters to suit your project:</p>
+
+<pre>php StaticPHP.php PATH_TO_INPUT_FILES_DIR PATH_TO_OUTPUT_FILES_DIR PATH_PART_TO_IGNORE FRIENDLY_URLS_BOOL METADATA_DELIMITER MINIFY_HTML_BOOL MINIFY_CSS_BOOL MINIFY_JS_BOOL</pre>
+
+<ul>
+	<li><code>PATH_TO_INPUT_FILES_DIR</code>: The path relative to StaticPHP that contains your source input files.</li>
 	
-	<p>Download the latest version to your project folder/directory. It is recommended to download the launcher, as this will keep you up-to-date with the latest StaticPHP features and provide easy customization options.</p>
-
-	<h3>Step Two: Develop Your Website</h3>
-
-	<p>Start creating HTML and PHP files, and let StaticPHP handle the rest. Ensure that any file paths, such as those for including other files, are relative to the location of the StaticPHP file.</p>
+	<li><code>PATH_TO_OUTPUT_FILES_DIR</code>: The path relative to StaticPHP that contains your generated output files.</li>
 	
-	<p>Refer to the <a href="/staticphp/docs/metadata">MetaData</a> feature to explore additional capabilities for your website files.</p>
-
-	<h3>Step Three: Build and Deploy</h3>
+	<li><code>PATH_PART_TO_IGNORE</code>: Any string of text in file paths that StaticPHP should ignore as individual files. Useful for PHP includes that you don't want to output.</li>
 	
-	<p>Run StaticPHP to generate the static version of your website in the output folder/directory.</p>
+	<li><code>FRIENDLY_URLS_BOOL</code>: A boolean (true/false) indicating whether StaticPHP should create friendly URLs (e.g., domain.tld/page) or keep the paths the same as the source (e.g., domain.tld/page.html).</li>
+	
+	<li><code>METADATA_DELIMITER</code>: A delimiter indicating where Metadata starts and ends. See the Metadata page for more details.</li>
+	
+	<li><code>MINIFY_HTML_BOOL</code>: A boolean indicating whether StaticPHP should minify HTML files. This affects only the output files; source files remain unminified.</li>
+	
+	<li><code>MINIFY_CSS_BOOL</code>: A boolean indicating whether StaticPHP should minify CSS files. This affects only the output files; source files remain unminified.</li>
+	
+	<li><code>MINIFY_JS_BOOL</code>: A boolean indicating whether StaticPHP should minify JavaScript files. This affects only the output files; source files remain unminified.</li>
+</ul>
 
-	<p>If using the launcher, simply run the following command:</p>
+<h4>Using a Custom Launcher Script</h4>
 
-	<pre>php StaticPHP-Launcher.php</pre>
+<p>You can create a custom launcher script for more flexibility. Here is an example:</p>
 
-	<p>For those using the StaticPHP file itself, there are two options:</p>
-
-	<h4>Using Command-Line Parameters</h4>
-
-	<p>This method is less recommended due to the potential difficulty in remembering configuration options. However, for those who prefer this approach, here’s how to do it:</p>
-
-	<p>Open a terminal in your project directory/folder, and type the following command, adjusting the parameters to suit your project:</p>
-
-	<pre>php StaticPHP.php PATH_TO_INPUT_FILES_DIR PATH_TO_OUTPUT_FILES_DIR PATH_PART_TO_IGNORE FRIENDLY_URLS_BOOL METADATA_DELIMITER MINIFY_HTML_BOOL MINIFY_CSS_BOOL MINIFY_JS_BOOL</pre>
-
-	<ul>
-		<li><code>PATH_TO_INPUT_FILES_DIR</code>: The path relative to StaticPHP that contains your source input files.</li>
-		
-		<li><code>PATH_TO_OUTPUT_FILES_DIR</code>: The path relative to StaticPHP that contains your generated output files.</li>
-		
-		<li><code>PATH_PART_TO_IGNORE</code>: Any string of text in file paths that StaticPHP should ignore as individual files. Useful for PHP includes that you don't want to output.</li>
-		
-		<li><code>FRIENDLY_URLS_BOOL</code>: A boolean (true/false) indicating whether StaticPHP should create friendly URLs (e.g., domain.tld/page) or keep the paths the same as the source (e.g., domain.tld/page.html).</li>
-		
-		<li><code>METADATA_DELIMITER</code>: A delimiter indicating where Metadata starts and ends. See the Metadata page for more details.</li>
-		
-		<li><code>MINIFY_HTML_BOOL</code>: A boolean indicating whether StaticPHP should minify HTML files. This affects only the output files; source files remain unminified.</li>
-		
-		<li><code>MINIFY_CSS_BOOL</code>: A boolean indicating whether StaticPHP should minify CSS files. This affects only the output files; source files remain unminified.</li>
-		
-		<li><code>MINIFY_JS_BOOL</code>: A boolean indicating whether StaticPHP should minify JavaScript files. This affects only the output files; source files remain unminified.</li>
-	</ul>
-
-	<h4>Using a Custom Launcher Script</h4>
-
-	<p>You can create a custom launcher script for more flexibility. Here is an example:</p>
-
-	<pre>
+<pre>
 &lt;?php<br>
 <br>
 $path_to_input_files_dir = __DIR__ . DIRECTORY_SEPARATOR . 'src';<br>
@@ -89,7 +80,6 @@ new StaticPHP<br>
 &nbsp;&nbsp;&nbsp;&nbsp;$minify_css_bool,<br>
 &nbsp;&nbsp;&nbsp;&nbsp;$minify_js_bool<br>
 );<br>
-	</pre>
+</pre>
 
-	<p>By following these steps, you can get started with StaticPHP and easily build and deploy your static websites. For more detailed information, refer to the accompanying documentation and guides.</p>
-</div>
+<p>By following these steps, you can get started with StaticPHP and easily build and deploy your static websites. For more detailed information, refer to the accompanying documentation and guides.</p>
