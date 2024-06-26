@@ -31,11 +31,11 @@ content_placeholder: CONTENT GOES HERE
                 <nav>
                     <h2>MENU</h2>
 
-                    <a href="/"--- if( main-nav-item == "home" ) ---  class="current"--- endif ---><span class="bullet">&bullet;</span> Home</a>
-                    <a href="/about"--- if( main-nav-item == "about" ) ---  class="current"--- endif ---><span class="bullet">&bullet;</span> About</a>
-                    <a href="/games"--- if( main-nav-item == "games" ) ---  class="current"--- endif ---><span class="bullet">&bullet;</span> Games</a>
-                    <a href="/tools"--- if( main-nav-item == "tools" ) ---  class="current"--- endif ---><span class="bullet">&bullet;</span> Tools</a>
-                    <a href="/a-z"--- if( main-nav-item == "a-z" ) ---  class="current"--- endif ---><span class="bullet">&bullet;</span> A - Z</a>
+                    <a href="/"--- if( main-nav-item == "home" ) --- class="current"--- endif ---><span class="bullet">&bullet;</span> Home</a>
+                    <a href="/about"--- if( main-nav-item == "about" ) --- class="current"--- endif ---><span class="bullet">&bullet;</span> About</a>
+                    <a href="/games"--- if( main-nav-item == "games" ) --- class="current"--- endif ---><span class="bullet">&bullet;</span> Games</a>
+                    <a href="/tools"--- if( main-nav-item == "tools" ) --- class="current"--- endif ---><span class="bullet">&bullet;</span> Tools</a>
+                    <a href="/a-z"--- if( main-nav-item == "a-z" ) --- class="current"--- endif ---><span class="bullet">&bullet;</span> A - Z</a>
                 </nav>
 
                 <section class="content">
