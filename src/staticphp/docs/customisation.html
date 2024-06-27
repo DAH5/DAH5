@@ -13,17 +13,17 @@ layout: src/staticphp/_includes/base.php
 
 <p>The input directory is where you put all your source files. By default, this is a folder named <code>src</code> located relative to StaticPHP. You can change this to any directory you prefer.</p>
 
-<p>To specify your input directory, set <code>PATH_TO_INPUT_FILES_DIR</code> in your build configuration to the path where your source files are located.</p>
+<p>To specify your input directory, set <code>source_dir_path</code> in your build configuration to the path where your source files are located.</p>
 
 <h3>Output Directory</h3>
 
 <p>The output directory is where StaticPHP places the generated output files after processing. By default, this is a folder named <code>public</code> located relative to StaticPHP. You can change this to any directory you prefer.</p>
 
-<p>To specify your output directory, set <code>PATH_TO_OUTPUT_FILES_DIR</code> in your build configuration to the path where you want StaticPHP to put your generated output files.</p>
+<p>To specify your output directory, set <code>output_dir_path</code> in your build configuration to the path where you want StaticPHP to put your generated output files.</p>
 
 <h3>Ignoring Files</h3>
 
-<p>Sometimes you have files used only within your source files, such as configuration and include files, that you don't want processed as individual pages. You can tell StaticPHP to ignore these by placing them inside a folder and setting the name of that folder as a path part to ignore.</p>
+<p>Sometimes you have files used only within your source files, such as configuration and include files, that you don't want processed as individual pages. You can tell StaticPHP to ignore these by placing them inside a folder and setting the name of that folder as a path part to ignore under `paths_to_ignore` in your build configuration.</p>
 
 <p>If using the command line option, you can specify one path part to ignore. If using the included launcher script or a custom launcher script, you can set this as an array of path parts.</p>
 
@@ -33,11 +33,11 @@ layout: src/staticphp/_includes/base.php
 
 <p>Enhance user experience and improve SEO by enabling StaticPHP's Friendly URLs feature. This feature creates URLs like <code>domain.tld/page</code> instead of <code>domain.tld/page.html</code>.</p>
 
-<p>Set <code>FRIENDLY_URLS_BOOL</code> in your build configuration to <code>true</code> to enable or <code>false</code> to disable Friendly URLs.</p>
+<p>Set <code>friendly_urls</code> in your build configuration to <code>true</code> to enable or <code>false</code> to disable Friendly URLs.</p>
 
 <h3>MetaData Delimiter</h3>
 
-<p>By default, StaticPHP uses a triple hyphen delimiter (<code>---</code>) for MetaData, but you can change this in your build configuration.</p>
+<p>By default, StaticPHP uses a triple hyphen delimiter (<code>---</code>) for MetaData, but you can change this in your build configuration under <code>metadata_delimiter</code>.</p>
 
 <p>For more details, refer to the <a href="/staticphp/docs/metadata">MetaData</a> guide.</p>
 
@@ -47,7 +47,7 @@ layout: src/staticphp/_includes/base.php
 
 <p>The code minification feature removes unnecessary spacing from your generated files, making them as small as possible while preserving content integrity. Your source files remain unaffected.</p>
 
-<p>You can choose which types of files to minify (<code>HTML</code>, <code>CSS</code>, <code>JS</code>) in your build configuration.</p>
+<p>You can choose which types of files to minify (<code>HTML</code>, <code>CSS</code>, <code>JS</code>) in your build configuration, by setting <code>minify_html</code>, <code>minify_css</code>, and <code>minify_js</code> to true or false.</p>
 
 <hr>
 
