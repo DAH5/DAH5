@@ -71,9 +71,20 @@ html
     color: #ffffff;
     text-decoration: none;
     cursor: pointer;
+    display: block;
+    width: 100%;
 }
 
 #searchBTN
 {
     background-color: #ff008c;
+}
+
+@media ( min-width: 800px )
+{
+    .buttons .button
+    {
+        display: inline;
+        width: auto;
+    }
 }
