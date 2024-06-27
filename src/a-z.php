@@ -18,6 +18,7 @@ layout: src/_inc/layout.php
             <li><a href="/a-z">A - Z</a></li>
             <li><a href="/favourite-actors-and-actresses">Favourite Actors and Actresses</a></li>
             <li><a href="/games">Games</a></li>
+            <li><a href="/start">Start</a></li>
             <li><a href="/tools">Tools</a></li>
         </ul>
 
