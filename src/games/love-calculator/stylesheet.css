@@ -1,0 +1,93 @@
+*,
+*::before,
+*::after
+{
+    box-sizing: border-box;
+}
+
+html,
+body
+{
+    font-family: system-ui, sans-serif;
+    font-size: 1.1rem;
+}
+
+html
+{
+    background-image: url( 'hearts.gif' );
+    background-color: #ffddf9;
+    color: #333333;
+    min-height: 100%;
+}
+
+a:link,
+a:visited
+{
+    color: #000000;
+    text-decoration: underline;
+    font-weight: bold;
+}
+
+a:hover,
+a:active
+{
+    text-decoration: none;
+}
+
+.love-calculator
+{
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 1rem;
+    background-color: #ffddf9;
+    border: 6px solid #ff9ced;
+    border-radius: 1rem;
+}
+
+.logo
+{
+    margin: 0;
+    font-size: 2rem;
+    font-weight: bold;
+    text-align: center;
+}
+
+.logo a
+{
+    text-decoration: none;
+}
+
+h1
+{
+    text-align: center;
+    margin: 0;
+}
+
+hr
+{
+    border-color: #ff9ced;
+    border-style: solid;
+    border-width: 3px;
+    margin-left: -1rem;
+    margin-right: -1rem;
+}
+
+.input
+{
+    padding: 1rem;
+    width: 100%;
+    min-height: 65px;
+    background-color: #ff9ced;
+    border-radius: 1rem;
+}
+
+.button
+{
+    background-color: #ff9ced;
+    color: #000000;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 1rem;
+    border-width: 0;
+}
