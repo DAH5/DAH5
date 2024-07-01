@@ -1,1 +1,1 @@
-Powered by <a href="/staticphp">StaticPHP</a> and <a href="https://pages.cloudflare.com" target="_blank">Cloudflare Pages</a>.</a>
+Powered by <a href="/staticphp">StaticPHP</a>.</a>
