@@ -27,8 +27,8 @@ function handleKeyPress( e )
 
 function calculate()
 {
-    var personOne = PersonOneTXT.innerText;
-    var personTwo = PersonTwoTXT.innerText;
+    var personOne = PersonOneTXT.innerText.trim();
+    var personTwo = PersonTwoTXT.innerText.trim();
 
     var score = 0;
 
