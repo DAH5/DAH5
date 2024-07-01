@@ -115,7 +115,31 @@ layout: src/staticphp/_includes/base.php
     &lt;p&gt;This is the home page.&lt;/p&gt;
 </pre>
 
-<p>It is currently limited to this basic functionality. The functionality may get extended in the future.</p>
+<h4>Checking the Key Only</h4>
+
+<p>The IF functional block can be used to only check if the key exists. Assume you want to output the page title, and have the following MetaData...</p>
+
+<pre>
+    ---<br>
+    page-title: Welcome<br>
+    ---
+</pre>
+
+<p>You want to check if there is a title before displaying it, so you have the following if functional block...</p>
+
+<pre>
+    ---&nbsp;if( page-title )&nbsp;---<br>
+        &lt;h1&gt;--- metadata.page-title ---&lt;/h1&gt;<br>
+    ---&nbsp;endif&nbsp;---
+</pre>
+
+<p>When the condition is true, it will output the content inside.</p>
+
+<pre>
+    &lt;h1&gt;Welcome&lt;/h1&gt;
+</pre>
+
+<p>The if functional block is currently limited to this basic functionality. The functionality may get extended in the future.</p>
 
 <h3>More Features Coming Soon</h3>
 
