@@ -19,12 +19,20 @@ $games = array
 
 ?>
 
-<article>
-    <p>Here are a selection of games I have created over time.</p>
+<section class="minisite-header">
+    <div class="container">
+        <h1>Games</h1>
+    </div>
+</section>
 
-    <ul>
-        <?php foreach( $games as $game ): ?>
-            <li><a href="<?php echo $game[ 'url' ]; ?>"><?php echo $game[ 'title' ]; ?></a> - <?php echo $game[ 'description' ]; ?></li>
-        <?php endforeach; ?>
-    </ul>
-</article>
+<section style="padding: 64px 0px;">
+    <div class="container">
+        <p>Here are a selection of games I have created over time.</p>
+        
+        <ul>
+            <?php foreach( $games as $game ): ?>
+                <li><a href="<?php echo $game[ 'url' ]; ?>"><?php echo $game[ 'title' ]; ?></a> - <?php echo $game[ 'description' ]; ?></li>
+            <?php endforeach; ?>
+        </ul>
+    </div>
+</section>

@@ -1,7 +1,7 @@
 ---
 current_page: home
 layout: src/davidhunter/_inc/base.php
-footer_scripts: /assets/javascript/anti-email-harvesting.js
+javascripts: /assets/javascript/anti-email-harvesting.js
 ---
 
 <div class="home_hero">

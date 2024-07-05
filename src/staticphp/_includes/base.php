@@ -4,19 +4,11 @@ site_tagline: Fast and Simple Static Site Generator
 site_author: David Hunter
 site_author_url: /davidhunter/
 content_placeholder: {{ content }}
+stylesheets: /staticphp/assets/css/main.css
 ---
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        
-        <title><?php if( isset( $metadata[ 'page_title' ] ) && $metadata[ 'page_title' ] ) echo $metadata[ 'page_title' ] . ' - '; ?>--- metadata.site_title --- - --- metadata.site_tagline ---</title>
+<?php include 'src/_inc/header.php'; ?>
 
-        <link rel="stylesheet" type="text/css" href="/staticphp/assets/css/main.css">
-    </head>
-
-    <body>
+    <div class="staticphp">
         <div class="header">
             <div class="container">
                 <div class="logo">
@@ -75,9 +67,9 @@ content_placeholder: {{ content }}
 
         <div class="footer">
             <div class="container">
-                <p class="text">Copyright &copy; <a href="--- metadata.site_author_url ---">--- metadata.site_author ---</a>.<br>StaticPHP is available on <a href="http://github.com/DAH5/StaticPHP" target="_blank">GitHub</a> and <a href="http://gitlab.com/DAH5/StaticPHP" target="_blank">GitLab</a>.</p>
-                <p class="logo"><a href="/"><img src="<?php echo IMAGES_URL; ?>/logos/dah5-logo-2024-alternate-150x35.png" alt="DAH5 Logo"></a></p>
+                <p class="text">StaticPHP is available on <a href="http://github.com/DAH5/StaticPHP" target="_blank">GitHub</a> and <a href="http://gitlab.com/DAH5/StaticPHP" target="_blank">GitLab</a>.</p>
             </div>
         </div>
-    </body>
-</html>
+    </div>
+
+<?php include 'src/_inc/footer.php'; ?>

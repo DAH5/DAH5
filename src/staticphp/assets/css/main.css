@@ -1,63 +1,60 @@
-*,
-*::before,
-*::after
+.staticphp
 {
-    box-sizing: border-box;
-}
-
-html,
-body
-{
-    font-family: system-ui, sans-serif;
-    font-size: 16px;
-    margin: 0px;
-    padding: 0px;
     line-height: 1.8;
+    background-color: #ffffff;
 }
 
-.container
-{
-    max-width: 1200px;
-    margin: auto;
-    padding: 16px;
-}
-
-a
+.staticphp a
 {
     color: #4F5B93;
     font-weight: bold;
 }
 
-a:hover
+.staticphp a:hover
 {
     color: #7A86B8;
 }
 
-.header
+.staticphp .header
 {
-    background-color: #4F5B93;
     border-bottom: 6px solid #7A86B8;
-    color: #ffffff;
 }
 
-.header a
+.staticphp .header a
 {
-    color: #ffffff;
     text-decoration: none;
 }
 
-.header .logo
+.staticphp .header,
+.staticphp .footer
+{
+    color: #ffffff;
+    background-color: #4F5B93;
+}
+
+.staticphp .header a,
+.staticphp .footer a
+{
+    color: #ffffff;
+}
+
+.staticphp .footer
+{
+    border-top: 6px solid #7A86B8;
+}
+
+.staticphp .header .logo
 {
     float: left;
 }
 
-.header .logo h1
+.staticphp .header .logo h1
 {
     margin: 0px;
     padding: 0px;
 }
 
-.header .navbar
+.staticphp .header .navbar
 {
     float: right;
     list-style-type: none;
@@ -67,25 +64,25 @@ a:hover
     padding-top: 8px;
 }
 
-.header .navbar li
+.staticphp .header .navbar li
 {
     display: inline;
     padding-left: 16px;
 }
 
-.header .navbar a:hover,
-.header .navbar a.current
+.staticphp .header .navbar a:hover,
+.staticphp .header .navbar a.current
 {
     text-decoration: underline;
 }
 
-.clearfloat
+.staticphp .clearfloat
 {
     float: none;
     clear: both;
 }
 
-.hero
+.staticphp .hero
 {
     background-color: #eeeeee;
     padding-top: 32px;
@@ -93,23 +90,23 @@ a:hover
     text-align: center;
 }
 
-.hero h2
+.staticphp .hero h2
 {
     font-size: 32px;
 }
 
-.hero p
+.staticphp .hero p
 {
     font-size: 24px;
     font-style: italic;
 }
 
-.hero .call2action
+.staticphp .hero .call2action
 {
     padding-top: 32px;
 }
 
-.hero .call2action .button
+.staticphp .hero .call2action .button
 {
     padding: 16px 24px;
     border-radius: 16px;
@@ -120,61 +117,61 @@ a:hover
     font-weight: 400;
 }
 
-.hero .call2action .button:hover
+.staticphp .hero .call2action .button:hover
 {
     border-color: #4F5B93;
     color: #4F5B93;
 }
 
-.hero .call2action .button.highlight
+.staticphp .hero .call2action .button.highlight
 {
     font-weight: bold;
 }
 
-.features
+.staticphp .features
 {
     padding-top: 64px;
     padding-bottom: 64px;
     text-align: center;
 }
 
-.features h3
+.staticphp .features h3
 {
     font-size: 32px;
     text-transform: uppercase;
 }
 
-.features .feature h4
+.staticphp .features .feature h4
 {
     font-size: 24px;
 }
 
-.features .feature
+.staticphp .features .feature
 {
     font-size: 18px;
 }
 
-.key-features
+.staticphp .key-features
 {
     padding-top: 64px;
     padding-bottom: 64px;
     text-align: center;
 }
 
-.key-features h3
+.staticphp .key-features h3
 {
     font-size: 32px;
     text-transform: uppercase;
 }
 
-.key-features .feature h4
+.staticphp .key-features .feature h4
 {
     font-size: 24px;
 }
 
-.key-features .feature,
-.features .feature,
-.howitworks .step
+.staticphp .key-features .feature,
+.staticphp .features .feature,
+.staticphp .howitworks .step
 {
     width: 33%;
     display: inline;
@@ -182,12 +179,12 @@ a:hover
     vertical-align: top;
 }
 
-.key-features .feature
+.staticphp .key-features .feature
 {
     font-size: 18px;
 }
 
-.howitworks
+.staticphp .howitworks
 {
     background-color: #eeeeee;
     padding-top: 64px;
@@ -195,28 +192,28 @@ a:hover
     text-align: center;
 }
 
-.howitworks h3
+.staticphp .howitworks h3
 {
     font-size: 32px;
     text-transform: uppercase;
 }
 
-.howitworks .step h4
+.staticphp .howitworks .step h4
 {
     font-size: 24px;
 }
 
-.howitworks .step
+.staticphp .howitworks .step
 {
     font-size: 18px;
 }
 
-.footer
+.staticphp .footer
 {
     font-size: 12px;
 }
 
-.footer .container
+.staticphp .footer .container
 {
     display: flex;
     justify-content: space-between;
@@ -224,7 +221,7 @@ a:hover
     line-height: 20px;
 }
 
-.docs-nav
+.staticphp .docs-nav
 {
     font-size: 16px;
     background-color: #7A86B8;
@@ -232,25 +229,25 @@ a:hover
     padding-bottom: 16px;
     margin-top: -6px;
 }
-    
-.docs-nav ul
+
+.staticphp .docs-nav ul
 {
     list-style-type: none;
     margin: 0px;
     padding: 0px;
 }
 
-.docs-nav .container
+.staticphp .docs-nav .container
 {
     padding: 0px;
 }
 
-.docs-nav li
+.staticphp .docs-nav li
 {
     float: left;
 }
 
-.docs-nav a
+.staticphp .docs-nav a
 {
     color: #ffffff;
     padding: 16px;
@@ -258,18 +255,18 @@ a:hover
     text-decoration: none;
 }
 
-.docs-nav a.current
+.staticphp .docs-nav a.current
 {
     font-weight: bold;
 }
 
-.docs-nav a:hover
+.staticphp .docs-nav a:hover
 {
     text-decoration: underline;
 }
 
-pre,
-code
+.staticphp pre,
+.staticphp code
 {
     background-color: #eeeeee;
     padding: 4px;
@@ -278,32 +275,32 @@ code
     white-space: nowrap;
 }
 
-.dropdown .button
+.staticphp .dropdown .button
 {
     display: none;
 }
 
 @media ( min-width: 1px )
 {
-    .hero .call2action .button
+    .staticphp .hero .call2action .button
     {
         font-weight: bold;
     }
 
-    .hero .call2action .button.highlight
+    .staticphp .hero .call2action .button.highlight
     {
         background-color: #7A86B8;
         color: #ffffff;
     }
 
-    .hero .call2action .button.highlight:hover
+    .staticphp .hero .call2action .button.highlight:hover
     {
         background-color: #4F5B93;
     }
 
-    .key-features .feature,
-    .features .feature,
-    .howitworks .step
+    .staticphp .key-features .feature,
+    .staticphp .features .feature,
+    .staticphp .howitworks .step
     {
         display: inline-block;
     }
@@ -311,14 +308,14 @@ code
 
 @media ( max-width: 800px )
 {
-    .header .logo,
-    .header .navbar
+    .staticphp .header .logo,
+    .staticphp .header .navbar
     {
         float: none;
         text-align: center;
     }
 
-    .dropdown
+    .staticphp .dropdown
     {
         position: static;
     }
@@ -328,7 +325,7 @@ code
         display: block;
     }
 
-    .dropdown .button
+    .staticphp .dropdown .button
     {
         user-select: none;
         display: block;
@@ -336,55 +333,55 @@ code
         font-weight: bold;
     }
 
-    .dropdown:hover .button
+    .staticphp .dropdown:hover .button
     {
         text-decoration: none;
         background-color: #4F5B93;
     }
 
-    .dropdown .content
+    .staticphp .dropdown .content
     {
         display: none;
     }
 
-    .docs-nav
+    .staticphp .docs-nav
     {
         text-align: center;
         padding-top: 0px;
         padding-bottom: 0px;
     }
 
-    .docs-nav li
+    .staticphp .docs-nav li
     {
         float: none;
         display: block;
     }
 
-    .docs-nav a
+    .staticphp .docs-nav a
     {
         line-height: 1.5;
         display: block;
     }
 
-    .docs-nav a:hover
+    .staticphp .docs-nav a:hover
     {
         background-color: #4F5B93;
     }
 
-    .key-features .feature,
-    .features .feature,
-    .howitworks .step
+    .staticphp .key-features .feature,
+    .staticphp .features .feature,
+    .staticphp .howitworks .step
     {
         width: 100%;
     }
 
-    .footer .container
+    .staticphp .footer .container
     {
         flex-direction: column;
         text-align: center;
     }
 
-    .hero .call2action .button
+    .staticphp .hero .call2action .button
     {
         display: block;
     }

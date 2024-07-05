@@ -4,28 +4,36 @@ main-nav-item: tools
 layout: src/_inc/layout.php
 ---
 
-<article>
-    <p><i>Some web based tools to help with some tedious tasks that can be a pain to do manually.</i></p>
+<section class="minisite-header">
+    <div class="container">
+        <h1>Tools</h1>
+    </div>
+</section>
 
-    <h4>Available Tools</h4>
+<section style="padding: 64px 0px;">
+    <div class="container">
+        <p><i>Some web based tools to help with some tedious tasks that can be a pain to do manually.</i></p>
 
-    <?php
+        <h4>Available Tools</h4>
 
-    $tools = array
-    (
-        array
+        <?php
+
+        $tools = array
         (
-            'title' => 'Find URLs in String',
-            'url' => '/tools/find-urls-in-string'
-        ),
-    );
+            array
+            (
+                'title' => 'Find URLs in String',
+                'url' => '/tools/find-urls-in-string'
+            ),
+        );
 
-    ?>
+        ?>
 
-    <?php if( isset( $tools ) && is_array( $tools ) && count( $tools ) > 0 ): ?>
-        <?php foreach( $tools as $tool ): ?>
-            <?php if( ! isset( $tool['title'], $tool['url'] ) || ! $tool['title'] || ! $tool['url'] ) continue; ?>
-            <p><b><?php echo $tool['title']; ?></b> - <a href="<?php echo $tool['url']; ?>">Go to Tool</a></p>
-        <?php endforeach; ?>
-    <?php endif; ?>
-</article>
+        <?php if( isset( $tools ) && is_array( $tools ) && count( $tools ) > 0 ): ?>
+            <?php foreach( $tools as $tool ): ?>
+                <?php if( ! isset( $tool['title'], $tool['url'] ) || ! $tool['title'] || ! $tool['url'] ) continue; ?>
+                <p><b><?php echo $tool['title']; ?></b> - <a href="<?php echo $tool['url']; ?>">Go to Tool</a></p>
+            <?php endforeach; ?>
+        <?php endif; ?>
+    </div>
+</section>
