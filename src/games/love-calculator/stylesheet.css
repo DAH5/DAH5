@@ -1,9 +1,10 @@
 .love-calculator
 {
     background-image: url( 'hearts.gif' );
+    background-position: center;
     background-color: #ffddf9;
     color: #333333;
-    padding: 128px 0px;
+    padding: 28px;
 }
 
 .love-calculator .container
@@ -16,14 +17,14 @@
     border-radius: 1rem;
 }
 
-h2
+.love-calculator h2
 {
     text-align: center;
     margin: 0;
     font-size: 32px;
 }
 
-hr
+.love-calculator hr
 {
     border-color: #ff9ced;
     border-style: solid;
@@ -32,7 +33,7 @@ hr
     margin-right: -1rem;
 }
 
-.input
+.love-calculator .input
 {
     padding: 1rem;
     width: 100%;
@@ -41,7 +42,7 @@ hr
     border-radius: 1rem;
 }
 
-.button
+.love-calculator .button
 {
     background-color: #ff9ced;
     color: #000000;
@@ -50,4 +51,12 @@ hr
     font-weight: bold;
     border-radius: 1rem;
     border-width: 0;
+}
+
+@media ( min-width: 800px )
+{
+    .love-calculator
+    {
+        padding: 128px 28px;
+    }
 }
