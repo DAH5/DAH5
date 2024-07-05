@@ -1,5 +1,5 @@
 ---
-page_title: Not Found (404)
+page-title: 404 Not Found
 friendly_urls: false
 layout: src/staticphp/_includes/base.php
 ---

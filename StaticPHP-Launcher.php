@@ -90,7 +90,7 @@ $configurable_options[ 'minify_js' ] = false;
 	If you wish to use a specific version of StaticPHP, or if your connection to the internet is weak or limited,
 	you should disable this feature by setting it to false.
 */
-$configurable_options[ 'auto_update' ] = false;
+$configurable_options[ 'auto_update' ] = true;
 
 
 //	END OF CONFIGURABLE OPTIONS

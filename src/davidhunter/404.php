@@ -1,6 +1,6 @@
 ---
 layout: src/davidhunter/_inc/base.php
-page_title: Not Found (404)
+page-title: 404 Not Found - David Hunter
 friendly_urls: false
 ---
 

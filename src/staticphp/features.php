@@ -1,6 +1,6 @@
 ---
 current_nav_item: features
-page_title: Features
+page-title: Features
 layout: src/staticphp/_includes/base.php
 ---
 

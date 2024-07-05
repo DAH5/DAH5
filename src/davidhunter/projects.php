@@ -1,5 +1,5 @@
 ---
-page_title: Projects
+page-title: Projects
 current_page: projects
 layout: src/davidhunter/_inc/base.php
 ---
