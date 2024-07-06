@@ -52,6 +52,7 @@ stylesheets: /staticphp/assets/css/main.css
             <div class="hero">
                 <div class="container">
                     <h2>--- metadata.page-title ---</h2>
+                    --- if( page-subtitle ) ---<p>--- metadata.page-subtitle ---</p>--- endif ---
                 </div>
             </div>
 
