@@ -5,7 +5,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        <title>--- if( article_title ) ------ metadata.article_title --- - Blog - --- endif ------ if( page-title ) ------ metadata.page-title --- - --- endif ------ if( site_title ) ------ metadata.site_title --- - --- endif ---DAH5</title>
+        <title>--- if( article_title ) ------ metadata.article_title --- - Blog - --- endif ------ if( page-title ) ------ metadata.page-title --- - --- endif ------ if( docs_nav_item ) ---Docs - --- endif ------ if( site_title ) ------ metadata.site_title --- - --- endif ---DAH5</title>
 
         <link rel="stylesheet" type="text/css" href="/assets/css/base.css">
 
