@@ -3,44 +3,18 @@ ErrorDocument 404 /404.html
 <IfModule mod_rewrite.c>
     RewriteEngine on
 
-    RewriteCond %{SERVER_PORT} ^80$ [NC]
-    RewriteCond %{HTTP_HOST} ^dah5.me.uk$
-    RewriteRule ^(.*)$ http://www.dah5.me.uk/$1 [R=307,END]
+    RewriteCond %{HTTP_HOST} ^davidhunter.scot$ [OR]
+    RewriteCond %{HTTP_HOST} ^www.davidhunter.scot$ [OR]
+    RewriteCond %{HTTP_HOST} ^david-hunter.net$ [OR]
+    RewriteCond %{HTTP_HOST} ^www.david-hunter.net$
+    RewriteRule ^(.*)$ https://www.dah5.me.uk/davidhunter/$1 [R=307,END]
 
-    RewriteCond %{SERVER_PORT} ^443$ [NC]
-    RewriteCond %{HTTP_HOST} ^dah5.me.uk$
-    RewriteRule ^(.*)$ https://www.dah5.me.uk/$1 [R=307,END]
+    RewriteCond %{HTTP_HOST} ^staticphp.io$ [OR]
+    RewriteCond %{HTTP_HOST} ^www.staticphp.io$
+    RewriteRule ^(.*)$ https://www.dah5.me.uk/staticphp/$1 [R=307,END]
 
-    RewriteCond %{SERVER_PORT} ^80$ [NC]
-    RewriteCond %{HTTP_HOST} ^dah5.com$
-    RewriteRule ^(.*)$ http://www.dah5.me.uk/$1 [R=307,END]
-
-    RewriteCond %{SERVER_PORT} ^443$ [NC]
-    RewriteCond %{HTTP_HOST} ^dah5.com$
-    RewriteRule ^(.*)$ https://www.dah5.me.uk/$1 [R=307,END]
-
-    RewriteCond %{SERVER_PORT} ^80$ [NC]
-    RewriteCond %{HTTP_HOST} ^www.dah5.com$
-    RewriteRule ^(.*)$ http://www.dah5.me.uk/$1 [R=307,END]
-
-    RewriteCond %{SERVER_PORT} ^443$ [NC]
-    RewriteCond %{HTTP_HOST} ^www.dah5.com$
-    RewriteRule ^(.*)$ https://www.dah5.me.uk/$1 [R=307,END]
-
-    RewriteCond %{SERVER_PORT} ^80$ [NC]
-    RewriteCond %{HTTP_HOST} ^dah5.co.uk$
-    RewriteRule ^(.*)$ http://www.dah5.me.uk/$1 [R=307,END]
-
-    RewriteCond %{SERVER_PORT} ^443$ [NC]
-    RewriteCond %{HTTP_HOST} ^dah5.co.uk$
-    RewriteRule ^(.*)$ https://www.dah5.me.uk/$1 [R=307,END]
-
-    RewriteCond %{SERVER_PORT} ^80$ [NC]
-    RewriteCond %{HTTP_HOST} ^www.dah5.co.uk$
-    RewriteRule ^(.*)$ http://www.dah5.me.uk/$1 [R=307,END]
-
-    RewriteCond %{SERVER_PORT} ^443$ [NC]
-    RewriteCond %{HTTP_HOST} ^www.dah5.co.uk$
+    RewriteCond %{SERVER_PORT} ^80$ [OR]
+    RewriteCond %{HTTP_HOST} !^www.dah5.me.uk$
     RewriteRule ^(.*)$ https://www.dah5.me.uk/$1 [R=307,END]
 
     RewriteRule ^lovecalculator$ /games/love-calculator [R=307,END]
