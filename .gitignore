@@ -1,2 +1,4 @@
-# local development output files
+# Ignore Generated Output Files
 public
+# Ignore StaticPHP File
+StaticPHP.php
