@@ -44,11 +44,24 @@ layout: src/_inc/layout.php
             </ul>
 
             <ul>
+                <li><h2><b><a href="/privacybuff">Privacy Buff</a></b></h2></li>
+                <li><a href="/privacybuff">Coming Soon</a></li>
+            </ul>
+
+            <ul>
+                <li><h2><b><a href="/start">Start</a></b></h2></li>
+            </ul>
+
+            <div class="clearfloat"></div>
+        </div>
+
+        <div class="a-z">
+            <ul>
                 <li><h2><b><a href="/staticly">Staticly</a></b></h2></li>
                 <li><a href="/staticly/w3css">W3.CSS</a></li>
                 <li><a href="/staticly/webfonts">WebFonts</a></li>
             </ul>
-            
+
             <ul>
                 <li><h2><b><a href="/staticphp">StaticPHP</a></b></h2></li>
                 <li><a href="/staticphp/about">Features</a></li>
@@ -56,10 +69,6 @@ layout: src/_inc/layout.php
                 <li><a href="/staticphp/docs">Downloads</a></li>
             </ul>
 
-            <div class="clearfloat"></div>
-        </div>
-
-        <div class="a-z">
             <ul>
                 <li><h2><b><a href="/staticphp/docs">StaticPHP Docs</a></b></h2></li>
                 <li><a href="/staticphp/docs/customisation">Customisation</a></li>
@@ -71,6 +80,10 @@ layout: src/_inc/layout.php
                 <li><a href="/staticphp/docs/php-files">PHP Files</a></li>
             </ul>
 
+            <div class="clearfloat"></div>
+        </div>
+
+        <div class="a-z">
             <ul>
                 <li><h2><b><a href="/tools">Tools</a></b></h2></li>
                 <li><a href="/tools/find-urls-in-string">Find URLs in String</a></li>
