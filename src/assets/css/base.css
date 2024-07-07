@@ -144,6 +144,34 @@ footer a
     text-align: center;
 }
 
+.archived
+{
+    background-color: #eeeeee;
+    background-image: linear-gradient( to bottom, #eeeeee, #dddddd );
+    color: #333333;
+    border-bottom: 3px solid #cccccc;
+    text-align: center;
+}
+
+.archived .heading,
+.archived .description
+{
+    margin: 0;
+    padding: 0;
+}
+
+.archived .heading
+{
+    font-size: 24px;
+    font-style: italic;
+}
+
+.archived .description
+{
+    font-size: 14px;
+    font-style: italic;
+}
+
 @media ( min-width: 800px )
 {
     .a-z ul
@@ -166,6 +194,11 @@ footer a
     }
 
     footer
+    {
+        text-align: left;
+    }
+
+    .archived
     {
         text-align: left;
     }

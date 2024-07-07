@@ -36,3 +36,12 @@
                 <div class="clearfloat"></div>
             </div>
         </header>
+
+        --- if( archived ) ---
+        <section class="archived">
+            <div class="container">
+                <p class="heading">Archived Page</p>
+                <p class="description">This page has been archived because there is no intention to update it in the future.</p>
+            </div>
+        </section>
+        --- endif ---

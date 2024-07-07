@@ -1,0 +1,33 @@
+.privacybuff .comingsoon
+{
+    margin: 0 auto;
+    padding: 8rem 0;
+    text-align: center;
+}
+
+.privacybuff .comingsoon .title
+{
+    font-size: 4rem;
+    font-weight: bold;
+    color: var( --color-primary );
+}
+
+.privacybuff .comingsoon .tagline
+{
+    font-weight: 300;
+    font-size: 1.6rem;
+    font-style: italic;
+}
+
+.privacybuff .comingsoon .bubble
+{
+    background-color: var( --color-primary );
+    color: white;
+    border-radius: 25px;
+    font-size: 2rem;
+    font-weight: bold;
+    width: max-content;
+    padding: 1rem 3rem;
+    margin: 0 auto;
+    margin-top: 5rem;
+}

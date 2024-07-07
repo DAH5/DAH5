@@ -1,0 +1,25 @@
+.privacybuff
+{
+    --color-primary: #00cc99;
+    --color-primary-faint: #e6fff9;
+    background-color: var( --color-primary-faint );
+}
+
+.privacybuff a
+{
+    color: var( --color-primary );
+}
+
+.privacybuff .container
+{
+    max-width: min( 100% - 2rem, 75rem );
+    margin: 0 auto;
+    padding: 16px;
+}
+
+.privacybuff .standalone
+{
+    margin: 0 auto;
+    padding: 3rem 0;
+    max-width: 600px;
+}
