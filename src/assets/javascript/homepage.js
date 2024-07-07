@@ -6,7 +6,7 @@ updateWelcomeWidgetDate();
 function updateWelcomeWidgetDate()
 {
     var current_date = new Date();
-    welcome_widget_date.innerHTML = '<b>' + dayNumToName( current_date.getDay() ) + ' ' + dayNumAddSuffix( current_date.getDate().toString() ) + ' ' + monthNumToName( current_date.getMonth() ) + ' ' + current_date.getFullYear() + '</b> ' + current_date.getHours() + ':' + current_date.getMinutes();
+    welcome_widget_date.innerHTML = '<b>' + dayNumToName( current_date.getDay() ) + ' ' + dayNumAddSuffix( current_date.getDate().toString() ) + ' ' + monthNumToName( current_date.getMonth() ) + ' ' + current_date.getFullYear() + '</b> ' + addLeadingZero( current_date.getHours() ) + ':' + addLeadingZero( current_date.getMinutes() );
 }
 
 setInterval( updateWelcomeWidgetDate, 1000 );
@@ -76,4 +76,11 @@ function monthNumToName( num )
         default:
             return num;
     }
+}
+
+function addLeadingZero( num )
+{
+    if( num < 10 )
+        return '0' + num;
+    return num;
 }
