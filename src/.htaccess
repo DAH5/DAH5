@@ -6,7 +6,13 @@ ErrorDocument 404 /404.html
     RewriteCond %{HTTP_HOST} ^davidhunter.scot$ [OR]
     RewriteCond %{HTTP_HOST} ^www.davidhunter.scot$ [OR]
     RewriteCond %{HTTP_HOST} ^david-hunter.net$ [OR]
-    RewriteCond %{HTTP_HOST} ^www.david-hunter.net$
+    RewriteCond %{HTTP_HOST} ^www.david-hunter.net$ [OR]
+    RewriteCond %{HTTP_HOST} ^davidhunter.me.uk$ [OR]
+    RewriteCond %{HTTP_HOST} ^www.davidhunter.me.uk$ [OR]
+    RewriteCond %{HTTP_HOST} ^davidhunter.uk$ [OR]
+    RewriteCond %{HTTP_HOST} ^www.davidhunter.uk$ [OR]
+    RewriteCond %{HTTP_HOST} ^dah.scot$ [OR]
+    RewriteCond %{HTTP_HOST} ^www.dah.scot$
     RewriteRule ^(.*)$ https://www.dah5.me.uk/davidhunter/$1 [R=307,END]
 
     RewriteCond %{HTTP_HOST} ^staticphp.io$ [OR]
