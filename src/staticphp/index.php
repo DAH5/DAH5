@@ -1,5 +1,6 @@
 ---
 current_nav_item: home
+site_nav_item: home
 layout: src/staticphp/_includes/base.php
 ---
 

@@ -1,5 +1,6 @@
 ---
 current_nav_item: download
+site_nav_item: download
 page-title: Download
 layout: src/staticphp/_includes/base.php
 ---

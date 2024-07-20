@@ -3,28 +3,16 @@ site_title: StaticPHP
 site_tagline: Fast and Simple Static Site Generator
 site_author: David Hunter
 site_author_url: /davidhunter/
+logo: /staticphp/assets/images/logo-1-107x25.png
+logo_url: /staticphp
+site_nav: Home:/staticphp:home::Features:/staticphp/features:features::Docs:/staticphp/docs:docs::Download:/staticphp/download:download
 content_placeholder: {{ content }}
 stylesheets: /staticphp/assets/css/main.css
 ---
 <?php include 'src/_inc/header.php'; ?>
 
     <div class="staticphp">
-        <div class="header">
-            <div class="container">
-                <div class="logo">
-                    <h1><a href="/staticphp">--- metadata.site_title ---</a></h1>
-                </div>
-
-                <ul class="navbar">
-                    <li><a href="/staticphp/"<?php if( isset( $metadata[ 'current_nav_item' ] ) && $metadata[ 'current_nav_item' ] == 'home' ) echo ' class="current"'; ?>>Home</a></li>
-                    <li><a href="/staticphp/features"<?php if( isset( $metadata[ 'current_nav_item' ] ) && $metadata[ 'current_nav_item' ] == 'features' ) echo ' class="current"'; ?>>Features</a></li>
-                    <li><a href="/staticphp/docs"<?php if( isset( $metadata[ 'current_nav_item' ] ) && $metadata[ 'current_nav_item' ] == 'docs' ) echo ' class="current"'; ?>>Docs</a></li>
-                    <li><a href="/staticphp/download"<?php if( isset( $metadata[ 'current_nav_item' ] ) && $metadata[ 'current_nav_item' ] == 'download' ) echo ' class="current"'; ?>>Download</a></li>
-                </ul>
-
-                <div class="clearfloat"></div>
-            </div>
-        </div>
+        <div class="header"></div>
 
         <?php if( isset( $metadata[ 'current_nav_item' ] ) && $metadata[ 'current_nav_item' ] == 'docs' ): ?>
             <div class="docs-nav">
