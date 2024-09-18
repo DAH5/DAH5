@@ -12,3 +12,5 @@
 /ir/* /fansites/international-rescue/:splat 307
 /staticphp https://staticphp.io 307
 /staticphp/* https://staticphp.io/:splat 307
+/davidhunter https://david-hunter.net 307
+/davidhunter/* https://david-hunter.net/:splat 307
