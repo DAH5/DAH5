@@ -63,28 +63,6 @@ layout: src/_inc/layout.php
             </ul>
 
             <ul>
-                <li><h2><b><a href="/staticphp">StaticPHP</a></b></h2></li>
-                <li><a href="/staticphp/about">Features</a></li>
-                <li><a href="/staticphp/docs">Docs</a></li>
-                <li><a href="/staticphp/docs">Downloads</a></li>
-            </ul>
-
-            <ul>
-                <li><h2><b><a href="/staticphp/docs">StaticPHP Docs</a></b></h2></li>
-                <li><a href="/staticphp/docs/customisation">Customisation</a></li>
-                <li><a href="/staticphp/docs/functional-blocks">Functional Blocks</a></li>
-                <li><a href="/staticphp/docs/getting-started">Getting Started</a></li>
-                <li><a href="/staticphp/docs/html-files">HTML Files</a></li>
-                <li><a href="/staticphp/docs/markdown-files">Markdown Files</a></li>
-                <li><a href="/staticphp/docs/metadata">MetaData</a></li>
-                <li><a href="/staticphp/docs/php-files">PHP Files</a></li>
-            </ul>
-
-            <div class="clearfloat"></div>
-        </div>
-
-        <div class="a-z">
-            <ul>
                 <li><h2><b><a href="/tools">Tools</a></b></h2></li>
                 <li><a href="/tools/find-urls-in-string">Find URLs in String</a></li>
             </ul>

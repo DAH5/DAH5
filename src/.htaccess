@@ -15,10 +15,6 @@ ErrorDocument 404 /404.html
     RewriteCond %{HTTP_HOST} ^www.dah.scot$
     RewriteRule ^(.*)$ https://www.dah5.me.uk/davidhunter/$1 [R=307,END]
 
-    RewriteCond %{HTTP_HOST} ^staticphp.io$ [OR]
-    RewriteCond %{HTTP_HOST} ^www.staticphp.io$
-    RewriteRule ^(.*)$ https://www.dah5.me.uk/staticphp/$1 [R=307,END]
-
     RewriteCond %{HTTP_HOST} ^privacybuff.net$ [OR]
     RewriteCond %{HTTP_HOST} ^www.privacybuff.net$
     RewriteRule ^(.*)$ https://www.dah5.me.uk/privacybuff/$1 [R=307,END]
@@ -37,4 +33,6 @@ ErrorDocument 404 /404.html
     RewriteRule ^internationalrescue/(.*)$ /fansites/international-rescue/$1 [R=307,END]
     RewriteRule ^ir/?$ /fansites/international-rescue [R=307,END]
     RewriteRule ^ir/(.*)$ /fansites/international-rescue/$1 [R=307,END]
+    RewriteRule ^staticphp/?$ https://staticphp.io/ [R=307,END]
+    RewriteRule ^staticphp/(.*)$ https://staticphp.io/$1 [R=307,END]
 </IfModule>
