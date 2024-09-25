@@ -21,8 +21,8 @@ ErrorDocument 404 /404.html
     RewriteRule ^internationalrescue/(.*)$ /fansites/international-rescue/$1 [R=307,END]
     RewriteRule ^ir/?$ /fansites/international-rescue [R=307,END]
     RewriteRule ^ir/(.*)$ /fansites/international-rescue/$1 [R=307,END]
-    RewriteRule ^staticphp/?$ https://staticphp.io/ [R=307,END]
-    RewriteRule ^staticphp/(.*)$ https://staticphp.io/$1 [R=307,END]
+    RewriteRule ^staticphp/?$ https://staticphp.softwayr.io/ [R=307,END]
+    RewriteRule ^staticphp/(.*)$ https://staticphp.softwayr.io/$1 [R=307,END]
     RewriteRule ^davidhunter/?$ https://david-hunter.net/ [R=307,END]
     RewriteRule ^davidhunter/(.*)$ https://david-hunter.net/$1 [R=307,END]
 </IfModule>
