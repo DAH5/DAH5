@@ -17,7 +17,7 @@ layout: src/staticly/_inc/base.php
 <section class="w3-padding-64 w3-bottombar w3-border-gray">
     <div class="w3-content w3-padding">
         <p><b>To get started, just link to the CSS file.</b></p>
-        <p class="w3-metro-darken w3-padding overflow w3-large w3-round-xlarge"><code><span style="color: var( --color-html-bracket );">&lt;</span><span style="color: var( --color-html-tag );">link</span> <span style="color: var( --color-html-attr );">rel</span><span style="color: var( --color-html-equals );">=</span><span style="color: var( --color-html-string );">"stylesheet"</span> <span style="color: var( --color-html-attr );">type</span><span style="color: var( --color-html-equals );">=</span><span style="color: var( --color-html-string );">"text/css"</span> <span style="color: var( --color-html-attr );">href</span><span style="color: var( --color-html-equals );">=</span><span style="color: var( --color-html-string );">"<?php echo 'https://w3css.' . STORAGE_DOMAIN; ?>/4.15/w3.css"</span><span style="color: var( --color-html-bracket );">&gt;</span></code></p>
+        <p class="w3-metro-darken w3-padding overflow w3-large w3-round-xlarge"><code><span style="color: var( --color-html-bracket );">&lt;</span><span style="color: var( --color-html-tag );">link</span>&nbsp;<span style="color: var( --color-html-attr );">rel</span><span style="color: var( --color-html-equals );">=</span><span style="color: var( --color-html-string );">"stylesheet"</span>&nbsp;<span style="color: var( --color-html-attr );">type</span><span style="color: var( --color-html-equals );">=</span><span style="color: var( --color-html-string );">"text/css"</span>&nbsp;<span style="color: var( --color-html-attr );">href</span><span style="color: var( --color-html-equals );">=</span><span style="color: var( --color-html-string );">"<?php echo STORAGE_DOMAIN; ?>/w3css/4.15/w3.css"</span><span style="color: var( --color-html-bracket );">&gt;</span></code></p>
 
         <p>&nbsp;</p>
 
@@ -31,11 +31,11 @@ layout: src/staticly/_inc/base.php
         {
             $path_to_w3css_file = __DIR__ . DIRECTORY_SEPARATOR . "w3css" . DIRECTORY_SEPARATOR . $w3css_file;
 
-            $w3css_file_url = "https://w3css." . STORAGE_DOMAIN . "/" . $w3css_file;
+            $w3css_file_url = STORAGE_DOMAIN . "/w3css/" . $w3css_file;
 
             ?>
             
-            <p class="w3-metro-darken w3-padding overflow w3-large w3-round-xlarge"><code><span style="color: var( --color-html-bracket );">&lt;</span><span style="color: var( --color-html-tag );">link</span> <span style="color: var( --color-html-attr );">rel</span><span style="color: var( --color-html-equals );">=</span><span style="color: var( --color-html-string );">"stylesheet"</span> <span style="color: var( --color-html-attr );">type</span><span style="color: var( --color-html-equals );">=</span><span style="color: var( --color-html-string );">"text/css"</span> <span style="color: var( --color-html-attr );">href</span><span style="color: var( --color-html-equals );">=</span><span style="color: var( --color-html-string );">"<?php echo $w3css_file_url . ".css"; ?>"</span><span style="color: var( --color-html-bracket );">&gt;</span></code></p>
+            <p class="w3-metro-darken w3-padding overflow w3-large w3-round-xlarge"><code><span style="color: var( --color-html-bracket );">&lt;</span><span style="color: var( --color-html-tag );">link</span>&nbsp;<span style="color: var( --color-html-attr );">rel</span><span style="color: var( --color-html-equals );">=</span><span style="color: var( --color-html-string );">"stylesheet"</span>&nbsp;<span style="color: var( --color-html-attr );">type</span><span style="color: var( --color-html-equals );">=</span><span style="color: var( --color-html-string );">"text/css"</span>&nbsp;<span style="color: var( --color-html-attr );">href</span><span style="color: var( --color-html-equals );">=</span><span style="color: var( --color-html-string );">"<?php echo $w3css_file_url . ".css"; ?>"</span><span style="color: var( --color-html-bracket );">&gt;</span></code></p>
             
             <?php
         }
