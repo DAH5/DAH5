@@ -1,1 +1,1 @@
-Powered by <a href="https://staticphp.softwayr.io" target="_blank">StaticPHP</a>.</a>
+Powered by <a href="https://staticphp.softwayr.net" target="_blank">StaticPHP</a>.</a>

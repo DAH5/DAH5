@@ -3,13 +3,9 @@ ErrorDocument 404 /404.html
 <IfModule mod_rewrite.c>
     RewriteEngine on
 
-    RewriteCond %{HTTP_HOST} ^privacybuff.net$ [OR]
-    RewriteCond %{HTTP_HOST} ^www.privacybuff.net$
-    RewriteRule ^(.*)$ https://www.dah5.me.uk/privacybuff/$1 [R=307,END]
-
     RewriteCond %{SERVER_PORT} ^80$ [OR]
-    RewriteCond %{HTTP_HOST} !^www.dah5.me.uk$
-    RewriteRule ^(.*)$ https://www.dah5.me.uk/$1 [R=307,END]
+    RewriteCond %{HTTP_HOST} !^www.dah5.com$
+    RewriteRule ^(.*)$ https://www.dah5.com/$1 [R=307,END]
 
     RewriteRule ^lovecalculator$ /games/love-calculator [R=307,END]
     RewriteRule ^lc$ /games/love-calculator [R=307,END]
