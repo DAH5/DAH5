@@ -41,7 +41,7 @@ content_placeholder: {{ content }}
 
         <footer class="w3-black w3-text-gray w3-center w3-border-top w3-border-amber w3-small w3-padding-16">
             <div class="w3-auto w3-row">
-                <p class="w3-half">Copyright &copy; <a href="https://david-hunter.net" target="_blank">David Hunter</a>.</p>
+                <p class="w3-half">Copyright &copy; <a href="https://weburl.net/davidhunter" target="_blank">David Hunter</a>.</p>
                 <p class="w3-half"><a href="/"><img src="/assets/images/logos/dah5-logo-2024-alternate-150x35.png" alt="DAH5 Logo"></a></p>
             </div>
         </footer>

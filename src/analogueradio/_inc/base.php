@@ -33,7 +33,7 @@ content_placeholder: {{ content }}
         </div>
 
         <footer class="w3-padding w3-center w3-small">
-            <p>Archive by <a href="https://david-hunter.net" target="_blank">David Hunter</a>. <?php include 'src/_inc/poweredby.php'; ?></p>
+            <p>Archive by <a href="https://weburl.net/davidhunter" target="_blank">David Hunter</a>. <?php include 'src/_inc/poweredby.php'; ?></p>
             <p><a href="/"><img src="<?php echo IMAGES_URL; ?>/logos/dah5-logo-2024-alternate-150x35.png" alt="DAH5 Logo"></a></p>
         </footer>
     </body>

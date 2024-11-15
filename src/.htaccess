@@ -4,8 +4,8 @@ ErrorDocument 404 /404.html
     RewriteEngine on
 
     RewriteCond %{SERVER_PORT} ^80$ [OR]
-    RewriteCond %{HTTP_HOST} !^www.dah5.com$
-    RewriteRule ^(.*)$ https://www.dah5.com/$1 [R=307,END]
+    RewriteCond %{HTTP_HOST} !^www.dah5.me.uk$
+    RewriteRule ^(.*)$ https://www.dah5.me.uk/$1 [R=307,END]
 
     RewriteRule ^lovecalculator$ /games/love-calculator [R=307,END]
     RewriteRule ^lc$ /games/love-calculator [R=307,END]
@@ -13,12 +13,8 @@ ErrorDocument 404 /404.html
     RewriteRule ^games/lovecalculator$ /games/love-calculator [R=307,END]
     RewriteRule ^games/lc$ /games/love-calculator [R=307,END]
     RewriteRule ^game/(.*)$ /games/$1 [R=307,END]
-    RewriteRule ^internationalrescue/?$ /fansites/international-rescue [R=307,END]
-    RewriteRule ^internationalrescue/(.*)$ /fansites/international-rescue/$1 [R=307,END]
-    RewriteRule ^ir/?$ /fansites/international-rescue [R=307,END]
-    RewriteRule ^ir/(.*)$ /fansites/international-rescue/$1 [R=307,END]
-    RewriteRule ^staticphp/?$ https://staticphp.softwayr.io/ [R=307,END]
-    RewriteRule ^staticphp/(.*)$ https://staticphp.softwayr.io/$1 [R=307,END]
-    RewriteRule ^davidhunter/?$ https://david-hunter.net/ [R=307,END]
-    RewriteRule ^davidhunter/(.*)$ https://david-hunter.net/$1 [R=307,END]
+    RewriteRule ^staticphp/?$ https://weburl.net/staticphp [R=307,END]
+    RewriteRule ^staticphp/(.*)$ https://weburl.net/staticphp/$1 [R=307,END]
+    RewriteRule ^davidhunter/?$ https://weburl.net/davidhunter [R=307,END]
+    RewriteRule ^davidhunter/(.*)$ https://weburl.net/davidhunter/$1 [R=307,END]
 </IfModule>
