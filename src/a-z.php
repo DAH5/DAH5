@@ -23,6 +23,7 @@ layout: src/_inc/layout.php
             <ul>
                 <li><h2><b><a href="/">DAH5</a></b></h2></li>
                 <li><a href="/a-z">A - Z</a></li>
+                <li><a href="/about">About</a></li>
                 <li><a href="/games">Games</a></li>
                 <li><a href="/start">Start</a></li>
                 <li><a href="/tools">Tools</a></li>
