@@ -25,6 +25,11 @@ layout: src/_inc/layout.php
                 'title' => 'Find URLs in String',
                 'url' => '/tools/find-urls-in-string'
             ),
+            array
+            (
+                'title' => 'DNS Lookup Tool',
+                'url' => '/tools/dns-lookup'
+            ),
         );
 
         ?>
