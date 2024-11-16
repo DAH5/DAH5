@@ -1,5 +1,5 @@
 <div class="video-container paused" data-volume-level="high">
-    <img src="{{ $video->getThumbnailURL() }}" class="thumbnail-img">
+    <img src="--- metadata.video-poster-url ---" class="thumbnail-img">
     <div class="noscript">
         <div>Please enable JavaScript to watch this video.</div>
     </div>

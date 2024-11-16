@@ -311,3 +311,8 @@ video
     justify-content: center;
     align-items: center;
 }
+
+.video-container .logo-btn img
+{
+    max-width: 100%;
+}

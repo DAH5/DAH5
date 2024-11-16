@@ -23,6 +23,4 @@
         ?></div>
 </div>
 
-<video style="width: 100%; aspect-radio: 16 / 9;" controls preload="none" poster="<?php echo IMAGES_URL; ?>/analogueradio--- metadata.clip-thumbnail-uri ---">
-    <source src="<?php echo VIDEOS_URL; ?>/analogueradio--- metadata.clip-storage-uri ---" type="video/mp4">
-</video>
+<?php include __DIR__ . DIRECTORY_SEPARATOR . '..' . DIRECTORY_SEPARATOR . '..' . DIRECTORY_SEPARATOR . '_inc' . DIRECTORY_SEPARATOR . 'video-player.php'; ?>

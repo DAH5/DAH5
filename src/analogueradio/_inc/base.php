@@ -12,6 +12,7 @@ content_placeholder: {{ content }}
         <link rel="stylesheet" type="text/css" href="<?php echo W3CSS_URL; ?>/4.15/w3.css">
         <link rel="stylesheet" type="text/css" href="<?php echo W3CSS_URL; ?>/w3-colors-metro.css">
         <link rel="stylesheet" type="text/css" href="<?php echo WEBFONTS_URL; ?>/poppins/poppins.css">
+        <link rel="stylesheet" type="text/css" href="/assets/css/video-player.css">
 
         <style type="text/css">
             body, h1, h2, h3, h4, h5, h6
@@ -36,5 +37,7 @@ content_placeholder: {{ content }}
             <p>Archive by <a href="https://weburl.net/davidhunter" target="_blank">David Hunter</a>. <?php include 'src/_inc/poweredby.php'; ?></p>
             <p><a href="/"><img src="<?php echo IMAGES_URL; ?>/logos/dah5-logo-2024-alternate-150x35.png" alt="DAH5 Logo"></a></p>
         </footer>
+
+        <script type="text/javascript" src="/assets/javascript/video-player.js"></script>
     </body>
 </html>
