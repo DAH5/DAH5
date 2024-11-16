@@ -61,6 +61,7 @@ layout: src/_inc/layout.php
                 <li><h2><b><a href="/tools">Tools</a></b></h2></li>
                 <li><a href="/tools/dns-lookup">DNS Lookup Tool</a></li>
                 <li><a href="/tools/find-urls-in-string">Find URLs in String</a></li>
+                <li><a href="/tools/whois-lookup">WHOIS Lookup Tool</a></li>
             </ul>
 
             <div class="clearfloat"></div>

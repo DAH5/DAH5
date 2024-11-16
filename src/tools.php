@@ -30,6 +30,11 @@ layout: src/_inc/layout.php
                 'title' => 'DNS Lookup Tool',
                 'url' => '/tools/dns-lookup'
             ),
+            array
+            (
+                'title' => 'WHOIS Lookup Tool',
+                'url' => '/tools/whois-lookup'
+            ),
         );
 
         ?>
