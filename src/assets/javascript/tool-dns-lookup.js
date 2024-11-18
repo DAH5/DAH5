@@ -3,6 +3,8 @@ var form = document.getElementById( 'form' );
 var txtDomain = document.getElementById( 'txtDomain' );
 var listType = document.getElementById( 'listType' );
 var listNS = document.getElementById( 'listNS' );
+var pNS = document.getElementById( 'pNS' );
+var txtNS = document.getElementById( 'txtNS' );
 var btnSubmit = document.getElementById( 'btnSubmit' );
 var result = document.getElementById( 'result' );
 
@@ -11,6 +13,23 @@ txtDomain.disabled = false;
 listType.disabled = false;
 listNS.disabled = false;
 btnSubmit.disabled = false;
+
+listNS.addEventListener( 'change', toggleCustomNS );
+document.onload = toggleCustomNS();
+
+function toggleCustomNS()
+{
+    if( listNS.value == 'custom' )
+    {
+        txtNS.disabled = false;
+        pNS.style.display = 'block';
+    }
+    else
+    {
+        txtNS.disabled = true;
+        pNS.style.display = 'none';
+    }
+}
 
 function lookup( domain )
 {
@@ -28,6 +47,9 @@ function lookup( domain )
 
     if( listNS.value != '' )
         nsIPs = listNS.value;
+
+    if( listNS.value == 'custom' && txtNS.value != '' )
+        nsIPs = txtNS.value;
 
     var url = form.dataset.apiurl + '/api/dns/' + domain + '/' + selectedType + '/' + nsIPs;
 

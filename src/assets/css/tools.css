@@ -46,6 +46,12 @@ select
   outline: none;
 }
 
+input[type="text"]:disabled,
+select:disabled
+{
+  background-color: var( --color-background );
+}
+
 input[type="checkbox"]
 {
   background-color: var( --color-background );
@@ -68,4 +74,9 @@ button
   background-color: var( --color-background );
   overflow-x: auto;
   padding: 1rem;
+}
+
+#pNS
+{
+  display: none;
 }

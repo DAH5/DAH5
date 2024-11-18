@@ -38,8 +38,11 @@ layout: src/_inc/layout.php
                 <select id="listNS" disabled>
                     <option value="1.1.1.1+1.0.0.1">Cloudflare DNS (1.1.1.1 & 1.0.0.1)</option>
                     <option value="8.8.8.8+8.8.4.4">Google DNS (8.8.8.8 & 8.8.4.4)</option>
+                    <option value="1.1.1.1+8.8.8.8">Cloudflare & Google DNS (1.1.1.1 & 8.8.8.8)</option>
+                    <option value="custom">Custom Name Server IPs (Enter Below)</option>
                 </select>
             </p>
+            <p id="pNS"><label for="txtNS"><b>Custom Name Server IPs:</b> </label><input type="text" id="txtNS" placeholder="1.1.1.1 8.8.8.8" disabled></p>
             <p><button type="submit" id="btnSubmit" disabled>Submit</button></p>
         </form>
 
