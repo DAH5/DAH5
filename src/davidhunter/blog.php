@@ -1,7 +1,7 @@
 ---
 current_page: blog
 page_title: Blog
-footer_scripts: /davidhunter/assets/js/blog-search.js
+javascripts: /davidhunter/assets/js/blog-search.js
 layout: src/davidhunter/_inc/layout.php
 ---
 
