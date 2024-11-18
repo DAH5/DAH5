@@ -1,0 +1,421 @@
+SECURE AND MANAGE A DEBIAN-BASED LINUX SERVER - TUTORIAL
+
+In this tutorial, I will teach you how to secure and manage a server running a Debian-based Linux Operating System.
+
+This tutorial assumes you already have a server deployed and it has nothing on it apart from the Operating System.
+
+Do not take this tutorial as an absolute resource to server security and management, but it should serve as a good guideline to help you learn the sort of steps required when running a server. I would be happy to hear any suggestions you may have on how this tutorial can be improved.
+
+For the commands you type on your local machine, if you are using a Windows based machine, some of these commands may or may not work for you. I've found that using the terminal that comes with Git Bash usually works, so if you have issues, maybe try that one.
+
+
+==============================================
+|| STEP 1: CONNECTING TO THE SERVER VIA SSH ||
+==============================================
+
+SSH is short for Secure Shell, and is how you will remotely connect to your server and execute commands.
+
+Firstly, you will need to know the username your server was deployed with. Most commonly this will be "root" but not always. To keep things simple, I will assume the username is root for now.
+
+Secondly, you will need the server's IP address or hostname, which should be available in wherever you got your server from, or in an email you received.
+
+Now open a terminal window and type in the following command.
+
+--------------------------------
+| ssh root@server.hostname.tld |
+--------------------------------
+
+Replace "root" with the username for your server if different, and replace "server.hostname.tld" with your server's IP address or hostname.
+
+Type in the password you set or were supplied with when the server was deployed.
+
+You should now be connected to your server. If there are any issues connecting, you may need to contact your server provider for help.
+
+
+==================================================
+|| STEP 2: SETTING UP AND ENABLING THE FIREWALL ||
+==================================================
+
+As soon as a server is deployed, automated bots through scanning IP ranges will likely know of its existance, and will attempt to connect to it or alert hackers who may try to cause trouble. There is no way to fully prevent this from happening, but we can try to reduce the likelihood of success. We can do this using the firewall.
+
+Linux has a very easy to use and powerful firewall called the Uncomplicated Firewall, or UFW for short. In this step, we will make sure it is installed, configured to allow SSH connections through, and enabled so it takes effect.
+
+Before we start, update the local software repositories to make sure they are aware of any changes. Prefix with "sudo" if your username is not "root".
+
+--------------
+| apt update |
+--------------
+
+To make sure it is installed, type in the following command. Prefix with "sudo" if your username is not "root".
+
+-------------------
+| apt install ufw |
+-------------------
+
+To enable the firewall, type the following command. Prefix with "sudo" if your username is not "root".
+
+--------------
+| ufw enable |
+--------------
+
+Allow SSH connections through the firewall. We can add more rules later, but for now, SSH will be sufficiant. Prefix with "sudo" if your username is not "root".
+
+---------------------
+| ufw allow OpenSSH |
+---------------------
+
+View the status to ensure it is enabled and SSH is allowed by typing the following command. Prefix with "sudo" if your username is not "root".
+
+--------------
+| ufw status |
+--------------
+
+It should display the list of rules added to the firewall, which currently should just be two rules, both for SSH, one for IPv4 and one for IPv6.
+
+Lastly, it is highly recommended you check you can still connect to your server via SSH before closing down your current connection.
+
+Open up another terminal window or tab on your local machine, and connect to the server as you did before.
+
+--------------------------------
+| ssh root@server.hostname.tld |
+--------------------------------
+
+Replace "root" with the username for your server if different, and replace "server.hostname.tld" with your server's IP address or hostname.
+
+Type in the password you set or were supplied with when the server was deployed.
+
+If the firewall was set correctly, you should now be connected to your server and can disconnect one of the server connections and close its window or tab. If you failed to connect, then you may need to look at the firewall again in the original terminal window or tab.
+
+
+=============================================================
+|| STEP 3: CREATING A NON-ROOT USER TO USE INSTEAD OF ROOT ||
+=============================================================
+
+This step is for those who have been connecting using root so far. The root user can do absolutely anything on the system, even completely destroy it, so it is extremely important to avoid using it unless absolutely essential.
+
+Most server administration tasks can be performed as a normal user with super user privilages. This is known as "sudo", which is short for "super user do", meaning do this command as a super user. It also has the added benefit of requiring your password to be re-entered, which further safeguards the server against unauthorised sudo command executions.
+
+Some server providers provision servers with this step already taken care of, but for those that don't, meaning those that currently log in as "root" user, we will take care of that now.
+
+Add a new user with the username of your choice. Throughout this tutorial, I will use "johndoe" as the username, but you should choose a username that suits you.
+
+-------------------
+| adduser johndoe |
+-------------------
+
+Enter a strong password for the user, and optionally fill out the profile fields, but you can leave them blank. Confirm by pressing Y and enter.
+
+Give the new user super user privilages.
+
+----------------------------
+| usermod -aG sudo johndoe |
+----------------------------
+
+On some systems, sudo is not installed, to make sure it is installed type the following command while logged in as root user.
+
+--------------------
+| apt install sudo |
+--------------------
+
+When you have confirmed sudo is installed, open another terminal window or tab and try connecting as the new user you just created.
+
+-----------------------------------
+| ssh johndoe@server.hostname.tld |
+-----------------------------------
+
+Enter the password for that user and it should log you in.
+
+Once logged in, try executing a command as a super user. The command doesn't matter, its just to make sure the user can use sudo commands. Here I will use the "ls" command to list the contents of the current directory if there are any. Since this is a new user account, it should be empty.
+
+-----------
+| sudo ls |
+-----------
+
+It should list the contents of the directory if any, or give no result if empty. If you get anything else, you may need to retrace your steps and try again.
+
+Once you have confirmed that the new user account is working as expected, log out of the root account in the other terminal window or tab, and just connect using this new user account moving forward. Very rarely will you ever need to access the root account, almost always you will use sudo commands.
+
+
+===========================================
+|| STEP 4: GENERATING AND USING SSH KEYS ||
+===========================================
+
+Passwords are great, but for SSH we have something even better, and that is SSH Keys. These use public key cryptography to secure access to your server. Consisting of two keys, one called a public key, and the other called a private key. Togethey they form a key pair.
+
+Your public key is so named because you can put it on a t-shirt and walk down the street telling the world all about it if you so wished. Your private key is so named because it is to only be known to you, so keep it safe.
+
+When it comes to securing our server, the most important line of defence is securing access, so since we can use SSH Keys, we definately should.
+
+If you already have a key pair for use with SSH, you can skip this generation stage and just use the ones you already have, or you can proceed with this stage to create an additional pair.
+
+Disconnect from the server if you are still connected, as we will be working on the local machine for most of this part, and establishing a new connection towards the end.
+
+In the terminal, make sure you are in your home directory.
+
+--------
+| cd ~ |
+--------
+
+Create a new directory for your SSH Keys if you don't already have one, just to keep things organised. Change "ssh-keys" to whatever you want your new directory to be called.
+
+------------------
+| mkdir ssh-keys |
+------------------
+
+Change to that directory.
+
+---------------
+| cd ssh-keys |
+---------------
+
+Now to generate the key pair. For the keys to work with SSH, they need to be rsa keys, so we need to specify that to be sure.
+
+---------------------
+| ssh-keygen -t rsa |
+---------------------
+
+You should be presented with a prompt for where you wish your new key pair to be located. You can just hit enter here to use the default, but we want to make sure our keys are organised into the new folder we created above, so we are going to specify a path here.
+
+------------
+| ./id_rsa |
+------------
+
+That should put the key pair in the current directory your terminal is navigated to, which should be the new directory you created above. Change "id_rsa" to whatever you want to name your key, and remember that is what you named it, just in case you have more keys in the future you don't want to mix them up.
+
+You will now be prompted to enter a passphrase, this is for the private key. You may be tempted to hit enter to leave it blank, and if you are tempted to do that, just relax for a moment until that temptation goes away, because you really need to specify a passphrase for your private key, and make it extra strong, such as a line from a song you know, but also make sure no one can guess it.
+
+If your private key file was to fall into the wrong hands, no passphrase means they can use it to instantly gain access to your server if they figure out that's what the key is used for. Having a passphrase would prevent your private key from working for anyone that doesn't know the passphrase, so you really need to enter a passphrase for your private keys.
+
+Enter the passphrase again.
+
+Now the new key pair should be generated and be available at the location you specified.
+
+Before continuing, I highly recommend you backup your key files to somewhere safe and secure, such as an external hard drive, or an encrypted password manager. Losing your key files means you lose access to your server, so back them up somewhere safe now before continuing.
+
+
+Lastly, we need to copy the public key to the server so we can authenticate ourselves with it.
+
+-------------------------------------------------------
+| ssh-copy-id -i ./id_rsa johndoe@server.hostname.tld |
+-------------------------------------------------------
+
+Replace "id_rsa" with the name of your key and enter the same connection details you use when connecting to your server using SSH. You will be prompted for the password for the user account on the server to authorise the copy.
+
+The new key should now be on the server. It is best practice to verify this before continuing.
+
+Attempt to connect to the server using SSH, but this time, we will specify our key so that is used instead.
+
+-----------------------------------------------
+| ssh -i ./id_rsa johndoe@server.hostname.tld |
+-----------------------------------------------
+
+Enter the passphrase for your private key to authorise your use of the key, which is verified on your local machine rather than the remote server.
+
+You should now be connected to the server. If you experience issues, retrace your steps and try again.
+
+
+=================================================================================
+|| STEP 5: LOCKING DOWN SSH AND PREVENTING BRUTE FORCE AUTHENTICATION ATTEMPTS ||
+=================================================================================
+
+In this step, we will lock down SSH to only allow connections using keys, and to disable logging into the root account, as well as other tweaks. We will also be preventing brute force authentication attempts using "fail2ban".
+
+Change directory to where alternative ssh configuration is located.
+
+-----------------------------
+| cd /etc/ssh/sshd_config.d |
+-----------------------------
+
+We will now put some custom configuration into a separate file. Any configuration file in this folder that ends in ".conf" will be included as part of the SSH configuration automatically upon load.
+
+Putting our configuration into a separate file will keep things organised, and should we need to revert back to the original configuration for any reason, all we need to do is rename this file to not have ".conf" at the end, or simply delete it.
+
+Open a blank file with ".conf" on the end using your editor of choice. You can name the file whatever you want, as long as it ends in ".conf".
+
+-------------------------
+| sudo nano custom.conf |
+-------------------------
+
+You will most likely get prompted to enter your user password here to authorise the use of sudo.
+
+The file should open on your screen for you to edit. Type in the following.
+
+-----------------------------
+| PasswordAuthentication no |
+|                           |
+| PubkeyAuthentication yes  |
+|                           |
+| PermitRootLogin no        |
+|                           |
+| MaxAuthTries 3            |
+|                           |
+| PermitEmptyPasswords no   |
+|                           |
+| KerberosAuthentication no |
+|                           |
+| GSSAPIAuthentication no   |
+-----------------------------
+
+A brief explaination of the above settings...
+
+Setting "PasswordAuthentication" to "no" will make it so we can no longer use passwords to log into the server.
+
+Setting "PubkeyAuthentication" to "yes" will make sure Public Key Authentication is allowed.
+
+Setting "PermitRootLogin" to "no" will disallow authentication attempts with the "root" username.
+
+Setting "MaxAuthTries" to "3" will make it so no more than 3 authentications can be attempted. This setting is what will defend the server against brute force authentication attempts. We will soon set a similar setting in fail2ban, which will make this one a little redundant, but we can never be too paranoid when it comes to server security and if fail2ban was to ever fail for whatever reason, this setting will be a backup.
+
+Setting "PermitEmptyPasswords" to "no" will ensure no authentication attempts with no password can succeed, as that would be very bad.
+
+Setting "KerberosAuthentication" to "no" will make sure this alternative authentication method, that we do not intend to use, is disabled for security purposes.
+
+Setting "GSSAPIAuthentication" to "no" will make sure this alternative authentication method, that we do not intend to use, is disabled for security purposes.
+
+Save and close the file. The changes have not yet taken effect. To make the changes take effect, we need to restart the SSH service.
+
+------------------------------
+| sudo systemctl restart ssh |
+------------------------------
+
+The changes should now be in effect. It is best practice to check these settings work as expected before continuing.
+
+Leave the current terminal connected to your server, and open another terminal window or tab, and reconnect to your server without specifying your key, which will tell us if password authentication is disabled as we defined in the SSH config file.
+
+-----------------------------------
+| ssh johndoe@server.hostname.tld |
+-----------------------------------
+
+It should present you with a message indicating that you cannot log in, and mention that a public key is required.
+
+Try connecting again, but this time as root, to make sure root authentication is disabled.
+
+--------------------------------
+| ssh root@server.hostname.tld |
+--------------------------------
+
+There most likely won't be a separate message indicating root login is disabled, so it might just be the same as the previous message.
+
+After successfully failing to connect without the key, we should do one final check with the key to make sure that still works.
+
+--------------------------------------------------------
+| ssh -i ~/ssh-keys/id_rsa johndoe@server.hostname.tld |
+--------------------------------------------------------
+
+Enter your passphrase once prompted, and you should be connected. You can close down this connection now as it was just for testing purposes.
+
+
+The final segment of this step of the tutorial is to install and configure "fail2ban".
+
+Update the local respositories on the server.
+
+-------------------
+| sudo apt update |
+-------------------
+
+Then install "fail2ban".
+
+-----------------------------
+| sudo apt install fail2ban |
+-----------------------------
+
+Start the service.
+
+---------------------------------
+| sudo systemctl start fail2ban |
+---------------------------------
+
+Make sure the service starts automatically whenever the server is rebooted.
+
+----------------------------------
+| sudo systemctl enable fail2ban |
+----------------------------------
+
+Change to the "fail2ban" directory.
+
+--------------------
+| cd /etc/fail2ban |
+--------------------
+
+There are a couple of files in there called "jail.conf" and "fail2ban.conf", which you may think is what you edit, but these could be overridden in an update, so we want to create a new file for our custom configuration.
+
+Create and open a new file.
+
+------------------------
+| sudo nano jail.local |
+------------------------
+
+The editor should open and look blank, this is normal because it is a new file we are working with. Type in the text you see below into the file you have open in the terminal.
+
+-------------------------------
+| [sshd]                      |
+|                             |
+| enabled = true              |
+|                             |
+| port = 22                   |
+|                             |
+| filter = sshd               |
+|                             |
+| logpath = /var/log/auth.log |
+|                             |
+| maxretry = 3                |
+-------------------------------
+
+The "maxretry" setting here should be the same as what we set in the SSH config file earlier.
+
+Save and close the file. The changes have not yet taken effect. We need to restart the fail2ban service.
+
+-----------------------------------
+| sudo systemctl restart fail2ban |
+-----------------------------------
+
+From this moment onwards, anyone who fails 3 times to log into the server, their IP address will be blocked in our firewall automatically for a specified amount of time. You can set a custom amount of time in the file you just edited or stick to the default. To view the default ban time, view the "jail.conf" file, but don't edit it. Anything you want to change in that file should be added and changed in the "jail.local" file.
+
+We now have multiple layers of protection on our server against unauthorised access.
+
+
+================================
+|| STEP 6: UPGRADING SOFTWARE ||
+================================
+
+It is very important to keep the software on your server at the latest version. This can fix bugs and exploits and keep your server secure and your data safe.
+
+Update local repositories.
+
+-------------------
+| sudo apt update |
+-------------------
+
+Upgrade software.
+
+--------------------
+| sudo apt upgrade |
+--------------------
+
+Auto remove what is no longer needed.
+
+-----------------------
+| sudo apt autoremove |
+-----------------------
+
+Reboot the server.
+
+---------------
+| sudo reboot |
+---------------
+
+The server should be back online in a few minutes at most. You don't need to log back into it unless you plan on doing more with it.
+
+
+================
+|| CONCLUSION ||
+================
+
+You have now successfully secured your new Debian-based Linux server. You can now proceed to install whatever software you need for the server's intended use. Most people set it up as a web server, and if you want to do the same, check out my secure web server tutorial.
+
+I recommend connecting to your server every few days to ensure software is kept up to date and the server gets rebooted when needed.
+
+Thank you so much for taking the time to go through this tutorial. I do hope it was useful to you. Feel free to provide me with feedback if you have any using the details on the contact page.
+
+Enjoy your new server! :)
+

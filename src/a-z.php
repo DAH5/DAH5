@@ -30,14 +30,21 @@ layout: src/_inc/layout.php
             </ul>
 
             <ul>
-                <li><h2><b><a href="/games">Games</a></b></h2></li>
-                <li><a href="/games/love-calculator">Love Calculator</a></li>
+                <li><h2><b><a href="/davidhunter">David Hunter</a></b></h2></li>
+                <li><a href="/davidhunter/blog">Blog</a></li>
+                <li><a href="/davidhunter">Home</a></li>
+                <li><a href="/davidhunter/projects">Projects</a></li>
             </ul>
 
             <div class="clearfloat"></div>
         </div>
 
         <div class="a-z">
+            <ul>
+                <li><h2><b><a href="/games">Games</a></b></h2></li>
+                <li><a href="/games/love-calculator">Love Calculator</a></li>
+            </ul>
+            
             <ul>
                 <li><h2><b><a href="/privacybuff">Privacy Buff</a></b></h2></li>
                 <li><a href="/privacybuff">Coming Soon</a></li>
@@ -47,16 +54,16 @@ layout: src/_inc/layout.php
                 <li><h2><b><a href="/start">Start</a></b></h2></li>
             </ul>
 
+            <div class="clearfloat"></div>
+        </div>
+
+        <div class="a-z">
             <ul>
                 <li><h2><b><a href="/staticly">Staticly</a></b></h2></li>
                 <li><a href="/staticly/w3css">W3.CSS</a></li>
                 <li><a href="/staticly/webfonts">WebFonts</a></li>
             </ul>
 
-            <div class="clearfloat"></div>
-        </div>
-
-        <div class="a-z">
             <ul>
                 <li><h2><b><a href="/staticphp">StaticPHP</a></b></h2></li>
                 <li><a href="/staticphp/docs">Docs</a></li>
@@ -75,6 +82,10 @@ layout: src/_inc/layout.php
                 <li><a href="/staticphp/docs/php-files">PHP Files</a></li>
             </ul>
 
+            <div class="clearfloat"></div>
+        </div>
+
+        <div class="a-z">
             <ul>
                 <li><h2><b><a href="/tools">Tools</a></b></h2></li>
                 <li><a href="/tools/dns-lookup">DNS Lookup Tool</a></li>

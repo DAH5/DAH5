@@ -1,0 +1,577 @@
+DEBIAN-BASED LINUX WEB SERVER USING APACHE - TUTORIAL
+
+In this tutorial, I will teach you how to setup and manaage a secure server for hosting websites and web-based applications on using the Apache Web Server software.
+
+This tutorial assumes you already have a server deployed, and have secured it with my tutorial on server management, and have connected to it via Secure Shell (SSH).
+
+Do not take this tutorial as an absolute resource on how to setup and manage a secure web server, but it should serve as a good guideline to help you learn the sort of steps required when running a secure web server. I would be happy to hear any suggestions you may have on how this tutorial can be improved.
+
+For the commands you type on your local machine, if you are using a Windows based machine, some of these commands may or may not work for you. I've found that using the terminal that comes with Git Bash usually works, so if you have issues, maybe try that one.
+
+
+=======================================================
+|| STEP 1: INSTALLING THE APACHE WEB SERVER SOFTWARE ||
+=======================================================
+
+The Web Server software by Apache is perhaps the most common and most widely used. This can be both a good thing and a bad thing.
+
+The good side about it being one of the most common and most widely used is if you experience any issues or need to know how to do something specific, there is a very high chance you will find an answer somewhere.
+
+The bad side is that it might also be the most targeted by attackers and hackers, which increases the liklihood of your server being a target. This doesn't neccesserily mean they will succeed in their attempts, but it is something to note.
+
+Lets get it installed and see how things go.
+
+Update local repositories.
+
+-------------------
+| sudo apt update |
+-------------------
+
+Install Apache.
+
+----------------------------
+| sudo apt install apache2 |
+----------------------------
+
+We should also allow traffic on TCP Port 80 through the firewall, which is used for HTTP Web Traffic.
+
+-------------------------
+| sudo ufw allow 80/tcp |
+-------------------------
+
+View the firewall status to ensure it was added correctly.
+
+-------------------
+| sudo ufw status |
+-------------------
+
+It should show an entry allowing TCP Port 80 and a second one for IPv6.
+
+Now open a web browser and go to your server's IP address or hostname and you should see a default web page indicating that the web server is running and it works.
+
+-------------------------------
+| http://server.hostname.tld/ |
+-------------------------------
+
+Remember, we have not setup any SSL/TLS Certificates yet therefore HTTPS won't work, so make sure you just use HTTP in your web browser for now.
+
+===========================
+|| STEP 2: HARDEN APACHE ||
+===========================
+
+We need to harden Apache to protect against some potential attacks.
+
+=================================================
+| Step 2.1: Remove Version Numbers from Headers |
+=================================================
+
+Firstly, we will remove the Apache version number, which can be seen in the headers metadata of the page when served to the browser and tells attackers which version of Apache you are running so they can use known exploits and vulnerabilities, 
+
+Open up the Apache configuration file in your chosen editor.
+
+---------------------------------------
+| sudo nano /etc/apache2/apache2.conf |
+---------------------------------------
+
+Scroll down to the bottom of the file and type in the following. The hash mark indicates the start of a comment on that line. It is good practice to write a comment here to remind yourself that this code is your modification. You can change the comments to whatever you want, but I recommend you include them.
+
+-----------------------------
+| # Custom Code Starts Here |
+|                           |
+| ServerTokens Prod         |
+| ServerSignature Off       |
+|                           |
+| # Custom Code Ends Here   |
+-----------------------------
+
+ServerTokens: Setting this to "Prod" will limit the amount of information Apache reveals to the public to simply "Apache".
+ServerSignature: Setting this to "Off" will hide some additional information that Apache can provide, such as OS version and virtual host name, etc.
+
+Save and close the file. Restart Apache.
+
+----------------------------------
+| sudo systemctl restart apache2 |
+----------------------------------
+
+Reload the page in the browser and check the headers information using inspect element and the network tab. It should now be very minumal information provided.
+
+
+=======================================
+| Step 2.2: Disable Directory Listing |
+=======================================
+
+Now we will disable directory listing when there is no index file. This can be used to reveal files not intended for the public, so is recommended to disable it.
+
+Open up the Apache configuration file.
+
+---------------------------------------
+| sudo nano /etc/apache2/apache2.conf |
+---------------------------------------
+
+Find the directory directive for www similar to the following.
+
+-------------------------
+| <Directory /var/www/> |
+|     # ...             |
+| </Directory>          |
+-------------------------
+
+Under "Options", check if one for Indexes exists and ensure it is set to "-Indexes" to negate it. Also make sure any other options set have either a + or a -, otherwise Apache will display an error when it restarts.
+
+Save the file and restart Apache.
+
+----------------------------------
+| sudo systemctl restart apache2 |
+----------------------------------
+
+Create an empty directory in your public web folder.
+
+---------------------------------
+| sudo mkdir /var/www/html/test |
+---------------------------------
+
+Try to visit this directory in your browser.
+
+-----------------------------------
+| http://server.hostname.tld/test |
+-----------------------------------
+
+It should now display a 403 Forbidden error instead of a directory listing.
+
+Delete the directory as it was just used for testing purposes.
+
+---------------------------------
+| sudo rmdir /var/www/html/test |
+---------------------------------
+
+The directory should now be deleted.
+
+
+==============================================
+| Step 2.3: Remove Info from the Etag Header |
+==============================================
+
+Now for the Etag header.
+
+The Etag header allows remote attackers to gain access to some sensitive information about your server, such as inode number, multipart MIME boundary, and child process through the Etag header. Setting it to "None" will hide this information, which is also a requirement for PCI compliance.
+
+Open the Apache configuration file.
+
+---------------------------------------
+| sudo nano /etc/apache2/apache2.conf |
+---------------------------------------
+
+Scroll down to where your custom code is, and add the following line below the others.
+
+-----------------
+| FileETag None |
+-----------------
+
+Save and close the file. Restart Apache.
+
+----------------------------------
+| sudo systemctl restart apache2 |
+----------------------------------
+
+
+=================================================
+| Step 2.4: Run Apache as a Non-Privilaged User |
+=================================================
+
+By default, Apache may run as a special user account, and this could be used by an attacker to cause problems for your site or even your system. It is highly recommended you ensure it runs as a non-privileged user to help protect against this.
+
+Decide on a username you want to use with Apache. For this tutorial, I will simply use "apache".
+
+Create a group with the same name as the username you chose.
+
+------------------------
+| sudo groupadd apache |
+------------------------
+
+Create a new user and put them in the group you just created.
+
+---------------------------------
+| sudo useradd -g apache apache |
+---------------------------------
+
+Find the path to the Apache installation directory.
+
+----------------------
+| sudo which apache2 |
+----------------------
+
+Change ownership of the Apache installation directory to that of the new user and group you just created.
+
+-----------------------------------------------
+| sudo chown -R apache:apache /path/to/apache |
+-----------------------------------------------
+
+Open the Apache Environment Variables file.
+
+----------------------------------
+| sudo nano /etc/apache2/envvars |
+----------------------------------
+
+Find and set the new user and group for Apache.
+
+----------------------------------
+| export APACHE_RUN_USER=apache  |
+| export APACHE_RUN_GROUP=apache |
+----------------------------------
+
+Save and close the file. Restart Apache.
+
+----------------------------------
+| sudo systemctl restart apache2 |
+----------------------------------
+
+
+========================================
+| Step 2.5: Limit HTTP Request Methods |
+========================================
+
+By default, Apache can accept many different request methods, most of which are not needed for the majority of sites, so its best to limit these to the ones you will likely need.
+
+Open the Apache configuration file.
+
+---------------------------------------
+| sudo nano /etc/apache2/apache2.conf |
+---------------------------------------
+
+Find the root directory directive, it will look something like this...
+
+-----------------
+| <Directory /> |
+|     # ...     |
+| </Directory>  |
+-----------------
+
+Add the following after anything else in that directive.
+
+-------------------------------
+| <LimitExcept GET POST HEAD> |
+|     Deny from All           |
+| </LimitExcept>              |
+-------------------------------
+
+This will limit HTTP Request Methods to just GET, POST, and HEAD. You can add more if you know you need more, but for most situations, these will be fine.
+
+Save and close the file. Restart Apache.
+
+----------------------------------
+| sudo systemctl restart apache2 |
+----------------------------------
+
+
+======================================
+|| STEP 3: SETUP A NEW VIRTUAL HOST ||
+======================================
+
+A virtual host is how the server knows what website to deliver for each request, and how to handle each request related to each website.
+
+================================
+| Step 3.1: Virtual host files |
+================================
+
+Change directory to where the website files will be stored.
+
+---------------
+| cd /var/www |
+---------------
+
+To keep things orgamised, I recommend you create a new directory/folder here to keep all your virtual hosts in, since the current directory has other directory items in it.
+
+Create a new directory for all virtual hosts.
+
+---------------------
+| sudo mkdir vhosts |
+---------------------
+
+You can change "vhosts" to whatever you want, but remember what you called it.
+
+Change ownership of the directory to yourself.
+
+----------------------------------------
+| sudo chown -R johndoe:johndoe vhosts |
+----------------------------------------
+
+Change permisssions for the directory and its contents so that you own them but other users can read them, which is important because Apache needs to read them.
+
+----------------------------
+| sudo chmod -R 755 vhosts |
+----------------------------
+
+Now change into that directory.
+
+-------------
+| cd vhosts |
+-------------
+
+Create a new directory/folder for your virtual host. You can name it however you want, but probably something related to the site it is for.
+
+----------------
+| mkdir mysite |
+----------------
+
+Remember not to use sudo here or the permissions and ownership will change. We own the parent directory so elevation to root and use of sudo is not needed while here.
+
+Change into that directory.
+
+-------------
+| cd mysite |
+-------------
+
+Create a new directory in here to serve as the document root, which is where you put your HTML files and other public files to be served when someone visits the site for this virtual host. The name doesn't matter, as long as you remember it. I will use "public" for my example, because everything in here will be publicly accessible.
+
+----------------
+| mkdir public |
+----------------
+
+While we are here, we should also create a logs directory where the log files for this virtual host will be located.
+
+--------------
+| mkdir logs |
+--------------
+
+Change into the public directory you created.
+
+-------------
+| cd public |
+-------------
+
+Create a test html file so that when we have setup the site and virtual host, we can see that it routes to the right place on the server and serves the right content.
+
+-------------------
+| nano index.html |
+-------------------
+
+Type in anything you want as test content. It only needs to show that it loads and is different to any other virtual host you have or create in the future.
+
+-----------------------------------------------------------------
+| Hello, world! This is the "mysite" virtual host landing page! |
+-----------------------------------------------------------------
+
+Save and close the file.
+
+========================================
+| Step 3.2: Virtual host configuration |
+========================================
+
+Change to the apache sites available directory. This is where the configuration for each virtual host is stored.
+
+-----------------------------------
+| cd /etc/apache2/sites-available |
+-----------------------------------
+
+A quick note, the sites-available directory is where each configuration file will live for each of your virtual hosts, but this does not mean they are active and enabled. There is another directory on the same level as this one called "sites-enabled", which holds symbolic links to the configuration files in the "sites-available" directory for the virtual hosts that are active. This allows you to just enable some of your configured virtual hosts, rather than all of them if you so wished.
+
+Open our editor with a new blank configuration file, and since we don't own this directory, we need to use sudo. You can name the file however you want, but keeping it consistant with the virtual host / site name is recommended to save confusion later.
+
+-------------------------
+| sudo nano mysite.conf |
+-------------------------
+
+Type in virtual host information similar to this example...
+
+-----------------------------------------------------------------
+| <VirtualHost *:80>                                            |
+|     ServerAdmin webmaster@mysite.tld                          |
+|     ServerName mysite.tld                                     |
+|     ServerAlias www.mysite.tld                                |
+|     DocumentRoot /var/www/vhosts/mysite/public                |
+|     ErrorLog /var/www/vhosts/mysite/logs/error.log            |
+|     CustomLog /var/www/vhosts/mysite/logs/access.log combined |
+| </VirtualHost>                                                |
+-----------------------------------------------------------------
+
+ServerAdmin: A valid contact email address for the person responsible for this virtual host.
+
+ServerName: A domain or hostname where the site will be made available at. This is often the domain apex (domain.tld).
+
+ServerAlias: An alternative domain or hostname where the same site will be made available. This is usually the www subdomain of the ServerName.
+
+DocumentRoot: A path to where the files for this virtual host will be served from and be publicly accessible.
+
+ErrorLog: A path to where the error log for this virtual host will be located.
+
+CustomLog: A path to where the access log for this virtual host will be located, with the "combined" keyword specified, which I believe has something to do with the log format.
+
+Save and close the file.
+
+If the domain or hostname you specified in the above configuration file is different to the server hostname, you may need to ensure DNS is configured for it to point to the server. I won't cover how to do that in this tutorial, but I may cover DNS in another tutorial.
+
+Once you have checked that DNS is configured for the domains / hostnames specified in the above configuration file, you can activate the site.
+
+Activate the site.
+
+-----------------------------
+| sudo a2ensite mysite.conf |
+-----------------------------
+
+Reload Apache.
+
+---------------------------------
+| sudo systemctl reload apache2 |
+---------------------------------
+
+On your local machine, open a browser window or tab, and go to the web address for that virtual host to confirm it is working.
+
+----------------------
+| http://mysite.tld/ |
+----------------------
+
+You should see the test content you created earlier for that virtual host.
+
+==================================================
+|| STEP 3: SETUP SSL/TLS CERTIFICATES FOR HTTPS ||
+==================================================
+
+It used to be that SSL/TLS Certificates was just for e-commerce websites where payment information was exchanged. That later got widened to sites that accepts user information, such as contact details and passwords. Nowadays, it is recommended for all sites and is completely free. Renewals are also free and completely automated. It really is worth setting up and using for your sites.
+
+The certificates are provided by Let's Encrypt (https://letsencrypt.org), and are completely safe to use for most sites. Setup and automated renewals use Certbot.
+
+Before we get started, lets update local repositories.
+
+-------------------
+| sudo apt update |
+-------------------
+
+Now, lets install Certbot.
+
+----------------------------
+| sudo apt install certbot |
+----------------------------
+
+Since we are using the Apache web server, there is something else we need to make Certbot work with Apache.
+
+-------------------------------------------
+| sudo apt install python3-certbot-apache |
+-------------------------------------------
+
+There may be a newer version available in the future that makes this one not work, but at the time of writing this tutorial, the above works fine.
+
+Before we request a certificate using Certbot, I want to remind you that you need to have DNS setup correctly before you do this stage, otherwise it will fail. If it fails too many times, it will block subsequent requests for a period of time, and we don't want that, so make sure DNS is configured correctly before continuing.
+
+Request a new certificate using Certbot
+
+---------------------------------------
+| sudo certbot --apache --no-redirect |
+---------------------------------------
+
+The above command example uses the "--no-redirect" flag, this tells certbot not to configure the redirection for us because it will set it up as permanent, which can cause issues if SSL fails to work correctly, you may wish to disable the redirection in the future to diagnose issues, and you can't really do that with permanent redirections. We will setup our own redirection to HTTPS later.
+
+You will be promoted for a valid email address for renewal notifications, even though our renewals will be automated, it is still good to provide a valid email address here.
+
+Then you will be asked to read the Terms of Service and then choose whether you Agree or wish to Cancel. Obviously you cannot continue if you don't agree, but please make sure you read the Terms of Service first and choose accurately.
+
+After that, it will ask you if you want to share your email address with the Electronic Frontier Foundation, who are the people behind Certbot who work with Let's Encrypt. This decision is up to you, but you can safely say no here.
+
+Lastly, you will be asked which hostnames you wish to generate a certificate for. I recommend choosing the hostnames related to a single virtual host to keep the certificates separate in case you have multiple virtual hosts in the future, but the decision is up to you.
+
+It will then confirm DNS is configured correctly and that the hostnames do indeed point towards your server, this is why it is important to make sure DNS is setup before you used Certbot. Once confirmed, it will generate the certificate and configure it with the virtual host for you.
+
+
+Allow HTTPS through the firewall.
+
+--------------------------
+| sudo ufw allow 443/tcp |
+--------------------------
+
+Open up your browser and try to access the web address for the virtual host. This time, try accessing it using HTTPS.
+
+----------------------
+| https://mysite.tld |
+----------------------
+
+It should load successfully and display the relevant content for that virtual host / website.
+
+
+=======================================
+|| STEP 4: REDIRECTING HTTP TO HTTPS ||
+=======================================
+
+Certbot normally configures a 301 redirection to force HTTP connections to HTTPS. This is technically wrong becuase 301 is actually "Moved Permanently", which is virtually the same thing for this use, but we should actually use "307 Temporary Redirect", which forces all connections to be HTTPS while also allowing us to disable it should we need to diagnose something in the future.
+
+Open the virtual host configuration file.
+
+------------------------------------------------------
+| sudo nano /etc/apache2/sites-available/mysite.conf |
+------------------------------------------------------
+
+Remember to replace "mysite" with the name of the configuration file for your virtual host.
+
+On a new line before the closing </VirtualHost> tag, add the following directory directive and allow all overrides.
+
+---------------------------------------------
+| <Directory /var/www/vhosts/mysite/public> |
+|     AllowOverride All                     |
+| </Directory>                              |
+---------------------------------------------
+
+Make sure the directory path matches that of your DocuemntRoot specified in the same file.
+
+Save and close the file.
+
+Make a similar modification to the equivilant Let's Encrypt SSL virtual host file.
+
+-------------------------------------------------------------
+| sudo nano /etc/apache2/sites-available/mysite-le-ssl.conf |
+-------------------------------------------------------------
+
+---------------------------------------------
+| <Directory /var/www/vhosts/mysite/public> |
+|     AllowOverride All                     |
+| </Directory>                              |
+---------------------------------------------
+
+Save and close the file.
+
+Enable Apache rewrite module.
+
+------------------------
+| sudo a2enmod rewrite |
+------------------------
+
+Restart Apache.
+
+----------------------------------
+| sudo systemctl restart apache2 |
+----------------------------------
+
+Change directory to the docuemnt root of your virtual host, the path might be different to the example.
+
+------------------------------------
+| cd /var/www/vhosts/mysite/public |
+------------------------------------
+
+Now to apply the code that redirects from HTTP to HTTPS.
+
+Open your text editor with a fresh new file called ".htaccess".
+
+------------------
+| nano .htaccess |
+------------------
+
+Type in the following code...
+
+--------------------------------------------------------------
+| <IfModule mod_rewrite.c>                                   |
+|     RewriteEngine on                                       |
+|                                                            |
+|     RewriteCond %{SERVER_PORT} ^80$                        |
+|     RewriteRule ^(.*)$ https://%{HTTP_HOST}/$1 [R=307,END] |
+| </IfModule>                                                |
+--------------------------------------------------------------
+
+It's not too important to know what this code does at this stage, but for those who are interested, I will briefly explain.
+
+A conditional check is performed to make sure rewrites are enabled in Apache. Then the Rewrite Engine is turned on. After that there is a Rewrite Condition check to see if the Server Port is 80, which is the port number used for HTTP connections. Finally, when the check suceeds, a Rewrite Rule is applied to rewrite the request, capturing everything in the request, and redirecting it using code 307, which is temporary redirect, to the HTTPS equivilant of the current request, and END signifying that once this rule is applied, do not apply other rules to the current request.
+
+Save and close the file.
+
+Open up your browser, attempt to visit the HTTP version of your site. It should redirect to the HTTPS version and show the correct content for that site.
+
+---------------------
+| http://mysite.tld |
+---------------------
+
