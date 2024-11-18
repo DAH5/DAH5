@@ -66,7 +66,7 @@ content_placeholder: {{ content }}
 
     <div class="footer">
         <div class="container">
-            <p class="text">StaticPHP is available on <a href="http://github.com/Softwayr/StaticPHP" target="_blank">GitHub</a>.</p>
+            <p class="text">StaticPHP is available on <a href="http://weburl.net/github/staticphp" target="_blank">GitHub</a> and <a href="https://weburl.net/gitlab/staticphp" target="_blank">GitLab</a>.</p>
         </div>
     </div>
 </div>
