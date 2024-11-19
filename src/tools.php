@@ -32,6 +32,11 @@ layout: src/_inc/layout.php
             ),
             array
             (
+                'title' => 'rDNS Lookup Tool',
+                'url' => '/tools/rdns-lookup'
+            ),
+            array
+            (
                 'title' => 'WHOIS Lookup Tool',
                 'url' => '/tools/whois-lookup'
             ),
