@@ -16,7 +16,9 @@ layout: src/staticphp/_inc/layout.php
         <p>The StaticPHP Launcher makes it easy to save your build configuration and stay up to date with the latest developments in StaticPHP.</p>
 
         <div class="call2action">
-            <a href="http://raw.githubusercontent.com/Softwayr/StaticPHP/master/StaticPHP-Launcher.php" target="_blank" class="button highlight">StaticPHP-Launcher.php on GitHub</a>
+            <a href="http://raw.githubusercontent.com/DAH5/StaticPHP/master/StaticPHP-Launcher.php" target="_blank" class="button highlight">StaticPHP-Launcher.php on GitHub</a>
+            &nbsp;
+            <a href="https://gitlab.com/DAH5/StaticPHP/-/raw/master/StaticPHP-Launcher.php" target="_blank" class="button">StaticPHP-Launcher.php on GitLab</a>
         </div>
 
         
@@ -28,7 +30,9 @@ layout: src/staticphp/_inc/layout.php
         <p>Alternatively, you can download the actual StaticPHP class file for use with the commandline or your own launcher script.</p>
 
         <div class="call2action">
-            <a href="http://raw.githubusercontent.com/Softwayr/StaticPHP/master/StaticPHP.php" target="_blank" class="button highlight">StaticPHP.php on GitHub</a>
+            <a href="http://raw.githubusercontent.com/DAH5/StaticPHP/master/StaticPHP.php" target="_blank" class="button highlight">StaticPHP.php on GitHub</a>
+            &nbsp;
+            <a href="https://gitlab.com/DAH5/StaticPHP/-/raw/master/StaticPHP.php" target="_blank" class="button">StaticPHP.php on GitLab</a>
         </div>
 
         <p>&nbsp;</p>
