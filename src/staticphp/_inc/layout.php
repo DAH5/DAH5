@@ -38,7 +38,8 @@ content_placeholder: {{ content }}
                         <li><a href="/staticphp/docs/html-files"<?php if( isset( $metadata[ 'docs_nav_item' ] ) && $metadata[ 'docs_nav_item' ] == 'html-files' ) echo ' class="current"'; ?>>HTML Files</a></li>
                         <li><a href="/staticphp/docs/php-files"<?php if( isset( $metadata[ 'docs_nav_item' ] ) && $metadata[ 'docs_nav_item' ] == 'php-files' ) echo ' class="current"'; ?>>PHP Files</a></li>
                         <li><a href="/staticphp/docs/markdown-files"<?php if( isset( $metadata[ 'docs_nav_item' ] ) && $metadata[ 'docs_nav_item' ] == 'markdown-files' ) echo ' class="current"'; ?>>Markdown Files</a></li>
-
+                        <li><a href="/staticphp/docs/redirections"<?php if( isset( $metadata[ 'docs_nav_item' ] ) && $metadata[ 'docs_nav_item' ] == 'redirections' ) echo ' class="current"'; ?>>Redirections</a></li>
+                        
                         <div class="clearfloat"></div>
                     </ul>
                 </div>
