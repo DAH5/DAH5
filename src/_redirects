@@ -6,3 +6,5 @@
 /game/* /games/:splat
 /faaa /favourite-actors-and-actresses
 /favorite-actors-and-actresses /favourite-actors-and-actresses
+
+/staticphp/* https://www.uri.me.uk/tools/staticphp/:splat 307
