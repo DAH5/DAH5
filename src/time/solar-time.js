@@ -1,6 +1,6 @@
 // Fetch and display solar data for a given identifier
 async function fetchSolarData(identifier, element) {
-    const apiUrl = `https://time.api.weburl.net/solar/${identifier}_solar_data.json`;
+    const apiUrl = `https://time.api.weburl.net/solar/${identifier}.json`;
 
     try {
         const response = await fetch(apiUrl);
