@@ -1,36 +1,74 @@
 .love-calculator
 {
-    background-image: url( 'hearts.gif' );
-    background-position: center;
-    background-color: #ffddf9;
+    background: linear-gradient(135deg, #ffddf9 0%, #ff9ced 100%);
     color: #333333;
     padding: 28px;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
 }
 
 .love-calculator .container
 {
     max-width: 600px;
     margin: 0 auto;
-    padding: 1rem;
-    background-color: #ffddf9;
-    border: 6px solid #ff9ced;
+    padding: 2rem;
+    background-color: rgba(255, 255, 255, 0.95);
+    border-radius: 1.5rem;
+    box-shadow: 0 10px 30px rgba(255, 156, 237, 0.3);
+    transition: transform 0.3s ease;
+    position: relative;
+}
+
+#NoJSOverlay
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(2px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 1.5rem;
+    z-index: 100;
+    border: 2px dashed #ff9ced;
+}
+
+#NoJSOverlay p
+{
+    font-size: 1.2rem;
+    color: #ff4d94;
+    text-align: center;
+    padding: 2rem;
+    font-weight: bold;
+    background: rgba(255, 255, 255, 0.9);
     border-radius: 1rem;
+    box-shadow: 0 4px 15px rgba(255, 77, 148, 0.2);
+}
+
+.love-calculator .container:hover
+{
+    transform: translateY(-5px);
 }
 
 .love-calculator h2
 {
     text-align: center;
-    margin: 0;
+    margin: 0 0 1rem 0;
     font-size: 32px;
+    color: #ff4d94;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .love-calculator hr
 {
-    border-color: #ff9ced;
-    border-style: solid;
-    border-width: 3px;
-    margin-left: -1rem;
-    margin-right: -1rem;
+    border: none;
+    height: 3px;
+    background: linear-gradient(to right, transparent, #ff9ced, transparent);
+    margin: 1.5rem -2rem;
 }
 
 .love-calculator .input
@@ -38,25 +76,145 @@
     padding: 1rem;
     width: 100%;
     min-height: 65px;
-    background-color: #ff9ced;
+    background-color: #fff;
+    border: 2px solid #ff9ced;
     border-radius: 1rem;
+    transition: all 0.3s ease;
+    margin-bottom: 1rem;
+}
+
+.love-calculator .input[tabindex="-1"]
+{
+    background-color: #f5f5f5;
+    border-color: #ddd;
+    cursor: not-allowed;
+}
+
+.love-calculator .input:focus
+{
+    outline: none;
+    border-color: #ff4d94;
+    box-shadow: 0 0 0 3px rgba(255, 77, 148, 0.2);
+}
+
+.love-calculator .buttons
+{
+    display: flex;
+    gap: 1rem;
+    margin: 1.5rem 0;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 .love-calculator .button
 {
-    background-color: #ff9ced;
-    color: #000000;
-    padding: 0.5rem 1rem;
+    padding: 0.75rem 1.5rem;
     font-size: 1rem;
     font-weight: bold;
-    border-radius: 1rem;
-    border-width: 0;
+    border-radius: 2rem;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-align: center;
+    white-space: nowrap;
 }
 
-@media ( min-width: 800px )
+.love-calculator .button:disabled
+{
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none !important;
+    box-shadow: none !important;
+}
+
+/* Primary button (Calculate) */
+.love-calculator .button#CalculateBTN
+{
+    background: linear-gradient(45deg, #ff9ced, #ff4d94);
+    color: #ffffff;
+    box-shadow: 0 4px 15px rgba(255, 77, 148, 0.2);
+    flex: 2;
+}
+
+.love-calculator .button#CalculateBTN:disabled
+{
+    background: #ccc;
+    color: #666;
+}
+
+.love-calculator .button#CalculateBTN:hover
+{
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(255, 77, 148, 0.4);
+}
+
+/* Secondary buttons (Swap and Reset) */
+.love-calculator .button#SwapNamesBTN,
+.love-calculator .button#ResetBTN
+{
+    background: transparent;
+    color: #ff4d94;
+    border: 2px solid #ff9ced;
+    flex: 1;
+}
+
+.love-calculator .button#SwapNamesBTN:hover,
+.love-calculator .button#ResetBTN:hover
+{
+    background: rgba(255, 156, 237, 0.1);
+    transform: translateY(-1px);
+}
+
+.love-calculator .button:active
+{
+    transform: translateY(0);
+}
+
+#MessageArea
+{
+    transition: all 0.3s ease;
+    margin: 1rem 0;
+    padding: 1rem;
+    border-radius: 1rem;
+    text-align: center;
+    font-weight: bold;
+}
+
+#MessageArea.success
+{
+    background-color: #ff9ced;
+    color: #fff;
+    animation: pulse 1s ease;
+}
+
+@keyframes pulse
+{
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+@media (max-width: 600px)
+{
+    .love-calculator .buttons
+    {
+        flex-direction: column;
+        gap: 0.75rem;
+    }
+
+    .love-calculator .button
+    {
+        width: 100%;
+        min-width: unset;
+    }
+}
+
+@media (min-width: 800px)
 {
     .love-calculator
     {
-        padding: 128px 28px;
+        padding: 64px 28px;
     }
 }

@@ -1,0 +1,48 @@
+---
+page-title: The Bored Game
+main-nav-item: games
+layout: src/_inc/layout.php
+stylesheets: /games/bored-game/stylesheet.css
+javascripts: /games/bored-game/javascript.js
+---
+
+<section class="minisite-header">
+    <div class="container">
+        <h1>Games</h1>
+    </div>
+</section>
+
+<section class="bored-game">
+    <div class="container">
+        <div class="game-container">
+            <div class="game-header">
+                <h2>Welcome to The Bored Game</h2>
+                <p class="game-description">A game so boring, it's actually fun to play. Or is it?</p>
+            </div>
+
+            <div class="game-content">
+                <div class="task-display">
+                    <h3>Current Task</h3>
+                    <p id="currentTask">Loading your first boring task...</p>
+                </div>
+
+                <div class="task-controls">
+                    <button id="nextTask" class="btn btn-primary">Next Task</button>
+                    <button id="resetGame" class="btn btn-secondary">Start Over</button>
+                </div>
+
+                <div class="progress-section">
+                    <h3>Your Progress</h3>
+                    <div class="progress-bar">
+                        <div id="progressFill" class="progress-fill"></div>
+                    </div>
+                    <p id="taskCount">Task 0 of 10</p>
+                </div>
+            </div>
+
+            <div id="NoJSOverlay" class="no-js-overlay">
+                <p>This game requires JavaScript to be enabled. Please enable JavaScript to play The Bored Game.</p>
+            </div>
+        </div>
+    </div>
+</section> 

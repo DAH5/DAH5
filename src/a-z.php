@@ -6,73 +6,60 @@ layout: src/_inc/layout.php
 
 <section class="minisite-header">
     <div class="container">
-        <h1>A-Z</h1>
+        <h1>A-Z Directory</h1>
     </div>
 </section>
 
-<section style="padding: 64px 0px;">
+<section class="directory-section">
     <div class="container">
-        <p>This page has a complete list of all pages on the DAH5 website. It may also include pages in development with broken features.</p>
-
-        <div class="a-z">
-            <ul>
-                <li><h2><b><a href="/analogueradio">Analogue Radio</a></b></h2></li>
-                <li><a href="/analogueradio/bbc-radio-4">BBC Radio 4</a></li>
-            </ul>
-
-            <ul>
-                <li><h2><b><a href="/">DAH5</a></b></h2></li>
-                <li><a href="/a-z">A - Z</a></li>
-                <li><a href="/about">About</a></li>
-                <li><a href="/games">Games</a></li>
-                <li><a href="/start">Start</a></li>
-                <li><a href="/tools">Tools</a></li>
-            </ul>
-
-            <ul>
-                <li><h2><b><a href="/davidhunter">David Hunter</a></b></h2></li>
-                <li><a href="/davidhunter/blog">Blog</a></li>
-                <li><a href="/davidhunter">Home</a></li>
-                <li><a href="/davidhunter/projects">Projects</a></li>
-            </ul>
-
-            <div class="clearfloat"></div>
+        <div class="directory-intro">
+            <p>Welcome to the complete directory of DAH5. Here you'll find all the main sections and features of the site, organized for easy navigation.</p>
         </div>
 
-        <div class="a-z">
-            <ul>
-                <li><h2><b><a href="/games">Games</a></b></h2></li>
-                <li><a href="/games/love-calculator">Love Calculator</a></li>
-            </ul>
-            
-            <ul>
-                <li><h2><b><a href="/privacybuff">Privacy Buff</a></b></h2></li>
-                <li><a href="/privacybuff">Coming Soon</a></li>
-            </ul>
+        <div class="directory-grid">
+            <!-- Main Sections -->
+            <div class="directory-category">
+                <h2>Main Sections</h2>
+                <div class="category-content">
+                    <a href="/" class="directory-link main-link">Home</a>
+                    <a href="/games" class="directory-link main-link">Games</a>
+                    <a href="/tools" class="directory-link main-link">Tools</a>
+                    <a href="/about" class="directory-link main-link">About</a>
+                </div>
+            </div>
 
-            <ul>
-                <li><h2><b><a href="/start">Start</a></b></h2></li>
-            </ul>
+            <!-- Games -->
+            <div class="directory-category">
+                <h2>Games</h2>
+                <div class="category-content">
+                    <a href="/games/love-calculator" class="directory-link">Love Calculator</a>
+                    <a href="/games/the-bored-game" class="directory-link">The Bored Game</a>
+                </div>
+            </div>
 
-            <div class="clearfloat"></div>
+            <!-- Tools -->
+            <div class="directory-category">
+                <h2>Tools</h2>
+                <div class="category-content">
+                    <a href="/tools/dns-lookup" class="directory-link">DNS Lookup Tool</a>
+                    <a href="/tools/rdns-lookup" class="directory-link">rDNS Lookup Tool</a>
+                    <a href="/tools/whois-lookup" class="directory-link">WHOIS Lookup Tool</a>
+                    <a href="/tools/find-urls-in-string" class="directory-link">Find URLs in String</a>
+                </div>
+            </div>
+
+            <!-- Resources -->
+            <div class="directory-category">
+                <h2>Resources</h2>
+                <div class="category-content">
+                    <a href="/staticly" class="directory-link">Staticly</a>
+                    <a href="/analogueradio" class="directory-link">Analogue Radio</a>
+                </div>
+            </div>
         </div>
 
-        <div class="a-z">
-            <ul>
-                <li><h2><b><a href="/staticly">Staticly</a></b></h2></li>
-                <li><a href="/staticly/w3css">W3.CSS</a></li>
-                <li><a href="/staticly/webfonts">WebFonts</a></li>
-            </ul>
-            
-            <ul>
-                <li><h2><b><a href="/tools">Tools</a></b></h2></li>
-                <li><a href="/tools/dns-lookup">DNS Lookup Tool</a></li>
-                <li><a href="/tools/find-urls-in-string">Find URLs in String</a></li>
-                <li><a href="/tools/rdns-lookup">rDNS Lookup Tool</a></li>
-                <li><a href="/tools/whois-lookup">WHOIS Lookup Tool</a></li>
-            </ul>
-
-            <div class="clearfloat"></div>
+        <div class="directory-footer">
+            <p>Can't find what you're looking for? <a href="/about#contact">Get in touch</a> and let us know!</p>
         </div>
     </div>
 </section>

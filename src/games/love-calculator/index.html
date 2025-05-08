@@ -3,6 +3,7 @@ page-title: Love Calculator - Games
 main-nav-item: games
 layout: src/_inc/layout.php
 stylesheets: /games/love-calculator/stylesheet.css
+javascripts: /games/love-calculator/javascript.js
 ---
 
 <section class="minisite-header">
@@ -13,30 +14,36 @@ stylesheets: /games/love-calculator/stylesheet.css
 
 <div class="love-calculator">
     <div class="container">
+        <div id="NoJSOverlay">
+            <p>Please enable JavaScript to use the Love Calculator.</p>
+        </div>
+
         <h2>Love Calculator</h2>
-        <p>A simple game that calculates how much one person is in love with another person.</p>
-        <p><b>Disclaimer:</b> This is a game, and is not to be taken seriously. Always follow your heart in matters of love, and give your situation proper thought.</p>
+        <p>Discover the magical connection between two names! This fun calculator uses a special algorithm to determine the love compatibility between any two people.</p>
+        <p><b>Disclaimer:</b> This is a fun game and should not be taken seriously. Always follow your heart in matters of love, and give your situation proper thought.</p>
 
         <hr>
 
-        <p id="MessageArea">Please enable JavaScript to play this game.</p>
+        <div id="MessageArea"></div>
 
-        <p><b>Person One:</b></p>
+        <div class="input-group">
+            <label for="PersonOneTXT"><b>First Name:</b></label>
+            <div class="input" id="PersonOneTXT" role="textbox" aria-label="Enter first name"></div>
+        </div>
 
-        <p class="input" id="PersonOneTXT"></p>
+        <div class="input-group">
+            <label for="PersonTwoTXT"><b>Second Name:</b></label>
+            <div class="input" id="PersonTwoTXT" role="textbox" aria-label="Enter second name"></div>
+        </div>
 
-        <p><b>Person Two:</b></p>
-
-        <p class="input" id="PersonTwoTXT"></p>
-
-        <p class="buttons">
-            <button type="button" class="button" id="CalculateBTN">Calculate</button>
-            &nbsp;
+        <div class="buttons">
+            <button type="button" class="button" id="CalculateBTN">Calculate Love</button>
             <button type="button" class="button" id="SwapNamesBTN">Swap Names</button>
-            &nbsp;
             <button type="button" class="button" id="ResetBTN">Reset</button>
-        </p>
+        </div>
+
+        <div class="tips">
+            <p><small>💡 Tip: Press Enter after typing names to calculate instantly!</small></p>
+        </div>
     </div>
 </div>
-
-<script type="text/javascript" src="/games/love-calculator/javascript.js"></script>
