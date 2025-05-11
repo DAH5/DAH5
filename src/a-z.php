@@ -41,6 +41,7 @@ layout: src/_inc/layout.php
             <div class="directory-category">
                 <h2>Tools</h2>
                 <div class="category-content">
+                    <a href="/tools/textpad" class="directory-link" target="_blank">Textpad</a>
                     <a href="/tools/dns-lookup" class="directory-link">DNS Lookup Tool</a>
                     <a href="/tools/rdns-lookup" class="directory-link">rDNS Lookup Tool</a>
                     <a href="/tools/whois-lookup" class="directory-link">WHOIS Lookup Tool</a>

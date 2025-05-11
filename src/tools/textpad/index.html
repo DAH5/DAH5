@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Textpad - Simple Text Editor</title>
+    <link rel="stylesheet" href="/tools/textpad/styles.css">
+</head>
+<body>
+    <div id="nojs-message">
+        <p>This text editor requires JavaScript to function. Please enable JavaScript in your browser settings to use this tool.</p>
+    </div>
+    <div class="editor-container" id="editorContainer">
+        <div class="toolbar">
+            <div class="toolbar-left">
+                <button id="newFile" title="New File">New</button>
+                <button id="openFile" title="Open File">Open</button>
+                <button id="saveFile" title="Save File">Save</button>
+            </div>
+            <div class="filename-display" id="filenameDisplay" title="Current filename">document.txt</div>
+        </div>
+        <div class="editor-wrapper">
+            <textarea id="editor" placeholder="Start typing here..."></textarea>
+        </div>
+    </div>
+    <input type="file" id="fileInput" accept=".txt" class="hidden">
+    <footer class="site-footer">
+        <div class="footer-content">
+            <a href="/" class="site-link">DAH5</a>
+            <span class="footer-separator">•</span>
+            <a href="/tools" class="site-link">More Tools</a>
+        </div>
+    </footer>
+    <script src="/tools/textpad/script.js"></script>
+</body>
+</html>

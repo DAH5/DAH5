@@ -14,6 +14,16 @@ layout: src/_inc/layout.php
 <section class="tools-section">
     <div class="container">
         <div class="tools-grid">
+            <!-- Textpad Tool -->
+            <div class="tool-card">
+                <div class="tool-icon">
+                    <i class="fas fa-file-alt"></i>
+                </div>
+                <h2>Textpad</h2>
+                <p>A simple, browser-based text editor with file operations. Create, edit, and save text files directly in your browser.</p>
+                <a href="/tools/textpad" class="btn btn-primary" target="_blank">Use Tool</a>
+            </div>
+
             <!-- DNS Lookup Tool -->
             <div class="tool-card">
                 <div class="tool-icon">
