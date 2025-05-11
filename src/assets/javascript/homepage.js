@@ -70,9 +70,16 @@ function dayNumToName(num) {
 }
 
 function dayNumAddSuffix(num) {
-    if (num.substr(-1, 1) == '1') return num + 'st';
-    if (num.substr(-1, 1) == '2') return num + 'nd';
-    if (num.substr(-1, 1) == '3') return num + 'rd';
+    // Special cases for 11, 12, 13
+    if (num === '11' || num === '12' || num === '13') {
+        return num + 'th';
+    }
+    
+    // Handle other numbers based on their last digit
+    const lastDigit = num.substr(-1, 1);
+    if (lastDigit === '1') return num + 'st';
+    if (lastDigit === '2') return num + 'nd';
+    if (lastDigit === '3') return num + 'rd';
     return num + 'th';
 }
 
