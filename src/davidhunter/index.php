@@ -15,7 +15,7 @@ javascripts: /assets/javascript/anti-email-harvesting.js
 
         <p>Just send me an email, and I will respond soon.</p>
 
-        <p><span class="email-address">david [dot] hunter [at] themailbox [dot] net</span></p>
+        <p><span class="email-address">david [dot] hunter [at] dah5 [dot] me [dot] uk</span></p>
 
         <p>One more thing, if you're not doing much else right now, maybe you could check out my <a href="/davidhunter/blog">blog</a>?</p>
     </div>

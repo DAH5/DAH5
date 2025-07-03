@@ -1,1 +1,1 @@
-Powered by <a href="https://weburl.net/staticphp" target="_blank">StaticPHP</a>.</a>
+Powered by <a href="https://redirect.dah5.me.uk/staticphp" target="_blank">StaticPHP</a>.</a>
