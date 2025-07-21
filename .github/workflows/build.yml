@@ -1,0 +1,84 @@
+name: Build Static Site with StaticPHP
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    env:
+      KATAPULT_OBJECT_STORAGE_REGION: uk-lon-1
+      KATAPULT_OBJECT_STORAGE_HOSTNAME: uk-lon-1.katapultobjects.com
+      KATAPULT_OBJECT_STORAGE_BUCKET_NAME: dah5
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Set up PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '7.4'
+
+      - name: Run StaticPHP build
+        run: php StaticPHP-Launcher.php
+      
+      - name: Install s3cmd
+        run: sudo apt-get install -y s3cmd
+
+      - name: Configure s3cmd for use with Katapult Object Storage and define mine-types list
+        run: |
+          cat > ~/.mime.types <<EOF
+          text/html       html htm
+          text/css        css
+          application/javascript js
+          application/json json
+          image/svg+xml   svg
+          EOF
+
+          cat > ~/.s3cfg <<EOF
+          [default]
+          access_key = ${{ secrets.KATAPULT_ACCESS_KEY }}
+          secret_key = ${{ secrets.KATAPULT_SECRET_KEY }}
+          host_base = $KATAPULT_OBJECT_STORAGE_HOSTNAME
+          host_bucket = %(bucket)s.$KATAPULT_OBJECT_STORAGE_HOSTNAME
+          bucket_location = $KATAPULT_OBJECT_STORAGE_REGION
+          signature_v2 = True
+          use_https = True
+          mime_types = /home/runner/.mime.types
+          EOF
+        
+      - name: Purge Katapult Object Storage bucket
+        run: |
+          s3cmd del --recursive --force s3://$KATAPULT_OBJECT_STORAGE_BUCKET_NAME/
+
+      - name: Upload files to the Katapult Object Storage bucket with correct MIME types
+        run: |
+          # Build extension-to-MIME map from .mime.types
+          declare -A mime_map
+          while read -r line; do
+            [[ "$line" =~ ^#.*$ || -z "$line" ]] && continue  # Skip comments/blanks
+            mime="${line%%[[:space:]]*}"
+            extensions="${line#"$mime"}"
+            for ext in $extensions; do
+              mime_map[$ext]=$mime
+            done
+          done < ~/.mime.types
+
+          # Upload files using detected MIME types
+          find public -type f | while read filepath; do
+            ext="${filepath##*.}"
+            mime="${mime_map[$ext]}"
+            s3path="${filepath#public/}"
+
+            if [ -n "$mime" ]; then
+              echo "Uploading $filepath as $mime"
+              s3cmd sync --mime-type="$mime" "$filepath" "s3://$KATAPULT_OBJECT_STORAGE_BUCKET_NAME/$s3path" --delete-removed --acl-public
+            else
+              echo "Uploading $filepath with default mime"
+              s3cmd sync "$filepath" "s3://$KATAPULT_OBJECT_STORAGE_BUCKET_NAME/$s3path" --delete-removed --acl-public
+            fi
+          done
