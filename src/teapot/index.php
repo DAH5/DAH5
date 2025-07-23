@@ -72,7 +72,7 @@
 		</div>
 		
 		<div class="teapot">
-			<p><img src="/assets/images/teapot.png"></p>
+			<p><img src="teapot.png"></p>
 		</div>
 	</body>
 </html>
