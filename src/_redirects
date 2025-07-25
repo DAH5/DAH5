@@ -8,3 +8,5 @@
 /favorite-actors-and-actresses /favourite-actors-and-actresses
 
 /staticphp/* https://weburl.net/staticphp/:splat 307
+
+/davidhunter/* https://weburl.net/davidhunter/:splat 307

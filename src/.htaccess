@@ -16,4 +16,7 @@ ErrorDocument 404 /404.html
 
     RewriteRule ^staticphp/?$ https://weburl.net/staticphp/ [R=307,END]
     RewriteRule ^staticphp/(.*)$ https://weburl.net/staticphp/$1 [R=307,END]
+
+    RewriteRule ^davidhunter/?$ https://weburl.net/davidhunter/ [R=307,END]
+    RewriteRule ^davidhunter/(.*)$ https://weburl.net/davidhunter/$1 [R=307,END]
 </IfModule>

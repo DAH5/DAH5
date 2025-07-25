@@ -1,8 +1,0 @@
-<article>
-    <h3 class="title">TITLE</h3>
-    <p class="metadata">Published by AUTHOR NAME on DATE at TIME.</p>
-    <p class="description">DESCRIPTION</p>
-    <p class="buttons">
-        <a href="PERMALINK">Read More</a>
-    </p>
-</article>
