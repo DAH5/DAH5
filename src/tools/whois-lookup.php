@@ -18,7 +18,7 @@ layout: src/_inc/layout.php
 
         <p id="msgDisabled">Please enable JavaScript to use this tool.</p>
 
-        <form method="POST" id="form" data-apiurl="https://networktools.<?php echo DOMAIN; ?>">
+        <form method="POST" id="form" data-apiurl="https://networktools.cloudhosted.net">
             <p><label for="txtDomain"><b>Domain:</b> </label><input type="text" id="txtDomain" disabled></p>
             <p><button type="submit" id="btnSubmit" disabled>Submit</button></p>
         </form>
