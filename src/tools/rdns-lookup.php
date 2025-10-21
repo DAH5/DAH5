@@ -18,7 +18,7 @@ layout: src/_inc/layout.php
 
         <p id="msgDisabled">Please enable JavaScript to use this tool.</p>
 
-        <form method="POST" id="form" data-apiurl="https://networktools.cloudhosted.net">
+        <form method="POST" id="form" data-apiurl="https://networktools.weburl.net">
             <p><label for="txtIP"><b>IP Address:</b> </label><input type="text" id="txtIP" disabled></p>
             <p>
                 <label for="listNS"><b>Name Server IPs:</b> </label>
