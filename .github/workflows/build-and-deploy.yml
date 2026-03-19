@@ -1,4 +1,4 @@
-name: Build Static Site with StaticPHP
+name: Build and Deploy Static Website
 
 on:
   push:
@@ -13,6 +13,8 @@ jobs:
       KATAPULT_OBJECT_STORAGE_REGION: uk-lon-1
       KATAPULT_OBJECT_STORAGE_HOSTNAME: uk-lon-1.katapultobjects.com
       KATAPULT_OBJECT_STORAGE_BUCKET_NAME: dah5
+      CLOUDFLARE_PAGES_PROJECT_NAME: dah5
+      OUTPUT_DIRECTORY: public
 
     steps:
       - name: Checkout repository
@@ -43,9 +45,9 @@ jobs:
           [default]
           access_key = ${{ secrets.KATAPULT_ACCESS_KEY }}
           secret_key = ${{ secrets.KATAPULT_SECRET_KEY }}
-          host_base = $KATAPULT_OBJECT_STORAGE_HOSTNAME
-          host_bucket = %(bucket)s.$KATAPULT_OBJECT_STORAGE_HOSTNAME
-          bucket_location = $KATAPULT_OBJECT_STORAGE_REGION
+          host_base = ${{ env.KATAPULT_OBJECT_STORAGE_HOSTNAME }}
+          host_bucket = %(bucket)s.${{ env.KATAPULT_OBJECT_STORAGE_HOSTNAME }}
+          bucket_location = ${{ env.KATAPULT_OBJECT_STORAGE_REGION }}
           signature_v2 = True
           use_https = True
           mime_types = /home/runner/.mime.types
@@ -55,7 +57,7 @@ jobs:
         run: |
           s3cmd del --recursive --force s3://$KATAPULT_OBJECT_STORAGE_BUCKET_NAME/
 
-      - name: Upload files to the Katapult Object Storage bucket with correct MIME types
+      - name: Deploy Site to Katapult Object Storage
         run: |
           # Build extension-to-MIME map from .mime.types
           declare -A mime_map
@@ -69,10 +71,10 @@ jobs:
           done < ~/.mime.types
 
           # Upload files using detected MIME types
-          find public -type f | while read filepath; do
+          find ${{ env.OUTPUT_DIRECTORY }} -type f | while read filepath; do
             ext="${filepath##*.}"
             mime="${mime_map[$ext]}"
-            s3path="${filepath#public/}"
+            s3path="${filepath#${{ env.OUTPUT_DIRECTORY }}/}"
 
             if [ -n "$mime" ]; then
               echo "Uploading $filepath as $mime"
@@ -82,3 +84,11 @@ jobs:
               s3cmd sync "$filepath" "s3://$KATAPULT_OBJECT_STORAGE_BUCKET_NAME/$s3path" --delete-removed --acl-public
             fi
           done
+
+      - name: Deploy Site to Cloudflare Pages
+        uses: cloudflare/wrangler-action@v3
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          command: pages deploy ${{ env.OUTPUT_DIRECTORY }} --project-name=${{ env.CLOUDFLARE_PAGES_PROJECT_NAME }}
+          gitHubToken: ${{ secrets.GITHUB_TOKEN }}
