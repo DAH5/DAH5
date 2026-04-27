@@ -48,7 +48,7 @@ javascripts: /assets/javascript/anti-email-harvesting.js
             <div class="about-contact">
                 <h3>Get in Touch</h3>
                 <p>Have questions, suggestions, or just want to say hello? Feel free to reach out.</p>
-                <p class="contact-email"><b class="email-address">contact [at] <?php echo str_replace( '.', ' [dot] ', DOMAIN ); ?></b></p>
+                <p class="contact-email"><b class="email-address">david [dot] hunter [at] <?php echo str_replace( '.', ' [dot] ', DOMAIN ); ?></b></p>
             </div>
         </div>
     </div>

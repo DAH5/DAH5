@@ -225,6 +225,11 @@ footer a
     font-weight: bold;
 }
 
+footer .text-muted
+{
+    color: #888;
+}
+
 .a-z ul
 {
     list-style-type: none;
