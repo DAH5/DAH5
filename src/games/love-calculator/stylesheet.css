@@ -189,6 +189,16 @@
     animation: pulse 1s ease;
 }
 
+.changelog
+{
+    text-align: center;
+}
+
+.changelog ul
+{
+    list-style: none;
+}
+
 @keyframes pulse
 {
     0% { transform: scale(1); }

@@ -48,8 +48,11 @@ function getLoveMessage(percentage)
 
 function calculate()
 {
-    var personOne = PersonOneTXT.innerText.trim();
-    var personTwo = PersonTwoTXT.innerText.trim();
+    var personOne = PersonOneTXT.innerText;
+    var personTwo = PersonTwoTXT.innerText;
+
+    var personOneLowerCaseSpaceless = personOne.trim().toLowerCase().replace(/\s+/g, '');
+    var personTwoLowerCaseSpaceless = personTwo.trim().toLowerCase().replace(/\s+/g, '');
 
     if (!personOne || !personTwo)
     {
@@ -68,9 +71,11 @@ function calculate()
         
         // Calculate how much personOne loves personTwo
         // Count how many letters from personOne appear in personTwo
-        for (var c = 0; c < personOne.length; c++)
+        for (var c = 0; c < personOneLowerCaseSpaceless.length; c++)
         {
-            if (personTwo.includes(personOne.charAt(c)))
+            var personOneChar = personOneLowerCaseSpaceless.charAt(c);
+
+            if (personTwoLowerCaseSpaceless.includes(personOneChar))
             {
                 score++;
             }
