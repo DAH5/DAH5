@@ -31,7 +31,7 @@ jobs:
       - name: Install s3cmd
         run: sudo apt-get install -y s3cmd
 
-      - name: Configure s3cmd for use with Katapult Object Storage and define mine-types list
+      - name: Configure s3cmd for use with Krystal Cloud Object Storage and define mine-types list
         run: |
           cat > ~/.mime.types <<EOF
           text/html       html htm
@@ -53,11 +53,11 @@ jobs:
           mime_types = /home/runner/.mime.types
           EOF
         
-      - name: Purge Katapult Object Storage bucket
+      - name: Purge Krystal Cloud Object Storage bucket
         run: |
           s3cmd del --recursive --force s3://$KATAPULT_OBJECT_STORAGE_BUCKET_NAME/
 
-      - name: Deploy Site to Katapult Object Storage
+      - name: Deploy Site to Krystal Cloud Object Storage
         run: |
           # Build extension-to-MIME map from .mime.types
           declare -A mime_map
