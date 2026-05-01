@@ -23,7 +23,7 @@
             <div class="container">
                 <div class="logos">
                     <div class="logo">
-                        <a href="/"><img src="/assets/images/logos/dah5-logo-2024-alternate-150x35.png" alt="DAH5" width="107" height="25"></a>
+                        <a href="/"><img src="/assets/images/logos/dah5-logo-8bit-2026-60x25-transparent.png" alt="DAH5" width="60" height="25"></a>
                     </div>
 
                     --- if( logo && logo_url ) ---
