@@ -48,15 +48,6 @@ layout: src/_inc/layout.php
                     <a href="/tools/find-urls-in-string" class="directory-link">Find URLs in String</a>
                 </div>
             </div>
-
-            <!-- Resources -->
-            <div class="directory-category">
-                <h2>Resources</h2>
-                <div class="category-content">
-                    <a href="/staticly" class="directory-link">Staticly</a>
-                    <a href="/analogueradio" class="directory-link">Analogue Radio</a>
-                </div>
-            </div>
         </div>
 
         <div class="directory-footer">
