@@ -1,58 +1,44 @@
----
-page-title: Love Calculator - Games
-main-nav-item: games
-layout: src/_inc/layout.php
-stylesheets: /games/love-calculator/stylesheet.css
-javascripts: /games/love-calculator/javascript.js
----
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <title>Love Calculator Game - DAH5</title>
 
-<section class="minisite-header">
-    <div class="container">
-        <h1>Games</h1>
-    </div>
-</section>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="/games/love-calculator/stylesheet.css">
+    </head>
 
-<div class="love-calculator">
-    <div class="container">
-        <div id="NoJSOverlay">
-            <p>Please enable JavaScript to use the Love Calculator.</p>
-        </div>
-
-        <h2>Love Calculator</h2>
+    <body onload="onLoad()">
+        <p class="logo"><a href="/" title="Return to DAH5 Main Site"><img src="/assets/images/logos/dah5-logo-8bit-2026-826x343-transparent.png"></a></p>
+        <h1>Love Calculator Game</h1>
         <p>Discover the magical connection between two names! This fun calculator uses a special algorithm to determine the love compatibility between any two people.</p>
         <p><b>Disclaimer:</b> This is a fun game and should not be taken seriously. Always follow your heart in matters of love, and give your situation proper thought.</p>
 
+        <div id="nojs">
+            <p>Sorry, but you can't play this game at this time. Your device doesn't support it.</p>
+        </div>
+
+        <div id="calculator">
+            <form>
+                <p><label for="firstName">First Name:</label> <input type="text" name="firstName" id="firstName"></p>
+                <p><label for="secondName">Second Name:</label> <input type="text" name="secondName" id="secondName"></p>
+                <p><button type="submit">Calculate</button></p>
+                <p><a href="/games/love-calculator/">Clear and Start Again</a></p>
+            </form>
+
+            <div id="result"></div>
+
+            <div id="shareUrl"></div>
+        </div>
+
         <hr>
 
-        <div id="MessageArea"></div>
+        <p>A DAH5 Game. Powered by questionable maths.</p>
 
-        <div class="input-group">
-            <label for="PersonOneTXT"><b>First Name:</b></label>
-            <div class="input" id="PersonOneTXT" role="textbox" aria-label="Enter first name"></div>
-        </div>
-
-        <div class="input-group">
-            <label for="PersonTwoTXT"><b>Second Name:</b></label>
-            <div class="input" id="PersonTwoTXT" role="textbox" aria-label="Enter second name"></div>
-        </div>
-
-        <div class="buttons">
-            <button type="button" class="button" id="CalculateBTN">Calculate Love</button>
-            <button type="button" class="button" id="SwapNamesBTN">Swap Names</button>
-            <button type="button" class="button" id="ResetBTN">Reset</button>
-        </div>
-
-        <div class="tips">
-            <p><small>💡 Tip: Press Enter after typing names to calculate instantly!</small></p>
-        </div>
-    </div>
-</div>
-
-<div class="changelog">
-    <div class="container">
-        <p><b>Change Log</b></p>
-        <ul>
-            <li><b>30 April 2026:</b> Calculations will now be performed on lower case versions of names and ignore all spacing.</li>
-        </ul>
-    </div>
-</div>
+        <script type="text/javascript" src="/games/love-calculator/javascript.js"></script>
+    </body>
+</html>
