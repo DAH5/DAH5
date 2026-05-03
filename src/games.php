@@ -18,7 +18,7 @@ $games = array
         'category' => 'Fun',
         'difficulty' => 'Easy',
         'playTime' => '1-2 minutes',
-        'lastUpdated' => '2024',
+        'lastUpdated' => '3 May 2026',
         'icon' => '💖',
         'gameClass' => 'love-calculator'
     ),
@@ -30,7 +30,7 @@ $games = array
         'category' => 'Puzzle',
         'difficulty' => 'Medium',
         'playTime' => '5-10 minutes',
-        'lastUpdated' => '2024',
+        'lastUpdated' => '8 May 2025',
         'icon' => '😴',
         'gameClass' => 'bored-game'
     ),
@@ -68,6 +68,10 @@ $games = array
                         <div class="game-card-meta-row">
                             <div class="game-card-meta-label">Play Time</div>
                             <div class="game-card-meta-value"><?php echo $game['playTime']; ?></div>
+                        </div>
+                        <div class="game-card-meta-row">
+                            <div class="game-card-meta-label">Last Updated</div>
+                            <div class="game-card-meta-value"><?php echo $game['lastUpdated']; ?></div>
                         </div>
                     </div>
                     <a href="<?php echo $game['url']; ?>" class="game-card-link">Play Now</a>
