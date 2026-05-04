@@ -1,5 +1,9 @@
 name: Build and Deploy Static Website
 
+concurrency:
+  group: static-site-deploy
+  cancel-in-progress: true
+
 on:
   push:
     branches:
@@ -18,7 +22,7 @@ jobs:
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Set up PHP
         uses: shivammathur/setup-php@v2
@@ -31,7 +35,7 @@ jobs:
       - name: Install s3cmd
         run: sudo apt-get install -y s3cmd
 
-      - name: Configure s3cmd for use with Krystal Cloud Object Storage and define mine-types list
+      - name: Configure s3cmd for Krystal Cloud Object Storage
         run: |
           cat > ~/.mime.types <<EOF
           text/html       html htm
@@ -52,38 +56,13 @@ jobs:
           use_https = True
           mime_types = /home/runner/.mime.types
           EOF
-        
-      - name: Purge Krystal Cloud Object Storage bucket
-        run: |
-          s3cmd del --recursive --force s3://$KATAPULT_OBJECT_STORAGE_BUCKET_NAME/
 
       - name: Deploy Site to Krystal Cloud Object Storage
         run: |
-          # Build extension-to-MIME map from .mime.types
-          declare -A mime_map
-          while read -r line; do
-            [[ "$line" =~ ^#.*$ || -z "$line" ]] && continue  # Skip comments/blanks
-            mime="${line%%[[:space:]]*}"
-            extensions="${line#"$mime"}"
-            for ext in $extensions; do
-              mime_map[$ext]=$mime
-            done
-          done < ~/.mime.types
-
-          # Upload files using detected MIME types
-          find ${{ env.OUTPUT_DIRECTORY }} -type f | while read filepath; do
-            ext="${filepath##*.}"
-            mime="${mime_map[$ext]}"
-            s3path="${filepath#${{ env.OUTPUT_DIRECTORY }}/}"
-
-            if [ -n "$mime" ]; then
-              echo "Uploading $filepath as $mime"
-              s3cmd sync --mime-type="$mime" "$filepath" "s3://$KATAPULT_OBJECT_STORAGE_BUCKET_NAME/$s3path" --delete-removed --acl-public
-            else
-              echo "Uploading $filepath with default mime"
-              s3cmd sync "$filepath" "s3://$KATAPULT_OBJECT_STORAGE_BUCKET_NAME/$s3path" --delete-removed --acl-public
-            fi
-          done
+          s3cmd sync "${{ env.OUTPUT_DIRECTORY }}/" "s3://$KATAPULT_OBJECT_STORAGE_BUCKET_NAME/" \
+            --delete-removed \
+            --acl-public \
+            --guess-mime-type
 
       - name: Deploy Site to Cloudflare Pages
         uses: cloudflare/wrangler-action@v3
