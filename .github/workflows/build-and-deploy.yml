@@ -67,37 +67,28 @@ jobs:
       
       - name: Fix Mime Type Mismatches on Krystal Cloud Object Storage
         run: |
-          s3cmd --debug modify \
-            --recursive \
-            --include "*.html" \
-            --include "*.htm" \
-            --exclude "*" \
-            --add-header="Content-Type:text/html" \
-            "s3://$KATAPULT_OBJECT_STORAGE_BUCKET_NAME/"
-          s3cmd --debug modify \
-            --recursive \
-            --include "*.css" \
-            --exclude "*" \
-            --add-header="Content-Type:text/css" \
-            "s3://$KATAPULT_OBJECT_STORAGE_BUCKET_NAME/"
-          s3cmd --debug modify \
-            --recursive \
-            --include "*.js" \
-            --exclude "*" \
-            --add-header="Content-Type:application/javascript" \
-            "s3://$KATAPULT_OBJECT_STORAGE_BUCKET_NAME/"
-          s3cmd --debug modify \
-            --recursive \
-            --include "*.json" \
-            --exclude "*" \
-            --add-header="Content-Type:application/json" \
-            "s3://$KATAPULT_OBJECT_STORAGE_BUCKET_NAME/"
-          s3cmd --debug modify \
-            --recursive \
-            --include "*.svg" \
-            --exclude "*" \
-            --add-header="Content-Type:image/svg+xml" \
-            "s3://$KATAPULT_OBJECT_STORAGE_BUCKET_NAME/"
+          set -euo pipefail
+
+          fix_mime() {
+            pattern="$1"
+            type="$2"
+
+            find "${{ env.OUTPUT_DIRECTORY }}" -type f -name "$pattern" | while read -r file; do
+              key="${file#${{ env.OUTPUT_DIRECTORY }}/}"
+              echo "Fixing $key -> $type"
+
+              s3cmd modify \
+                --add-header="Content-Type:${type}" \
+                "s3://$KATAPULT_OBJECT_STORAGE_BUCKET_NAME/$key"
+            done
+          }
+
+          fix_mime "*.html" "text/html"
+          fix_mime "*.htm" "text/html"
+          fix_mime "*.css" "text/css"
+          fix_mime "*.js" "application/javascript"
+          fix_mime "*.json" "application/json"
+          fix_mime "*.svg" "image/svg+xml"
 
       - name: Deploy Site to Cloudflare Pages
         uses: cloudflare/wrangler-action@v3
