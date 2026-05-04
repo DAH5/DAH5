@@ -69,33 +69,33 @@ jobs:
         run: |
           s3cmd --debug modify \
             --recursive \
-            --exclude "*" \
             --include "*.html" \
             --include "*.htm" \
+            --exclude "*" \
             --add-header="Content-Type:text/html" \
             "s3://$KATAPULT_OBJECT_STORAGE_BUCKET_NAME/"
           s3cmd --debug modify \
             --recursive \
-            --exclude "*" \
             --include "*.css" \
+            --exclude "*" \
             --add-header="Content-Type:text/css" \
             "s3://$KATAPULT_OBJECT_STORAGE_BUCKET_NAME/"
           s3cmd --debug modify \
             --recursive \
-            --exclude "*" \
             --include "*.js" \
+            --exclude "*" \
             --add-header="Content-Type:application/javascript" \
             "s3://$KATAPULT_OBJECT_STORAGE_BUCKET_NAME/"
           s3cmd --debug modify \
             --recursive \
-            --exclude "*" \
             --include "*.json" \
+            --exclude "*" \
             --add-header="Content-Type:application/json" \
             "s3://$KATAPULT_OBJECT_STORAGE_BUCKET_NAME/"
           s3cmd --debug modify \
             --recursive \
-            --exclude "*" \
             --include "*.svg" \
+            --exclude "*" \
             --add-header="Content-Type:image/svg+xml" \
             "s3://$KATAPULT_OBJECT_STORAGE_BUCKET_NAME/"
 
