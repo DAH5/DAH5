@@ -18,6 +18,13 @@ function calculate( firstName, secondName )
     var result = document.getElementById( 'result' );
 
     result.innerHTML = 'Compatibility Report:<div class="text">' + firstName + ' is ' + percentage + '% in love with ' + secondName + '! ' + getResultMessage( percentage ) + '</div>';
+
+    document.getElementById( 'swapNamesSpan' ).style.display = 'inline-block';
+
+    var swapNamesLink = document.getElementById( 'swapNamesLink' );
+
+    swapNamesLink.href = '?firstName=' + encodeURI( secondName.replace( ' ', '+' ) ) + '&secondName=' + encodeURI( firstName.replace( ' ', '+' ) );
+    swapNamesLink.title = 'Makes ' + secondName + ' the first name, and ' + firstName + ' the second name.';
 }
 
 function getResultMessage( percentage )

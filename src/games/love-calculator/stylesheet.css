@@ -108,3 +108,8 @@ form button:hover
 {
     display: none;
 }
+
+#swapNamesSpan
+{
+    display: none;
+}
