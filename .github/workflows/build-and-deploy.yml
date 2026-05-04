@@ -67,32 +67,32 @@ jobs:
       
       - name: Fix Mime Type Mismatches on Krystal Cloud Object Storage
         run: |
-          s3cmd modify \
+          s3cmd --debug modify \
             --recursive \
             --exclude "*" \
             --include "*.html" \
             --include "*.htm" \
             --add-header="Content-Type:text/html" \
             "s3://$KATAPULT_OBJECT_STORAGE_BUCKET_NAME/"
-          s3cmd modify \
+          s3cmd --debug modify \
             --recursive \
             --exclude "*" \
             --include "*.css" \
             --add-header="Content-Type:text/css" \
             "s3://$KATAPULT_OBJECT_STORAGE_BUCKET_NAME/"
-          s3cmd modify \
+          s3cmd --debug modify \
             --recursive \
             --exclude "*" \
             --include "*.js" \
             --add-header="Content-Type:application/javascript" \
             "s3://$KATAPULT_OBJECT_STORAGE_BUCKET_NAME/"
-          s3cmd modify \
+          s3cmd --debug modify \
             --recursive \
             --exclude "*" \
             --include "*.json" \
             --add-header="Content-Type:application/json" \
             "s3://$KATAPULT_OBJECT_STORAGE_BUCKET_NAME/"
-          s3cmd modify \
+          s3cmd --debug modify \
             --recursive \
             --exclude "*" \
             --include "*.svg" \
