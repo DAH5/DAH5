@@ -62,7 +62,42 @@ jobs:
           s3cmd sync "${{ env.OUTPUT_DIRECTORY }}/" "s3://$KATAPULT_OBJECT_STORAGE_BUCKET_NAME/" \
             --delete-removed \
             --acl-public \
-            --guess-mime-type
+            --guess-mime-type \
+            --no-mime-magic
+      
+      - name: Fix Mime Type Mismatches on Krystal Cloud Object Storage
+        run: |
+          s3cmd modify \
+            --recursive \
+            --exclude "*" \
+            --include "*.html" \
+            --include "*.htm" \
+            --add-header="Content-Type:text/html" \
+            "s3://$KATAPULT_OBJECT_STORAGE_BUCKET_NAME/"
+          s3cmd modify \
+            --recursive \
+            --exclude "*" \
+            --include "*.css" \
+            --add-header="Content-Type:text/css" \
+            "s3://$KATAPULT_OBJECT_STORAGE_BUCKET_NAME/"
+          s3cmd modify \
+            --recursive \
+            --exclude "*" \
+            --include "*.js" \
+            --add-header="Content-Type:application/javascript" \
+            "s3://$KATAPULT_OBJECT_STORAGE_BUCKET_NAME/"
+          s3cmd modify \
+            --recursive \
+            --exclude "*" \
+            --include "*.json" \
+            --add-header="Content-Type:application/json" \
+            "s3://$KATAPULT_OBJECT_STORAGE_BUCKET_NAME/"
+          s3cmd modify \
+            --recursive \
+            --exclude "*" \
+            --include "*.svg" \
+            --add-header="Content-Type:image/svg+xml" \
+            "s3://$KATAPULT_OBJECT_STORAGE_BUCKET_NAME/"
 
       - name: Deploy Site to Cloudflare Pages
         uses: cloudflare/wrangler-action@v3
