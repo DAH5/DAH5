@@ -18,7 +18,7 @@ $games = array
         'category' => 'Fun',
         'difficulty' => 'Easy',
         'playTime' => '1-2 minutes',
-        'lastUpdated' => '3 May 2026',
+        'lastUpdated' => '5 May 2026',
         'icon' => '💖',
         'gameClass' => 'love-calculator'
     ),
