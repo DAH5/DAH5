@@ -12,13 +12,18 @@
 
     <body class="font-comicneue" onload="onLoad()">
         <p class="logo"><a href="/" title="Return to DAH5 Main Site"><img src="/assets/images/logos/dah5-logo-8bit-2026-826x343-transparent.png"></a></p>
-        <h1>Love Calculator Game</h1>
+        <h1><a href="/games/love-calculator">Love Calculator Game</a></h1>
+
         <p>Discover the magical connection between two names! This fun calculator uses a special algorithm to determine the love compatibility between any two people.</p>
         <p><b>Disclaimer:</b> This is a fun game and should not be taken seriously. Always follow your heart in matters of love, and give your situation proper thought.</p>
 
         <div id="nojs">
             <p>Sorry, but you can't play this game at this time. Your device doesn't support it.</p>
         </div>
+
+        <div id="result"></div>
+
+        <div id="shareUrl"></div>
 
         <div id="calculator">
             <form>
@@ -27,15 +32,12 @@
                 <p><button type="submit">Calculate</button></p>
                 <p><a href="/games/love-calculator/">Clear and Start Again</a><span id="swapNamesSpan">&nbsp;| <a href="javascript: void();" id="swapNamesLink">Swap Names</a></span></p>
             </form>
-
-            <div id="result"></div>
-
-            <div id="shareUrl"></div>
         </div>
 
         <hr>
 
-        <p>A DAH5 Game. Powered by questionable maths.</p>
+        <p class="footer-text">A DAH5 Game. Powered by questionable maths.</p>
+        <p class="footer-text"><a href="/games">More Games</a> | <a href="/">Back to DAH5</a></p>
 
         <script type="text/javascript" src="/games/love-calculator/javascript.js"></script>
     </body>

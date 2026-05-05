@@ -15,10 +15,20 @@ function calculate( firstName, secondName )
 
     var percentage = Math.min( 100, Math.round( ( score / firstNameFinal.length ) * 100 ) );
 
+    displayResult( firstName, secondName, percentage );
+
+    displaySwapNamesFeature( firstName, secondName );
+}
+
+function displayResult( firstName, secondName, percentage )
+{
     var result = document.getElementById( 'result' );
 
     result.innerHTML = 'Compatibility Report:<div class="text">' + firstName + ' is ' + percentage + '% in love with ' + secondName + '! ' + getResultMessage( percentage ) + '</div>';
+}
 
+function displaySwapNamesFeature( firstName, secondName )
+{
     document.getElementById( 'swapNamesSpan' ).style.display = 'inline-block';
 
     var swapNamesLink = document.getElementById( 'swapNamesLink' );

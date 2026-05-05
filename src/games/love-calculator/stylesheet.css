@@ -9,7 +9,25 @@ html,
 body
 {
     font-size: 1.2rem;
-    background-color: #ffffff;
+}
+
+html
+{
+    color: #fff;
+    background-color: #2c2138;
+    min-height: 100vh;
+}
+
+html::before
+{
+    content: "";
+    position: fixed;
+    inset: 0;
+    background-color: #2c2138;
+    background-image: url( '/assets/images/gifs/backgrounds/5HFPCUGHY5MPW7FPDI57HXOFX2VVP6Y7.gif' );
+    color: #fff;
+    filter: blur(6px) brightness(0.6);
+    z-index: -1;
 }
 
 body
@@ -17,6 +35,16 @@ body
     max-width: 900px;
     margin: 2rem auto;
     padding: 1rem;
+}
+
+a
+{
+    color: #fff;
+}
+
+a:hover
+{
+    color: #ccc;
 }
 
 img
@@ -43,6 +71,11 @@ h1
     text-align: center;
 }
 
+h1 a
+{
+    text-decoration: none;
+}
+
 form,
 #result,
 #shareUrl,
@@ -51,11 +84,31 @@ form,
     margin-top: 1rem;
     margin-bottom: 1rem;
     padding: 1rem;
-    background-color: #ffddf9;
-    border: 3px solid #ff9ced;
+    background-color: #e6c4ff;
+    border: 6px solid #8257bb;
+    color: #000;
     border-radius: 1rem;
     width: max-content;
     max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+form a,
+#result a,
+#shareUrl a,
+#nojs a
+{
+    color: #653c9a;
+    font-weight: 600;
+}
+
+form a:hover,
+#result a:hover,
+#shareUrl a:hover,
+#nojs a:hover
+{
+    color: #8f69c0;
 }
 
 form input[ type = 'text' ]
@@ -74,14 +127,15 @@ form button
 {
     padding: 0.4em 0.8em;
     cursor: pointer;
-    background-color: #ff9ced;
-    border: 1px solid #ff9ced;
+    background-color: #8257bb;
+    border: 1px solid #8257bb;
+    color: #fff;
     border-radius: 1rem;
 }
 
 form button:hover
 {
-    box-shadow: 0px 0px 5px #888;
+    background-color: #9672c4;
 }
 
 #result .text
@@ -111,4 +165,9 @@ form button:hover
 #swapNamesSpan
 {
     display: none;
+}
+
+.footer-text
+{
+    text-align: center;
 }
