@@ -63,7 +63,8 @@ jobs:
             --delete-removed \
             --acl-public \
             --guess-mime-type \
-            --no-mime-magic
+            --no-mime-magic \
+            --checksum
       
       - name: Fix Mime Type Mismatches on Krystal Cloud Object Storage
         run: |
