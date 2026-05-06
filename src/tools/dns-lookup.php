@@ -1,8 +1,8 @@
 ---
 page-title: DNS Lookup Tool
 main-nav-item: tools
-stylesheets: /assets/css/tools.css
-javascripts: /assets/javascript/tool-dns-lookup.js
+stylesheets: /assets/css/tools.min.css
+javascripts: /assets/javascript/tool-dns-lookup.min.js
 layout: src/_inc/layout.php
 ---
 

@@ -1,8 +1,8 @@
 ---
 page-title: Find URLs in String
 main-nav-item: tools
-stylesheets: /assets/css/tools.css
-javascripts: /assets/javascript/tool-find-urls-in-string.js
+stylesheets: /assets/css/tools.min.css
+javascripts: /assets/javascript/tool-find-urls-in-string.min.js
 layout: src/_inc/layout.php
 ---
 

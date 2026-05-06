@@ -2,7 +2,7 @@
 page-title: About
 main-nav-item: about
 layout: src/_inc/layout.php
-javascripts: /assets/javascript/anti-email-harvesting.js
+javascripts: /assets/javascript/anti-email-harvesting.min.js
 ---
 
 <section class="minisite-header">
