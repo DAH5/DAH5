@@ -19,12 +19,12 @@ btnFindUrlsInString.addEventListener( 'click', function()
     for( var u = 0; u < urls.length; u++ )
     {
       resultFindUrlsInString.innerHTML += '<a href="' + urls[ u ] + '" target="_blank">' + urls[ u ] + '</a><br>';
-    }
+    };
   }
   else
   {
     resultFindUrlsInString.innerHTML = 'No URLs found.';
-  }
+  };
 });
 
 function extractUrls( string, excludeTrailingBracket = false )
@@ -42,11 +42,11 @@ function extractUrls( string, excludeTrailingBracket = false )
         if( urls[ u ].substring( urls[ u ].length -1 ) == ")" )
         {
           urls[ u ] = urls[ u ].substring( 0, urls[ u ].length -1 );
-        }
-      }
-    }
+        };
+      };
+    };
     
     return urls;
-  }
+  };
   return [];
-}
+};

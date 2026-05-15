@@ -1,4 +1,6 @@
 ---
+stylesheets:
+- /assets/css/base.min.css
 content_placeholder: CONTENT GOES HERE
 ---
 <?php include 'src/_inc/header.php'; ?>

@@ -8,12 +8,8 @@
             </div>
         </footer>
 
-        <?php if( isset( $metadata[ 'javascripts' ] ) && $metadata[ 'javascripts' ] ): ?>
-            <?php $javascripts = explode( '::', $metadata[ 'javascripts' ] ); ?>
-
-            <?php foreach( $javascripts as $javascript ): ?>
-                <script src="<?php echo $javascript; ?>"></script>
-            <?php endforeach; ?>
-        <?php endif; ?>
+        --- loop( metadata = "javascripts" ) ---
+        <script type="text/javascript" src="--- loop.item ---"></script>
+        --- endloop ---
     </body>
 </html>

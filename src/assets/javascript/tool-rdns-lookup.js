@@ -26,8 +26,8 @@ function toggleCustomNS()
     {
         txtNS.disabled = true;
         pNS.style.display = 'none';
-    }
-}
+    };
+};
 
 function lookup( ip )
 {
@@ -35,7 +35,7 @@ function lookup( ip )
     {
         result.innerHTML = '<p>Please enter an IP Address to continue.</p>';
         return;
-    }
+    };
 
     var selectedType = 'ALL';
     var nsIPs = '1.1.1.1+1.0.0.1';
@@ -78,7 +78,7 @@ function lookup( ip )
                         record = answers[ type ][ 'answer' ][ recordID ];
 
                         output += '<tr><td>' + ip + '</td><td>' + record.type + '</td><td>' + record.class + '</td><td>' + record.ttl + '</td><td>' + record.ptrdname + '</td></tr>';
-                    }
+                    };
 
                     output += '</table>';
 
@@ -87,17 +87,17 @@ function lookup( ip )
                 else
                 {
                     output += '<p>Name Server <b>' + answers[ type ][ 'answer_from' ] + '</b> has no <b>' + type + '</b> records for <b>' + ip + '</b>.</p>';
-                }
-            }
-        }
+                };
+            };
+        };
 
         result.innerHTML = output;
-    }
+    };
 
     // Send a request
     xhttp.open( "GET", url );
     xhttp.send();
-}
+};
 
 form.addEventListener( 'submit', function( event )
 {

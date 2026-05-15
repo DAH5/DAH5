@@ -28,8 +28,8 @@ function toggleCustomNS()
     {
         txtNS.disabled = true;
         pNS.style.display = 'none';
-    }
-}
+    };
+};
 
 function lookup( domain )
 {
@@ -37,7 +37,7 @@ function lookup( domain )
     {
         result.innerHTML = '<p>Please enter a domain name to continue.</p>';
         return;
-    }
+    };
 
     var selectedType = 'ALL';
     var nsIPs = '1.1.1.1+1.0.0.1';
@@ -81,37 +81,37 @@ function lookup( domain )
                     if( type == 'SOA' )
                     {
                         output += '<th>Primary NS</th><th>Email</th><th>Serial</th><th>Refresh</th><th>Retry</th><th>Expire</th><th>Minimum TTL</th>';
-                    }
+                    };
 
                     if( type == 'NS' )
                     {
                         output += '<th>Name Server</th>';
-                    }
+                    };
 
                     if( type == 'A' )
                     {
                         output += '<th>IPv4</th>';
-                    }
+                    };
 
                     if( type == 'AAAA' )
                     {
                         output += '<th>IPv6</th>';
-                    }
+                    };
 
                     if( type == 'CNAME' )
                     {
                         output += '<th>Hostname</th>';
-                    }
+                    };
 
                     if( type == 'MX' )
                     {
                         output += '<th>Priority</th><th>Exchange</th>';
-                    }
+                    };
 
                     if( type == 'TXT' )
                     {
                         output += '<th>Text</th>';
-                    }
+                    };
 
                     output += '</tr>';
 
@@ -161,17 +161,17 @@ function lookup( domain )
                 else
                 {
                     output += '<p>Name Server <b>' + answers[ type ][ 'answer_from' ] + '</b> has no <b>' + type + '</b> records for <b>' + domain + '</b>.</p>';
-                }
-            }
-        }
+                };
+            };
+        };
 
         result.innerHTML = output;
-    }
+    };
 
     // Send a request
     xhttp.open( "GET", url );
     xhttp.send();
-}
+};
 
 form.addEventListener( 'submit', function( event )
 {

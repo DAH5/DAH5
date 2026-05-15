@@ -2,7 +2,8 @@
 page-title: Games
 main-nav-item: games
 layout: src/_inc/layout.php
-stylesheets: /assets/css/games.css
+stylesheets:
+- /assets/css/games.css
 ---
     
     

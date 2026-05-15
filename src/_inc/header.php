@@ -7,15 +7,9 @@
 
         <title>--- if( article_title ) ------ metadata.article_title --- - Blog - --- endif ------ if( page-title ) ------ metadata.page-title --- - --- endif ------ if( docs_nav_item ) ---Docs - --- endif ------ if( site_title ) ------ metadata.site_title --- - --- endif ---DAH5</title>
 
-        <link rel="stylesheet" type="text/css" href="/assets/css/base.min.css">
-
-        <?php if( isset( $metadata[ 'stylesheets' ] ) && $metadata[ 'stylesheets' ] ): ?>
-            <?php $stylesheets = explode( '::', $metadata[ 'stylesheets' ] ); ?>
-            
-            <?php foreach( $stylesheets as $stylesheet ): ?>
-                <link rel="stylesheet" type="text/css" href="<?php echo $stylesheet; ?>">
-            <?php endforeach; ?>
-        <?php endif; ?>
+        --- loop( metadata = "stylesheets" ) ---
+        <link rel="stylesheet" type="text/css" href="--- loop.item ---">
+        --- endloop ---
     </head>
 
     <body>

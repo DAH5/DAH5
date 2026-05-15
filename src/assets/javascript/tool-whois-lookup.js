@@ -14,7 +14,7 @@ function lookup( domain )
     {
         result.innerHTML = '<p>Please enter a domain name to continue.</p>';
         return;
-    }
+    };
 
     var url = form.dataset.apiurl + '/api/whois/' + domain;
 
@@ -34,12 +34,12 @@ function lookup( domain )
             const resultJSON = responseJSON.result;
 
             result.innerHTML = '<pre>' + resultJSON + '</pre>';
-        }
-    }
+        };
+    };
 
     xhttp.open( "GET", url );
     xhttp.send();
-}
+};
 
 form.addEventListener( 'submit', function( event )
 {

@@ -1,8 +1,10 @@
 ---
 page-title: rDNS Lookup Tool
 main-nav-item: tools
-stylesheets: /assets/css/tools.min.css
-javascripts: /assets/javascript/tool-rdns-lookup.min.js
+stylesheets:
+- /assets/css/tools.min.css
+javascripts:
+- /assets/javascript/tool-rdns-lookup.min.js
 layout: src/_inc/layout.php
 ---
 
