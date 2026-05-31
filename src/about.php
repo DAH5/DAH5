@@ -20,30 +20,17 @@ javascripts: /assets/javascript/anti-email-harvesting.min.js
                 <p class="lead">A platform for exploration, creativity, and discovery.</p>
             </div>
 
-            <div class="about-grid">
-                <div class="about-card">
-                    <div class="card-icon">🎮</div>
-                    <h3>Games & Entertainment</h3>
-                    <p>Discover a collection of interactive games and tools designed to entertain and engage. From classic favorites to unique creations, there's something for everyone.</p>
-                </div>
-
-                <div class="about-card">
-                    <div class="card-icon">🛠️</div>
-                    <h3>Tools & Utilities</h3>
-                    <p>Access a variety of practical tools and utilities to help with everyday tasks. All tools are designed to be simple, efficient, and accessible.</p>
-                </div>
-
-                <div class="about-card">
-                    <div class="card-icon">🚀</div>
-                    <h3>Always Evolving</h3>
-                    <p>DAH5 continues to grow and evolve, with new features and content being added regularly. Stay tuned for more games, tools, and resources in the future.</p>
-                </div>
+            <div class="about-history">
+                <h3>Hello, I'm David.</h3>
+                <p>A self-taught web developer in his late 30s from Ayrshire, Scotland.</p>
+                <p><a href="<?php echo DH_URL; ?>" target="_blank">Visit my Personal Website</a></p>
             </div>
 
             <div class="about-history">
                 <h3>The Story</h3>
-                <p>DAH5 began in 2005 as an exploration of web technologies and personal projects. Over time, it has evolved into a platform that combines entertainment, utility, and information.</p>
-                <p>The name DAH5 represents a journey of continuous learning and growth, embracing new technologies while maintaining a focus on quality and user experience.</p>
+                <p>Back in the early 2000s, I found a piece of software on the family computer called Microsoft Frontpage. I used this to make simple web pages, and copied code snippets from other sites. Some time later, I found a web hosting provider where I could put some of these web pages on the internet for free. This fueled my passion for websites even more.</p>
+                <p>In 2005, I got my hands on a proper web hosting provider and registered my first ever domain name, <a href="https://dah5.me.uk" target="_blank">dah5.me.uk</a>, which if you haven't noticed is still in use to this day, and learned so much about how websites and the internet worked.</p>
+                <p>Today, DAH5 represents over two decades of education, exploration, and trial and error, and is a place for me to showcase things I have created along the way. I hope you enjoy my website.</p>
             </div>
 
             <div class="about-contact">

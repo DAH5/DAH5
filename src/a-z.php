@@ -48,6 +48,14 @@ layout: src/_inc/layout.php
                     <a href="/tools/find-urls-in-string" class="directory-link">Find URLs in String</a>
                 </div>
             </div>
+
+            <div class="directory-category">
+                <h2>My Other Websites</h2>
+                <div class="category-content">
+                    <a href="<?php echo DH_URL; ?>" class="directory-link" target="_blank">David Hunter</a>
+                    <a href="<?php echo STATICPHP_URL; ?>" class="directory-link" target="_blank">StaticPHP</a>
+                </div>
+            </div>
         </div>
 
         <div class="directory-footer">

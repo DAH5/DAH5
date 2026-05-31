@@ -12,4 +12,8 @@ if( ! defined( "W3CSS_URL" ) )
     define( "W3CSS_URL", "/assets/w3css" );
 if( ! defined( "WEBFONTS_URL" ) )
     define( "WEBFONTS_URL", "/assets/webfonts" );
+if( ! defined( "STATICPHP_URL" ) )
+    define( "STATICPHP_URL", "https://staticphp." . DOMAIN );
+if( ! defined( "DH_URL" ) )
+    define( "DH_URL", "https://davidhunter." . DOMAIN );
 
