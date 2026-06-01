@@ -20,7 +20,7 @@ layout: src/_inc/layout.php
 
         <p id="msgDisabled">Please enable JavaScript to use this tool.</p>
 
-        <form method="POST" id="form" data-apiurl="https://networktools.weburl.net">
+        <form method="POST" id="form" data-apiurl="https://networktools.<?php echo DOMAIN; ?>">
             <p><label for="txtDomain"><b>Domain:</b> </label><input type="text" id="txtDomain" disabled></p>
             <p>
                 <label for="listType"><b>Type:</b> </label>
