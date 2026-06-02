@@ -20,9 +20,9 @@ layout: src/_inc/layout.php
 
         <p id="msgDisabled">Please enable JavaScript to use this tool.</p>
 
-        <form method="POST" id="form" data-apiurl="https://networktools.<?php echo DOMAIN; ?>">
+        <form method="POST" id="form" data-apiurl="<?php echo NETWORKTOOLS_URL; ?>">
             <p><label for="txtDomain"><b>Domain:</b> </label><input type="text" id="txtDomain" disabled></p>
-            <p><button type="submit" id="btnSubmit" disabled>Submit</button></p>
+            <p><button type="submit" id="btnSubmit" disabled>Submit</button>&nbsp;<a href="<?php echo NETWORKTOOLS_URL; ?>/whois" target="_blank">Alternative Tool</a></p>
         </form>
 
         <div class="result" id="result"></div>

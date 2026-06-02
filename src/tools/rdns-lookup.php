@@ -20,7 +20,7 @@ layout: src/_inc/layout.php
 
         <p id="msgDisabled">Please enable JavaScript to use this tool.</p>
 
-        <form method="POST" id="form" data-apiurl="https://networktools.<?php echo DOMAIN; ?>">
+        <form method="POST" id="form" data-apiurl="<?php echo NETWORKTOOLS_URL; ?>">
             <p><label for="txtIP"><b>IP Address:</b> </label><input type="text" id="txtIP" disabled></p>
             <p>
                 <label for="listNS"><b>Name Server IPs:</b> </label>
@@ -32,7 +32,7 @@ layout: src/_inc/layout.php
                 </select>
             </p>
             <p id="pNS"><label for="txtNS"><b>Custom Name Server IPs:</b> </label><input type="text" id="txtNS" placeholder="1.1.1.1 8.8.8.8" disabled></p>
-            <p><button type="submit" id="btnSubmit" disabled>Submit</button></p>
+            <p><button type="submit" id="btnSubmit" disabled>Submit</button>&nbsp;<a href="<?php echo NETWORKTOOLS_URL; ?>/rdns" target="_blank">Alternative Tool</a></p>
         </form>
 
         <div class="result" id="result"></div>

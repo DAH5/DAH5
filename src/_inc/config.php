@@ -16,4 +16,6 @@ if( ! defined( "STATICPHP_URL" ) )
     define( "STATICPHP_URL", "https://staticphp." . DOMAIN );
 if( ! defined( "DH_URL" ) )
     define( "DH_URL", "https://davidhunter." . DOMAIN );
+if( ! defined( "NETWORKTOOLS_URL" ) )
+    define( "NETWORKTOOLS_URL", "https://networktools." . DOMAIN );
 
