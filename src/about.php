@@ -15,7 +15,7 @@ javascripts: /assets/javascript/anti-email-harvesting.min.js
     <div class="container">
         <div class="about-content">
             <div class="about-intro">
-                <p><img src="/assets/images/logos/dah5-logo-8bit-2026-826x343-transparent.png" width="826" height="343"></p>
+                <p><img src="/assets/images/logos/dah5-logo-blocks-2026-coloured-transparent.png" width="672" height="154"></p>
                 <h2>Welcome to DAH5</h2>
                 <p class="lead">A platform for exploration, creativity, and discovery.</p>
             </div>

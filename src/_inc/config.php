@@ -13,9 +13,9 @@ if( ! defined( "W3CSS_URL" ) )
 if( ! defined( "WEBFONTS_URL" ) )
     define( "WEBFONTS_URL", "/assets/webfonts" );
 if( ! defined( "STATICPHP_URL" ) )
-    define( "STATICPHP_URL", "https://staticphp." . DOMAIN );
+    define( "STATICPHP_URL", "/staticphp" );
 if( ! defined( "DH_URL" ) )
-    define( "DH_URL", "https://davidhunter." . DOMAIN );
+    define( "DH_URL", "/davidhunter" );
 if( ! defined( "NETWORKTOOLS_URL" ) )
     define( "NETWORKTOOLS_URL", "https://networktools." . DOMAIN );
 

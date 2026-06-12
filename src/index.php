@@ -107,7 +107,7 @@ javascripts:
             </div>
 
             <div class="teaser-cta">
-                <a href="/games/love-calculator" class="cta-button">Go to Love Calculator</a>
+                <a href="/lovecalculator" class="cta-button">Go to Love Calculator</a>
             </div>
         </div>
     </div>

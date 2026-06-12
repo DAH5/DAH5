@@ -54,6 +54,7 @@ layout: src/_inc/layout.php
                 <div class="category-content">
                     <a href="<?php echo DH_URL; ?>" class="directory-link" target="_blank">David Hunter</a>
                     <a href="<?php echo STATICPHP_URL; ?>" class="directory-link" target="_blank">StaticPHP</a>
+                    <a href="<?php echo NETWORKTOOLS_URL; ?>" class="directory-link" target="_blank">Network Tools</a>
                 </div>
             </div>
         </div>

@@ -17,9 +17,14 @@ body
     line-height: 1.6;
 }
 
+p
+{
+    font-size: 1.1875rem;
+}
+
 .container
 {
-    max-width: 1200px;
+    max-width: 80rem;
     margin: 0;
     margin-left: auto;
     margin-right: auto;
@@ -218,6 +223,11 @@ footer
     color: #cccccc;
     font-size: 14px;
     text-align: center;
+}
+
+footer p
+{
+    font-size: 1rem;
 }
 
 footer a
@@ -909,4 +919,17 @@ footer .text-muted
     {
         padding: 24px;
     }
+}
+
+/* External Links */
+a[ target = "_blank" ]:after
+{
+    content: "";
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    margin-left: 0.3em;
+    background: currentColor;
+    mask: url( "/assets/images/ui/external-link.svg" ) no-repeat center;
+    mask-size: contain;
 }
