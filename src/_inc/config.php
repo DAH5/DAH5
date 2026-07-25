@@ -13,9 +13,15 @@ if( ! defined( "W3CSS_URL" ) )
 if( ! defined( "WEBFONTS_URL" ) )
     define( "WEBFONTS_URL", "/assets/webfonts" );
 if( ! defined( "STATICPHP_URL" ) )
-    define( "STATICPHP_URL", "/staticphp" );
+    define( "STATICPHP_URL", "/ext/staticphp" );
 if( ! defined( "DH_URL" ) )
-    define( "DH_URL", "/davidhunter" );
+    define( "DH_URL", "/ext/davidhunter" );
 if( ! defined( "NETWORKTOOLS_URL" ) )
-    define( "NETWORKTOOLS_URL", "https://networktools." . DOMAIN );
+    define( "NETWORKTOOLS_URL", "/ext/networktools" );
+if( ! defined( "GITHUB_URL" ) )
+    define( "GITHUB_URL", "/ext/github" );
+if( ! defined( "GITLAB_URL" ) )
+    define( "GITLAB_URL", "/ext/gitlab" );
+if( ! defined( "KCOS_URL" ) )
+    define( "KCOS_URL", "/ext/krystal-cloud-object-storage" );
 
