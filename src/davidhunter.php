@@ -1,1 +1,4 @@
-<?php include __DIR__ . DIRECTORY_SEPARATOR . 'ext' . DIRECTORY_SEPARATOR . 'davidhunter.php'; ?>
+---
+layout: src/_inc/layout-redirection-internal.php
+destination: /ext/davidhunter
+---
