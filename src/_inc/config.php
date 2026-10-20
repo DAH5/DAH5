@@ -18,10 +18,14 @@ if( ! defined( "DH_URL" ) )
     define( "DH_URL", "/ext/davidhunter" );
 if( ! defined( "NETWORKTOOLS_URL" ) )
     define( "NETWORKTOOLS_URL", "/ext/networktools" );
+if( ! defined( "NETWORKTOOLS_API" ) )
+    define( "NETWORKTOOLS_API_URL", "https://networktools.dah5.me.uk" );
 if( ! defined( "GITHUB_URL" ) )
     define( "GITHUB_URL", "/ext/github" );
 if( ! defined( "GITLAB_URL" ) )
     define( "GITLAB_URL", "/ext/gitlab" );
 if( ! defined( "KCOS_URL" ) )
     define( "KCOS_URL", "/ext/krystal-cloud-object-storage" );
+if( ! defined( "CLOUDFLARE_PAGES_URL" ) )
+    define( "CLOUDFLARE_PAGES_URL", "/ext/cloudflare-pages" );
 
