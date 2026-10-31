@@ -70,7 +70,7 @@ jobs:
           set net:max-retries 2
           set net:timeout 30
 
-          mirror --reverse --delete --verbose --parallel=2 "${OUTPUT_DIRECTORY}/" "${FTP_REMOTE_PATH}/"
+          mirror --reverse --delete --verbose --parallel=6 "${OUTPUT_DIRECTORY}/" "${FTP_REMOTE_PATH}/"
 
           bye
           EOF
