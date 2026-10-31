@@ -14,16 +14,8 @@ ErrorDocument 404 /404.html
     RewriteCond %{HTTP_HOST} ^www.dah5.co.uk$
     RewriteRule ^(.*)$ https://www.dah5.me.uk/$1 [R=307,END]
 
-    RewriteRule ^lovecalculator$ /games/love-calculator [R=307,END]
-    RewriteRule ^lc$ /games/love-calculator [R=307,END]
-    RewriteRule ^love-calculator$ /games/love-calculator [R=307,END]
-    RewriteRule ^games/lovecalculator$ /games/love-calculator [R=307,END]
-    RewriteRule ^games/lc$ /games/love-calculator [R=307,END]
-    RewriteRule ^game/(.*)$ /games/$1 [R=307,END]
-
-    RewriteRule ^staticphp/?$ https://weburl.net/staticphp/ [R=307,END]
-    RewriteRule ^staticphp/(.*)$ https://weburl.net/staticphp/$1 [R=307,END]
-
-    RewriteRule ^davidhunter/?$ https://weburl.net/davidhunter/ [R=307,END]
-    RewriteRule ^davidhunter/(.*)$ https://weburl.net/davidhunter/$1 [R=307,END]
+    RewriteCond %{HTTP_HOST} ^(?!www\.)(.+)\.dah5\.me\.uk$ [OR]
+	RewriteCond %{HTTP_HOST} ^(?!www\.)(.+)\.dah5\.com$ [OR]
+    RewriteCond %{HTTP_HOST} ^(?!www\.)(.+)\.dah5\.co\.uk$
+	RewriteRule ^(.*)$ https://www.dah5.me.uk/%1/$1 [R=307,END]
 </IfModule>
