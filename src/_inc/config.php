@@ -28,4 +28,6 @@ if( ! defined( "KCOS_URL" ) )
     define( "KCOS_URL", "/ext/krystal-cloud-object-storage" );
 if( ! defined( "CLOUDFLARE_PAGES_URL" ) )
     define( "CLOUDFLARE_PAGES_URL", "/ext/cloudflare-pages" );
+if( ! defined( "KRYSTAL_HOSTING_URL" ) )
+    define( "KRYSTAL_HOSTING_URL", "/ext/krystal-hosting" );
 
