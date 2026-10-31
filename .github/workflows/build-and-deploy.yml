@@ -61,7 +61,7 @@ jobs:
 
           export LFTP_PASSWORD="$FTP_PASSWORD"
 
-          lftp -u "$FTP_USER" "ftp://$FTP_HOST:21" <<EOF
+          lftp -u "$FTP_USER","$FTP_PASSWORD" "ftp://$FTP_HOST:21" <<EOF
           set cmd:fail-exit yes
           set ftp:ssl-force yes
           set ftp:ssl-protect-data yes
