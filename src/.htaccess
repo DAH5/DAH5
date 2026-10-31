@@ -14,8 +14,10 @@ ErrorDocument 404 /404.html
     RewriteCond %{HTTP_HOST} ^www.dah5.co.uk$
     RewriteRule ^(.*)$ https://www.dah5.me.uk/$1 [R=307,END]
 
-    RewriteCond %{HTTP_HOST} ^(?!www\.)(.+)\.dah5\.me\.uk$ [OR]
 	RewriteCond %{HTTP_HOST} ^(?!www\.)(.+)\.dah5\.com$ [OR]
     RewriteCond %{HTTP_HOST} ^(?!www\.)(.+)\.dah5\.co\.uk$
+    RewriteRule ^(.*)$ https://%1.dah5.me.uk/$1 [R=307,END]
+
+    RewriteCond %{HTTP_HOST} ^(?!www\.)(.+)\.dah5\.me\.uk$
 	RewriteRule ^(.*)$ https://www.dah5.me.uk/%1/$1 [R=307,END]
 </IfModule>
