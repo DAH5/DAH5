@@ -50,6 +50,15 @@ $configurable_options[ 'metadata_delimiter' ] = "---";
 
 
 /*
+	MetaData Closing Delimiter
+
+	This is what defines the end of the MetaData syntax. Defaults to the same as the main MetaData delimiter.
+*/
+
+$configurable_options[ 'metadata_closing_delimiter' ] = $configurable_options[ 'metadata_delimiter' ];
+
+
+/*
 	Minify HTML
 
 	Removes whitespace between HTML tags, comments, and extra spaces.
@@ -83,6 +92,39 @@ $configurable_options[ 'minify_js' ] = true;
 
 
 /*
+	Minify HTML Tags to Preserve
+
+	Preserves the following tags as-is during the Minify HTML process, resulting in them not being minified like the rest of the code.
+
+	Set to an array of tag names (e.g. "pre") to enable, set to an empty array, or remove the option entirely to disable.
+*/
+
+$configurable_options[ 'minify_html_tags_to_preserve' ] = array();
+
+
+/*
+	Bulk Redirects Filename
+
+	Your preferred filename to use as the file where your bulk redirection rules are defined.
+	
+	Set to a string (e.g. "_my_bulk_redirects"). Defaults to "_bulk_redirects" if not specified.
+*/
+
+$configurable_options[ 'bulk_redirects_filename' ] = "_bulk_redirects";
+
+
+/*
+	Redirection Template Filename
+
+	Your preferred filename to use as the redirection template generated for all redirections.
+
+	Set to a string (e.g. "_my_redirection_template.html"). Defaults to "_redirection_template.html" if not specified.
+*/
+
+$configurable_options[ 'redirection_template_filename' ] = "_redirection_template.html";
+
+
+/*
 	Minify CSS In-Place
 
 	Whether to output CSS files in minified form only, or to output both original and minified versions (minified ending in .min.css).
@@ -102,6 +144,118 @@ $configurable_options[ 'minify_css_inplace' ] = false;
 */
 
 $configurable_options[ 'minify_js_inplace' ] = false;
+
+
+/*
+	Items To Passthrough
+
+	Sometimes you may wish a PHP script or file that StaticPHP would normally process, remain in the output as-is.
+
+	Set items_to_passthrough to an array of path parts you wish to match against, where StaticPHP will simply copy them over to output.
+
+	Defaults to an empty array.
+*/
+
+$configurable_options[ 'items_to_passthrough' ] = array();
+
+
+/*
+	Test Mode
+
+	Set to true to perform tests instead of normal processing.
+
+	Defaults to false.
+*/
+
+$configurable_options[ 'test_mode' ] = false;
+
+
+/*
+	Test Mode Input Directory Path
+
+	Directory path containing test input files.
+
+	Defaults to "tests/input".
+*/
+
+$configurable_options[ 'test_mode_input_dir_path' ] = __DIR__ . DIRECTORY_SEPARATOR . "tests" . DIRECTORY_SEPARATOR . "input";
+
+
+/*
+	Test Mode Expected Directory Path
+
+	Directory path containing test expected output files.
+
+	Defaults to "tests/expected".
+*/
+
+$configurable_options[ 'test_mode_expected_dir_path' ] = __DIR__ . DIRECTORY_SEPARATOR . "tests" . DIRECTORY_SEPARATOR . "expected";
+
+
+/*
+	Test Mode Output Directory Path
+
+	Directory path for where to output test results.
+
+	Defaults to "tests/output".
+*/
+
+$configurable_options[ 'test_mode_output_dir_path' ] = __DIR__ . DIRECTORY_SEPARATOR . "tests" . DIRECTORY_SEPARATOR . "output";
+
+
+/*
+	Test Mode Output Results File
+
+	If set to true, a file containing the test results will be generated.
+
+	Defaults to true. Set to false to disable.
+*/
+
+$configurable_options[ 'test_mode_output_results_file' ] = true;
+
+
+/*
+	Test Mode Results Template File Path
+
+	If set to a valid path, this file will be used as the HTML template for the results file.
+
+	Defaults to empty "".
+*/
+
+$configurable_options[ 'test_mode_results_template_file_path' ] = "";
+
+
+/*
+	Test Mode Results File Path
+
+	If test_mode_output_results_file is set to true, an HTML file will be generated containing the test results at the specified path.
+
+	Defaults to "tests/output/results.html".
+*/
+
+$configurable_options[ 'test_mode_results_file_path' ] = __DIR__ . DIRECTORY_SEPARATOR . "tests" . DIRECTORY_SEPARATOR . "output" . DIRECTORY_SEPARATOR . "results.html";
+
+
+/*
+	Generate Standard Redirects File
+
+	Set this to true if you want a "_redirects" file to be generated based on your _bulk_redirects file.
+
+	Defaults to false.
+*/
+
+$configurable_options[ 'generate_standard_redirects_file' ] = true;
+
+
+/*
+	Generate Htaccess Redirections
+
+	Set this to true if you want a ".htaccess" file to be generated based on your _bulk_redirects file.
+
+	Defaults to false.
+*/
+
+$configurable_options[ 'generate_htaccess_redirections' ] = true;
 
 
 /*
