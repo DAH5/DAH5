@@ -31,6 +31,40 @@ jobs:
 
       - name: Run StaticPHP build
         run: php StaticPHP-Launcher.php
+      
+      - name: Install lftp
+        run: sudo apt-get update && sudo apt-get install -y lftp
+
+      - name: Deploy Site to cPanel via FTPS
+        env:
+          FTP_HOST: ${{ secrets.CPANEL_SFTP_HOST }}
+          FTP_USER: ${{ secrets.CPANEL_SFTP_USER }}
+          FTP_PASSWORD: ${{ secrets.CPANEL_SFTP_PASSWORD }}
+          FTP_REMOTE_PATH: ${{ secrets.CPANEL_SFTP_REMOTE_PATH }}
+        run: |
+          set -euo pipefail
+
+          test -f "${OUTPUT_DIRECTORY}/index.html"
+
+          if [[ -z "$FTP_REMOTE_PATH" ||
+                "$FTP_REMOTE_PATH" == "/" ||
+                "$FTP_REMOTE_PATH" == "." ||
+                "$FTP_REMOTE_PATH" == ".." ]]; then
+            echo "::error::Invalid FTP destination"
+            exit 1
+          fi
+
+          
+          lftp -e '
+            set cmd:fail-exit yes
+            set ftp:ssl-force yes
+            set ftp:ssl-protect-data yes
+            set ssl:verify-certificate yes
+            set ftp:passive-mode yes
+            mirror --reverse --delete --verbose --parallel=2 \
+              "$OUTPUT_DIRECTORY/" "$FTP_REMOTE_PATH/"
+            bye
+          ' "ftp://$FTP_HOST"
 
       - name: Deploy Site to Cloudflare Pages
         uses: cloudflare/wrangler-action@v3
