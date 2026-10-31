@@ -33,7 +33,7 @@ layout: src/_inc/layout.php
                 <h2>Games</h2>
                 <div class="category-content">
                     <a href="/games/love-calculator" class="directory-link">Love Calculator</a>
-                    <a href="/games/the-bored-game" class="directory-link">The Bored Game</a>
+                    <a href="/games/bored-game" class="directory-link">The Bored Game</a>
                 </div>
             </div>
 
