@@ -46,25 +46,34 @@ jobs:
 
           test -f "${OUTPUT_DIRECTORY}/index.html"
 
-          if [[ -z "$FTP_REMOTE_PATH" ||
+          if [[ -z "$FTP_HOST" || -z "$FTP_USER" ||
+                -z "$FTP_PASSWORD" ]]; then
+            echo "::error::Missing FTP connection details"
+            exit 1
+          fi
+
+          if [[ ! "$FTP_REMOTE_PATH" =~ ^/[a-zA-Z0-9_./-]+$ ||
                 "$FTP_REMOTE_PATH" == "/" ||
-                "$FTP_REMOTE_PATH" == "." ||
-                "$FTP_REMOTE_PATH" == ".." ]]; then
+                "$FTP_REMOTE_PATH" == *"/../"* ]]; then
             echo "::error::Invalid FTP destination"
             exit 1
           fi
 
-          
-          lftp -e '
-            set cmd:fail-exit yes
-            set ftp:ssl-force yes
-            set ftp:ssl-protect-data yes
-            set ssl:verify-certificate yes
-            set ftp:passive-mode yes
-            mirror --reverse --delete --verbose --parallel=2 \
-              "$OUTPUT_DIRECTORY/" "$FTP_REMOTE_PATH/"
-            bye
-          ' "ftp://$FTP_HOST"
+          export LFTP_PASSWORD="$FTP_PASSWORD"
+
+          lftp -u "$FTP_USER" "ftp://$FTP_HOST:21" <<EOF
+          set cmd:fail-exit yes
+          set ftp:ssl-force yes
+          set ftp:ssl-protect-data yes
+          set ssl:verify-certificate yes
+          set ftp:passive-mode yes
+          set net:max-retries 2
+          set net:timeout 30
+
+          mirror --reverse --delete --verbose --parallel=2 "${OUTPUT_DIRECTORY}/" "${FTP_REMOTE_PATH}/"
+
+          bye
+          EOF
 
       - name: Deploy Site to Cloudflare Pages
         uses: cloudflare/wrangler-action@v3
