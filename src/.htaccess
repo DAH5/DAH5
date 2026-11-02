@@ -21,6 +21,4 @@ ErrorDocument 418 /teapot/index.html
 
     RewriteCond %{HTTP_HOST} ^(?!www\.)(.+)\.dah5\.me\.uk$
 	RewriteRule ^(.*)$ https://www.dah5.me.uk/%1/$1 [R=307,END]
-
-    RewriteRule ^teapot/?$ - [R=418,END]
 </IfModule>
