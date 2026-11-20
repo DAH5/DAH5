@@ -10,6 +10,8 @@ btnSubmit.disabled = false;
 
 function lookup( domain )
 {
+    result.innerHTML = '';
+
     if( domain == '' )
     {
         result.innerHTML = '<p>Please enter a domain name to continue.</p>';
@@ -31,9 +33,16 @@ function lookup( domain )
 
         if( responseJSON.type == 'success' )
         {
-            const resultJSON = responseJSON.result;
+            const resultJSON = responseJSON.result.registrar_response;
 
             result.innerHTML = '<pre>' + resultJSON + '</pre>';
+        };
+
+        if( responseJSON.type == 'error' )
+        {
+            const resultMessage = responseJSON.message;
+
+            result.innerHTML = '<pre>' + resultMessage + '</pre>';
         };
     };
 
