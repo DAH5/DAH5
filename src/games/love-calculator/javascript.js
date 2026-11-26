@@ -48,8 +48,8 @@ function getLoveMessage(percentage)
 
 function calculate()
 {
-    var personOne = PersonOneTXT.innerText;
-    var personTwo = PersonTwoTXT.innerText;
+    var personOne = PersonOneTXT.value.trim();
+    var personTwo = PersonTwoTXT.value.trim();
 
     var personOneLowerCaseSpaceless = personOne.trim().toLowerCase().replace(/\s+/g, '');
     var personTwoLowerCaseSpaceless = personTwo.trim().toLowerCase().replace(/\s+/g, '');
@@ -109,13 +109,13 @@ function displayMessage(message, type = "")
 
 function swapNames()
 {
-    var personOne = PersonOneTXT.innerText;
-    var personTwo = PersonTwoTXT.innerText;
+    var personOne = PersonOneTXT.value.trim();
+    var personTwo = PersonTwoTXT.value.trim();
     
     if (personOne || personTwo)
     {
-        PersonOneTXT.innerText = personTwo;
-        PersonTwoTXT.innerText = personOne;
+        PersonOneTXT.value = personTwo;
+        PersonTwoTXT.value = personOne;
         MessageArea.innerText = "Names swapped! Try calculating again!";
         MessageArea.className = "";
     }
@@ -123,8 +123,8 @@ function swapNames()
 
 function reset()
 {
-    PersonOneTXT.innerText = "";
-    PersonTwoTXT.innerText = "";
+    PersonOneTXT.value = "";
+    PersonTwoTXT.value = "";
     MessageArea.innerText = "";
     MessageArea.className = "";
     CalculateBTN.disabled = false;
