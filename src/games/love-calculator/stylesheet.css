@@ -1,173 +1,230 @@
-*,
-*::before,
-*::after
+.love-calculator
 {
-    box-sizing: border-box;
+    background: linear-gradient(135deg, #ffddf9 0%, #ff9ced 100%);
+    color: #333333;
+    padding: 28px;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
 }
 
-html,
-body
+.love-calculator .container
+{
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 2rem;
+    background-color: rgba(255, 255, 255, 0.95);
+    border-radius: 1.5rem;
+    box-shadow: 0 10px 30px rgba(255, 156, 237, 0.3);
+    transition: transform 0.3s ease;
+    position: relative;
+}
+
+#NoJSOverlay
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(2px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 1.5rem;
+    z-index: 100;
+    border: 2px dashed #ff9ced;
+}
+
+#NoJSOverlay p
 {
     font-size: 1.2rem;
-}
-
-html
-{
-    color: #fff;
-    background-color: #2c2138;
-    min-height: 100vh;
-}
-
-html::before
-{
-    content: "";
-    position: fixed;
-    inset: 0;
-    background-color: #2c2138;
-    background-image: url( '/assets/images/gifs/backgrounds/5HFPCUGHY5MPW7FPDI57HXOFX2VVP6Y7.gif' );
-    color: #fff;
-    filter: blur(6px) brightness(0.6);
-    z-index: -1;
-}
-
-body
-{
-    max-width: 900px;
-    margin: 2rem auto;
-    padding: 1rem;
-}
-
-a
-{
-    color: #fff;
-}
-
-a:hover
-{
-    color: #ccc;
-}
-
-img
-{
-    max-width: 100%;
-    height: 100%;
-}
-
-.logo
-{
-    max-width: min( 80%, 300px );
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.logo img
-{
-    image-rendering: pixelated;
-}
-
-h1
-{
-    letter-spacing: 0.03em;
+    color: #ff4d94;
     text-align: center;
+    padding: 2rem;
+    font-weight: bold;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 1rem;
+    box-shadow: 0 4px 15px rgba(255, 77, 148, 0.2);
 }
 
-h1 a
+.love-calculator .container:hover
 {
-    text-decoration: none;
+    transform: translateY(-5px);
 }
 
-form,
-#result,
-#shareUrl,
-#nojs
+.love-calculator h2
 {
-    margin-top: 1rem;
-    margin-bottom: 1rem;
+    text-align: center;
+    margin: 0 0 1rem 0;
+    font-size: 32px;
+    color: #ff4d94;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.love-calculator hr
+{
+    border: none;
+    height: 3px;
+    background: linear-gradient(to right, transparent, #ff9ced, transparent);
+    margin: 1.5rem -2rem;
+}
+
+.love-calculator .input
+{
     padding: 1rem;
-    background-color: #e6c4ff;
-    border: 6px solid #8257bb;
-    color: #000;
-    border-radius: 1rem;
-    width: max-content;
-    max-width: 100%;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-form a,
-#result a,
-#shareUrl a,
-#nojs a
-{
-    color: #653c9a;
-    font-weight: 600;
-}
-
-form a:hover,
-#result a:hover,
-#shareUrl a:hover,
-#nojs a:hover
-{
-    color: #8f69c0;
-}
-
-form input[ type = 'text' ]
-{
-    padding: 0.5rem;
-    max-width: 100%;
-}
-
-form input[ type = 'text' ],
-form button
-{
-    font-size: 1.2em;
-}
-
-form button
-{
-    padding: 0.4em 0.8em;
-    cursor: pointer;
-    background-color: #8257bb;
-    border: 1px solid #8257bb;
-    color: #fff;
-    border-radius: 1rem;
-}
-
-form button:hover
-{
-    background-color: #9672c4;
-}
-
-#result .text
-{
-    font-size: 1.4em;
-    font-weight: 600;
-}
-
-#result,
-#shareUrl
-{
-    display: none;
-}
-
-#shareUrl code
-{
-    font-family: monospace;
-    border: 1px solid #ccc;
+    width: 100%;
+    min-height: 65px;
     background-color: #fff;
+    border: 2px solid #ff9ced;
+    border-radius: 1rem;
+    transition: all 0.3s ease;
+    margin-bottom: 1rem;
 }
 
-#calculator
+.love-calculator .input[tabindex="-1"]
 {
-    display: none;
+    background-color: #f5f5f5;
+    border-color: #ddd;
+    cursor: not-allowed;
 }
 
-#swapNamesSpan
+.love-calculator .input:focus
 {
-    display: none;
+    outline: none;
+    border-color: #ff4d94;
+    box-shadow: 0 0 0 3px rgba(255, 77, 148, 0.2);
 }
 
-.footer-text
+.love-calculator .buttons
+{
+    display: flex;
+    gap: 1rem;
+    margin: 1.5rem 0;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.love-calculator .button
+{
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 2rem;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-align: center;
+    white-space: nowrap;
+}
+
+.love-calculator .button:disabled
+{
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none !important;
+    box-shadow: none !important;
+}
+
+/* Primary button (Calculate) */
+.love-calculator .button#CalculateBTN
+{
+    background: linear-gradient(45deg, #ff9ced, #ff4d94);
+    color: #ffffff;
+    box-shadow: 0 4px 15px rgba(255, 77, 148, 0.2);
+    flex: 2;
+}
+
+.love-calculator .button#CalculateBTN:disabled
+{
+    background: #ccc;
+    color: #666;
+}
+
+.love-calculator .button#CalculateBTN:hover
+{
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(255, 77, 148, 0.4);
+}
+
+/* Secondary buttons (Swap and Reset) */
+.love-calculator .button#SwapNamesBTN,
+.love-calculator .button#ResetBTN
+{
+    background: transparent;
+    color: #ff4d94;
+    border: 2px solid #ff9ced;
+    flex: 1;
+}
+
+.love-calculator .button#SwapNamesBTN:hover,
+.love-calculator .button#ResetBTN:hover
+{
+    background: rgba(255, 156, 237, 0.1);
+    transform: translateY(-1px);
+}
+
+.love-calculator .button:active
+{
+    transform: translateY(0);
+}
+
+#MessageArea
+{
+    transition: all 0.3s ease;
+    margin: 1rem 0;
+    padding: 1rem;
+    border-radius: 1rem;
+    text-align: center;
+    font-weight: bold;
+}
+
+#MessageArea.success
+{
+    background-color: #ff9ced;
+    color: #fff;
+    animation: pulse 1s ease;
+}
+
+.changelog
 {
     text-align: center;
+}
+
+.changelog ul
+{
+    list-style: none;
+}
+
+@keyframes pulse
+{
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+@media (max-width: 600px)
+{
+    .love-calculator .buttons
+    {
+        flex-direction: column;
+        gap: 0.75rem;
+    }
+
+    .love-calculator .button
+    {
+        width: 100%;
+        min-width: unset;
+    }
+}
+
+@media (min-width: 800px)
+{
+    .love-calculator
+    {
+        padding: 64px 28px;
+    }
 }
