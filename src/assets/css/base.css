@@ -728,6 +728,7 @@ footer .text-muted
     padding: 40px;
     border-radius: 16px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: 48px;
 }
 
 .about-contact h3
@@ -748,6 +749,29 @@ footer .text-muted
 {
     font-size: 18px;
     margin-top: 24px;
+}
+
+.about-platforms
+{
+    text-align: center;
+    background: #ffffff;
+    padding: 40px;
+    border-radius: 16px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.about-platforms h3
+{
+    font-size: 28px;
+    color: #333;
+    margin-bottom: 16px;
+}
+
+.about-platforms ul
+{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
 }
 
 @media (max-width: 768px)
@@ -773,7 +797,8 @@ footer .text-muted
     }
     
     .about-history,
-    .about-contact
+    .about-contact,
+    .about-platforms
     {
         padding: 32px;
     }

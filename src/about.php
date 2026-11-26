@@ -38,6 +38,17 @@ javascripts: /assets/javascript/anti-email-harvesting.min.js
                 <p>Have questions, suggestions, or just want to say hello? Feel free to reach out.</p>
                 <p class="contact-email"><b class="email-address">david [dot] hunter [at] <?php echo str_replace( '.', ' [dot] ', DOMAIN ); ?></b></p>
             </div>
+
+            <div id="platforms" class="about-platforms">
+                <h3>Platforms</h3>
+                <p>This website is hosted on multiple platforms.<br>Direct deployment links specific to those platforms are below.</p>
+
+                <ul>
+                    <li><a href="/ext/deployment/cloudflarepages" target="_blank">Cloudflare Pages</a></li>
+                    <li><a href="/ext/deployment/krystalobjectstorage" target="_blank">Krystal Object Storage</a></li>
+                    <li><a href="/ext/deployment/20i" target="_blank">20i</a></li>
+                </ul>
+            </div>
         </div>
     </div>
 </section>
