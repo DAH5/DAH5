@@ -86,11 +86,11 @@ javascripts:
     </div>
 </section>
 
-<section class="games-teaser" style="background: transparent; background-image: url( '/assets/images/gifs/backgrounds/5HFPCUGHY5MPW7FPDI57HXOFX2VVP6Y7.gif' );">
+<section class="games-teaser" style="background: linear-gradient( 135deg, #ffddf9 0%, #ff9ced 100% );">
     <div class="container">
         <div class="teaser-content">
-            <h2 style="color: #fff;">The Love Calculator Game</h2>
-            <p class="teaser-intro" style="color: #fff;">Discover how much two people could be in love with each other using this simple game.</p>
+            <h2 style="color: #000;">The Love Calculator Game</h2>
+            <p class="teaser-intro" style="color: #000;">Discover how much two people could be in love with each other using this simple game.</p>
             
             <div class="teaser-features">
                 <div class="feature">
