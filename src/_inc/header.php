@@ -17,7 +17,7 @@
             <div class="container">
                 <div class="logos">
                     <div class="logo">
-                        <a href="/"><img src="/assets/images/logos/dah5-logo-blocks-2026-coloured-transparent.png" alt="DAH5" width="131" height="30"></a>
+                        <a href="/"><img src="/assets/images/logos/dah5-logo-blocks-2026-coloured-transparent.--- StaticPHP.BuildID ---.png" alt="DAH5" width="131" height="30"></a>
                     </div>
 
                     --- if( logo && logo_url ) ---

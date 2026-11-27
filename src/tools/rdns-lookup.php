@@ -2,9 +2,9 @@
 page-title: rDNS Lookup Tool
 main-nav-item: tools
 stylesheets:
-- /assets/css/tools.min.css
+- /assets/css/tools.--- StaticPHP.BuildID ---.min.css
 javascripts:
-- /assets/javascript/tool-rdns-lookup.min.js
+- /assets/javascript/tool-rdns-lookup.--- StaticPHP.BuildID ---.min.js
 layout: src/_inc/layout.php
 ---
 

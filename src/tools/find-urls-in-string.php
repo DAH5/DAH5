@@ -2,9 +2,9 @@
 page-title: Find URLs in String
 main-nav-item: tools
 stylesheets:
-- /assets/css/tools.min.css
+- /assets/css/tools.--- StaticPHP.BuildID ---.min.css
 javascripts:
-- /assets/javascript/tool-find-urls-in-string.min.js
+- /assets/javascript/tool-find-urls-in-string.--- StaticPHP.BuildID ---.min.js
 layout: src/_inc/layout.php
 ---
 

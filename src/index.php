@@ -3,7 +3,7 @@ page-title: Home
 main-nav-item: home
 layout: src/_inc/layout.php
 javascripts:
-- /assets/javascript/homepage.js
+- /assets/javascript/homepage.--- StaticPHP.BuildID ---.js
 ---
 
 <section class="minisite-header">

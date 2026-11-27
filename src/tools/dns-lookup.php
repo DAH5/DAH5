@@ -2,9 +2,9 @@
 page-title: DNS Lookup Tool
 main-nav-item: tools
 stylesheets:
-- /assets/css/tools.min.css
+- /assets/css/tools.--- StaticPHP.BuildID ---.min.css
 javascripts:
-- /assets/javascript/tool-dns-lookup.min.js
+- /assets/javascript/tool-dns-lookup.--- StaticPHP.BuildID ---.min.js
 layout: src/_inc/layout.php
 ---
 

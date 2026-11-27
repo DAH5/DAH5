@@ -3,7 +3,7 @@ page-title: Games
 main-nav-item: games
 layout: src/_inc/layout.php
 stylesheets:
-- /assets/css/games.css
+- /assets/css/games.--- StaticPHP.BuildID ---.css
 ---
     
     
